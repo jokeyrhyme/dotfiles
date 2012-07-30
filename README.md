@@ -18,7 +18,12 @@
     yum install zsh
 ```
 
-1. install **oh-my-zsh**, as per https://github.com/robbyrussell/oh-my-zsh
+2. install **oh-my-zsh**, as per https://github.com/robbyrussell/oh-my-zsh
+
+3. double-check that your PATH is set appropriately by `/etc/zprofile`, which you might find convenient (if not
+already configured this way) to source `/etc/profile` or `/etc/profile.d` (or vice versa) to maintain easy
+compatibility with **bash** users on the same system
+
 
 #### VIM
 
@@ -36,7 +41,7 @@
     yum install gvim
 ```
 
-1. install **janus**, as per https://github.com/carlhuda/janus
+2. install **janus**, as per https://github.com/carlhuda/janus
 
 ### Installation
 
@@ -49,19 +54,19 @@ first!
     cd ~
 ```
 
-1. clone this repository into a hidden directory
+2. clone this repository into a hidden directory
 
 ```
     git clone https://github.com/jokeyrhyme/dotfiles.git .dotfiles
 ```
 
-1. remove any conflicting dot files
+3. remove any conflicting dot files
 
 ```
     rm .zshrc
 ```
 
-1. create symbolic links
+4. create symbolic links
 
 ```
     ln -s .dotfiles/zshrc .zshrc
@@ -70,13 +75,13 @@ first!
     ln -s .dotfiles/janus .janus
 ```
 
-1. change to the dotfiles directory
+5. change to the dotfiles directory
 
 ```
     cd ~/.dotfiles
 ```
 
-1. pull in git submodules
+6. pull in git submodules
 
 ```
     git submodule init
