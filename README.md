@@ -17,7 +17,7 @@ first!
 1. change to your home directory
     cd ~
 1. clone this repository into a hidden directory
-    git clone git@github.com:jokeyrhyme/dotfiles.git .dotfiles
+    git clone https://github.com/jokeyrhyme/dotfiles.git .dotfiles
 1. remove any conflicting dot files
     rm .zshrc
 1. create symbolic links
