@@ -12,8 +12,12 @@ ZSH_THEME="kphoen"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gvim="gvim --remote-tab-silent"
-alias mvim="gvim --remote-tab-silent"
+if whence gvim > /dev/null; then
+  alias gvim="gvim --remote-tab-silent"
+fi
+if whence mvim > /dev/null; then
+  alias mvim="mvim --remote-tab-silent"
+fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
