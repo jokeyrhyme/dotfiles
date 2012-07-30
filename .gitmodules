@@ -1,0 +1,9 @@
+[submodule "janus/zencoding"]
+	path = janus/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "janus/editorconfig"]
+	path = janus/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "janus/solarized"]
+	path = janus/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

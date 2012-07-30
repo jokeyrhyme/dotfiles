@@ -1,0 +1,15 @@
+if has('mac')
+  set guifont=Menlo:h13
+  set transparency=2
+endif
+
+if has('win32')
+  set guifont=Consolas:h12
+endif
+
+if has('toolbar')
+  set go-=T
+endif
+
+set columns=90
+set lines=50
