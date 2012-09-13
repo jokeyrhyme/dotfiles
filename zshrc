@@ -44,7 +44,7 @@ COMPLETION_WAITING_DOTS="true"
 PLUGIN_CMDS="brew gem npm yum" # package managers
 PLUGIN_CMDS="git svn ${PLUGIN_CMDS}" # version control
 PLUGIN_CMDS="bundler knife rbenv ruby vagrant ${PLUGIN_CMDS}" # ruby
-PLUGIN_CMDS="ant mvn screen ${PLUGIN_CMDS}" # other commands
+PLUGIN_CMDS="ant mvn screen vi-mode ${PLUGIN_CMDS}" # other commands
 for p in $PLUGIN_CMDS
 do
   if whence $p > /dev/null; then
