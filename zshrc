@@ -15,9 +15,11 @@ ZSH_THEME="steeef"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if whence gvim > /dev/null; then
+  alias vim="gvim"
   alias gvim="gvim --remote-tab-silent"
 fi
 if whence mvim > /dev/null; then
+  alias vim="mvim"
   alias mvim="mvim --remote-tab-silent"
 fi
 
@@ -61,6 +63,8 @@ fi
 plugins=(battery encode64 $plugins)
 
 source $ZSH/oh-my-zsh.sh
+
+export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
