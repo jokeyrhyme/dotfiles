@@ -64,6 +64,9 @@ plugins=(battery encode64 $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
+# enable vi-mode
+set -o vi
+
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
 # Customize to your needs...
