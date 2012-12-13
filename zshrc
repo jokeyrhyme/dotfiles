@@ -66,6 +66,7 @@ source $ZSH/oh-my-zsh.sh
 
 # enable vi-mode
 set -o vi
+bindkey "^R" history-incremental-search-backward
 
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
