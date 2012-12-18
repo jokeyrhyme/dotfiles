@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS="brew gem npm yum" # package managers
+PLUGIN_CMDS="gem npm yum" # package managers
 PLUGIN_CMDS="git svn ${PLUGIN_CMDS}" # version control
 PLUGIN_CMDS="bundler knife rbenv ruby vagrant ${PLUGIN_CMDS}" # ruby
 PLUGIN_CMDS="ant mvn screen vi-mode ${PLUGIN_CMDS}" # other commands
@@ -56,7 +56,8 @@ done
 
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  plugins=(osx terminalapp $plugins)
+  plugins=(brew osx terminalapp $plugins)
+  export HOMEBREW_BUILD_FROM_SOURCE=1
 fi
 
 # load in other plugins
