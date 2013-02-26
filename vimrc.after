@@ -13,3 +13,4 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+let g:syntastic_javascript_checkers=['gjslint','jslint']
