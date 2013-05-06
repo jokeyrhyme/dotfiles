@@ -71,5 +71,16 @@ bindkey "^R" history-incremental-search-backward
 
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
+# rbenv and ruby
+if [ -d ~/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  
+  # fix ruby-build cache
+  if [ ! -d ~/.rbenv/cache ]; then
+    mkdir ~/.rbenv/cache
+  fi
+fi
+
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
