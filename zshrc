@@ -82,5 +82,10 @@ if [ -d ~/.rbenv ]; then
   fi
 fi
 
+# nave and node.js
+if [ -f ~/.nave/nave.sh ]; then
+  alias nave="~/.nave/nave.sh"
+fi
+
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
