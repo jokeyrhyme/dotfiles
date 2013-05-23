@@ -1,12 +1,7 @@
-[submodule "janus/zencoding"]
-	path = janus/zencoding
-	url = https://github.com/mattn/zencoding-vim.git
-[submodule "janus/editorconfig"]
-	path = janus/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "janus/solarized"]
 	path = janus/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "janus/csscomb"]
-	path = janus/csscomb
-	url = git://github.com/batsuev/csscomb-vim.git
+[submodule "janus/zencoding"]
+	path = janus/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
+	branch = master
