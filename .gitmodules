@@ -5,3 +5,15 @@
 	path = janus/zencoding
 	url = git://github.com/mattn/zencoding-vim.git
 	branch = master
+[submodule "grunt-init/commonjs"]
+	path = grunt-init/commonjs
+	url = git://github.com/gruntjs/grunt-init-commonjs.git
+	branch = master
+[submodule "grunt-init/gruntfile"]
+	path = grunt-init/gruntfile
+	url = git://github.com/gruntjs/grunt-init-gruntfile.git
+	branch = master
+[submodule "grunt-init/node"]
+	path = grunt-init/node
+	url = git://github.com/gruntjs/grunt-init-node.git
+	branch = master
