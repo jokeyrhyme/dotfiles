@@ -73,6 +73,7 @@ first!
     ln -s .dotfiles/gvimrc.after .gvimrc.after
     ln -s .dotfiles/vimrc.after .vimrc.after
     ln -s .dotfiles/janus .janus
+    ln -s .dotfiles/nave .nave
 ```
 
 5. change to the dotfiles directory
