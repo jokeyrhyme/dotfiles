@@ -14,6 +14,10 @@ ZSH_THEME="steeef"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# vim, gvim and MacVim
+# TODO: detect vim first
+export EDITOR=$(which vim)
 if whence gvim > /dev/null; then
   alias vim="gvim"
   alias gvim="gvim --remote-tab-silent"
@@ -43,10 +47,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS="gem npm yum" # package managers
-PLUGIN_CMDS="git svn ${PLUGIN_CMDS}" # version control
-PLUGIN_CMDS="bundler knife rbenv ruby vagrant ${PLUGIN_CMDS}" # ruby
-PLUGIN_CMDS="ant mvn screen vi-mode ${PLUGIN_CMDS}" # other commands
+PLUGIN_CMDS="yum" # package managers
+PLUGIN_CMDS="git git-flow svn ${PLUGIN_CMDS}" # version control
+PLUGIN_CMDS="tmux vi-mode ${PLUGIN_CMDS}" # other commands
 for p in $PLUGIN_CMDS
 do
   if whence $p > /dev/null; then
@@ -60,19 +63,9 @@ if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
   export HOMEBREW_BUILD_FROM_SOURCE=1
 fi
 
-# load in other plugins
-plugins=(battery encode64 $plugins)
-
-source $ZSH/oh-my-zsh.sh
-
-# enable vi-mode
-set -o vi
-bindkey "^R" history-incremental-search-backward
-
-export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
-
 # rbenv and ruby
 if [ -d ~/.rbenv ]; then
+  plugins=(gem bundler rbenv rake rails4 ruby vagrant $plugins)
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   
@@ -84,7 +77,24 @@ fi
 
 # nave and node.js
 if [ -f ~/.nave/nave.sh ]; then
+  plugins=(npm $plugins)
   alias nave="~/.nave/nave.sh"
+fi
+
+# load in other plugins
+plugins=(battery encode64 $plugins)
+
+source $ZSH/oh-my-zsh.sh
+
+# enable vi-mode
+set -o vi
+bindkey "^R" history-incremental-search-backward
+
+export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
+
+# Java on OS X
+if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
 # Android SDK
