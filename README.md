@@ -87,7 +87,8 @@ first!
     ln -s ~/.dotfiles/rbenv ~/.rbenv
     mkdir -p ~/.rbenv/cache
     mkdir -p ~/.rbenv/plugins
-    ln -s ~/.dotfiles/rbenv-plugins/ruby-build ~/.rbenv/plugins/ruby-build
+    ln -s ~/.dotfiles/rbenv-vars ~/.rbenv/plugins/rbenv-vars
+    ln -s ~/.dotfiles/ruby-build ~/.rbenv/plugins/ruby-build
     ```
 
 
