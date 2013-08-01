@@ -17,7 +17,9 @@ ZSH_THEME="steeef"
 
 # vim, gvim and MacVim
 # TODO: detect vim first
-export EDITOR=$(which vim)
+if [ ! "$EDITOR" ]; then
+  export EDITOR=$(which vim)
+fi
 if whence gvim > /dev/null; then
   alias vim="gvim"
   alias gvim="gvim --remote-tab-silent"
