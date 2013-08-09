@@ -1,3 +1,8 @@
 # JetBrains IDEA files
 /*.iml
 /.idea
+
+# nave files
+nave/.zlogout
+nave/.zshenv
+
