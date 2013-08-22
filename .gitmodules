@@ -34,3 +34,7 @@
 	path = janus/emmet
 	url = https://github.com/mattn/emmet-vim.git
 	branch = master
+[submodule "janus/multiple-cursors"]
+	path = janus/multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
+	branch = master
