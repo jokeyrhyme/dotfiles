@@ -1,9 +1,6 @@
 [submodule "janus/solarized"]
 	path = janus/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "janus/zencoding"]
-	path = janus/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
 	branch = master
 [submodule "grunt-init/commonjs"]
 	path = grunt-init/commonjs
@@ -32,4 +29,8 @@
 [submodule "ruby-build"]
 	path = ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+	branch = master
+[submodule "janus/emmet"]
+	path = janus/emmet
+	url = https://github.com/mattn/emmet-vim.git
 	branch = master
