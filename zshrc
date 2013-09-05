@@ -71,5 +71,7 @@ bindkey "^R" history-incremental-search-backward
 
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
+export LANGUAGE="en_AU:en_GB:en_US:en"
+
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
