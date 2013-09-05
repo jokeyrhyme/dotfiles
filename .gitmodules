@@ -1,12 +1,40 @@
-[submodule "janus/zencoding"]
-	path = janus/zencoding
-	url = https://github.com/mattn/zencoding-vim.git
-[submodule "janus/editorconfig"]
-	path = janus/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "janus/solarized"]
 	path = janus/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "janus/csscomb"]
-	path = janus/csscomb
-	url = git://github.com/batsuev/csscomb-vim.git
+	branch = master
+[submodule "grunt-init/commonjs"]
+	path = grunt-init/commonjs
+	url = git://github.com/gruntjs/grunt-init-commonjs.git
+	branch = master
+[submodule "grunt-init/gruntfile"]
+	path = grunt-init/gruntfile
+	url = git://github.com/gruntjs/grunt-init-gruntfile.git
+	branch = master
+[submodule "grunt-init/node"]
+	path = grunt-init/node
+	url = git://github.com/gruntjs/grunt-init-node.git
+	branch = master
+[submodule "nave"]
+	path = nave
+	url = https://github.com/isaacs/nave.git
+	branch = master
+[submodule "rbenv"]
+	path = rbenv
+	url = https://github.com/sstephenson/rbenv.git
+	branch = master
+[submodule "rbenv-vars"]
+	path = rbenv-vars
+	url = https://github.com/sstephenson/rbenv-vars.git
+	branch = master
+[submodule "ruby-build"]
+	path = ruby-build
+	url = https://github.com/sstephenson/ruby-build.git
+	branch = master
+[submodule "janus/emmet"]
+	path = janus/emmet
+	url = https://github.com/mattn/emmet-vim.git
+	branch = master
+[submodule "janus/multiple-cursors"]
+	path = janus/multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
+	branch = master

@@ -14,6 +14,12 @@ ZSH_THEME="steeef"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# vim, gvim and MacVim
+# TODO: detect vim first
+if [ ! "$EDITOR" ]; then
+  export EDITOR=$(which vim)
+fi
 if whence gvim > /dev/null; then
   alias vim="gvim"
   alias gvim="gvim --remote-tab-silent"
@@ -43,10 +49,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS="gem npm yum" # package managers
-PLUGIN_CMDS="git svn ${PLUGIN_CMDS}" # version control
-PLUGIN_CMDS="bundler knife rbenv ruby vagrant ${PLUGIN_CMDS}" # ruby
-PLUGIN_CMDS="ant mvn screen vi-mode ${PLUGIN_CMDS}" # other commands
+PLUGIN_CMDS="yum" # package managers
+PLUGIN_CMDS="git git-flow svn ${PLUGIN_CMDS}" # version control
+PLUGIN_CMDS="tmux vi-mode ${PLUGIN_CMDS}" # other commands
 for p in $PLUGIN_CMDS
 do
   if whence $p > /dev/null; then
@@ -58,6 +63,24 @@ done
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
   plugins=(brew osx terminalapp $plugins)
   export HOMEBREW_BUILD_FROM_SOURCE=1
+fi
+
+# rbenv and ruby
+if [ -d ~/.rbenv ]; then
+  plugins=(gem bundler rbenv rake rails4 ruby vagrant $plugins)
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  
+  # fix ruby-build cache
+  if [ ! -d ~/.rbenv/cache ]; then
+    mkdir ~/.rbenv/cache
+  fi
+fi
+
+# nave and node.js
+if [ -f ~/.nave/nave.sh ]; then
+  plugins=(npm $plugins)
+  alias nave="~/.nave/nave.sh"
 fi
 
 # load in other plugins
@@ -72,6 +95,14 @@ bindkey "^R" history-incremental-search-backward
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
 
 export LANGUAGE="en_AU:en_GB:en_US:en"
+
+# Java on OS X
+if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+# Android SDK
+export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
 
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin

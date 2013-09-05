@@ -50,40 +50,63 @@ first!
 
 1. change to your home directory
 
-```
+    ```
     cd ~
-```
+    ```
 
 2. clone this repository into a hidden directory
 
-```
+    ```
     git clone https://github.com/jokeyrhyme/dotfiles.git .dotfiles
-```
+    ```
 
 3. remove any conflicting dot files
 
-```
+    ```
     rm .zshrc
-```
+    ```
 
-4. create symbolic links
+4. pull in git submodules
 
-```
-    ln -s .dotfiles/zshrc .zshrc
-    ln -s .dotfiles/gvimrc.after .gvimrc.after
-    ln -s .dotfiles/vimrc.after .vimrc.after
-    ln -s .dotfiles/janus .janus
-```
-
-5. change to the dotfiles directory
-
-```
+    ```
     cd ~/.dotfiles
-```
-
-6. pull in git submodules
-
-```
     git submodule init
     git submodule update
-```
+    ```
+    
+5. configure symbolic links and directories
+
+    ```
+    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    
+    ln -s ~/.dotfiles/gvimrc.after ~/.gvimrc.after
+    ln -s ~/.dotfiles/vimrc.after ~/.vimrc.after
+    ln -s ~/.dotfiles/janus ~/.janus
+    ln -s ~/.dotfiles/nave ~/.nave
+    
+    ln -s ~/.dotfiles/rbenv ~/.rbenv
+    mkdir -p ~/.rbenv/cache
+    mkdir -p ~/.rbenv/plugins
+    ln -s ~/.dotfiles/rbenv-vars ~/.rbenv/plugins/rbenv-vars
+    ln -s ~/.dotfiles/ruby-build ~/.rbenv/plugins/ruby-build
+    ```
+
+
+### Update
+
+1. update git repository and git submodules
+
+    ```
+    cd ~/.dotfiles
+    git pull
+    git submodule init
+    git submodule update
+    git submodule foreach --recursive git pull origin master
+    ```
+    
+2. update janus
+
+    ```
+    cd ~/.vim
+    rake
+    ```
