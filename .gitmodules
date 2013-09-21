@@ -38,3 +38,7 @@
 	path = janus/multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
 	branch = master
+[submodule "ansible"]
+	path = ansible
+	url = git://github.com/ansible/ansible.git
+	branch = devel

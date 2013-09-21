@@ -83,6 +83,13 @@ if [ -f ~/.nave/nave.sh ]; then
   alias nave="~/.nave/nave.sh"
 fi
 
+#ansible
+if [ -f ~/.dotfiles/ansible/hacking/env-setup ]; then
+  cd ~/.dotfiles/ansible/
+  source ~/.dotfiles/ansible/hacking/env-setup > /dev/null
+  cd ~
+fi
+
 # load in other plugins
 plugins=(battery encode64 $plugins)
 
