@@ -61,8 +61,10 @@ done
 
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  plugins=(brew osx terminalapp $plugins)
+  plugins=(osx terminalapp $plugins)
+  plugins=(brew $plugins)
   export HOMEBREW_BUILD_FROM_SOURCE=1
+  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 fi
 
 # rbenv and ruby
