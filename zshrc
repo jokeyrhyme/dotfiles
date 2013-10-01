@@ -61,8 +61,10 @@ done
 
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  plugins=(brew osx terminalapp $plugins)
+  plugins=(osx terminalapp $plugins)
+  plugins=(brew $plugins)
   export HOMEBREW_BUILD_FROM_SOURCE=1
+  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 fi
 
 # rbenv and ruby
@@ -100,6 +102,8 @@ set -o vi
 bindkey "^R" history-incremental-search-backward
 
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
+
+export LANGUAGE="en_AU:en_GB:en_US:en"
 
 # Java on OS X
 if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
