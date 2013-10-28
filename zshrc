@@ -62,9 +62,11 @@ done
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
   plugins=(osx terminalapp $plugins)
-  plugins=(brew $plugins)
-  export HOMEBREW_BUILD_FROM_SOURCE=1
-  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+  if whence brew > /dev/null; then
+    plugins=(brew $plugins)
+    export HOMEBREW_BUILD_FROM_SOURCE=1
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  fi
 fi
 
 # rbenv and ruby
@@ -72,7 +74,7 @@ if [ -d ~/.rbenv ]; then
   plugins=(gem bundler rbenv rake rails4 ruby vagrant $plugins)
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-  
+
   # fix ruby-build cache
   if [ ! -d ~/.rbenv/cache ]; then
     mkdir ~/.rbenv/cache
@@ -85,11 +87,10 @@ if [ -f ~/.nave/nave.sh ]; then
   alias nave="~/.nave/nave.sh"
 fi
 
-#ansible
-if [ -f ~/.dotfiles/ansible/hacking/env-setup ]; then
-  cd ~/.dotfiles/ansible/
-  source ~/.dotfiles/ansible/hacking/env-setup > /dev/null
-  cd ~
+# nvm and node.js
+if [ -f ~/.nvm/nvm.sh ]; then
+  plugins=(nvm npm $plugins)
+  source ~/.nvm/nvm.sh
 fi
 
 # load in other plugins
@@ -111,7 +112,9 @@ if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
 fi
 
 # Android SDK
-export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
+if [ -d /opt/android-sdk ]; then
+  export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
+fi
 
 # Customize to your needs...
 #export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
