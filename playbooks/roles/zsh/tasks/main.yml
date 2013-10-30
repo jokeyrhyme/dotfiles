@@ -1,0 +1,31 @@
+---
+- name: apt | install zsh
+  apt: pkg=zsh state=latest
+  when: ansible_pkg_mgr == "apt"
+
+- name: brew | install zsh
+  homebrew: name=zsh state=present
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: pacman | install zsh
+  pacman: name=zsh state=installed
+  when: ansible_pkg_mgr == "pacman"
+
+- name: yum | install zsh
+  yum: name=zsh state=latest
+  when: ansible_pkg_mgr == "yum"
+
+- name: git | clone oh-my-zsh
+  git: repo=git@github.com:robbyrussell/oh-my-zsh.git
+       dest=~/.oh-my-zsh
+       depth=1
+       version=master
+       update=yes
+
+- name: file | link ~/.dotfiles/zshrc to ~/.zshrc
+  file: path=~/.zshrc
+        src=~/.dotfiles/zshrc
+        state=link
+        force=yes
+
+

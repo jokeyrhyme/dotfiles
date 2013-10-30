@@ -13,7 +13,7 @@
   pacman: name=git state=installed
   when: ansible_pkg_mgr == "pacman"
 
-- name: apt | install git
+- name: yum | install git
   yum: name=git state=latest
   when: ansible_pkg_mgr == "yum"
 

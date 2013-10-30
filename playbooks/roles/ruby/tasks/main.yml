@@ -1,0 +1,54 @@
+---
+- name: git | clone rbenv
+  git: repo=git@github.com:sstephenson/rbenv.git
+       dest=~/.rbenv
+       depth=1
+       version=master
+       update=yes
+
+- name: file | ~/.rbenv/cache == directory
+  file: path=~/.rbenv/cache
+        state=directory
+
+- name: file | ~/.rbenv/plugins == directory
+  file: path=~/.rbenv/plugins
+        state=directory
+
+- name: git | clone rbenv-vars
+  git: repo=git@github.com:sstephenson/rbenv-vars.git
+       dest=~/.rbenv/plugins/rbenv-vars
+       depth=1
+       version=master
+       update=yes
+
+- name: git | clone rbenv-gem-rehash
+  git: repo=git@github.com:sstephenson/rbenv-gem-rehash.git
+       dest=~/.rbenv/plugins/rbenv-gem-rehash
+       depth=1
+       version=master
+       update=yes
+
+- name: git | clone ruby-build
+  git: repo=git@github.com:sstephenson/ruby-build.git
+       dest=~/.rbenv/plugins/ruby-build
+       depth=1
+       version=master
+       update=yes
+
+- name: rbenv | install Ruby
+  shell: eval "$(./rbenv init -)" && ./rbenv install {{rubyversion}}
+         chdir=~/.rbenv/bin
+         creates=~/.rbenv/versions/{{rubyversion}}/bin/ruby
+
+- name: rbenv | set global Ruby
+  shell: eval "$(./rbenv init -)" && ./rbenv global {{rubyversion}}
+         chdir=~/.rbenv/bin
+
+- name: gem | install rake
+  shell: eval "$(./rbenv init -)" && gem install -f rake
+         chdir=~/.rbenv/bin
+
+- name: gem | install bundle
+  shell: eval "$(./rbenv init -)" && gem install -f bundle
+         chdir=~/.rbenv/bin
+

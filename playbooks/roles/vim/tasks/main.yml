@@ -1,0 +1,85 @@
+---
+
+# install gvim if "Desktop"
+
+- name: apt | install gvim
+  apt: pkg=gvim state=latest
+  when: ansible_pkg_mgr == "apt" and ansible_form_factor == "Desktop"
+
+- name: brew | install macvim
+  homebrew: name=macvim state=present
+  when: ansible_pkg_mgr == "homebrew" and ansible_form_factor == "Desktop"
+
+- name: pacman | install gvim
+  pacman: name=gvim state=installed
+  when: ansible_pkg_mgr == "pacman" and ansible_form_factor == "Desktop"
+
+- name: yum | install gvim
+  yum: name=gvim state=latest
+  when: ansible_pkg_mgr == "yum" and ansible_form_factor == "Desktop"
+
+# install vim if not "Desktop"
+
+- name: apt | install vim
+  apt: pkg=vim state=latest
+  when: ansible_pkg_mgr == "apt" and ansible_form_factor != "Desktop"
+
+- name: brew | install vim
+  homebrew: name=vim state=present
+  when: ansible_pkg_mgr == "homebrew" and ansible_form_factor != "Desktop"
+
+- name: pacman | install vim
+  pacman: name=vim state=installed
+  when: ansible_pkg_mgr == "pacman" and ansible_form_factor != "Desktop"
+
+- name: yum | install vim
+  yum: name=vim state=latest
+  when: ansible_pkg_mgr == "yum" and ansible_form_factor != "Desktop"
+
+# install carlhuda/janus
+
+- name: git | clone janus
+  git: repo=git@github.com:carlhuda/janus.git
+       dest=~/.vim
+       depth=1
+       version=master
+       update=yes
+
+- name: rake | install janus
+  shell: eval "$(./rbenv init -)" && rake
+         chdir=~/.vim
+
+- name: file | link ~/.dotfiles/vimrc.after to ~/.vimrc.after
+  file: path=~/.vimrc.after
+        src=~/.dotfiles/vimrc.after
+        state=link
+        force=yes
+
+- name: file | link ~/.dotfiles/gvimrc.after to ~/.gvimrc.after
+  file: path=~/.gvimrc.after
+        src=~/.dotfiles/gvimrc.after
+        state=link
+        force=yes
+
+# vim plugins
+
+- name: file | ~/.janus == directory
+  file: path=~/.janus
+        state=directory
+
+- name: git | clone emmet-vim
+  git: repo=git@github.com:mattn/emmet-vim.git
+       dest=~/.janus/emmet
+       depth=1
+       version=master
+       update=yes
+
+- name: git | clone vim-solarized
+  git: repo=git@github.com:altercation/vim-colors-solarized.git
+       dest=~/.janus/solarized
+       depth=1
+       version=master
+       update=yes
+
+
+

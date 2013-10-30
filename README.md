@@ -2,111 +2,35 @@
 
 ### Dependencies
 
-#### Z Shell
+You will need to have a the gcc toolchain installed (for building Ruby).
 
-1. install **zsh**
-
-  * in OS X:
-
-```
-    brew install zsh
-```
-
-  * in Fedora Linux:
-
-```
-    yum install zsh
-```
-
-2. install **oh-my-zsh**, as per https://github.com/robbyrussell/oh-my-zsh
-
-3. double-check that your PATH is set appropriately by `/etc/zprofile`, which you might find convenient (if not
-already configured this way) to source `/etc/profile` or `/etc/profile.d` (or vice versa) to maintain easy
-compatibility with **bash** users on the same system
-
-
-#### VIM
-
-1. install **vim**
-
-  * in OS X:
-
-```
-    brew install macvim
-```
-
-* in Fedora Linux:
-
-```
-    yum install gvim
-```
-
-2. install **janus**, as per https://github.com/carlhuda/janus
+You will need to have ansible installed (which requires Python 2).
 
 ### Installation
 
 Please make sure you have fulfilled the aforementioned Dependencies
 first!
 
-1. change to your home directory
+1. clone this repository into a hidden directory
 
     ```
-    cd ~
+    git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
-2. clone this repository into a hidden directory
+2. run the ansible playbooks
 
     ```
-    git clone https://github.com/jokeyrhyme/dotfiles.git .dotfiles
+    ansible-playbook -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
     ```
 
-3. remove any conflicting dot files
+### Updating
 
-    ```
-    rm .zshrc
-    ```
-
-4. pull in git submodules
-
-    ```
-    cd ~/.dotfiles
-    git submodule init
-    git submodule update
-    ```
-    
-5. configure symbolic links and directories
-
-    ```
-    ln -s ~/.dotfiles/zshrc ~/.zshrc
-    
-    ln -s ~/.dotfiles/gvimrc.after ~/.gvimrc.after
-    ln -s ~/.dotfiles/vimrc.after ~/.vimrc.after
-    ln -s ~/.dotfiles/janus ~/.janus
-    ln -s ~/.dotfiles/nave ~/.nave
-    
-    ln -s ~/.dotfiles/rbenv ~/.rbenv
-    mkdir -p ~/.rbenv/cache
-    mkdir -p ~/.rbenv/plugins
-    ln -s ~/.dotfiles/rbenv-vars ~/.rbenv/plugins/rbenv-vars
-    ln -s ~/.dotfiles/ruby-build ~/.rbenv/plugins/ruby-build
-    ```
-
-
-### Update
-
-1. update git repository and git submodules
+1. update the .dotfiles working copy
 
     ```
     cd ~/.dotfiles
     git pull
-    git submodule init
-    git submodule update
-    git submodule foreach --recursive git pull origin master
     ```
-    
-2. update janus
 
-    ```
-    cd ~/.vim
-    rake
-    ```
+2. Just run the ansible playbooks (install step 3) again.
+

@@ -7,9 +7,9 @@
        update=yes
 
 - name: nvm | install Node.JS
-  shell: . ~/.nvm/nvm.sh && nvm install 0.10
+  shell: . ~/.nvm/nvm.sh && nvm install {{nodejsversion}}
 
 - name: nvm | set default Node.JS version
-  shell: . ~/.nvm/nvm.sh && nvm alias default 0.10
+  shell: . ~/.nvm/nvm.sh && nvm alias default {{nodejsversion}}
 
 
