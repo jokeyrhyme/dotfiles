@@ -81,12 +81,6 @@ if [ -d ~/.rbenv ]; then
   fi
 fi
 
-# nave and node.js
-if [ -f ~/.nave/nave.sh ]; then
-  plugins=(npm $plugins)
-  alias nave="~/.nave/nave.sh"
-fi
-
 # nvm and node.js
 if [ -f ~/.nvm/nvm.sh ]; then
   plugins=(nvm npm $plugins)

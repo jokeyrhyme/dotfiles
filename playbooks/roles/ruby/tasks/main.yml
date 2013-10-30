@@ -1,4 +1,16 @@
 ---
+- name: apt | install build dependencies for Ruby
+  apt: pkg=$item state=present
+  with_items:
+    - build-essential
+    - libcurl4-openssl-dev
+    - libmysqlclient-dev
+    - libssl-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - zlib1g-dev
+  when: ansible_pkg_mgr == "apt"
+
 - name: git | clone rbenv
   git: repo=git@github.com:sstephenson/rbenv.git
        dest=~/.rbenv
@@ -43,6 +55,17 @@
 - name: rbenv | set global Ruby
   shell: eval "$(./rbenv init -)" && ./rbenv global {{rubyversion}}
          chdir=~/.rbenv/bin
+
+- name: register | Ruby's default SSL CA path
+  shell: eval "$(./rbenv init -)" && echo "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
+  register: sslcapath
+  ignore_errors: yes
+
+- name: get_url | install default SSL certificates
+  get_url: dest={{sslcapath.stdout}}
+           url=curl.haxx.se/ca/cacert.pem
+           force=no
+  when: sslcapath|success
 
 - name: gem | install rake
   shell: eval "$(./rbenv init -)" && gem install -f rake

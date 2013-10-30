@@ -7,7 +7,7 @@
 
 - name: brew | install git
   homebrew: name=git state=present
-  when: ansible_pkg_mgr == "homebrew"
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
 
 - name: pacman | install git
   pacman: name=git state=installed

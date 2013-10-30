@@ -1,14 +1,14 @@
 ---
 
+- name: brew | install macvim
+  homebrew: name=macvim state=present
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+
 # install gvim if "Desktop"
 
 - name: apt | install gvim
   apt: pkg=gvim state=latest
   when: ansible_pkg_mgr == "apt" and ansible_form_factor == "Desktop"
-
-- name: brew | install macvim
-  homebrew: name=macvim state=present
-  when: ansible_pkg_mgr == "homebrew" and ansible_form_factor == "Desktop"
 
 - name: pacman | install gvim
   pacman: name=gvim state=installed
@@ -23,10 +23,6 @@
 - name: apt | install vim
   apt: pkg=vim state=latest
   when: ansible_pkg_mgr == "apt" and ansible_form_factor != "Desktop"
-
-- name: brew | install vim
-  homebrew: name=vim state=present
-  when: ansible_pkg_mgr == "homebrew" and ansible_form_factor != "Desktop"
 
 - name: pacman | install vim
   pacman: name=vim state=installed

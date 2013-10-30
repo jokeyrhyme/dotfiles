@@ -5,15 +5,15 @@ if type brew > /dev/null; then
   brew update && brew upgrade && brew linkapps && brew cleanup
 fi
 
-if [ -f ~/.nvm/nvm.sh ]; then
-  echo 'updating NVM...'
-  (cd ~/.nvm && git pull)
-  echo 'updating Node.JS...'
-  source ~/.nvm/nvm.sh
-  nvm install 0.10
-  nvm alias default 0.10
+if type npm > /dev/null; then
   echo 'updating NPM and packages...'
   npm -g update
+fi
+
+if type gem > /dev/null; then
+  echo 'updating Ruby gems...'
+  gem update
+  gem cleanup
 fi
 
 

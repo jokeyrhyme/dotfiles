@@ -2,8 +2,6 @@
 
 ### Dependencies
 
-You will need to have a the gcc toolchain installed (for building Ruby).
-
 You will need to have ansible installed (which requires Python 2).
 
 ### Installation
@@ -17,12 +15,12 @@ first!
     git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
-2. run the ansible playbooks
+2. run the ansible playbooks (it'll prompt for `sudo` passphrase)
 
     ```
-    ansible-playbook -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
+    ansible-playbook -K -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
     ```
-
+    
 ### Updating
 
 1. update the .dotfiles working copy
@@ -34,3 +32,9 @@ first!
 
 2. Just run the ansible playbooks (install step 3) again.
 
+### Note: sudo
+
+`sudo` usage is avoided where it can be. Currently, it is used for:
+
+- ensuring installed `zsh` is in the `/etc/shells` file
+- setting `zsh` as the default shell for the current user

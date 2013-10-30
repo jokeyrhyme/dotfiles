@@ -3,10 +3,11 @@
 
 - hosts: localhost
   roles:
-    - debug
+    - packagemanagers
     - git
     - zsh
     - ruby
     - vim
     - nodejs
+    - debug
 

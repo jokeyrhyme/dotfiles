@@ -1,11 +1,14 @@
 ---
+
+# install zsh
+
 - name: apt | install zsh
   apt: pkg=zsh state=latest
   when: ansible_pkg_mgr == "apt"
 
 - name: brew | install zsh
   homebrew: name=zsh state=present
-  when: ansible_pkg_mgr == "homebrew"
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
 
 - name: pacman | install zsh
   pacman: name=zsh state=installed
@@ -15,12 +18,14 @@
   yum: name=zsh state=latest
   when: ansible_pkg_mgr == "yum"
 
+# install oh-my-zsh
+
 - name: git | clone oh-my-zsh
   git: repo=git@github.com:robbyrussell/oh-my-zsh.git
        dest=~/.oh-my-zsh
        depth=1
        version=master
-       update=yes
+       update=no
 
 - name: file | link ~/.dotfiles/zshrc to ~/.zshrc
   file: path=~/.zshrc
@@ -28,4 +33,18 @@
         state=link
         force=yes
 
+# ensure zsh is a registered shell
+
+- name: lineinfile | zsh in /etc/shells
+  lineinfile: dest=/etc/shells
+              state=present
+              line=/usr/local/bin/zsh
+              regexp=^\/usr\/local\/bin\/zsh$
+  sudo: yes
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+
+- name: command | change default shell to zsh
+  command: chsh -s /usr/local/bin/zsh {{ansible_user_id}}
+  sudo: yes
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
 
