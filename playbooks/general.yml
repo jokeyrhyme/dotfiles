@@ -1,0 +1,9 @@
+---
+# file: general.yml
+
+- hosts: localhost
+  roles:
+    - debug
+    - git
+    - nodejs
+

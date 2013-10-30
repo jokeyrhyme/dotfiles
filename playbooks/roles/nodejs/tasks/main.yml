@@ -1,0 +1,15 @@
+---
+- name: git | clone nvm
+  git: repo=git@github.com:creationix/nvm.git
+       dest=~/.nvm
+       depth=1
+       version=master
+       update=yes
+
+- name: nvm | install Node.JS
+  shell: . ~/.nvm/nvm.sh && nvm install 0.10
+
+- name: nvm | set default Node.JS version
+  shell: . ~/.nvm/nvm.sh && nvm alias default 0.10
+
+

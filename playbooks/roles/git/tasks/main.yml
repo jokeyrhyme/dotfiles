@@ -1,0 +1,19 @@
+---
+# file: roles/git/tasks/main.yml
+
+- name: apt | install git
+  apt: pkg=git state=latest
+  when: ansible_pkg_mgr == "apt"
+
+- name: brew | install git
+  homebrew: name=git state=present
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: pacman | install git
+  pacman: name=git state=installed
+  when: ansible_pkg_mgr == "pacman"
+
+- name: apt | install git
+  yum: name=git state=latest
+  when: ansible_pkg_mgr == "yum"
+
