@@ -63,9 +63,10 @@
 
 - name: get_url | install default SSL certificates
   get_url: dest={{sslcapath.stdout}}
-           url=curl.haxx.se/ca/cacert.pem
+           url=http://curl.haxx.se/ca/cacert.pem
            force=no
   when: sslcapath|success
+  ignore_errors: yes
 
 - name: gem | install rake
   shell: eval "$(./rbenv init -)" && gem install -f rake
