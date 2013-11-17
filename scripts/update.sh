@@ -1,5 +1,15 @@
 #!/bin/sh
 
+if type yum > /dev/null; then
+  echo 'updating packages with yum...'
+  sudo yum upgrade -y
+fi
+
+if type pacman > /dev/null; then
+  echo 'updating packages with pacman...'
+  sudo pacman -Syu
+fi
+
 if type brew > /dev/null; then
   echo 'updating Homebrew and packages...'
   brew update && brew upgrade && brew linkapps && brew cleanup
