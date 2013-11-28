@@ -74,11 +74,6 @@ if [ -d ~/.rbenv ]; then
   plugins=(gem bundler rbenv rake rails4 ruby vagrant $plugins)
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-
-  # fix ruby-build cache
-  if [ ! -d ~/.rbenv/cache ]; then
-    mkdir ~/.rbenv/cache
-  fi
 fi
 
 # nvm and node.js
@@ -86,8 +81,8 @@ if [ -f ~/.nvm/nvm.sh ]; then
   plugins=(nvm npm $plugins)
   source ~/.nvm/nvm.sh
 fi
-
 # load in other plugins
+
 plugins=(battery encode64 $plugins)
 
 source $ZSH/oh-my-zsh.sh
@@ -108,6 +103,14 @@ fi
 # Android SDK
 if [ -d /opt/android-sdk ]; then
   export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
+fi
+
+# check if connecting via SSH
+if [ -n "$SSH_CLIENT" ]; then
+  # check if connected locally
+  if [[ "$SSH_CLIENT" == *::1* ]]; then
+    export DISPLAY=:0
+  fi
 fi
 
 # Customize to your needs...
