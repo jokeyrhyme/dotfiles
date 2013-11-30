@@ -1,4 +1,17 @@
 ---
+- name: pacman | install python2
+  pacman: name=python2
+          state=installed
+  sudo: yes
+  when: ansible_pkg_mgr == "pacman"
+
+- name: file | /usr/bin/python2 -> /usr/bin/python
+  file: state=link
+        path=/usr/bin/python
+        src=/usr/bin/python2
+  sudo: yes
+  when: ansible_pkg_mgr == "pacman"
+
 - name: git | clone nvm
   git: repo=git@github.com:creationix/nvm.git
        dest=~/.nvm
@@ -11,5 +24,12 @@
 
 - name: nvm | set default Node.JS version
   shell: . ~/.nvm/nvm.sh && nvm alias default {{nodejsversion}}
+
+- name: file | /usr/bin/python3 -> /usr/bin/python
+  file: state=link
+        path=/usr/bin/python
+        src=/usr/bin/python3
+  sudo: yes
+  when: ansible_pkg_mgr == "pacman"
 
 
