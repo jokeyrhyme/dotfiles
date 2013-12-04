@@ -71,7 +71,7 @@ fi
 
 # rbenv and ruby
 if [ -d ~/.rbenv ]; then
-  plugins=(gem bundler rbenv rake rails4 ruby vagrant $plugins)
+  plugins=(gem bundler rbenv rake ruby vagrant $plugins)
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
