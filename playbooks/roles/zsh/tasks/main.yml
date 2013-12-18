@@ -33,6 +33,11 @@
         state=link
         force=yes
 
+- name: get_url | install pure
+  get_url: dest=~/.oh-my-zsh/custom/pure.zsh-theme
+           url=https://raw.github.com/sindresorhus/pure/master/pure.zsh
+           force=yes
+
 # ensure zsh is a registered shell
 
 - name: lineinfile | zsh in /etc/shells
