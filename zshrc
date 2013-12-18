@@ -49,8 +49,17 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
+# load in OS X plugins
+if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
+  plugins=(osx terminalapp $plugins)
+  if [ -x /usr/local/bin/brew ]; then
+    export HOMEBREW_BUILD_FROM_SOURCE=1
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  fi
+fi
+
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS="yum" # package managers
+PLUGIN_CMDS="yum brew" # package managers
 PLUGIN_CMDS="git git-flow svn ${PLUGIN_CMDS}" # version control
 PLUGIN_CMDS="tmux ${PLUGIN_CMDS}" # other commands
 for p in $PLUGIN_CMDS
@@ -59,16 +68,6 @@ do
     plugins=($p $plugins)
   fi
 done
-
-# load in OS X plugins
-if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  plugins=(osx terminalapp $plugins)
-  if whence brew > /dev/null; then
-    plugins=(brew $plugins)
-    export HOMEBREW_BUILD_FROM_SOURCE=1
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-  fi
-fi
 
 # rbenv and ruby
 if [ -d ~/.rbenv ]; then
