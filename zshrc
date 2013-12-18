@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # run through list of commands and pull in matching plugins
 PLUGIN_CMDS="yum" # package managers
 PLUGIN_CMDS="git git-flow svn ${PLUGIN_CMDS}" # version control
-PLUGIN_CMDS="tmux vi-mode ${PLUGIN_CMDS}" # other commands
+PLUGIN_CMDS="tmux ${PLUGIN_CMDS}" # other commands
 for p in $PLUGIN_CMDS
 do
   if whence $p > /dev/null; then
@@ -82,14 +82,14 @@ if [ -f ~/.nvm/nvm.sh ]; then
   plugins=(nvm npm $plugins)
   source ~/.nvm/nvm.sh
 fi
+
 # load in other plugins
 
-plugins=(battery encode64 $plugins)
+plugins=(vi-mode battery encode64 $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
-# enable vi-mode
-set -o vi
+# enable incremental search
 bindkey "^R" history-incremental-search-backward
 
 export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
