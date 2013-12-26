@@ -47,19 +47,28 @@
        version=master
        update=yes
 
+- name: file | ~/.rbenv/tmp == directory
+  file: path=~/.rbenv/tmp
+        state=directory
+
 - name: rbenv | install Ruby
-  shell: eval "$(./rbenv init -)" && ./rbenv install {{rubyversion}}
-         chdir=~/.rbenv/bin
+  shell: TMPDIR=~/.rbenv/tmp rbenv install {{rubyversion}}
          creates=~/.rbenv/versions/{{rubyversion}}/bin/ruby
+  sudo_user: "{{ansible_user_id}} -i"
+
+- name: file | delete ~/.rbenv/tmp
+  file: path=~/.rbenv/tmp
+        state=absent
 
 - name: rbenv | set global Ruby
-  shell: eval "$(./rbenv init -)" && ./rbenv global {{rubyversion}}
-         chdir=~/.rbenv/bin
+  shell: rbenv global {{rubyversion}}
+  sudo_user: "{{ansible_user_id}} -i"
 
 - name: register | Ruby's default SSL CA path
-  shell: eval "$(./rbenv init -)" && echo "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
+  shell: echo "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
   register: sslcapath
   ignore_errors: yes
+  sudo_user: "{{ansible_user_id}} -i"
 
 - name: get_url | install default SSL certificates
   get_url: dest={{sslcapath.stdout}}
@@ -69,10 +78,14 @@
   ignore_errors: yes
 
 - name: gem | install rake
-  shell: eval "$(./rbenv init -)" && gem install -f rake
-         chdir=~/.rbenv/bin
+  gem: name=rake
+       state=present
+       user_install=no
+  sudo_user: "{{ansible_user_id}} -i"
 
 - name: gem | install bundle
-  shell: eval "$(./rbenv init -)" && gem install -f bundle
-         chdir=~/.rbenv/bin
+  gem: name=bundle
+       state=present
+       user_install=no
+  sudo_user: "{{ansible_user_id}} -i"
 
