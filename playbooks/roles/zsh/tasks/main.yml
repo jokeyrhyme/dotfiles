@@ -43,8 +43,21 @@
   sudo: yes
   when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
 
+- name: lineinfile | zsh in /etc/shells
+  lineinfile: dest=/etc/shells
+              state=present
+              line=/usr/bin/zsh
+              regexp=^\/usr\/bin\/zsh$
+  sudo: yes
+  when: ansible_pkg_mgr == "pacman"
+
 - name: command | change default shell to zsh
   command: chsh -s /usr/local/bin/zsh {{ansible_user_id}}
   sudo: yes
   when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+
+- name: command | change default shell to zsh
+  command: chsh -s /usr/bin/zsh {{ansible_user_id}}
+  sudo: yes
+  when: ansible_pkg_mgr == "pacman"
 
