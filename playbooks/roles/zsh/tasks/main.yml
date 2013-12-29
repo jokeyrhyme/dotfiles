@@ -5,6 +5,7 @@
 - name: apt | install zsh
   apt: pkg=zsh state=latest
   when: ansible_pkg_mgr == "apt"
+  sudo: yes
 
 - name: brew | install zsh
   homebrew: name=zsh state=present
@@ -13,10 +14,12 @@
 - name: pacman | install zsh
   pacman: name=zsh state=installed
   when: ansible_pkg_mgr == "pacman"
+  sudo: yes
 
 - name: yum | install zsh
   yum: name=zsh state=latest
   when: ansible_pkg_mgr == "yum"
+  sudo: yes
 
 # install oh-my-zsh
 
