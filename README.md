@@ -7,7 +7,7 @@ You will need to have ansible installed (which requires Python 2).
 #### `apt`-based Linux: Debian, Ubuntu, etc
 
 ```sh
-sudo apt-get install python-pip python2.7-dev
+sudo apt-get install python-pip python2.7-dev python-apt
 sudo pip install --upgrade ansible
 ```
 
