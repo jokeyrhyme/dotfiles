@@ -1,5 +1,12 @@
 #!/bin/sh
 
+if type apt-get &> /dev/null; then
+  echo 'updating packages with apt...'
+  sudo apt-get update
+  sudo apt-get autoremove -y
+  sudo apt-get upgrade -y
+fi
+
 if type yum &> /dev/null; then
   echo 'updating packages with yum...'
   sudo yum upgrade -y
