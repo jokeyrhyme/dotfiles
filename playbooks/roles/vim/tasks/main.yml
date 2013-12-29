@@ -9,28 +9,34 @@
 - name: apt | install gvim
   apt: pkg=gvim state=latest
   when: ansible_pkg_mgr == "apt" and ansible_form_factor == "Desktop"
+  sudo: yes
 
 - name: pacman | install gvim
   pacman: name=gvim state=installed
   when: ansible_pkg_mgr == "pacman" and ansible_form_factor == "Desktop"
+  sudo: yes
 
 - name: yum | install gvim
   yum: name=gvim state=latest
   when: ansible_pkg_mgr == "yum" and ansible_form_factor == "Desktop"
+  sudo: yes
 
 # install vim if not "Desktop"
 
 - name: apt | install vim
   apt: pkg=vim state=latest
   when: ansible_pkg_mgr == "apt" and ansible_form_factor != "Desktop"
+  sudo: yes
 
 - name: pacman | install vim
   pacman: name=vim state=installed
   when: ansible_pkg_mgr == "pacman" and ansible_form_factor != "Desktop"
+  sudo: yes
 
 - name: yum | install vim
   yum: name=vim state=latest
   when: ansible_pkg_mgr == "yum" and ansible_form_factor != "Desktop"
+  sudo: yes
 
 # install carlhuda/janus
 

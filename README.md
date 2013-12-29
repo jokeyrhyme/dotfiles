@@ -43,7 +43,7 @@ first!
 
 `sudo` usage is avoided where it can be. Currently, it is used for:
 
-- installing `zsh`
+- installing `zsh` and `vim`
 - ensuring installed `zsh` is in the `/etc/shells` file
 - setting `zsh` as the default shell for the current user
 - installing build dependencies for `ruby`
