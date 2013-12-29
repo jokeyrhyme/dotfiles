@@ -46,3 +46,4 @@ first!
 - installing `zsh`
 - ensuring installed `zsh` is in the `/etc/shells` file
 - setting `zsh` as the default shell for the current user
+- installing build dependencies for `ruby`
