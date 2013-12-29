@@ -10,6 +10,7 @@
     - libxslt1-dev
     - zlib1g-dev
   when: ansible_pkg_mgr == "apt"
+  sudo: yes
 
 - name: git | clone rbenv
   git: repo=git@github.com:sstephenson/rbenv.git
