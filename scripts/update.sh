@@ -36,8 +36,10 @@ fi
 if type ansible &> /dev/null; then
   if type pip2 &> /dev/null; then
     sudo pip2 install --upgrade ansible
+    sudo pip2 install --upgrade python-boto
   elif type pip &> /dev/null; then
     sudo pip install --upgrade ansible
+    sudo pip install --upgrade python-boto
   fi
 fi
 
