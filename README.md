@@ -11,6 +11,13 @@ sudo apt-get install python-pip python2.7-dev python-apt
 sudo pip install --upgrade ansible
 ```
 
+#### `yum`-based Linux: Fedora, RedHat, Amazon, etc
+
+```sh
+sudo yum install python-pip python-devel gcc
+sudo pip install --upgrade ansible
+```
+
 ### Installation
 
 Please make sure you have fulfilled the aforementioned Dependencies
