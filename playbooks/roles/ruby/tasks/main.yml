@@ -1,6 +1,6 @@
 ---
 - name: apt | install build dependencies for Ruby
-  apt: pkg=$item state=present
+  apt: pkg={{item}} state=present
   with_items:
     - build-essential
     - libcurl4-openssl-dev
@@ -10,6 +10,13 @@
     - libxslt1-dev
     - zlib1g-dev
   when: ansible_pkg_mgr == "apt"
+  sudo: yes
+
+- name: yum | install build dependencies for Ruby
+  yum: name={{item}} state=present
+  with_items:
+    - openssl-devel
+  when: ansible_pkg_mgr == "yum"
   sudo: yes
 
 - name: git | clone rbenv

@@ -52,7 +52,7 @@
               line=/usr/bin/zsh
               regexp=^\/usr\/bin\/zsh$
   sudo: yes
-  when: ansible_pkg_mgr == "pacman"
+  when: ansible_pkg_mgr == "pacman" or ansible_pkg_mgr == "yum"
 
 - name: command | change default shell to zsh
   command: chsh -s /usr/local/bin/zsh {{ansible_user_id}}
@@ -62,5 +62,5 @@
 - name: command | change default shell to zsh
   command: chsh -s /usr/bin/zsh {{ansible_user_id}}
   sudo: yes
-  when: ansible_pkg_mgr == "pacman"
+  when: ansible_pkg_mgr == "pacman" or ansible_pkg_mgr == "yum"
 
