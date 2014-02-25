@@ -1,4 +1,13 @@
 ---
+- name: nvm | install build dependencies
+  apt: pkg={{item}} state=present
+  with_items:
+    - build-essential
+    - curl
+    - libssl-dev
+  when: ansible_os_family == "Debian"
+  sudo: yes
+
 - name: pacman | install python2
   pacman: name=python2
           state=installed
@@ -21,6 +30,7 @@
 
 - name: nvm | install Node.JS
   shell: . ~/.nvm/nvm.sh && nvm install {{nodejsversion}}
+         creates=~/.nvm/v{{nodejsversion}}/bin/node
 
 - name: nvm | set default Node.JS version
   shell: . ~/.nvm/nvm.sh && nvm alias default {{nodejsversion}}
