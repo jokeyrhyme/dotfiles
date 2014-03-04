@@ -1,0 +1,15 @@
+---
+- name: pip | install latest ansible (pip2)
+  pip: name=ansible
+       state=latest
+       executable=pip2
+  when: ansible_pkg_mgr == "pacman"
+  sudo: yes
+
+- name: pip | install latest ansible (pip)
+  pip: name=ansible
+       state=latest
+       executable=pip
+  when: ansible_pkg_mgr != "pacman"
+  sudo: yes
+

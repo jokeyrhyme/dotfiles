@@ -33,11 +33,3 @@ if type gem &> /dev/null; then
   gem cleanup
 fi
 
-if type ansible &> /dev/null; then
-  if type pip2 &> /dev/null; then
-    sudo pip2 install --upgrade ansible
-  elif type pip &> /dev/null; then
-    sudo pip install --upgrade ansible
-  fi
-fi
-

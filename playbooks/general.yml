@@ -4,6 +4,7 @@
 - hosts: localhost
   roles:
     - packagemanagers
+    - ansible
     - git
     - zsh
     - ruby
