@@ -1,12 +1,4 @@
 ---
-- name: git | install homebrew
-  git: repo=git@github.com:mxcl/homebrew.git
-       dest=/usr/local
-       version=master
-       update=yes
-       force=no
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
-
 - name: apt | update cache, upgrade packages
   apt: cache_valid_time=86400 update_cache=yes upgrade=dist
   # 86400 = 24 * 60 * 60 = 24 hours

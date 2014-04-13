@@ -1,0 +1,36 @@
+---
+- name: git | install homebrew
+  git: repo=git@github.com:mxcl/homebrew.git
+       dest=/usr/local
+       version=master
+       update=yes
+       force=no
+
+- name: command | tap homebrew cask
+  command: brew tap phinze/cask
+           creates=/usr/local/Library/Taps/phinze-cask
+
+- name: homebrew | install homebrew cask
+  homebrew: name=brew-cask
+        state=present
+
+- name: command | brew-cask install sourcetree
+  command: brew cask install sourcetree
+           creates=/opt/homebrew-cask/Caskroom/sourcetree
+
+- name: command | brew-cask install cyberduck
+  command: brew cask install cyberduck
+           creates=/opt/homebrew-cask/Caskroom/cyberduck
+
+- name: command | brew-cask install github
+  command: brew cask install github
+           creates=/opt/homebrew-cask/Caskroom/github
+
+- name: command | brew-cask install google-chrome
+  command: brew cask install google-chrome
+           creates=/opt/homebrew-cask/Caskroom/google-chrome
+
+- name: command | brew-cask install gimp
+  command: brew cask install gimp
+           creates=/opt/homebrew-cask/Caskroom/gimp
+
