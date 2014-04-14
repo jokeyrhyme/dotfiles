@@ -14,13 +14,25 @@
   homebrew: name=brew-cask
         state=present
 
-- name: command | brew-cask install sourcetree
-  command: brew cask install sourcetree
-           creates=/opt/homebrew-cask/Caskroom/sourcetree
+- name: command | brew-cask install android-file-transfer
+  command: brew cask install android-file-transfer
+           creates=/opt/homebrew-cask/Caskroom/android-file-transfer
+
+- name: command | brew-cask install brackets
+  command: brew cask install brackets
+           creates=/opt/homebrew-cask/Caskroom/brackets
 
 - name: command | brew-cask install cyberduck
   command: brew cask install cyberduck
            creates=/opt/homebrew-cask/Caskroom/cyberduck
+
+- name: command | brew-cask install firefox
+  command: brew cask install firefox
+           creates=/opt/homebrew-cask/Caskroom/firefox
+
+- name: command | brew-cask install gimp
+  command: brew cask install gimp
+           creates=/opt/homebrew-cask/Caskroom/gimp
 
 - name: command | brew-cask install github
   command: brew cask install github
@@ -30,7 +42,12 @@
   command: brew cask install google-chrome
            creates=/opt/homebrew-cask/Caskroom/google-chrome
 
-- name: command | brew-cask install gimp
-  command: brew cask install gimp
-           creates=/opt/homebrew-cask/Caskroom/gimp
+- name: command | brew-cask install skype
+  command: brew cask install skype
+           creates=/opt/homebrew-cask/Caskroom/skype
+
+- name: command | brew-cask install sourcetree
+  command: brew cask install sourcetree
+           creates=/opt/homebrew-cask/Caskroom/sourcetree
+
 
