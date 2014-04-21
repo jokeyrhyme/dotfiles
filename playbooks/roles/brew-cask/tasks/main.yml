@@ -10,6 +10,10 @@
   command: brew tap phinze/cask
            creates=/usr/local/Library/Taps/phinze-cask
 
+- name: command | tap homebrew cask versions
+  command: brew tap caskroom/versions
+           creates=/usr/local/Library/Taps/caskroom/versions
+
 - name: homebrew | install homebrew cask
   homebrew: name=brew-cask
         state=present
@@ -42,6 +46,10 @@
   command: brew cask install google-chrome
            creates=/opt/homebrew-cask/Caskroom/google-chrome
 
+- name: command | brew-cask install google-chrome-canary
+  command: brew cask install google-chrome-canary
+           creates=/opt/homebrew-cask/Caskroom/google-chrome-canary
+
 - name: command | brew-cask install skype
   command: brew cask install skype
            creates=/opt/homebrew-cask/Caskroom/skype
@@ -49,5 +57,3 @@
 - name: command | brew-cask install sourcetree
   command: brew cask install sourcetree
            creates=/opt/homebrew-cask/Caskroom/sourcetree
-
-
