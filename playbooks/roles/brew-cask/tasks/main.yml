@@ -6,6 +6,10 @@
        update=yes
        force=no
 
+- name: homebrew | install homebrew cask
+  homebrew: name=brew-cask
+        state=present
+
 - name: command | tap homebrew cask
   command: brew tap phinze/cask
            creates=/usr/local/Library/Taps/phinze-cask
@@ -18,9 +22,17 @@
   homebrew: name=brew-cask
         state=present
 
+- name: homebrew | install android-sdk
+  homebrew: name=android-sdk
+        state=present
+
 - name: command | brew-cask install android-file-transfer
   command: brew cask install android-file-transfer
            creates=/opt/homebrew-cask/Caskroom/android-file-transfer
+
+- name: command | brew-cask install android-studio
+  command: brew cask install android-studio
+           creates=/opt/homebrew-cask/Caskroom/android-studio
 
 - name: command | brew-cask install brackets
   command: brew cask install brackets

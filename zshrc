@@ -107,7 +107,12 @@ fi
 
 # Android SDK
 if [ -d /opt/android-sdk ]; then
-  export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
+  export ANDROID_HOME=/opt/android-sdk
+  export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+fi
+if [ -d /usr/local/opt/android-sdk ]; then
+  export ANDROID_HOME=/usr/local/opt/android-sdk
+  export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 fi
 
 # check if connecting via SSH
