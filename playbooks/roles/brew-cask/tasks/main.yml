@@ -73,3 +73,8 @@
 - name: command | brew-cask install sourcetree
   command: brew cask install sourcetree
            creates=/opt/homebrew-cask/Caskroom/sourcetree
+
+- name: command | brew-cask install webkit-nightly
+  command: brew cask install webkit-nightly
+           creates=/opt/homebrew-cask/Caskroom/webkit-nightly
+
