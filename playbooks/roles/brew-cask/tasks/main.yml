@@ -62,6 +62,10 @@
   command: brew cask install google-chrome-canary
            creates=/opt/homebrew-cask/Caskroom/google-chrome-canary
 
+- name: command | brew-cask install java
+  command: brew cask install java
+           creates=/opt/homebrew-cask/Caskroom/java
+
 - name: command | brew-cask install skype
   command: brew cask install skype
            creates=/opt/homebrew-cask/Caskroom/skype
