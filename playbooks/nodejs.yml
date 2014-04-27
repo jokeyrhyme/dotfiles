@@ -1,0 +1,11 @@
+---
+# file: nodejs.yml
+
+- hosts: localhost
+  roles:
+    - packagemanagers
+    - ansible
+    - git
+    - zsh
+    - nodejs
+    - debug
