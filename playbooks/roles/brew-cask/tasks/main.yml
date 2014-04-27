@@ -4,6 +4,7 @@
        dest=/usr/local
        version=master
        update=yes
+       accept_hostkey=yes
        force=no
 
 - name: homebrew | install homebrew cask
@@ -77,4 +78,3 @@
 - name: command | brew-cask install webkit-nightly
   command: brew cask install webkit-nightly
            creates=/opt/homebrew-cask/Caskroom/webkit-nightly
-

@@ -29,6 +29,7 @@
        depth=1
        version=master
        update=no
+       accept_hostkey=yes
 
 - name: file | link ~/.dotfiles/zshrc to ~/.zshrc
   file: path=~/.zshrc
@@ -63,4 +64,3 @@
   command: chsh -s /usr/bin/zsh {{ansible_user_id}}
   sudo: yes
   when: ansible_pkg_mgr == "pacman" or ansible_pkg_mgr == "yum"
-

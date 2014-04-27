@@ -27,6 +27,7 @@
        depth=1
        version=master
        update=yes
+       accept_hostkey=yes
 
 - name: nvm | install Node.JS
   shell: . ~/.nvm/nvm.sh && nvm install {{nodejsversion}}
@@ -41,5 +42,3 @@
         src=/usr/bin/python3
   sudo: yes
   when: ansible_pkg_mgr == "pacman"
-
-
