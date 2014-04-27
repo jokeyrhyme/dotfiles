@@ -21,6 +21,13 @@
   when: ansible_pkg_mgr == "yum"
   sudo: yes
 
+- name: register | zsh_path
+  shell: type -p zsh
+  register: zsh_path
+
+#- name: debug | zsh_path
+#  debug: var=zsh_path
+
 # install oh-my-zsh
 
 - name: git | clone oh-my-zsh
@@ -41,26 +48,9 @@
 - name: lineinfile | zsh in /etc/shells
   lineinfile: dest=/etc/shells
               state=present
-              line=/usr/local/bin/zsh
-              regexp=^\/usr\/local\/bin\/zsh$
+              line={{zsh_path.stdout}}
   sudo: yes
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
-
-- name: lineinfile | zsh in /etc/shells
-  lineinfile: dest=/etc/shells
-              state=present
-              line=/usr/bin/zsh
-              regexp=^\/usr\/bin\/zsh$
-  sudo: yes
-  when: ansible_pkg_mgr == "pacman" or ansible_pkg_mgr == "yum"
 
 - name: command | change default shell to zsh
-  command: chsh -s /usr/local/bin/zsh {{ansible_user_id}}
+  command: chsh -s {{zsh_path.stdout}} {{ansible_user_id}}
   sudo: yes
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
-
-- name: command | change default shell to zsh
-  command: chsh -s /usr/bin/zsh {{ansible_user_id}}
-  sudo: yes
-  when: ansible_pkg_mgr == "pacman" or ansible_pkg_mgr == "yum"
-
