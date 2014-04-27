@@ -46,7 +46,6 @@
        depth=1
        version=master
        update=yes
-       accept_hostkey=yes
 
 - name: rake | install janus
   shell: eval "$(./rbenv init -)" && rake
@@ -76,7 +75,6 @@
        depth=1
        version=master
        update=yes
-       accept_hostkey=yes
 
 - name: git | clone vim-solarized
   git: repo=https://github.com/altercation/vim-colors-solarized.git
@@ -84,4 +82,6 @@
        depth=1
        version=master
        update=yes
-       accept_hostkey=yes
+
+
+
