@@ -41,7 +41,7 @@
 # install carlhuda/janus
 
 - name: git | clone janus
-  git: repo=git@github.com:carlhuda/janus.git
+  git: repo=https://github.com/carlhuda/janus.git
        dest=~/.vim
        depth=1
        version=master
@@ -71,7 +71,7 @@
         state=directory
 
 - name: git | clone emmet-vim
-  git: repo=git@github.com:mattn/emmet-vim.git
+  git: repo=https://github.com/mattn/emmet-vim.git
        dest=~/.janus/emmet
        depth=1
        version=master
@@ -79,7 +79,7 @@
        accept_hostkey=yes
 
 - name: git | clone vim-solarized
-  git: repo=git@github.com:altercation/vim-colors-solarized.git
+  git: repo=https://github.com/altercation/vim-colors-solarized.git
        dest=~/.janus/solarized
        depth=1
        version=master

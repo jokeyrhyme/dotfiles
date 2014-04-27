@@ -22,7 +22,7 @@
   when: ansible_pkg_mgr == "pacman"
 
 - name: git | clone nvm
-  git: repo=git@github.com:creationix/nvm.git
+  git: repo=https://github.com/creationix/nvm.git
        dest=~/.nvm
        depth=1
        version=master

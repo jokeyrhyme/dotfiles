@@ -1,6 +1,6 @@
 ---
 - name: git | install homebrew
-  git: repo=git@github.com:mxcl/homebrew.git
+  git: repo=https://github.com/mxcl/homebrew.git
        dest=/usr/local
        version=master
        update=yes
