@@ -6,70 +6,74 @@
        update=yes
        force=no
 
-- name: command | tap homebrew cask
-  command: brew tap caskroom/cask
-           creates=/usr/local/Library/Taps/caskroom/homebrew-cask
+- name: homebrew_tap | homebrew cask
+  homebrew_tap: tap=caskroom/cask
+                state=present
 
-- name: command | tap homebrew cask versions
-  command: brew tap caskroom/versions
-           creates=/usr/local/Library/Taps/caskroom/homebrew-versions
+- name: homebrew_tap | homebrew cask versions
+  homebrew_tap: tap=caskroom/versions
+                state=present
 
 - name: homebrew | install homebrew cask
   homebrew: name=brew-cask
-        state=present
+            state=present
 
 - name: homebrew | install android-sdk
   homebrew: name=android-sdk
-        state=present
+            state=present
 
-- name: command | brew-cask install android-file-transfer
-  command: brew cask install android-file-transfer
-           creates=/opt/homebrew-cask/Caskroom/android-file-transfer
+- name: homebrew_cask | install android-file-transfer
+  homebrew_cask: name=android-file-transfer
+                state=present
 
-- name: command | brew-cask install android-studio
-  command: brew cask install android-studio
-           creates=/opt/homebrew-cask/Caskroom/android-studio
+- name: homebrew_cask | install android-studio
+  homebrew_cask: name=android-studio
+                state=present
 
-- name: command | brew-cask install brackets
-  command: brew cask install brackets
-           creates=/opt/homebrew-cask/Caskroom/brackets
+- name: homebrew_cask | install brackets
+  homebrew_cask: name=brackets
+                state=present
 
-- name: command | brew-cask install cyberduck
-  command: brew cask install cyberduck
-           creates=/opt/homebrew-cask/Caskroom/cyberduck
+- name: homebrew_cask | install cyberduck
+  homebrew_cask: name=cyberduck
+                state=present
 
-- name: command | brew-cask install firefox
-  command: brew cask install firefox
-           creates=/opt/homebrew-cask/Caskroom/firefox
+- name: homebrew_cask | install firefox
+  homebrew_cask: name=firefox
+                state=present
 
-- name: command | brew-cask install gimp
-  command: brew cask install gimp
-           creates=/opt/homebrew-cask/Caskroom/gimp
+- name: homebrew_cask | install gimp
+  homebrew_cask: name=gimp
+                state=present
 
-- name: command | brew-cask install github
-  command: brew cask install github
-           creates=/opt/homebrew-cask/Caskroom/github
+- name: homebrew_cask | install github
+  homebrew_cask: name=github
+                state=present
 
-- name: command | brew-cask install google-chrome
-  command: brew cask install google-chrome
-           creates=/opt/homebrew-cask/Caskroom/google-chrome
+- name: homebrew_cask | install google-chrome
+  homebrew_cask: name=google-chrome
+                state=present
 
-- name: command | brew-cask install google-chrome-canary
-  command: brew cask install google-chrome-canary
-           creates=/opt/homebrew-cask/Caskroom/google-chrome-canary
+- name: homebrew_cask | install google-chrome-canary
+  homebrew_cask: name=google-chrome-canary
+                state=present
 
-- name: command | brew-cask install java
-  command: brew cask install java
-           creates=/opt/homebrew-cask/Caskroom/java
+- name: homebrew_cask | install java
+  homebrew_cask: name=java
+                state=present
 
-- name: command | brew-cask install skype
-  command: brew cask install skype
-           creates=/opt/homebrew-cask/Caskroom/skype
+- name: homebrew_cask | install skype
+  homebrew_cask: name=skype
+                state=present
 
-- name: command | brew-cask install sourcetree
-  command: brew cask install sourcetree
-           creates=/opt/homebrew-cask/Caskroom/sourcetree
+- name: homebrew_cask | install sourcetree
+  homebrew_cask: name=sourcetree
+                state=present
 
-- name: command | brew-cask install webkit-nightly
-  command: brew cask install webkit-nightly
-           creates=/opt/homebrew-cask/Caskroom/webkit-nightly
+- name: homebrew_cask | install vagrant
+  homebrew_cask: name=vagrant
+                 state=present
+
+- name: homebrew_cask | install webkit-nightly
+  homebrew_cask: name=webkit-nightly
+                 state=present
