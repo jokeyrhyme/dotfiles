@@ -6,17 +6,13 @@
        update=yes
        force=no
 
-- name: homebrew | install homebrew cask
-  homebrew: name=brew-cask
-        state=present
-
 - name: command | tap homebrew cask
-  command: brew tap phinze/cask
-           creates=/usr/local/Library/Taps/phinze-cask
+  command: brew tap caskroom/cask
+           creates=/usr/local/Library/Taps/caskroom/homebrew-cask
 
 - name: command | tap homebrew cask versions
   command: brew tap caskroom/versions
-           creates=/usr/local/Library/Taps/caskroom/versions
+           creates=/usr/local/Library/Taps/caskroom/homebrew-versions
 
 - name: homebrew | install homebrew cask
   homebrew: name=brew-cask
@@ -77,4 +73,3 @@
 - name: command | brew-cask install webkit-nightly
   command: brew cask install webkit-nightly
            creates=/opt/homebrew-cask/Caskroom/webkit-nightly
-
