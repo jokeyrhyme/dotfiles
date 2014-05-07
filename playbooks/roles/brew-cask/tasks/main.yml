@@ -6,74 +6,45 @@
        update=yes
        force=no
 
-- name: homebrew_tap | homebrew cask
-  homebrew_tap: tap=caskroom/cask
-                state=present
+- name: homebrew_tap
+  homebrew_tap: tap={{item}} state=present
+  with_items:
+    - caskroom/cask
+    - caskroom/versions
 
-- name: homebrew_tap | homebrew cask versions
-  homebrew_tap: tap=caskroom/versions
-                state=present
+- name: homebrew
+  homebrew: name={{item}} state=present
+  with_items:
+    - brew-cask
+    - android-sdk
 
-- name: homebrew | install homebrew cask
-  homebrew: name=brew-cask
-            state=present
+- name: homebrew_cask | android development
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - android-studio
+    - android-file-transfer
+    - java
 
-- name: homebrew | install android-sdk
-  homebrew: name=android-sdk
-            state=present
+- name: homebrew_cask | web browsers
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - firefox
+    - google-chrome
+    - google-chrome-canary
+    - webkit-nightly
 
-- name: homebrew_cask | install android-file-transfer
-  homebrew_cask: name=android-file-transfer
-                state=present
+- name: homebrew_cask | development tools
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - atom
+    - brackets
+    - github
+    - sourcetree
+    - vagrant
 
-- name: homebrew_cask | install android-studio
-  homebrew_cask: name=android-studio
-                state=present
-
-- name: homebrew_cask | install brackets
-  homebrew_cask: name=brackets
-                state=present
-
-- name: homebrew_cask | install cyberduck
-  homebrew_cask: name=cyberduck
-                state=present
-
-- name: homebrew_cask | install firefox
-  homebrew_cask: name=firefox
-                state=present
-
-- name: homebrew_cask | install gimp
-  homebrew_cask: name=gimp
-                state=present
-
-- name: homebrew_cask | install github
-  homebrew_cask: name=github
-                state=present
-
-- name: homebrew_cask | install google-chrome
-  homebrew_cask: name=google-chrome
-                state=present
-
-- name: homebrew_cask | install google-chrome-canary
-  homebrew_cask: name=google-chrome-canary
-                state=present
-
-- name: homebrew_cask | install java
-  homebrew_cask: name=java
-                state=present
-
-- name: homebrew_cask | install skype
-  homebrew_cask: name=skype
-                state=present
-
-- name: homebrew_cask | install sourcetree
-  homebrew_cask: name=sourcetree
-                state=present
-
-- name: homebrew_cask | install vagrant
-  homebrew_cask: name=vagrant
-                 state=present
-
-- name: homebrew_cask | install webkit-nightly
-  homebrew_cask: name=webkit-nightly
-                 state=present
+- name: homebrew_cask | miscellaneous
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - cyberduck
+    - gimp
+    - skype
