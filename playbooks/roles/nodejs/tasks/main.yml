@@ -50,5 +50,6 @@
     - grunt-cli
     - bower
     - node-dependencies
+    - node-inspector
     - http-server
     - tin
