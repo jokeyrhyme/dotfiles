@@ -29,7 +29,6 @@
   homebrew_cask: name={{item}} state=present
   with_items:
     - firefox
-    - google-chrome
     - google-chrome-canary
     - webkit-nightly
 
@@ -45,6 +44,7 @@
 - name: homebrew_cask | miscellaneous
   homebrew_cask: name={{item}} state=present
   with_items:
+    - chrome-remote-desktop-host
     - cyberduck
     - gimp
     - skype
