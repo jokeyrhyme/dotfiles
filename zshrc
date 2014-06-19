@@ -131,3 +131,6 @@ cd() { builtin cd "$@" && ls; }
 
 # added by travis gem
 [ -f /Users/ron/.travis/travis.sh ] && source /Users/ron/.travis/travis.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
