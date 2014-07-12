@@ -5,10 +5,6 @@
   apt: pkg=git state=latest
   when: ansible_pkg_mgr == "apt"
 
-- name: brew | install git
-  homebrew: name=git state=present
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
-
 - name: pacman | install git
   pacman: name=git state=installed
   when: ansible_pkg_mgr == "pacman"
@@ -16,4 +12,3 @@
 - name: yum | install git
   yum: name=git state=latest
   when: ansible_pkg_mgr == "yum"
-
