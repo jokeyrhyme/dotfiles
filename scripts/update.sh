@@ -15,6 +15,11 @@ if type brew &> /dev/null; then
   brew update && brew upgrade && brew linkapps && brew cleanup
 fi
 
+if type brew-cask.rb &> /dev/null; then
+  echo 'updating Homebrew Cask and packages...'
+  brew cask cleanup
+fi
+
 if type npm &> /dev/null; then
   echo 'updating NPM and packages...'
   npm -g update
