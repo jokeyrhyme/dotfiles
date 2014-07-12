@@ -134,3 +134,7 @@ cd() { builtin cd "$@" && ls; }
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# set defaults for docker
+export DOCKER_HOST=tcp://:2375
+
