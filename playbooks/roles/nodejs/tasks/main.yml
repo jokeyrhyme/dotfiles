@@ -1,0 +1,18 @@
+---
+- include: nvm.yml
+  when: ansible_os_family != "Darwin" or ansible_distribution != "MacOSX"
+
+- include: brew.yml
+  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+
+- name: npm | install global packages
+  npm: name={{item}}
+       global=yes
+       state=present
+  with_items:
+    - grunt-cli
+    - bower
+    - gulp
+    - node-dependencies
+    - node-inspector
+    - http-server
