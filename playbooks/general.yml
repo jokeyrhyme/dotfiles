@@ -3,7 +3,8 @@
 
 - hosts: localhost
   roles:
-    - { role: brew-cask, when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX" }
+    - { role: homebrew, when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX" }
+    - { role: osx-apps, when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX" }
     - packagemanagers
     - ansible
     - git
@@ -12,4 +13,3 @@
     - vim
     - nodejs
     - debug
-

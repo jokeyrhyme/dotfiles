@@ -1,22 +1,9 @@
 ---
-- name: git | install homebrew
-  git: repo=https://github.com/mxcl/homebrew.git
-       dest=/usr/local
-       version=master
-       update=yes
-       force=no
-
-- name: homebrew_tap
-  homebrew_tap: tap={{item}} state=present
-  with_items:
-    - caskroom/cask
-    - caskroom/versions
-
 - name: homebrew
   homebrew: name={{item}} state=present
   with_items:
-    - brew-cask
     - android-sdk
+    - git
 
 - name: homebrew_cask | android development
   homebrew_cask: name={{item}} state=present
@@ -36,7 +23,6 @@
   homebrew_cask: name={{item}} state=present
   with_items:
     - atom
-    - brackets
     - github
     - sourcetree
     - vagrant
@@ -47,4 +33,3 @@
     - chrome-remote-desktop-host
     - cyberduck
     - gimp
-    - skype
