@@ -21,6 +21,7 @@
     - grunt-cli
     - bower
     - gulp
+    - git-guilt
     - node-dependencies
     - node-inspector
     - http-server
