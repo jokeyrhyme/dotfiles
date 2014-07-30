@@ -2,7 +2,7 @@
 
 - name: brew | install macvim
   homebrew: name=macvim state=present
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+  when: ansible_os_family == "Darwin"
 
 # install gvim if "Desktop"
 
@@ -75,4 +75,3 @@
        depth=1
        version=master
        update=yes
-
