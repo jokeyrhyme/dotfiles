@@ -6,13 +6,13 @@
        update=yes
        force=no
 
-- name: tap homebrew-cask
-  homebrew_tap: tap={{item}} state=present
-  with_items:
-    - caskroom/cask
-    - caskroom/versions
-
-- name: install homebrew-cask
-  homebrew: name={{item}} state=present
-  with_items:
-    - brew-cask
+# - name: tap homebrew-cask
+#   homebrew_tap: tap={{item}} state=present
+#   with_items:
+#     - caskroom/cask
+#     - caskroom/versions
+#
+# - name: install homebrew-cask
+#   homebrew: name={{item}} state=present
+#   with_items:
+#     - brew-cask
