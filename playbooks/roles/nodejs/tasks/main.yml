@@ -10,7 +10,10 @@
   sudo: yes
   when: ansible_pkg_mgr == "yum"
 
-- include: brew.yml
+- name: homebrew | install Node.JS
+  homebrew: name={{item}} state=latest
+  with_items:
+    - node
   when: ansible_os_family == "Darwin"
 
 - name: npm | install global packages
