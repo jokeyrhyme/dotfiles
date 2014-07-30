@@ -9,7 +9,7 @@
     - ansible
     - git
     - zsh
-#    - ruby
+    - ruby
 #    - vim
     - nodejs
   gather_facts: False

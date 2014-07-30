@@ -74,17 +74,20 @@ do
   fi
 done
 
-# rbenv and ruby
-if [ -d ~/.rbenv ]; then
-  plugins=(gem bundler rbenv rake ruby vagrant $plugins)
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+# ruby
+if whence ruby > /dev/null; then
+  plugins=(gem bundler rake ruby vagrant $plugins)
+fi
+if [ -d ~/.gem/ruby/2.0.0/bin ]; then
+  export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
+fi
+if [ -d ~/.gem/ruby/2.1.0/bin ]; then
+  export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
 fi
 
-# nvm and node.js
-if [ -f ~/.nvm/nvm.sh ]; then
-  plugins=(nvm npm $plugins)
-  source ~/.nvm/nvm.sh
+# node.js
+if whence npm > /dev/null; then
+  plugins=(npm $plugins)
 fi
 
 # load in other plugins
