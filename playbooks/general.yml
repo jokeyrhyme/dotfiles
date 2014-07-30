@@ -3,12 +3,13 @@
 
 - hosts: localhost
   roles:
-    - { role: homebrew, when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX" }
-    - { role: osx-apps, when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX" }
+    - { role: homebrew, when: ansible_os_family == "Darwin" }
+    - { role: osx-apps, when: ansible_os_family == "Darwin" }
     - packagemanagers
     - ansible
     - git
     - zsh
-    - ruby
-    - vim
+#    - ruby
+#    - vim
     - nodejs
+  gather_facts: False
