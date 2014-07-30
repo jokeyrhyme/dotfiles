@@ -57,9 +57,9 @@ COMPLETION_WAITING_DOTS="true"
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
   plugins=(osx terminalapp $plugins)
-  if [ -x /usr/local/bin/brew ]; then
+  if [ -x /opt/homebrew/bin/brew ]; then
     export HOMEBREW_BUILD_FROM_SOURCE=1
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
   fi
 fi
 
@@ -102,7 +102,9 @@ export LANGUAGE="en_AU:en_GB:en_US:en"
 
 # Java on OS X
 if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
+  if /usr/libexec/java_home &> /dev/null; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+  fi
 fi
 
 # Android SDK
@@ -110,8 +112,8 @@ if [ -d /opt/android-sdk ]; then
   export ANDROID_HOME=/opt/android-sdk
   export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 fi
-if [ -d /usr/local/opt/android-sdk ]; then
-  export ANDROID_HOME=/usr/local/opt/android-sdk
+if [ -d /opt/homebrew/opt/android-sdk ]; then
+  export ANDROID_HOME=/opt/homebrew/opt/android-sdk
   export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 fi
 
@@ -136,31 +138,37 @@ cd() { builtin cd "$@" && ls; }
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # set defaults for docker
-export DOCKER_HOST=tcp://:2375
+if whence docker > /dev/null; then
+  if whence boot2docker > /dev/null; then
+    export DOCKER_HOST=tcp://:2375
+  fi
+fi
 
 # go
-GO=$(whence go)
-if [ -n $GO ]; then
-  export GOROOT=$(dirname $(dirname $GO))
-  if [ -h $GO ]; then
-    PLATFORM=$(uname -s)
-    if [ $PLATFORM = 'Linux' ]; then
-      GO_SYM=$(readlink -f $GO)
-    fi
-    if [ $PLATFORM = 'Darwin' ]; then
-      GO_SYM=$(readlink $GO)
-    fi
-    if [ -n $GO_SYM ]; then
-      if [[ $GO_SYM == ..* ]]; then
-        GO_SYM=$(dirname $GO)/$GO_SYM
+if whence go > /dev/null; then
+  GO=$(whence go)
+  if [ -n $GO ]; then
+    export GOROOT=$(dirname $(dirname $GO))
+    if [ -h $GO ]; then
+      PLATFORM=$(uname -s)
+      if [ $PLATFORM = 'Linux' ]; then
+        GO_SYM=$(readlink -f $GO)
       fi
-      export GOROOT=$(dirname $(dirname $GO_SYM))
+      if [ $PLATFORM = 'Darwin' ]; then
+        GO_SYM=$(readlink $GO)
+      fi
+      if [ -n $GO_SYM ]; then
+        if [[ $GO_SYM == ..* ]]; then
+          GO_SYM=$(dirname $GO)/$GO_SYM
+        fi
+        export GOROOT=$(dirname $(dirname $GO_SYM))
+      fi
     fi
+    mkdir -p $HOME/Projects/GOPATH/bin
+    if whence brew > /dev/null; then
+      export GOROOT=/opt/homebrew/opt/go/libexec
+    fi
+    export GOPATH=$HOME/Projects/GOPATH
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
   fi
-  mkdir -p $HOME/Projects/GOPATH/bin
-  if whence brew > /dev/null; then
-    export GOROOT=/usr/local/opt/go/libexec
-  fi
-  export GOPATH=$HOME/Projects/GOPATH
-  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 fi

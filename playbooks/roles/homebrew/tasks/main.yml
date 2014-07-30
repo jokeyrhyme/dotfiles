@@ -1,10 +1,14 @@
 ---
+- name: file | root:admin rwxrwxr-x /opt/homebrew
+  file: path=/opt/homebrew recurse=no group=admin owner=root state=directory mode=0775
+  sudo: yes
+
 - name: git | install homebrew
   git: repo=https://github.com/mxcl/homebrew.git
-       dest=/usr/local
+       dest=/opt/homebrew
        version=master
        update=yes
-       force=no
+       force=yes
 
 # - name: tap homebrew-cask
 #   homebrew_tap: tap={{item}} state=present
