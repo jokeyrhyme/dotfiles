@@ -1,0 +1,17 @@
+---
+- name: file | ~/.rbenv/tmp == directory
+  file: path=~/.rbenv/tmp
+        state=directory
+
+- name: rbenv | install Ruby
+  shell: TMPDIR=~/.rbenv/tmp rbenv install {{rubyversion}}
+         creates=~/.rbenv/versions/{{rubyversion}}/bin/ruby
+  sudo_user: "{{ansible_user_id}} -i"
+
+- name: file | delete ~/.rbenv/tmp
+  file: path=~/.rbenv/tmp
+        state=absent
+
+- name: rbenv | set global Ruby
+  shell: rbenv global {{rubyversion}}
+  sudo_user: "{{ansible_user_id}} -i"

@@ -1,76 +1,19 @@
 ---
-- name: apt | install build dependencies for Ruby
-  apt: pkg={{item}} state=present
-  with_items:
-    - build-essential
-    - libcurl4-openssl-dev
-    - libmysqlclient-dev
-    - libssl-dev
-    - libxml2-dev
-    - libxslt1-dev
-    - zlib1g-dev
-  when: ansible_pkg_mgr == "apt"
-  sudo: yes
+- include: rbenv.yml
+  when: ansible_os_family != "Darwin" and ansible_pkg_mgr != "yum"
 
-- name: yum | install build dependencies for Ruby
-  yum: name={{item}} state=present
+- name: yum | install Ruby
+  yum: name="{{item}}" state=present
   with_items:
-    - openssl-devel
+    - ruby
+  sudo: yes
   when: ansible_pkg_mgr == "yum"
-  sudo: yes
 
-- name: git | clone rbenv
-  git: repo=https://github.com/sstephenson/rbenv.git
-       dest=~/.rbenv
-       depth=1
-       version=master
-       update=yes
-
-- name: file | ~/.rbenv/cache == directory
-  file: path=~/.rbenv/cache
-        state=directory
-
-- name: file | ~/.rbenv/plugins == directory
-  file: path=~/.rbenv/plugins
-        state=directory
-
-- name: git | clone rbenv-vars
-  git: repo=https://github.com/sstephenson/rbenv-vars.git
-       dest=~/.rbenv/plugins/rbenv-vars
-       depth=1
-       version=master
-       update=yes
-
-- name: git | clone rbenv-gem-rehash
-  git: repo=https://github.com/sstephenson/rbenv-gem-rehash.git
-       dest=~/.rbenv/plugins/rbenv-gem-rehash
-       depth=1
-       version=master
-       update=yes
-
-- name: git | clone ruby-build
-  git: repo=https://github.com/sstephenson/ruby-build.git
-       dest=~/.rbenv/plugins/ruby-build
-       depth=1
-       version=master
-       update=yes
-
-- name: file | ~/.rbenv/tmp == directory
-  file: path=~/.rbenv/tmp
-        state=directory
-
-- name: rbenv | install Ruby
-  shell: TMPDIR=~/.rbenv/tmp rbenv install {{rubyversion}}
-         creates=~/.rbenv/versions/{{rubyversion}}/bin/ruby
-  sudo_user: "{{ansible_user_id}} -i"
-
-- name: file | delete ~/.rbenv/tmp
-  file: path=~/.rbenv/tmp
-        state=absent
-
-- name: rbenv | set global Ruby
-  shell: rbenv global {{rubyversion}}
-  sudo_user: "{{ansible_user_id}} -i"
+- name: homebrew | install Ruby
+  homebrew: name={{item}} state=latest
+  with_items:
+    - ruby
+  when: ansible_os_family == "Darwin"
 
 - name: register | Ruby's default SSL CA path
   shell: echo "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
@@ -85,15 +28,9 @@
   when: sslcapath|success
   ignore_errors: yes
 
-- name: gem | install rake
-  gem: name=rake
-       state=present
-       user_install=no
+- name: gem | install user packages
+  gem: name={{item}} state=present user_install=yes
   sudo_user: "{{ansible_user_id}} -i"
-
-- name: gem | install bundle
-  gem: name=bundle
-       state=present
-       user_install=no
-  sudo_user: "{{ansible_user_id}} -i"
-
+  with_items:
+    - rake
+    - bundle
