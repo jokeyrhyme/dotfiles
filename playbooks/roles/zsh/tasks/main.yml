@@ -7,9 +7,10 @@
   when: ansible_pkg_mgr == "apt"
   sudo: yes
 
-- name: brew | install zsh
-  homebrew: name=zsh state=present
-  when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
+#  don't bother with OSX, it comes with ZSH
+# - name: brew | install zsh
+#   homebrew: name=zsh state=present
+#   when: ansible_os_family == "Darwin" and ansible_distribution == "MacOSX"
 
 - name: pacman | install zsh
   pacman: name=zsh state=installed
