@@ -143,7 +143,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # set defaults for docker
 if whence docker > /dev/null; then
   if whence boot2docker > /dev/null; then
-    export DOCKER_HOST=tcp://:2375
+    export DOCKER_HOST=tcp://boot2docker:2375
+  else
+    export DOCKER_HOST=tcp://localhost:2375
   fi
 fi
 
