@@ -115,8 +115,8 @@ if [ -d /opt/android-sdk ]; then
   export ANDROID_HOME=/opt/android-sdk
   export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 fi
-if [ -d /opt/homebrew/opt/android-sdk ]; then
-  export ANDROID_HOME=/opt/homebrew/opt/android-sdk
+if [ -d /Applications/Android\ Studio.app/sdk ]; then
+  export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
   export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 fi
 
