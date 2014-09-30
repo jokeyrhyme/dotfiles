@@ -30,3 +30,8 @@ if type gem &> /dev/null; then
   gem update
   gem cleanup
 fi
+
+if type apm &> /dev/null; then
+  echo 'updating Atom packages...'
+  apm upgrade -c=false
+fi
