@@ -138,7 +138,9 @@ cd() { builtin cd "$@" && ls; }
 [ -f /Users/ron/.travis/travis.sh ] && source /Users/ron/.travis/travis.sh
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [ -d /usr/local/heroku/bin ]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
 
 # set defaults for docker
 if whence docker > /dev/null; then
@@ -147,6 +149,8 @@ if whence docker > /dev/null; then
   else
     export DOCKER_HOST=tcp://localhost:2375
   fi
+  export DOCKER_CERT_PATH=/Users/ron/.boot2docker/certs/boot2docker-vm
+  export DOCKER_TLS_VERIFY=1
 fi
 
 # go
