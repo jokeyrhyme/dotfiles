@@ -33,5 +33,5 @@ fi
 
 if type apm &> /dev/null; then
   echo 'updating Atom packages...'
-  apm upgrade -c=false
+  apm upgrade --confirm false
 fi
