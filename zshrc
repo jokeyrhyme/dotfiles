@@ -145,12 +145,12 @@ fi
 # set defaults for docker
 if whence docker > /dev/null; then
   if whence boot2docker > /dev/null; then
-    export DOCKER_HOST=tcp://boot2docker:2375
+    $(boot2docker shellinit)
   else
     export DOCKER_HOST=tcp://localhost:2375
+    export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
   fi
-  export DOCKER_CERT_PATH=/Users/ron/.boot2docker/certs/boot2docker-vm
-  export DOCKER_TLS_VERIFY=1
 fi
 
 # go
