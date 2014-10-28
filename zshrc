@@ -10,11 +10,6 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="random"
-#ZSH_THEME="kphoen"
-#ZSH_THEME="kolo"
-#ZSH_THEME="steeef"
 ZSH_THEME="pure"
 
 # Example aliases
@@ -37,15 +32,6 @@ fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -123,9 +109,6 @@ fi
 
 # custom `cd` command
 cd() { builtin cd "$@" && ls; }
-
-# Customize to your needs...
-#export PATH=/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/bin:/home/ron/bin:/usr/local/sbin:/usr/sbin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin:/home/ron/bin:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/usr/local/bin:/opt/npm/bin
 
 # added by travis gem
 [ -f /Users/ron/.travis/travis.sh ] && source /Users/ron/.travis/travis.sh
