@@ -64,9 +64,10 @@ if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
 fi
 
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS="yum brew" # package managers
-PLUGIN_CMDS="git git-flow svn ${PLUGIN_CMDS}" # version control
-PLUGIN_CMDS="tmux ${PLUGIN_CMDS}" # other commands
+PLUGIN_CMDS=(brew bundler gem npm pip yum) # package managers
+PLUGIN_CMDS=(git git-flow svn ${PLUGIN_CMDS}) # version control
+PLUGIN_CMDS=(go node ruby ${PLUGIN_CMDS}) # languages
+PLUGIN_CMDS=(docker gpg-agent rake tmux vagrant ${PLUGIN_CMDS}) # other commands
 for p in $PLUGIN_CMDS
 do
   if whence $p > /dev/null; then
@@ -75,19 +76,11 @@ do
 done
 
 # ruby
-if whence ruby > /dev/null; then
-  plugins=(gem bundler rake ruby vagrant $plugins)
-fi
 if [ -d ~/.gem/ruby/2.0.0/bin ]; then
   export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 fi
 if [ -d ~/.gem/ruby/2.1.0/bin ]; then
   export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
-fi
-
-# node.js
-if whence npm > /dev/null; then
-  plugins=(npm $plugins)
 fi
 
 # load in other plugins
