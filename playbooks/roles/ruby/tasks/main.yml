@@ -9,11 +9,11 @@
   sudo: yes
   when: ansible_pkg_mgr == "yum"
 
-- name: homebrew | install Ruby
-  homebrew: name={{item}} state=latest
-  with_items:
-    - ruby
-  when: ansible_os_family == "Darwin"
+#- name: homebrew | install Ruby
+#  homebrew: name={{item}} state=latest
+#  with_items:
+#    - ruby
+#  when: ansible_os_family == "Darwin"
 
 - name: register | Ruby's default SSL CA path
   shell: echo "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
@@ -31,6 +31,7 @@
 - name: gem | install user packages
   gem: name={{item}} state=present user_install=yes
   sudo_user: "{{ansible_user_id}} -i"
+  when: ansible_os_family != "Darwin"
   with_items:
     - rake
     - bundle

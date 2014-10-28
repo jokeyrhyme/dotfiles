@@ -40,16 +40,14 @@
 
 # install carlhuda/janus
 
+- name: command | remove non-git ~/.vim
+  command: rm -fr ~/.vim creates=~/.vim/.git
+
 - name: git | clone janus
-  git: repo=https://github.com/carlhuda/janus.git
-       dest=~/.vim
-       depth=1
-       version=master
-       update=yes
+  git: repo=https://github.com/carlhuda/janus.git force=yes dest=~/.vim depth=1 version=master update=yes
 
 - name: rake | install janus
-  shell: eval "$(./rbenv init -)" && rake
-         chdir=~/.vim
+  shell: rake chdir=~/.vim
 
 - name: file | link ~/.dotfiles/vimrc.after to ~/.vimrc.after
   file: path=~/.vimrc.after
