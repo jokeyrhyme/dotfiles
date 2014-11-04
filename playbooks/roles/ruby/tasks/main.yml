@@ -1,6 +1,6 @@
 ---
 - include: rbenv.yml
-  when: ansible_os_family != "Darwin" and ansible_pkg_mgr != "yum"
+  when: ansible_pkg_mgr != "yum"
 
 - name: yum | install Ruby
   yum: name="{{item}}" state=present
@@ -31,7 +31,6 @@
 - name: gem | install user packages
   gem: name={{item}} state=present user_install=yes
   sudo_user: "{{ansible_user_id}} -i"
-  when: ansible_os_family != "Darwin"
   with_items:
     - rake
     - bundle

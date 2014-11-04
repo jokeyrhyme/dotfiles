@@ -52,7 +52,7 @@ fi
 # run through list of commands and pull in matching plugins
 PLUGIN_CMDS=(brew bundler gem npm pip yum) # package managers
 PLUGIN_CMDS=(git git-flow svn ${PLUGIN_CMDS}) # version control
-PLUGIN_CMDS=(go node ruby ${PLUGIN_CMDS}) # languages
+PLUGIN_CMDS=(go node ruby rbenv ${PLUGIN_CMDS}) # languages
 PLUGIN_CMDS=(docker gpg-agent rake tmux vagrant ${PLUGIN_CMDS}) # other commands
 for p in $PLUGIN_CMDS
 do
@@ -69,11 +69,17 @@ if [ -d ~/.gem/ruby/2.1.0/bin ]; then
   export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
 fi
 
+# rbenv
+if [ -x ~/.rbenv/bin/rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
 # load in other plugins
 
 plugins=(vi-mode battery encode64 $plugins)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
@@ -132,24 +138,24 @@ fi
 # go
 if whence go > /dev/null; then
   GO=$(whence go)
-  if [ -n $GO ]; then
+  if [ -n "$GO" ]; then
     export GOROOT=$(dirname $(dirname $GO))
-    if [ -h $GO ]; then
+    if [ -h "$GO" ]; then
       PLATFORM=$(uname -s)
-      if [ $PLATFORM = 'Linux' ]; then
+      if [ "$PLATFORM" = 'Linux' ]; then
         GO_SYM=$(readlink -f $GO)
       fi
-      if [ $PLATFORM = 'Darwin' ]; then
+      if [ "$PLATFORM" = 'Darwin' ]; then
         GO_SYM=$(readlink $GO)
       fi
-      if [ -n $GO_SYM ]; then
+      if [ -n "$GO_SYM" ]; then
         if [[ $GO_SYM == ..* ]]; then
           GO_SYM=$(dirname $GO)/$GO_SYM
         fi
         export GOROOT=$(dirname $(dirname $GO_SYM))
       fi
     fi
-    mkdir -p $HOME/Projects/GOPATH/bin
+    mkdir -p "$HOME"/Projects/GOPATH/bin
     if whence brew > /dev/null; then
       export GOROOT=/opt/homebrew/opt/go/libexec
     fi
