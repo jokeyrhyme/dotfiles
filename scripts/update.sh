@@ -45,3 +45,7 @@ if type apm > /dev/null 2>&1; then
   echo 'updating Atom packages...'
   apm upgrade --confirm false
 fi
+
+if type boot2docker > /dev/null 2>&1; then
+  boot2docker upgrade
+fi
