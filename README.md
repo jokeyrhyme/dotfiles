@@ -1,6 +1,9 @@
-## dotfiles
+# dotfiles
 
-### Dependencies
+## Dependencies
+
+
+### Ansible
 
 You will need to have ansible installed (which requires Python 2).
 
@@ -18,7 +21,13 @@ sudo yum install python-pip python-devel gcc
 sudo pip install --upgrade ansible
 ```
 
-### Installation
+### Homebrew
+
+For OS X systems, make sure you install [Homebrew](http://brew.sh/) before you
+begin.
+
+
+## Installation
 
 Please make sure you have fulfilled the aforementioned Dependencies
 first!
@@ -34,8 +43,8 @@ first!
     ```
     ansible-playbook -K -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
     ```
-    
-### Updating
+
+## Updating
 
 1. update the .dotfiles working copy
 
@@ -46,7 +55,7 @@ first!
 
 2. Just run the ansible playbooks (install step 3) again.
 
-### Note: sudo
+## Note: sudo
 
 `sudo` usage is avoided where it can be. Currently, it is used for:
 

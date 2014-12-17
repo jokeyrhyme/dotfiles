@@ -43,9 +43,8 @@ COMPLETION_WAITING_DOTS="true"
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
   plugins=(osx terminalapp $plugins)
-  if [ -x /opt/homebrew/bin/brew ]; then
-    export HOMEBREW_BUILD_FROM_SOURCE=1
-    export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+  if [ -x /usr/local/bin/brew ]; then
+    export PATH=/usr/local/sbin:$PATH
   fi
 fi
 
