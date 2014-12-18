@@ -158,7 +158,7 @@ if whence go > /dev/null; then
     fi
     mkdir -p "$HOME"/Projects/GOPATH/bin
     if whence brew > /dev/null; then
-      export GOROOT=/opt/homebrew/opt/go/libexec
+      export GOROOT=$(brew --prefix)/opt/go/libexec
     fi
     export GOPATH=$HOME/Projects/GOPATH
     export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
