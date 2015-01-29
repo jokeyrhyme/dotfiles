@@ -26,6 +26,9 @@ sudo pip install --upgrade ansible
 For OS X systems, make sure you install [Homebrew](http://brew.sh/) before you
 begin.
 
+[scripts/install-homebrew.sh](scripts/install-homebrew.sh) is provided for this
+purpose.
+
 
 ## Installation
 
