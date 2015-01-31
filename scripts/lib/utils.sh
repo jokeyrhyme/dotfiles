@@ -10,4 +10,11 @@ __dotfiles_ensure_shallow_git_clone() {
   fi
 }
 
-
+__dotfiles_assert_in_path() {
+  if type $1 > /dev/null 2>&1; then
+    echo "found $1"
+  else
+    echo "error: no $1!"
+    exit 1
+  fi
+}

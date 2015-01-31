@@ -4,12 +4,7 @@ set -e
 
 source $(dirname $0)/lib/utils.sh
 
-if type git > /dev/null 2>&1; then
-  echo "found git"
-else
-  echo "no git!"
-  exit 1
-fi
+__dotfiles_assert_in_path git
 
 if type brew > /dev/null 2>&1; then
   echo 'found brew!'

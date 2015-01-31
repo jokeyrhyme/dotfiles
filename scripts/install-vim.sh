@@ -14,26 +14,11 @@ if type pacman > /dev/null 2>&1; then
   sudo pacman -Sy gvim-python3
 fi
 
-if type git > /dev/null 2>&1; then
-  echo "found git"
-else
-  echo "no git!"
-  exit 1
-fi
+__dotfiles_assert_in_path git
 
-if type ruby > /dev/null 2>&1; then
-  echo "found ruby"
-else
-  echo "no ruby!"
-  exit 1
-fi
+__dotfiles_assert_in_path ruby
 
-if type rake > /dev/null 2>&1; then
-  echo "found rake"
-else
-  echo "no rake!"
-  exit 1
-fi
+__dotfiles_assert_in_path rake
 
 __dotfiles_ensure_shallow_git_clone ~/.vim https://github.com/carlhuda/janus.git
 
