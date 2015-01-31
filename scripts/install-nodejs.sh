@@ -10,11 +10,7 @@ __dotfiles_ensure_shallow_git_clone ~/.nvm https://github.com/creationix/nvm.git
 
 source ~/.nvm/nvm.sh
 
-if [ -d ~/.npm-packages ]; then
-  echo "~/.npm-packages found"
-else
-  mkdir ~/.npm-packages
-fi
+__dotfiles_force_mkdir ~/.npm-packages
 
 nvm install 0.10
 nvm alias default 0.10

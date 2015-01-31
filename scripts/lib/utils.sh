@@ -18,3 +18,13 @@ __dotfiles_assert_in_path() {
     exit 1
   fi
 }
+
+__dotfiles_force_mkdir() {
+  if [ -d "$1" ]; then
+    echo "$1 is a directory"
+  else
+    rm -f "$1"
+    mkdir -p "$1"
+    echo "$1 is now a directory"
+  fi
+}

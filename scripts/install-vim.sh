@@ -11,7 +11,7 @@ fi
 
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -Sy gvim-python3
+  sudo pacman -Sy --noconfirm gvim-python3
 fi
 
 __dotfiles_assert_in_path git
@@ -47,12 +47,7 @@ else
   ln -s ~/.dotfiles/gvimrc.after ~/.gvimrc.after
 fi
 
-if [ -d ~/.janus/ ]; then
-  echo "~/.janus is a directory"
-else
-  echo "~/.janus is not a directory"
-  mkdir -p ~/.janus
-fi
+__dotfiles_force_mkdir ~/.janus
 
 __dotfiles_ensure_shallow_git_clone ~/.janus/emmet https://github.com/mattn/emmet-vim.git
 
@@ -61,3 +56,4 @@ __dotfiles_ensure_shallow_git_clone ~/.janus/solarized https://github.com/alterc
 __dotfiles_ensure_shallow_git_clone ~/.janus/multiple-cursors https://github.com/terryma/vim-multiple-cursors.git
 
 __dotfiles_ensure_shallow_git_clone ~/.janus/wakatime git://github.com/wakatime/vim-wakatime.git
+
