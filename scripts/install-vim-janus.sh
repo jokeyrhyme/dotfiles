@@ -48,7 +48,7 @@ if [ -L ~/.vimrc.after ]; then
   echo "~/.vimrc.after is a symlink"
 else
   echo "~/.vimrc.after is not a symlink"
-  rm ~/.vimrc.after
+  rm -f ~/.vimrc.after
   ln -s ~/.dotfiles/vimrc.after ~/.vimrc.after
 fi
 
@@ -56,7 +56,7 @@ if [ -L ~/.gvimrc.after ]; then
   echo "~/.gvimrc.after is a symlink"
 else
   echo "~/.gvimrc.after is not a symlink"
-  rm ~/.gvimrc.after
+  rm -f ~/.gvimrc.after
   ln -s ~/.dotfiles/gvimrc.after ~/.gvimrc.after
 fi
 

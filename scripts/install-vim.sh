@@ -10,6 +10,6 @@ fi
 
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  pacman -Sy gvim-python3
+  sudo pacman -Sy gvim-python3
   exit 0
 fi
