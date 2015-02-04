@@ -9,6 +9,5 @@
     - git
     - zsh
     - ruby
-    - vim
     - nodejs
   gather_facts: False

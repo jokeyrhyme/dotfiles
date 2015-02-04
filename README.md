@@ -47,6 +47,12 @@ first!
     ansible-playbook -K -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
     ```
 
+3. run as many of the following as you wish
+
+    ```
+    sh ~/.dotfiles/packages/vim-install.sh
+    ```
+
 ## Updating
 
 1. update the .dotfiles working copy
@@ -57,6 +63,8 @@ first!
     ```
 
 2. Just run the ansible playbooks (install step 3) again.
+
+3. run `sh ~/.dotfiles/scripts/update.sh`
 
 ## Note: sudo
 
