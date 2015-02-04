@@ -29,6 +29,7 @@ fi
 
 if type npm > /dev/null 2>&1; then
   echo 'updating NPM and packages...'
+  npm cache clean
   for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
   do
     npm -g install "$package"
@@ -49,3 +50,6 @@ fi
 if type boot2docker > /dev/null 2>&1; then
   boot2docker upgrade
 fi
+
+source $(dirname $0)/../packages/vim-update.sh
+

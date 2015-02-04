@@ -74,6 +74,26 @@ if [ -x ~/.rbenv/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+# nvm
+if [ -f ~/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+  plugins=(node npm $plugins)
+fi
+
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+
+# npm
+if [ -d ~/.npm-packages ]; then
+  if whence npm > /dev/null; then
+    NPM_PACKAGES="${HOME}/.npm-packages"
+    npm config set prefix $NPM_PACKAGES
+    export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+    export PATH="$NPM_PACKAGES/bin:$PATH"
+    unset MANPATH
+    export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+  fi
+fi
+
 # load in other plugins
 
 plugins=(vi-mode battery encode64 $plugins)

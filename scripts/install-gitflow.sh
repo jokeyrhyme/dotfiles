@@ -2,6 +2,8 @@
 
 set -e
 
+source $(dirname $0)/lib/utils.sh
+
 if type git-flow > /dev/null 2>&1; then
   echo 'found git-flow! no install necessary'
   exit 0
@@ -13,11 +15,6 @@ if type brew > /dev/null 2>&1; then
   exit 0
 fi
 
-if type wget > /dev/null 2>&1; then
-  echo "found wget"
-else
-  echo "no wget!"
-  exit 1
-fi
+__dotfiles_assert_in_path wget
 
 wget -q -O - https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh | sudo bash

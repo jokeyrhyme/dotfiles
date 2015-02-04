@@ -2,26 +2,13 @@
 
 set -e
 
-if type ruby > /dev/null 2>&1; then
-  echo "found ruby"
-else
-  echo "no ruby!"
-  exit 1
-fi
+source $(dirname $0)/lib/utils.sh
 
-if type git > /dev/null 2>&1; then
-  echo "found git"
-else
-  echo "no git!"
-  exit 1
-fi
+__dotfiles_assert_in_path ruby
 
-if type xcode-select > /dev/null 2>&1; then
-  echo "found xcode-select"
-else
-  echo "no xcode-select! is this OS X?"
-  exit 1
-fi
+__dotfiles_assert_in_path git
+
+__dotfiles_assert_in_path xcode-select
 
 if type brew > /dev/null 2>&1; then
   echo 'found brew! no install necessary'
