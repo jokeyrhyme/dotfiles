@@ -3,7 +3,6 @@
 
 - hosts: localhost
   roles:
-    - { role: osx-apps, when: ansible_os_family == "Darwin" }
     - packagemanagers
     - ansible
     - git
