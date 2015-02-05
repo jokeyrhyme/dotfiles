@@ -27,6 +27,8 @@ fi
 #  npm -g update
 #fi
 
+source $(dirname $0)/../packages/nodejs-update.sh
+
 if type npm > /dev/null 2>&1; then
   echo 'updating NPM and packages...'
   npm cache clean
@@ -52,4 +54,3 @@ if type boot2docker > /dev/null 2>&1; then
 fi
 
 source $(dirname $0)/../packages/vim-update.sh
-
