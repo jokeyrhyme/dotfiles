@@ -21,14 +21,6 @@ sudo yum install python-pip python-devel gcc
 sudo pip install --upgrade ansible
 ```
 
-### Homebrew
-
-For OS X systems, make sure you install [Homebrew](http://brew.sh/) before you
-begin.
-
-[scripts/install-homebrew.sh](scripts/install-homebrew.sh) is provided for this
-purpose.
-
 
 ## Installation
 
@@ -37,29 +29,36 @@ first!
 
 1. clone this repository into a hidden directory
 
-    ```
+    ```sh
     git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
 2. run the ansible playbooks (it'll prompt for `sudo` passphrase)
 
-    ```
+    ```sh
     ansible-playbook -K -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
     ```
 
-3. run as many of the following as you wish
+3. if on OS X, make sure you install [Homebrew](http://brew.sh/)
 
+    ```sh
+    sh ~/.dotfiles/packages/homebrew-install.sh
     ```
+
+4. run any of the following as you wish
+
+    ```sh
     sh ~/.dotfiles/packages/fonts-install.sh
     sh ~/.dotfiles/packages/nodejs-install.sh
     sh ~/.dotfiles/packages/vim-install.sh
     ```
 
+
 ## Updating
 
 1. update the .dotfiles working copy
 
-    ```
+    ```sh
     cd ~/.dotfiles
     git pull
     ```
@@ -67,6 +66,7 @@ first!
 2. Just run the ansible playbooks (install step 3) again.
 
 3. run `sh ~/.dotfiles/scripts/update.sh`
+
 
 ## Note: sudo
 
