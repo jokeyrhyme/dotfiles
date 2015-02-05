@@ -147,10 +147,9 @@ fi
 if whence docker > /dev/null; then
   if whence boot2docker > /dev/null; then
     $(boot2docker shellinit)
-  else
-    export DOCKER_HOST=tcp://localhost:2375
-    export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-    export DOCKER_TLS_VERIFY=1
+  fi
+  if [ -w /var/run/docker.sock ]; then
+    export DOCKER_HOST=unix:///var/run/docker.sock
   fi
 fi
 
