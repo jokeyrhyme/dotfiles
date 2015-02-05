@@ -50,6 +50,7 @@ first!
 3. run as many of the following as you wish
 
     ```
+    sh ~/.dotfiles/packages/fonts-install.sh
     sh ~/.dotfiles/packages/vim-install.sh
     ```
 
