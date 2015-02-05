@@ -103,8 +103,6 @@ source "$ZSH/oh-my-zsh.sh"
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
 
-export GREP_OPTIONS="--exclude=.svn --exclude=.git ${GREP_OPTIONS}"
-
 export LANGUAGE="en_AU:en_GB:en_US:en"
 
 # Java on OS X
