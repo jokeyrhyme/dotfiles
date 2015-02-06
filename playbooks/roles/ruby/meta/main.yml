@@ -1,3 +1,0 @@
----
-dependencies:
-- { role: rbenv, when: ansible_pkg_mgr != "yum" }

@@ -7,5 +7,4 @@
     - ansible
     - git
     - zsh
-    - ruby
   gather_facts: False
