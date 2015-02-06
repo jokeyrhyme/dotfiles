@@ -50,6 +50,7 @@ first!
     ```sh
     sh ~/.dotfiles/packages/git-install.sh
     sh ~/.dotfiles/packages/fonts-install.sh
+    sh ~/.dotfiles/packages/zsh-install.sh # requires git
     sh ~/.dotfiles/packages/nodejs-install.sh # requires git
     sh ~/.dotfiles/packages/ruby-install.sh # requires git
     sh ~/.dotfiles/packages/vim-install.sh # requires git, ruby
