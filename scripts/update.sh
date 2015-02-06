@@ -38,6 +38,8 @@ if type npm > /dev/null 2>&1; then
   done
 fi
 
+source $(dirname $0)/../packages/ruby-update.sh
+
 if type gem > /dev/null 2>&1; then
   echo 'updating Ruby gems...'
   gem update
