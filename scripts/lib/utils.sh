@@ -49,3 +49,14 @@ __dotfiles_force_symlink() {
     ln -s $1 $2
   fi
 }
+
+__dotfiles_safely_set_shell () {
+  if [ -x $1 ]; then
+    if grep -q $1 /etc/shells; then
+      echo "$1 already registered in /etc/shells"
+    else
+      echo $1 | sudo tee -a /etc/shells
+      echo "$1 registered in /etc/shells"
+    fi
+  fi
+}
