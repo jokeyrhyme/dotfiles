@@ -15,7 +15,7 @@ fi
 
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -Syu git
+  sudo pacman -Sy --needed --noconfirm git
   exit 0
 fi
 

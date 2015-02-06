@@ -48,9 +48,10 @@ first!
 4. run any of the following as you wish
 
     ```sh
+    sh ~/.dotfiles/packages/git-install.sh
     sh ~/.dotfiles/packages/fonts-install.sh
-    sh ~/.dotfiles/packages/nodejs-install.sh
-    sh ~/.dotfiles/packages/vim-install.sh
+    sh ~/.dotfiles/packages/nodejs-install.sh # requires git
+    sh ~/.dotfiles/packages/vim-install.sh # requires git
     ```
 
 
