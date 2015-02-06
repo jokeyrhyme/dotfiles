@@ -2,30 +2,12 @@
 
 ## Dependencies
 
+### OS X
 
-### Ansible
-
-You will need to have ansible installed (which requires Python 2).
-
-#### `apt`-based Linux: Debian, Ubuntu, etc
-
-```sh
-sudo apt-get install python-pip python2.7-dev python-apt
-sudo pip install --upgrade ansible
-```
-
-#### `yum`-based Linux: Fedora, RedHat, Amazon, etc
-
-```sh
-sudo yum install python-pip python-devel gcc
-sudo pip install --upgrade ansible
-```
+- Xcode, run at least once to agree to the license
 
 
 ## Installation
-
-Please make sure you have fulfilled the aforementioned Dependencies
-first!
 
 1. clone this repository into a hidden directory
 
@@ -59,23 +41,16 @@ first!
 
 ## Updating
 
-1. update the .dotfiles working copy
-
-    ```sh
-    cd ~/.dotfiles
-    git pull
-    ```
-
-2. Just run the ansible playbooks (install step 3) again.
-
-3. run `sh ~/.dotfiles/scripts/update.sh`
-
+```sh
+cd ~/.dotfiles
+git pull
+sh ~/.dotfiles/scripts/update.sh
+```
 
 ## Note: sudo
 
-`sudo` usage is avoided where it can be. Currently, it is used for:
+I avoid `sudo` usage where possible. I currently need it for:
 
-- installing `zsh` and `vim`
+- system package installation (e.g. pacman, apt, yum)
 - ensuring installed `zsh` is in the `/etc/shells` file
 - setting `zsh` as the default shell for the current user
-- installing build dependencies for `ruby`

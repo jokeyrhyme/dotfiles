@@ -1,3 +1,0 @@
----
-- name: output all variables
-  action: template src=dumpall.j2 dest=/tmp/ansible.all
