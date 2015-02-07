@@ -12,6 +12,7 @@ if [ -d ~/.nvm/.git ]; then
   source ~/.nvm/nvm.sh
 
   nvm install 0.10
-  nvm alias default 0.10
-  nvm use 0.10
+  nvm install 0.12
+  nvm alias default 0.12
+  nvm use 0.12
 fi
