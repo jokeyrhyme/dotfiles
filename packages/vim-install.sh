@@ -25,8 +25,6 @@ __dotfiles_force_symlink ~/.dotfiles/vimrc.after ~/.vimrc.after
 
 __dotfiles_force_mkdir ~/.janus
 
-__dotfiles_ensure_shallow_git_clone ~/.janus/emmet https://github.com/mattn/emmet-vim.git
-
 __dotfiles_ensure_shallow_git_clone ~/.janus/solarized https://github.com/altercation/vim-colors-solarized.git
 
 __dotfiles_ensure_shallow_git_clone ~/.janus/multiple-cursors https://github.com/terryma/vim-multiple-cursors.git
@@ -34,4 +32,3 @@ __dotfiles_ensure_shallow_git_clone ~/.janus/multiple-cursors https://github.com
 __dotfiles_ensure_shallow_git_clone ~/.janus/wakatime git://github.com/wakatime/vim-wakatime.git
 
 source $(dirname $0)/vim-update.sh
-

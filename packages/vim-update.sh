@@ -16,12 +16,8 @@ if [ -d ~/.vim/.git ]; then
   popd
 fi
 
-__dotfiles_update_shallow_git_clone ~/.janus/emmet
-
 __dotfiles_update_shallow_git_clone ~/.janus/solarized
 
 __dotfiles_update_shallow_git_clone ~/.janus/multiple-cursors
 
 __dotfiles_update_shallow_git_clone ~/.janus/wakatime
-
-
