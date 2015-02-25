@@ -22,8 +22,10 @@ if [ ! "$EDITOR" ]; then
   export EDITOR=$(which vim)
 fi
 if whence gvim > /dev/null; then
-  alias vim="gvim"
-  alias gvim="gvim --remote-tab-silent"
+  if [ -n "$DISPLAY" ]; then
+    alias vim="gvim"
+    alias gvim="gvim --remote-tab-silent"
+  fi
 fi
 if whence mvim > /dev/null; then
   alias vim="mvim"
