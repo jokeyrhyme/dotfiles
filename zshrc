@@ -124,6 +124,9 @@ fi
 if [ -d ~/Library/Android/sdk ]; then
   export ANDROID_HOME=~/Library/Android/sdk
 fi
+if [ -d ~/Android/Sdk ]; then
+  export ANDROID_HOME=~/Android/Sdk
+fi
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 # check if connecting via SSH
