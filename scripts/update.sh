@@ -55,4 +55,8 @@ if type boot2docker > /dev/null 2>&1; then
   boot2docker upgrade
 fi
 
+if type docker-machine > /dev/null 2>&1; then
+  docker-machine upgrade dev
+fi
+
 source $(dirname $0)/../packages/vim-update.sh
