@@ -20,22 +20,12 @@ if type brew-cask.rb > /dev/null 2>&1; then
   brew cask cleanup
 fi
 
-# TODO: still not safe to do this
-# https://github.com/npm/npm/issues/6247
-#if type npm > /dev/null 2>&1; then
-#  echo 'updating NPM and packages...'
-#  npm -g update
-#fi
-
 source $(dirname $0)/../packages/nodejs-update.sh
 
 if type npm > /dev/null 2>&1; then
   echo 'updating NPM and packages...'
-  npm cache clean
-  for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
-  do
-    npm -g install "$package"
-  done
+  npm -g install npm
+  npm -g update
 fi
 
 source $(dirname $0)/../packages/ruby-update.sh
