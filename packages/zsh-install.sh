@@ -11,6 +11,11 @@ if type brew > /dev/null 2>&1; then
   brew install zsh
 fi
 
+if type dnf > /dev/null 2>&1; then
+  echo 'found dnf!'
+  sudo dnf install -y zsh
+fi
+
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm zsh

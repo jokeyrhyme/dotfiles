@@ -9,6 +9,11 @@ if type brew > /dev/null 2>&1; then
   brew install macvim
 fi
 
+if type dnf > /dev/null 2>&1; then
+  echo 'found dnf!'
+  sudo dnf install -y vim
+fi
+
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --noconfirm gvim-python3

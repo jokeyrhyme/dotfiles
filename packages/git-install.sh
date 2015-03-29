@@ -19,6 +19,12 @@ if type pacman > /dev/null 2>&1; then
   exit 0
 fi
 
+if type dnf > /dev/null 2>&1; then
+  echo 'found dnf!'
+  sudo dnf install -y git
+  exit 0
+fi
+
 if type yum > /dev/null 2>&1; then
   echo 'found yum!'
   sudo yum install -y git

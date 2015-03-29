@@ -1,6 +1,9 @@
 #!/bin/sh
 
-if type yum > /dev/null 2>&1; then
+if type dnf > /dev/null 2>&1; then
+  echo 'updating packages with dnf...'
+  sudo dnf upgrade --obsoletes --allowerasing
+elif type yum > /dev/null 2>&1; then
   echo 'updating packages with yum...'
   sudo yum upgrade -y
 fi
