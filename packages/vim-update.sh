@@ -5,8 +5,6 @@ set -e
 source $(dirname $0)/../scripts/lib/utils.sh
 
 __dotfiles_assert_in_path git
-__dotfiles_assert_in_path ruby
-__dotfiles_assert_in_path rake
 
 if [ -d ~/.vim/.git ]; then
   echo "updating janus..."
