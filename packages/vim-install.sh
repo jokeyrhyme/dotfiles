@@ -12,6 +12,10 @@ fi
 if type dnf > /dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y vim
+  if type Xorg > /dev/null 2>&1; then
+    echo 'found Xorg!'
+    sudo dnf install -y vim-X11
+  fi
 fi
 
 if type pacman > /dev/null 2>&1; then

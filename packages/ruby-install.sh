@@ -14,8 +14,8 @@ fi
 
 if type dnf > /dev/null 2>&1; then
   echo 'found dnf!'
-  sudo dnf group install -y "C Development Tools and Libraries"
-  sudo dnf install -y openssl-devel readline-devel
+  #sudo dnf group install -y "Development Tools"
+  sudo dnf install -y gcc openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel
 fi
 
 if type pacman > /dev/null 2>&1; then
