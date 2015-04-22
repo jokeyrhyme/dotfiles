@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+# set -e # nvm.sh triggers this
 
 source $(dirname $0)/../scripts/lib/utils.sh
 
@@ -14,7 +14,4 @@ source $(dirname $0)/nodejs-update.sh
 
 npm install -g cordova
 npm install -g git-guilt
-npm install -g grunt-cli
-npm install -g gulp
 npm install -g http-server
-npm install -g node-dependencies

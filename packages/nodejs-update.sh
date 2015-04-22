@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+# set -e # nvm.sh triggers this
 
 source $(dirname $0)/../scripts/lib/utils.sh
 
@@ -16,3 +16,5 @@ if [ -d ~/.nvm/.git ]; then
   nvm alias default 0.12
   nvm use 0.12
 fi
+
+echo "fi"
