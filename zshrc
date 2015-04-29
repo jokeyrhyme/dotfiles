@@ -89,7 +89,8 @@ if [ -d ~/.npm-packages ]; then
   if whence npm > /dev/null; then
     NPM_PACKAGES="${HOME}/.npm-packages"
     npm config set prefix $NPM_PACKAGES
-    export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+    #export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+    export NODE_PATH="$NPM_PACKAGES/lib/node_modules"
     export PATH="$NPM_PACKAGES/bin:$PATH"
     unset MANPATH
     export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
