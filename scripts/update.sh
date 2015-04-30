@@ -15,7 +15,7 @@ fi
 
 if type brew > /dev/null 2>&1; then
   echo 'updating Homebrew and packages...'
-  brew update && brew upgrade && brew linkapps && brew cleanup
+  brew update && brew upgrade --all && brew linkapps && brew cleanup
 fi
 
 if type brew-cask.rb > /dev/null 2>&1; then
