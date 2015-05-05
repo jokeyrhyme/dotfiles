@@ -8,11 +8,6 @@ if type brew > /dev/null 2>&1; then
   exit 0
 fi
 
-if type git > /dev/null 2>&1; then
-  echo 'found git! no install necessary'
-  exit 0
-fi
-
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm git
@@ -21,7 +16,7 @@ fi
 
 if type dnf > /dev/null 2>&1; then
   echo 'found dnf!'
-  sudo dnf install -y git
+  sudo dnf install -y git gitflow
   exit 0
 fi
 
