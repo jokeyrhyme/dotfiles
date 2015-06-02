@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source $(dirname $0)/../packages/git-config.sh
+
 if type dnf > /dev/null 2>&1; then
   echo 'updating packages with dnf...'
   sudo dnf upgrade --obsoletes --allowerasing
