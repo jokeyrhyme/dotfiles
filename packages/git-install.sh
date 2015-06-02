@@ -14,7 +14,7 @@ fi
 
 if type dnf > /dev/null 2>&1; then
   echo 'found dnf!'
-  sudo dnf install -y git
+  sudo dnf install -y git gitflow
 
 elif type yum > /dev/null 2>&1; then
   echo 'found yum!'
