@@ -15,19 +15,14 @@
     git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
-2. run the ansible playbooks (it'll prompt for `sudo` passphrase)
+2. install additional package managers depending on your OS
 
     ```sh
-    ansible-playbook -K -c local -i ~/.dotfiles/playbooks/localhost ~/.dotfiles/playbooks/general.yml
+    sh ~/.dotfiles/packages/aurget-install.sh # ArchLinux-only, required
+    sh ~/.dotfiles/packages/homebrew-install.sh # OSX-only, required
     ```
 
-3. if on OS X, make sure you install [Homebrew](http://brew.sh/)
-
-    ```sh
-    sh ~/.dotfiles/packages/homebrew-install.sh
-    ```
-
-4. run any of the following as you wish
+3. run any of the following as you wish
 
     ```sh
     sh ~/.dotfiles/packages/git-install.sh
@@ -37,6 +32,7 @@
     sh ~/.dotfiles/packages/nodejs-install.sh # requires git
     sh ~/.dotfiles/packages/ruby-install.sh # requires git
     sh ~/.dotfiles/packages/vim-install.sh # requires git, ruby
+    sh ~/.dotfiles/packages/atom-install.sh
     ```
 
 

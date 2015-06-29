@@ -15,6 +15,11 @@ if type pacman > /dev/null 2>&1; then
   sudo pacman -Syu
 fi
 
+if type aurget > /dev/null 2>&1; then
+  echo 'updating packages with aurget...'
+  aurget -Syu --noedit
+fi
+
 if type brew > /dev/null 2>&1; then
   echo 'updating Homebrew and packages...'
   brew update && brew upgrade --all && brew linkapps && brew cleanup
