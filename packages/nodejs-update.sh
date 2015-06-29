@@ -11,10 +11,11 @@ __dotfiles_update_shallow_git_clone ~/.nvm
 if [ -d ~/.nvm/.git ]; then
   source ~/.nvm/nvm.sh
 
-  nvm install 0.10
   nvm install 0.12
   nvm alias default 0.12
   nvm use 0.12
 fi
 
-echo "fi"
+if [ -x /usr/bin/python2 ]; then
+  npm config set python /usr/bin/python2
+fi
