@@ -40,12 +40,6 @@ fi
 
 source $(dirname $0)/../packages/ruby-update.sh
 
-if type gem > /dev/null 2>&1; then
-  echo 'updating Ruby gems...'
-  gem update
-  gem cleanup
-fi
-
 if type apm > /dev/null 2>&1; then
   echo 'updating Atom packages...'
   apm upgrade --confirm false

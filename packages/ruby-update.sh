@@ -35,4 +35,10 @@ if [ -d ~/.rbenv/.git ]; then
       -o "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
   fi
 
+  if type gem > /dev/null 2>&1; then
+    echo 'updating Ruby gems...'
+    gem update
+    gem cleanup
+  fi
+
 fi
