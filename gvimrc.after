@@ -1,10 +1,7 @@
-if has('mac')
-  set guifont=Menlo:h13
-  set transparency=2
-endif
+set guifont=Hack:h14,Source\ Code\ Pro:h14,Menlo:h13,Consolas:h12
 
-if has('win32')
-  set guifont=Consolas:h12
+if has('mac')
+  set transparency=2
 endif
 
 if has('toolbar')
