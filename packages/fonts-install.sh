@@ -2,11 +2,14 @@
 
 set -e
 
+. $(dirname $0)/../scripts/lib/utils.sh
+
 HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
 ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
 
 if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
+  __dotfiles_force_mkdir ~/.local/share/fonts
   sudo dnf install -y adobe-source-{code,sans}-pro-fonts
   sudo dnf install -y google-droid-{sans,serif,sans-mono}-fonts
   sudo dnf install -y liberation-{mono,narrow,sans,serif}-fonts
@@ -14,8 +17,17 @@ fi
 
 if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
+  __dotfiles_force_mkdir ~/.local/share/fonts
   sudo pacman -Sy --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts
   sudo pacman -Sy --needed --noconfirm ttf-{droid,liberation,ubuntu-font-family}
+fi
+
+if [ -d ~/.local/share/fonts ]; then
+  HACK_URL=${HACK_RELEASES}'v2.013/Hack-v2_013-ttf.zip'
+  ZIP=`mktemp`
+  curl -L -o "${ZIP}" "${HACK_URL}"
+  unzip -o "${ZIP}" -d ~/.local/share/fonts/
+  rm "${ZIP}"
 fi
 
 if [ -d ~/Library/Fonts ]; then
