@@ -7,7 +7,7 @@
 __dotfiles_assert_in_path git
 
 if [ -f ~/.nvm/install.sh ]; then
-  . ~/.nvm/install.sh
+  sh ~/.nvm/install.sh
 fi
 
 if [ -d ~/.nvm/.git ]; then
