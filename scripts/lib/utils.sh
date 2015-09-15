@@ -61,3 +61,9 @@ __dotfiles_safely_set_shell () {
     fi
   fi
 }
+
+__dotfiles_remove_line () {
+  local TEMP=`mktemp`
+  sed "$2" "$1" > "$TEMP"
+  mv "$TEMP" "$1"
+}
