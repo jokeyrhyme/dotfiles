@@ -2,42 +2,32 @@
 
 set -e
 
-source $(dirname $0)/../scripts/lib/utils.sh
+. $(dirname $0)/../scripts/lib/utils.sh
 
-if type brew > /dev/null 2>&1; then
+if which brew > /dev/null 2>&1; then
   echo 'found brew!'
-  brew install macvim
+  brew install ctags macvim
 fi
 
-if type dnf > /dev/null 2>&1; then
+if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
-  sudo dnf install -y vim
-  if type Xorg > /dev/null 2>&1; then
+  sudo dnf install -y ctags vim
+  if which Xorg > /dev/null 2>&1; then
     echo 'found Xorg!'
     sudo dnf install -y vim-X11
   fi
 fi
 
-if type pacman > /dev/null 2>&1; then
+if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -Sy --noconfirm gvim-python3
+  sudo pacman -Sy --noconfirm ctags gvim-python3
 fi
 
 __dotfiles_assert_in_path git
-__dotfiles_assert_in_path ruby
-__dotfiles_assert_in_path rake
 
-__dotfiles_ensure_shallow_git_clone ~/.vim https://github.com/carlhuda/janus.git
+__dotfiles_ensure_shallow_git_clone ~/.vim_runtime https://github.com/amix/vimrc.git
+sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-__dotfiles_force_symlink ~/.dotfiles/gvimrc.after ~/.gvimrc.after
-__dotfiles_force_symlink ~/.dotfiles/vimrc.after ~/.vimrc.after
+__dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/wakatime git://github.com/wakatime/vim-wakatime.git
 
-__dotfiles_force_mkdir ~/.janus
-
-__dotfiles_ensure_shallow_git_clone ~/.janus/solarized https://github.com/altercation/vim-colors-solarized.git
-
-__dotfiles_ensure_shallow_git_clone ~/.janus/multiple-cursors https://github.com/terryma/vim-multiple-cursors.git
-
-__dotfiles_ensure_shallow_git_clone ~/.janus/wakatime git://github.com/wakatime/vim-wakatime.git
-
-source $(dirname $0)/vim-update.sh
+. $(dirname $0)/vim-update.sh
