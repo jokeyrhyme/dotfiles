@@ -6,6 +6,7 @@ set -e
 
 HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
 ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
+OVERPASS_RELEASES='https://github.com/RedHatBrand/overpass/releases/download/'
 
 if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
@@ -28,6 +29,12 @@ if [ -d ~/.local/share/fonts ]; then
   curl -L -o "${ZIP}" "${HACK_URL}"
   unzip -o "${ZIP}" -d ~/.local/share/fonts/
   rm "${ZIP}"
+
+  OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
+  ZIP=`mktemp`
+  curl -L -o "${ZIP}" "${OVERPASS_URL}"
+  unzip -o "${ZIP}" *.ttf -d ~/.local/share/fonts/
+  rm "${ZIP}"
 fi
 
 if [ -d ~/Library/Fonts ]; then
@@ -41,6 +48,12 @@ if [ -d ~/Library/Fonts ]; then
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${ADOBE_CODE_URL}"
   unzip -j -o "${ZIP}" *.otf -d ~/Library/Fonts/
+  rm "${ZIP}"
+
+  OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
+  ZIP=`mktemp`
+  curl -L -o "${ZIP}" "${OVERPASS_URL}"
+  unzip -o "${ZIP}" *.ttf -d ~/Library/Fonts/
   rm "${ZIP}"
 fi
 
