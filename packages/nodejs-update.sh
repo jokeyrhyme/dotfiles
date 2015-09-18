@@ -13,7 +13,7 @@ fi
 if [ -d ~/.nvm/.git ]; then
   . ~/.nvm/nvm.sh
 
-  nvm install 4.0
+  nvm install 4
 
   nvm install 0.12
 
