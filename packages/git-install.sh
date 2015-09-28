@@ -4,7 +4,7 @@ set -e
 
 if type brew > /dev/null 2>&1; then
   echo 'found brew! preferring brew-installed git'
-  brew install git
+  brew install git --without-completions
 fi
 
 if type pacman > /dev/null 2>&1; then

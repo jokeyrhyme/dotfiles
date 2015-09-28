@@ -6,11 +6,6 @@ source $(dirname $0)/../scripts/lib/utils.sh
 
 __dotfiles_assert_in_path git
 
-if type brew > /dev/null 2>&1; then
-  echo 'found brew!'
-  brew install zsh
-fi
-
 if type dnf > /dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y zsh
