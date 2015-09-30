@@ -20,15 +20,7 @@ if which aurget > /dev/null 2>&1; then
   aurget -Syu --noedit
 fi
 
-if which brew > /dev/null 2>&1; then
-  echo 'updating Homebrew and packages...'
-  brew update && brew upgrade --all && brew linkapps && brew cleanup
-fi
-
-if which brew-cask.rb > /dev/null 2>&1; then
-  echo 'updating Homebrew Cask and packages...'
-  brew cask cleanup
-fi
+. $(dirname $0)/../packages/homebrew-update.sh
 
 . $(dirname $0)/../packages/nodejs-update.sh
 
