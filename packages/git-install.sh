@@ -4,7 +4,12 @@ set -e
 
 if type brew > /dev/null 2>&1; then
   echo 'found brew! preferring brew-installed git'
-  brew install git --without-completions
+
+  sudo chmod g+w /usr/local/share/zsh /usr/local/share/zsh/site-functions
+
+  brew install git git-lfs git-flow
+
+  sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
 if type pacman > /dev/null 2>&1; then
