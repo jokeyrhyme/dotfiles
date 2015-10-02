@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+# set -e
 
 . $(dirname $0)/../scripts/lib/utils.sh
 
