@@ -22,3 +22,5 @@ fi
 if [ -x /usr/bin/python2 ]; then
   npm config set python /usr/bin/python2
 fi
+
+npm config set save-exact true
