@@ -24,7 +24,7 @@ if which pacman > /dev/null 2>&1; then
 fi
 
 if [ -d ~/.local/share/fonts ]; then
-  HACK_URL=${HACK_RELEASES}'v2.018/Hack-v2_019-ttf.zip'
+  HACK_URL=${HACK_RELEASES}'v2.019/Hack-v2_019-ttf.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${HACK_URL}"
   unzip -o "${ZIP}" -d ~/.local/share/fonts/
@@ -38,7 +38,7 @@ if [ -d ~/.local/share/fonts ]; then
 fi
 
 if [ -d ~/Library/Fonts ]; then
-  HACK_URL=${HACK_RELEASES}'v2.018/Hack-v2_019-otf.zip'
+  HACK_URL=${HACK_RELEASES}'v2.019/Hack-v2_019-otf.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${HACK_URL}"
   unzip -o "${ZIP}" -d ~/Library/Fonts/
