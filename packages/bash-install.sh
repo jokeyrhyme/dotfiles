@@ -8,10 +8,13 @@ __dotfiles_assert_in_path git
 
 __dotfiles_ensure_shallow_git_clone ~/.bash_it https://github.com/Bash-it/bash-it.git
 
-sh ~/.bash_it/install.sh
+rm -f ~/.bashrc ~/.bash_profile ~/.inputrc ~/.profile
+
+yes | sh ~/.bash_it/install.sh
 
 __dotfiles_force_symlink ~/.dotfiles/bashrc ~/.bashrc
 __dotfiles_force_symlink ~/.dotfiles/bashrc ~/.bash_profile
+__dotfiles_force_symlink ~/.dotfiles/inputrc ~/.inputrc
 __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 
 #source $(dirname $0)/zsh-update.sh
