@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias ls='ls --color=auto'
+export CLICOLOR=true
 
 # ruby
 if [ -d ~/.gem/ruby/2.0.0/bin ]; then
@@ -39,7 +39,7 @@ if [ -d ~/.npm-packages ]; then
 fi
 
 # custom `cd` command
-cd() { builtin cd "$@" && ls; }
+#cd() { builtin cd "$@" && ls; }
 
 # vim, gvim and MacVim
 # TODO: detect vim first
