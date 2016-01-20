@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if type go > /dev/null 2>&1; then
-  GO=$(whence go)
+  GO=$(which go)
   if [ -n "$GO" ]; then
     export GOROOT=$(dirname $(dirname $GO))
     if [ -h "$GO" ]; then
@@ -20,7 +20,7 @@ if type go > /dev/null 2>&1; then
       fi
     fi
     mkdir -p "$HOME"/Projects/GOPATH/bin
-    if whence brew > /dev/null; then
+    if type brew > /dev/null 2>&1; then
       export GOROOT=$(brew --prefix)/opt/go/libexec
     fi
     if [ -x /usr/lib/go/bin/go ]; then

@@ -19,6 +19,7 @@ fi
 __dotfiles_ensure_shallow_git_clone ~/.oh-my-zsh https://github.com/robbyrussell/oh-my-zsh.git
 
 __dotfiles_force_symlink ~/.dotfiles/zshrc ~/.zshrc
+__dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 
 #source $(dirname $0)/zsh-update.sh
 # not necessary anyway, as oh-my-zsh prompts regularly to update itself
