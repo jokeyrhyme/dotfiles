@@ -56,3 +56,6 @@ plugins=(vi-mode battery encode64 $plugins)
 
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

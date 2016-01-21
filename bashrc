@@ -39,3 +39,12 @@ export SCM_CHECK=true
 # Load Bash It
 # shellcheck source=../.bash-it/bash_it.sh
 . $BASH_IT/bash_it.sh
+
+if [ "$(uname)" = "Darwin"  ]; then
+  bash-it enable plugin osx > /dev/null 2>&1
+fi
+
+bash-it enable plugin git ssh > /dev/null 2>&1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

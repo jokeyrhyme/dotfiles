@@ -16,14 +16,6 @@ if [ -x ~/.rbenv/bin/rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-# nvm
-if [ -s ~/.nvm/nvm.sh ]; then
-  export NVM_DIR="$HOME/.nvm"
-  # shellcheck source=../.nvm/nvm.sh
-  . "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
-
-
 # npm
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 if [ -d ~/.npm-packages ]; then
