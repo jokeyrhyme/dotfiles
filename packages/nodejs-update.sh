@@ -13,6 +13,7 @@ fi
 if [ -d ~/.nvm/.git ]; then
   . ~/.nvm/nvm.sh
 
+  nvm install 4
   nvm install 5
 
   nvm alias default 5
