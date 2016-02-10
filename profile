@@ -17,7 +17,7 @@ if [ -x ~/.rbenv/bin/rbenv ]; then
 fi
 
 # custom `cd` command
-#cd() { builtin cd "$@" && ls; }
+cd() { builtin cd "$@" && ls; }
 
 # vim, gvim and MacVim
 # TODO: detect vim first
