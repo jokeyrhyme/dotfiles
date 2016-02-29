@@ -1,46 +1,15 @@
 #!/bin/bash
 
+. ~/.dotfiles/packages/ruby-env.sh
+
 export CLICOLOR=true
-
-# ruby
-if [ -d ~/.gem/ruby/2.0.0/bin ]; then
-  export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-fi
-if [ -d ~/.gem/ruby/2.1.0/bin ]; then
-  export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
-fi
-
-# rbenv
-if [ -x ~/.rbenv/bin/rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
 
 # custom `cd` command
 cd() { builtin cd "$@" && ls; }
 
-# vim, gvim and MacVim
-# TODO: detect vim first
-if [ ! "$EDITOR" ]; then
-  export EDITOR=$(which vim)
-fi
-if type gvim > /dev/null 2>&1; then
-  if [ -n "$DISPLAY" ]; then
-    alias vim="gvim"
-    alias gvim="gvim --remote-tab-silent"
-  fi
-fi
-if type mvim > /dev/null 2>&1; then
-  alias vim="mvim"
-  alias mvim="mvim --remote-tab-silent"
-fi
+. ~/.dotfiles/packages/vim-env.sh
 
-# OS X
-if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  if [ -x /usr/local/bin/brew ]; then
-    export PATH=/usr/local/sbin:$PATH
-  fi
-fi
+. ~/.dotfiles/packages/homebrew-env.sh
 
 export LANGUAGE="en_AU:en_GB:en_US:en"
 
