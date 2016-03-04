@@ -2,6 +2,8 @@
 
 . $(dirname $0)/../packages/git-config.sh
 
+. $(dirname $0)/../packages/bash-update.sh
+
 if which dnf > /dev/null 2>&1; then
   echo 'updating packages with dnf...'
   sudo dnf upgrade --obsoletes --allowerasing
