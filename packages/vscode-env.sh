@@ -6,3 +6,7 @@ if type open > /dev/null 2>&1; then
     function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@"; }
   fi
 fi
+
+if [ -x /opt/VSCode-linux-x64/code ]; then
+  function code () { VSCODE_CWD="$PWD" /opt/VSCode-linux-x64/code "$@" & disown; }
+fi
