@@ -4,14 +4,9 @@ set -e
 
 . $(dirname $0)/../scripts/lib/utils.sh
 
-HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
-ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
-OVERPASS_RELEASES='https://github.com/RedHatBrand/overpass/releases/download/'
-
 if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
   __dotfiles_force_mkdir ~/.local/share/fonts
-  sudo dnf install -y adobe-source-{code,sans}-pro-fonts
   sudo dnf install -y google-droid-{sans,serif,sans-mono}-fonts
   sudo dnf install -y liberation-{mono,narrow,sans,serif}-fonts
 fi
@@ -19,41 +14,47 @@ fi
 if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   __dotfiles_force_mkdir ~/.local/share/fonts
-  sudo pacman -Sy --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts
   sudo pacman -Sy --needed --noconfirm ttf-{droid,liberation,ubuntu-font-family}
 fi
 
 if [ -d ~/.local/share/fonts ]; then
-  HACK_URL=${HACK_RELEASES}'v2.019/Hack-v2_019-ttf.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${HACK_URL}"
-  unzip -o "${ZIP}" -d ~/.local/share/fonts/
-  rm "${ZIP}"
-
-  OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${OVERPASS_URL}"
-  unzip -o "${ZIP}" *.ttf -d ~/.local/share/fonts/
-  rm "${ZIP}"
+  USER_TTF_DIR=~/.local/share/fonts
+  USER_OTF_DIR=$USER_TTF_DIR/opentype
+  mkdir -p ${USER_OTF_DIR}
+elif [ -d ~/Library/Fonts ]; then
+  USER_OTF_DIR=~/Library/Fonts
+  USER_TTF_DIR=${USER_OTF_DIR}
 fi
 
-if [ -d ~/Library/Fonts ]; then
+if [ ${USER_OTF_DIR} ]; then
+  HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
   HACK_URL=${HACK_RELEASES}'v2.019/Hack-v2_019-otf.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${HACK_URL}"
-  unzip -o "${ZIP}" -d ~/Library/Fonts/
+  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
   rm "${ZIP}"
 
+  ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
   ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.010R-ro/1.030R-it.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${ADOBE_CODE_URL}"
-  unzip -j -o "${ZIP}" *.otf -d ~/Library/Fonts/
+  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
   rm "${ZIP}"
 
+  FIRACODE_RELEASES='https://github.com/tonsky/FiraCode/releases/download/'
+  FIRACODE_URL=${FIRACODE_RELEASES}'1.102/FiraCode_1.102.zip'
+  ZIP=`mktemp`
+  curl -L -o "${ZIP}" "${FIRACODE_URL}"
+  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
+  rm "${ZIP}"
+fi
+
+if [ ${USER_TTF_DIR} ]; then
+  OVERPASS_RELEASES='https://github.com/RedHatBrand/overpass/releases/download/'
   OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${OVERPASS_URL}"
-  unzip -o "${ZIP}" *.ttf -d ~/Library/Fonts/
+  unzip -j -o "${ZIP}" *.ttf -d ${USER_TTF_DIR}
   rm "${ZIP}"
 fi
 
