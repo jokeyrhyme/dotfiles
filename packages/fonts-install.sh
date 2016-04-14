@@ -47,6 +47,13 @@ if [ ${USER_OTF_DIR} ]; then
   curl -L -o "${ZIP}" "${FIRACODE_URL}"
   unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
   rm "${ZIP}"
+
+  HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
+  HASKLIG_URL=${HASKLIG_RELEASES}'v1.0-beta/Hasklig-1.0-Beta.zip'
+  ZIP=`mktemp`
+  curl -L -o "${ZIP}" "${HASKLIG_URL}"
+  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
+  rm "${ZIP}"
 fi
 
 if [ ${USER_TTF_DIR} ]; then
