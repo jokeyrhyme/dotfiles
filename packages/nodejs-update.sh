@@ -15,8 +15,9 @@ if [ -d ~/.nvm/.git ]; then
 
   nvm install 4
   nvm install 5
+  nvm install 6
 
-  nvm alias default 5
+  nvm alias default 6
   nvm use default
 fi
 
