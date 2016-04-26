@@ -28,7 +28,7 @@ fi
 
 if [ ${USER_OTF_DIR} ]; then
   HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
-  HACK_URL=${HACK_RELEASES}'v2.019/Hack-v2_019-otf.zip'
+  HACK_URL=${HACK_RELEASES}'v2.020/Hack-v2_020-otf.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${HACK_URL}"
   unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
