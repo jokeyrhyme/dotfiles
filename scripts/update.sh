@@ -26,12 +26,6 @@ fi
 
 . $(dirname $0)/../packages/nodejs-update.sh
 
-if which npm > /dev/null 2>&1; then
-  echo 'updating NPM and packages...'
-  npm -g install npm
-  npm -g update
-fi
-
 . $(dirname $0)/../packages/ruby-update.sh
 
 if which apm > /dev/null 2>&1; then
