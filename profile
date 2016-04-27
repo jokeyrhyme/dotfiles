@@ -53,14 +53,6 @@ fi
 
 # set defaults for docker
 if type docker > /dev/null 2>&1; then
-  if type boot2docker > /dev/null 2>&1; then
-    $(boot2docker shellinit)
-  fi
-  if type docker-machine > /dev/null 2>&1; then
-    if docker-machine ip > /dev/null 2>&1; then
-      eval "$(docker-machine env)"
-    fi
-  fi
   if [ -w /var/run/docker.sock ]; then
     export DOCKER_HOST=unix:///var/run/docker.sock
   fi
