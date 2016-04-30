@@ -20,7 +20,7 @@ fi
 
 if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -Sy --noconfirm ctags gvim-python3
+  sudo pacman -Sy --noconfirm ctags gvim
 fi
 
 __dotfiles_assert_in_path git
