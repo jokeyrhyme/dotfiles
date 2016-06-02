@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# https://code.visualstudio.com/docs/editor/setup
-if type open > /dev/null 2>&1; then
-  if [ -d ~/Applications/Visual\ Studio\ Code.app ]; then
-    function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@"; }
+VSCODE_PATHS=(
+  ~/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+  ~/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin
+  /opt/VSCode-linux-x64
+)
+for vscode_path in "${VSCODE_PATHS[@]}"
+do
+  if [ -d "$vscode_path" ]; then
+      export PATH=$PATH:$vscode_path
   fi
-fi
+done
 
-if [ -x /opt/VSCode-linux-x64/code ]; then
-  function code () { VSCODE_CWD="$PWD" /opt/VSCode-linux-x64/code "$@" & disown; }
-fi
