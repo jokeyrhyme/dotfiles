@@ -44,3 +44,5 @@ if which docker-machine > /dev/null 2>&1; then
 fi
 
 . $(dirname $0)/../packages/vim-update.sh
+
+. $(dirname $0)/../packages/vscode-update.sh
