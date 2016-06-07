@@ -3,6 +3,19 @@
 # http://www.growingwiththeweb.com/2016/06/syncing-vscode-extensions.html
 
 EXTENSIONS=(
+    "EditorConfig.EditorConfig"
+    "WakaTime.vscode-wakatime"
+    "dbaeumer.vscode-eslint"
+    "eg2.tslint"
+    "lukehoban.Go"
+    "ms-vscode.PowerShell"
+    "ms-vscode.csharp"
+    "rebornix.Ruby"
+    "saviorisdead.RustyCode"
+    "shinnn.stylelint"
+    "vsmobile.cordova-tools"
+    "vsmobile.vscode-react-native"
+    "waderyan.gitblame"
 )
 
 for VARIANT in "code" \
