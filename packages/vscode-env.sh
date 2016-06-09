@@ -12,3 +12,8 @@ do
   fi
 done
 
+if type code-insiders > /dev/null 2>&1; then
+  if ! type code > /dev/null 2>&1; then
+    function code () { VSCODE_CWD="$PWD" code-insiders "$@" & disown; }
+  fi
+fi
