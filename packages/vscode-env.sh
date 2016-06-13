@@ -3,7 +3,7 @@
 VSCODE_PATHS=(
   ~/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
   ~/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin
-  /opt/VSCode-linux-x64
+  /opt/VSCode-linux-x64/bin
 )
 for vscode_path in "${VSCODE_PATHS[@]}"
 do
