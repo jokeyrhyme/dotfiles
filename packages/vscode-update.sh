@@ -27,7 +27,6 @@ EXTENSIONS=(
     "saviorisdead.RustyCode"
     "shinnn.stylelint"
     "vsmobile.cordova-tools"
-    "vsmobile.vscode-react-native"
     "waderyan.gitblame"
 )
 
