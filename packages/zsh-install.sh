@@ -18,6 +18,8 @@ fi
 
 __dotfiles_ensure_shallow_git_clone ~/.oh-my-zsh https://github.com/robbyrussell/oh-my-zsh.git
 
+__dotfiles_ensure_shallow_git_clone ~/.zsh-pure https://github.com/sindresorhus/pure.git
+
 __dotfiles_force_symlink ~/.dotfiles/zshrc ~/.zshrc
 __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 
@@ -26,3 +28,5 @@ __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 
 __dotfiles_safely_set_shell /usr/bin/zsh
 __dotfiles_safely_set_shell /usr/local/bin/zsh # homebrew
+
+. $(dirname $0)/zsh-update.sh
