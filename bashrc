@@ -40,6 +40,9 @@ export SCM_CHECK=true
 # shellcheck source=../.bash-it/bash_it.sh
 . $BASH_IT/bash_it.sh
 
+# custom `cd` command
+cd() { builtin cd "$@" && ls; }
+
 if [ "$(uname)" = "Darwin"  ]; then
   bash-it enable plugin osx > /dev/null 2>&1
 fi

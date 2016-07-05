@@ -54,6 +54,9 @@ plugins=(vi-mode battery encode64 $plugins)
 
 . "$ZSH/oh-my-zsh.sh"
 
+# custom `cd` command
+cd() { builtin cd "$@" && ls; }
+
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
 

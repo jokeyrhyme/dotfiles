@@ -4,9 +4,6 @@
 
 export CLICOLOR=true
 
-# custom `cd` command
-cd() { builtin cd "$@" && ls; }
-
 . ~/.dotfiles/packages/vim-env.sh
 
 . ~/.dotfiles/packages/homebrew-env.sh
