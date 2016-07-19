@@ -35,14 +35,14 @@ if [ ${USER_OTF_DIR} ]; then
   rm "${ZIP}"
 
   ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
-  ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.010R-ro/1.030R-it.zip'
+  ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.030R-ro/1.050R-it.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${ADOBE_CODE_URL}"
   unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
   rm "${ZIP}"
 
   FIRACODE_RELEASES='https://github.com/tonsky/FiraCode/releases/download/'
-  FIRACODE_URL=${FIRACODE_RELEASES}'1.102/FiraCode_1.102.zip'
+  FIRACODE_URL=${FIRACODE_RELEASES}'1.200/FiraCode_1.200.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${FIRACODE_URL}"
   unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
