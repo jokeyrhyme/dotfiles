@@ -7,7 +7,7 @@ if [ -d /opt/VSCode-linux-x64 ]; then
         LINUX_DL=`mktemp`
         curl -L -o "${LINUX_DL}" "${LINUX_URL}"
         sudo rm -rf /opt/VSCode-linux-x64
-        sudo tar --overwrite-dir -C /opt -Jxf "${LINUX_DL}"
+        sudo tar --overwrite-dir -C /opt -zxf "${LINUX_DL}"
         sudo chown -R root:vscode /opt/VSCode-linux-x64
         rm "${LINUX_DL}"
     fi
