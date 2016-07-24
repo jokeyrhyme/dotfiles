@@ -36,6 +36,7 @@ npm config set save-exact true
 
 NPM_FAVOURITES=(
   "cordova"
+  "create-react-app"
   "git-guilt"
   "grunt-cli"
   "gulp"
