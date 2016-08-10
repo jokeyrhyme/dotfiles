@@ -14,7 +14,6 @@ if [ -d ~/.nvm/.git ]; then
   . ~/.nvm/nvm.sh
 
   nvm install 4
-  nvm install 5
   nvm install 6
 
   nvm alias default 6
