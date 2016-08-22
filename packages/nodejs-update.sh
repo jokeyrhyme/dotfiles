@@ -37,6 +37,7 @@ NPM_FAVOURITES=(
   "cordova"
   "create-react-app"
   "git-guilt"
+  "greenkeeper"
   "grunt-cli"
   "gulp"
   "http-server"
