@@ -42,7 +42,7 @@ if [ ${USER_OTF_DIR} ]; then
   rm "${ZIP}"
 
   FIRACODE_RELEASES='https://github.com/tonsky/FiraCode/releases/download/'
-  FIRACODE_URL=${FIRACODE_RELEASES}'1.200/FiraCode_1.200.zip'
+  FIRACODE_URL=${FIRACODE_RELEASES}'1.201/FiraCode_1.201.zip'
   ZIP=`mktemp`
   curl -L -o "${ZIP}" "${FIRACODE_URL}"
   unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
