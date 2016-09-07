@@ -6,7 +6,15 @@ source $(dirname $0)/../scripts/lib/utils.sh
 
 __dotfiles_assert_in_path git
 
-__dotfiles_update_shallow_git_clone ~/.oh-my-zsh
+## just let oh-my-zsh use its own updater for now
+
+# __dotfiles_update_shallow_git_clone ~/.oh-my-zsh
+
+# if [ -f ~/.oh-my-zsh/tools/upgrade.sh ]; then
+#   pushd ~/.oh-my-zsh
+#   sh ~/.oh-my-zsh/tools/upgrade.sh
+#   popd
+# fi
 
 __dotfiles_ensure_shallow_git_clone ~/.zsh-pure https://github.com/sindresorhus/pure.git
 
@@ -17,10 +25,3 @@ mkdir -p ~/.oh-my-zsh/functions
 cp -v ~/.zsh-pure/async.zsh ~/.oh-my-zsh/functions/async
 
 rm -rf ~/.zsh-pure
-
-if [ -f ~/.oh-my-zsh/tools/upgrade.sh ]; then
-  pushd ~/.oh-my-zsh
-  sh ~/.oh-my-zsh/tools/upgrade.sh
-  popd
-fi
-
