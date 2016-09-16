@@ -34,14 +34,19 @@ npm config set save-exact true
 # fi
 
 NPM_FAVOURITES=(
+  "angular-cli"
   "cordova"
   "create-react-app"
+  "ember-cli"
   "git-guilt"
   "greenkeeper"
   "grunt-cli"
   "gulp"
   "http-server"
   "ionic"
+  "meteor"
+  "react-native-cli"
+  "typings"
 )
 
 if type npm > /dev/null 2>&1; then
@@ -63,4 +68,3 @@ if type npm > /dev/null 2>&1; then
     npm -g install "$package"
   done
 fi
-
