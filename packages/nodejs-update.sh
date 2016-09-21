@@ -44,7 +44,6 @@ NPM_FAVOURITES=(
   "gulp"
   "http-server"
   "ionic"
-  "meteor"
   "react-native-cli"
   "typings"
 )
