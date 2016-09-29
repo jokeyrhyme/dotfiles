@@ -24,6 +24,10 @@ if [ -x /usr/bin/python2 ]; then
   npm config set python /usr/bin/python2
 fi
 
+npm config set init.author.name 'Ron Waldon'
+npm config set init.author.email 'jokeyrhyme@gmail.com'
+npm config set init.author.url 'https://github.com/jokeyrhyme'
+
 npm config set save-exact true
 
 # this isn't dangerous, but it doesn't work
