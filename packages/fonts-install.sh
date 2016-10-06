@@ -29,40 +29,32 @@ fi
 if [ ${USER_OTF_DIR} ]; then
   HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
   HACK_URL=${HACK_RELEASES}'v2.020/Hack-v2_020-otf.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${HACK_URL}"
-  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
-  rm "${ZIP}"
+  __dotfiles_download_extract_zip "${HACK_URL}" "${USER_OTF_DIR}" "*.otf"
 
   ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
   ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.030R-ro/1.050R-it.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${ADOBE_CODE_URL}"
-  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
-  rm "${ZIP}"
+  __dotfiles_download_extract_zip "${ADOBE_CODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
   FIRACODE_RELEASES='https://github.com/tonsky/FiraCode/releases/download/'
   FIRACODE_URL=${FIRACODE_RELEASES}'1.203/FiraCode_1.203.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${FIRACODE_URL}"
-  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
-  rm "${ZIP}"
+  __dotfiles_download_extract_zip "${FIRACODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
   HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
   HASKLIG_URL=${HASKLIG_RELEASES}'v1.0-beta/Hasklig-1.0-Beta.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${HASKLIG_URL}"
-  unzip -j -o "${ZIP}" *.otf -d ${USER_OTF_DIR}
-  rm "${ZIP}"
+  __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
 fi
 
 if [ ${USER_TTF_DIR} ]; then
   OVERPASS_RELEASES='https://github.com/RedHatBrand/overpass/releases/download/'
   OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
-  ZIP=`mktemp`
-  curl -L -o "${ZIP}" "${OVERPASS_URL}"
-  unzip -j -o "${ZIP}" *.ttf -d ${USER_TTF_DIR}
-  rm "${ZIP}"
+  __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_TTF_DIR}" "*.ttf"
+
+  if [ -d ~/.local/share/fonts ]; then
+    NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
+  elif [ -d ~/Library/Fonts ]; then
+    NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-unhinted.zip'
+  fi
+  __dotfiles_download_extract_zip "${NOTO_URL}" "${USER_TTF_DIR}" "*.ttf"
 fi
 
 if which fc-cache > /dev/null 2>&1; then

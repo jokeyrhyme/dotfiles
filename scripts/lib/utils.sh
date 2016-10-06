@@ -1,6 +1,6 @@
 #!/bin/sh
 
-__dotfiles_ensure_shallow_git_clone() {
+__dotfiles_ensure_shallow_git_clone() { # dirPath, gitUrl
   if [ -d $1/.git ]; then
     echo "$1 is a git repo"
   else
@@ -10,7 +10,7 @@ __dotfiles_ensure_shallow_git_clone() {
   fi
 }
 
-__dotfiles_update_shallow_git_clone() {
+__dotfiles_update_shallow_git_clone() { # dirPath
   if [ -d $1/.git ]; then
     echo "updating $1 ..."
     pushd $1
@@ -21,7 +21,7 @@ __dotfiles_update_shallow_git_clone() {
   fi
 }
 
-__dotfiles_assert_in_path() {
+__dotfiles_assert_in_path() { # binBasename
   if type $1 > /dev/null 2>&1; then
     echo "found $1"
   else
@@ -30,7 +30,7 @@ __dotfiles_assert_in_path() {
   fi
 }
 
-__dotfiles_force_mkdir() {
+__dotfiles_force_mkdir() { # dirPath
   if [ -d "$1" ]; then
     echo "$1 is a directory"
   else
@@ -41,7 +41,7 @@ __dotfiles_force_mkdir() {
 }
 
 # ln -sf fails silently, so we need this
-__dotfiles_force_symlink() {
+__dotfiles_force_symlink() { # sourcePath, # targetPath
   if [ -L $2 ]; then
     echo "$2 is a symlink"
   else
@@ -51,7 +51,7 @@ __dotfiles_force_symlink() {
   fi
 }
 
-__dotfiles_safely_set_shell () {
+__dotfiles_safely_set_shell() { # shellPath
   if [ -x $1 ]; then
     if grep -q $1 /etc/shells; then
       echo "$1 already registered in /etc/shells"
@@ -62,8 +62,15 @@ __dotfiles_safely_set_shell () {
   fi
 }
 
-__dotfiles_remove_line () {
+__dotfiles_remove_line() { # filePath, lineString
   local TEMP=`mktemp`
   sed "$2" "$1" > "$TEMP"
   mv "$TEMP" "$1"
+}
+
+__dotfiles_download_extract_zip() { # url, targetDir, filePattern
+  local TEMP=`mktemp`
+  curl -L -o "${TEMP}" "$1"
+  unzip -j -o "${TEMP}" "$3" -d "$2"
+  rm "${TEMP}"
 }
