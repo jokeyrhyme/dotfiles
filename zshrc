@@ -43,7 +43,7 @@ PLUGIN_CMDS=(go node ruby rbenv ${PLUGIN_CMDS}) # languages
 PLUGIN_CMDS=(docker gpg-agent rake tmux vagrant ${PLUGIN_CMDS}) # other commands
 for p in $PLUGIN_CMDS
 do
-  if whence $p > /dev/null; then
+  if type $p > /dev/null 2>&1; then
     plugins=($p $plugins)
   fi
 done

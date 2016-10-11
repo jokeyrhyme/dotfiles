@@ -1,17 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
 # set -e # nvm.sh triggers this
 
-. $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.."
+. ./scripts/lib/utils.sh
+popd
 
 __dotfiles_assert_in_path git
 
-if [ -f ~/.nvm/install.sh ]; then
-  sh ~/.nvm/install.sh
-fi
-
 if [ -d ~/.nvm/.git ]; then
-  . ~/.nvm/nvm.sh
+  if ! type nvm > /dev/null 2>&1; then
+    pushd ~
+    . ./.nvm/nvm.sh
+    popd
+  fi
 
   nvm install 4
   nvm install 6
@@ -54,7 +56,7 @@ NPM_FAVOURITES=(
 
 if type npm > /dev/null 2>&1; then
   echo 'installing favourite NPM packages...'
-  for NPM_FAVOURITE in ${NPM_FAVOURITES[@]}
+  for NPM_FAVOURITE in "${NPM_FAVOURITES[@]}"
   do
     if npm ls -g --depth=0 ${NPM_FAVOURITE} > /dev/null 2>&1; then
       echo "- ${NPM_FAVOURITE} is already installed"
@@ -71,3 +73,13 @@ if type npm > /dev/null 2>&1; then
     npm -g install "$package"
   done
 fi
+
+echo "installing / updating yarn..."
+YARN_URL="https://yarnpkg.com/latest.tar.gz"
+mkdir -p ~/.yarn
+__dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
+
+# https://github.com/yarnpkg/yarn/issues/612
+# if type yarn > /dev/null 2>&1; then
+#   yarn self-update
+# fi

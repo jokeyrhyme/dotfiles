@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 __dotfiles_ensure_shallow_git_clone() { # dirPath, gitUrl
   if [ -d $1/.git ]; then
@@ -63,14 +63,24 @@ __dotfiles_safely_set_shell() { # shellPath
 }
 
 __dotfiles_remove_line() { # filePath, lineString
-  local TEMP=`mktemp`
+  local TEMP
+  TEMP=`mktemp`
   sed "$2" "$1" > "$TEMP"
   mv "$TEMP" "$1"
 }
 
 __dotfiles_download_extract_zip() { # url, targetDir, filePattern
-  local TEMP=`mktemp`
+  local TEMP
+  TEMP=`mktemp`
   curl -L -o "${TEMP}" "$1"
   unzip -j -o "${TEMP}" "$3" -d "$2"
+  rm "${TEMP}"
+}
+
+__dotfiles_download_extract_tgz() { # url, targetDir
+  local TEMP
+  TEMP=`mktemp`
+  curl -L -o "${TEMP}" "$1"
+  tar zxf "${TEMP}" -C "$2" --strip 1
   rm "${TEMP}"
 }

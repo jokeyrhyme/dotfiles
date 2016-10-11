@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # npm
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
@@ -12,3 +12,7 @@
 #    export PATH="$NPM_PACKAGES/bin:$PATH"
 #  fi
 #fi
+
+if [ -d ~/.yarn/bin ]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
+fi
