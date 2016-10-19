@@ -74,12 +74,7 @@ if type npm > /dev/null 2>&1; then
   done
 fi
 
-echo "installing / updating yarn..."
-YARN_URL="https://yarnpkg.com/latest.tar.gz"
-mkdir -p ~/.yarn
-__dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
-
-# https://github.com/yarnpkg/yarn/issues/612
-# if type yarn > /dev/null 2>&1; then
-#   yarn self-update
-# fi
+echo "updating yarn..."
+if type yarn > /dev/null 2>&1; then
+  yarn self-update
+fi
