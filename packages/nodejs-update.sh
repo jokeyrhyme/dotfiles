@@ -37,5 +37,31 @@ if type yarn > /dev/null 2>&1; then
   yarn self-update
 
   echo 'installing / updating favourite global NPM packages with yarn...'
-  yarn global add npm angular-cli cordova create-react-app ember-cli git-guilt greenkeeper grunt-cli gulp http-server ionic react-native-cli typings
+  yarn global add npm angular-cli cordova create-react-app ember-cli git-guilt greenkeeper grunt-cli gulp flow-typed http-server ionic react-native-cli typings
+fi
+
+NPM_FAVOURITES=(
+  "@jokeyrhyme/node-init"
+)
+
+if type npm > /dev/null 2>&1; then
+  echo 'installing favourite NPM packages...'
+  for NPM_FAVOURITE in "${NPM_FAVOURITES[@]}"
+  do
+    if npm ls -g --depth=0 ${NPM_FAVOURITE} > /dev/null 2>&1; then
+      echo "- ${NPM_FAVOURITE} is already installed"
+    else
+      echo "- installing ${NPM_FAVOURITE}..."
+      npm install -g ${NPM_FAVOURITE}
+    fi
+  done
+
+  echo 'updating NPM and packages...'
+  npm cache clean
+  GLOBAL_NPM_PACKAGES=''
+  for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
+  do
+    GLOBAL_NPM_PACKAGES="${GLOBAL_NPM_PACKAGES} ${package}"
+  done
+  npm -g install ${GLOBAL_NPM_PACKAGES}
 fi
