@@ -1,10 +1,10 @@
 #!/bin/sh
 
-. $(dirname $0)/../packages/git-config.sh
-
-. $(dirname $0)/../packages/bash-update.sh
-
-. $(dirname $0)/../packages/zsh-update.sh
+pushd "$(dirname $0)/.."
+. ./packages/git-config.sh
+. ./packages/bash-update.sh
+. ./packages/zsh-update.sh
+popd
 
 if which dnf > /dev/null 2>&1; then
   echo 'updating packages with dnf...'
@@ -24,17 +24,11 @@ if which aurget > /dev/null 2>&1; then
   aurget -Syu --noedit
 fi
 
-. $(dirname $0)/../packages/homebrew-update.sh
-
-. $(dirname $0)/../packages/nodejs-update.sh
-
-. $(dirname $0)/../packages/ruby-update.sh
-
-if which apm > /dev/null 2>&1; then
-  echo 'updating Atom packages...'
-  apm upgrade --confirm false
-fi
-
-. $(dirname $0)/../packages/vim-update.sh
-
-. $(dirname $0)/../packages/vscode-update.sh
+pushd "$(dirname $0)/.."
+. ./packages/homebrew-update.sh
+. ./packages/nodejs-update.sh
+. ./packages/ruby-update.sh
+. ./packages/atom-update.sh
+. ./packages/vim-update.sh
+. ./packages/vscode-update.sh
+popd
