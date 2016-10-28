@@ -35,16 +35,6 @@ if which apm > /dev/null 2>&1; then
   apm upgrade --confirm false
 fi
 
-if which boot2docker > /dev/null 2>&1; then
-  boot2docker upgrade
-fi
-
-if which docker-machine > /dev/null 2>&1; then
-  if docker-machine ip > /dev/null 2>&1; then
-    docker-machine upgrade
-  fi
-fi
-
 . $(dirname $0)/../packages/vim-update.sh
 
 . $(dirname $0)/../packages/vscode-update.sh
