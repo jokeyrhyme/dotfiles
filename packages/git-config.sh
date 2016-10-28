@@ -18,4 +18,8 @@ if type git > /dev/null 2>&1; then
   fi
 
   git config --global color.ui "auto"
+
+  # http://blog.kfish.org/2010/04/git-lola.html
+  git config --global alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit"
+  git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 fi
