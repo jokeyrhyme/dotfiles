@@ -10,8 +10,11 @@ __dotfiles_assert_in_path git
 
 if [ -d ~/.nvm/.git ]; then
   if ! type nvm > /dev/null 2>&1; then
-    pushd ~
-    . ./.nvm/nvm.sh
+    # https://github.com/creationix/nvm#manual-upgrade
+    pushd ~/.nvm
+    git fetch origin
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+    . ./nvm.sh
     popd
   fi
 
