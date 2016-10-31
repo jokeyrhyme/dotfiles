@@ -40,12 +40,26 @@ if type yarn > /dev/null 2>&1; then
   echo "updating yarn..."
   yarn self-update
 
-  echo 'installing / updating favourite global NPM packages with yarn...'
-  yarn global add npm angular-cli cordova create-react-app ember-cli git-guilt greenkeeper grunt-cli gulp flow-typed http-server ionic react-native-cli typings
+  # echo 'installing / updating favourite global NPM packages with yarn...'
+  # yarn global add
 fi
 
 NPM_FAVOURITES=(
+  "npm"
   "@jokeyrhyme/node-init"
+  "angular-cli"
+  "cordova"
+  "create-react-app"
+  "ember-cli"
+  "git-guilt"
+  "greenkeeper"
+  "grunt-cli"
+  "gulp"
+  "flow-typed"
+  "http-server"
+  "ionic"
+  "react-native-cli"
+  "typings"
 )
 
 if type npm > /dev/null 2>&1; then
