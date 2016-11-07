@@ -36,7 +36,7 @@ if [ ${USER_OTF_DIR} ]; then
   __dotfiles_download_extract_zip "${ADOBE_CODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
   FIRACODE_RELEASES='https://github.com/tonsky/FiraCode/releases/download/'
-  FIRACODE_URL=${FIRACODE_RELEASES}'1.203/FiraCode_1.203.zip'
+  FIRACODE_URL=${FIRACODE_RELEASES}'1.204/FiraCode_1.204.zip'
   __dotfiles_download_extract_zip "${FIRACODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
   HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
