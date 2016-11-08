@@ -1,18 +1,5 @@
 #!/bin/bash
 
-LINUX_URL=https://go.microsoft.com/fwlink/?LinkId=723968
-
-if [ -d /opt/VSCode-linux-x64 ]; then
-    if [ $(uname -o) == "GNU/Linux" ]; then
-        LINUX_DL=`mktemp`
-        curl -L -o "${LINUX_DL}" "${LINUX_URL}"
-        sudo rm -rf /opt/VSCode-linux-x64
-        sudo tar --overwrite-dir -C /opt -zxf "${LINUX_DL}"
-        sudo chown -R root:vscode /opt/VSCode-linux-x64
-        rm "${LINUX_DL}"
-    fi
-fi
-
 # http://www.growingwiththeweb.com/2016/06/syncing-vscode-extensions.html
 
 EXTENSIONS=(
@@ -38,11 +25,9 @@ for VARIANT in "code-insiders" \
 do
   if hash $VARIANT 2>/dev/null; then
     echo "Installing extensions for $VARIANT"
-    for EXTENSION in ${EXTENSIONS[@]}
+    for EXTENSION in "${EXTENSIONS[@]}"
     do
       $VARIANT --install-extension $EXTENSION
     done
   fi
 done
-
-

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if type pacman > /dev/null 2>&1; then
+if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -S atom apm
+  sudo pacman -Sy atom apm
 fi
 
 if [ -x /usr/bin/python2 ]; then
