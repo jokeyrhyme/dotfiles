@@ -45,8 +45,8 @@ if [ ${USER_OTF_DIR} ]; then
 fi
 
 if [ ${USER_TTF_DIR} ]; then
-  OVERPASS_RELEASES='https://github.com/RedHatBrand/overpass/releases/download/'
-  OVERPASS_URL=${OVERPASS_RELEASES}'2.0/overpass-fonts-ttf-2.zip'
+  OVERPASS_RELEASES='https://github.com/RedHatBrand/Overpass/releases/download/'
+  OVERPASS_URL=${OVERPASS_RELEASES}'3.0/Overpass-Desktop-Fonts.zip'
   __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_TTF_DIR}" "*.ttf"
 
   if [ -d ~/.local/share/fonts ]; then
