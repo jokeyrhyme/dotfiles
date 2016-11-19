@@ -42,13 +42,13 @@ if [ ${USER_OTF_DIR} ]; then
   HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
   HASKLIG_URL=${HASKLIG_RELEASES}'v1.0-beta/Hasklig-1.0-Beta.zip'
   __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
+
+  OVERPASS_RELEASES='https://github.com/RedHatBrand/Overpass/releases/download/'
+  OVERPASS_URL=${OVERPASS_RELEASES}'3.0/Overpass-Desktop-Fonts.zip'
+  __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_OTF_DIR}" "*.otf"
 fi
 
 if [ ${USER_TTF_DIR} ]; then
-  OVERPASS_RELEASES='https://github.com/RedHatBrand/Overpass/releases/download/'
-  OVERPASS_URL=${OVERPASS_RELEASES}'3.0/Overpass-Desktop-Fonts.zip'
-  __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_TTF_DIR}" "*.ttf"
-
   if [ -d ~/.local/share/fonts ]; then
     NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
   elif [ -d ~/Library/Fonts ]; then
