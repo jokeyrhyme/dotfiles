@@ -36,14 +36,6 @@ npm config set init.author.url 'https://github.com/jokeyrhyme'
 
 npm config set save-exact true
 
-if type yarn > /dev/null 2>&1; then
-  echo "updating yarn..."
-  yarn self-update
-
-  # echo 'installing / updating favourite global NPM packages with yarn...'
-  # yarn global add
-fi
-
 NPM_FAVOURITES=(
   "npm"
   "@jokeyrhyme/node-init"
@@ -62,24 +54,13 @@ NPM_FAVOURITES=(
   "typings"
 )
 
-if type npm > /dev/null 2>&1; then
-  echo 'installing favourite NPM packages...'
-  for NPM_FAVOURITE in "${NPM_FAVOURITES[@]}"
-  do
-    if npm ls -g --depth=0 ${NPM_FAVOURITE} > /dev/null 2>&1; then
-      echo "- ${NPM_FAVOURITE} is already installed"
-    else
-      echo "- installing ${NPM_FAVOURITE}..."
-      npm install -g ${NPM_FAVOURITE}
-    fi
-  done
+if type yarn > /dev/null 2>&1; then
+  echo "updating yarn..."
+  yarn self-update
 
-  echo 'updating NPM and packages...'
-  npm cache clean
-  GLOBAL_NPM_PACKAGES=''
-  for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
-  do
-    GLOBAL_NPM_PACKAGES="${GLOBAL_NPM_PACKAGES} ${package}"
-  done
-  npm -g install ${GLOBAL_NPM_PACKAGES}
+  echo 'installing favourite global NPM packages with yarn...'
+  yarn global add "${NPM_FAVOURITES[@]}"
+
+  echo 'upgrading favourite global NPM packages with yarn...'
+  yarn global upgrade
 fi
