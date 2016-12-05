@@ -44,7 +44,7 @@ if [ ${USER_OTF_DIR} ]; then
   __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
 
   OVERPASS_RELEASES='https://github.com/RedHatBrand/Overpass/releases/download/'
-  OVERPASS_URL=${OVERPASS_RELEASES}'3.0/Overpass-Desktop-Fonts.zip'
+  OVERPASS_URL=${OVERPASS_RELEASES}'3.0.2/overpass-desktop-fonts.zip'
   __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_OTF_DIR}" "*.otf"
 fi
 
