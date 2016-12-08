@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if type git > /dev/null 2>&1; then
+if which git > /dev/null 2>&1; then
   echo "configuring git..."
 
   git config --global user.email "jokeyrhyme@gmail.com"
@@ -18,6 +18,11 @@ if type git > /dev/null 2>&1; then
   fi
 
   git config --global color.ui "auto"
+
+  # https://about.gitlab.com/2016/12/08/git-tips-and-tricks/
+  git config --global fetch.prune true
+  git config --global rebase.autosquash true
+  git config --global status.submoduleSummary true
 
   # http://blog.kfish.org/2010/04/git-lola.html
   git config --global alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit"
