@@ -94,6 +94,7 @@ module.exports = {
   plugins: [
       'hyper-blink',
       'hyper-snazzy',
+      'hypercwd',
       'hyperlinks'
   ],
 
