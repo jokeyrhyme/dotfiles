@@ -49,6 +49,7 @@ NPM_FAVOURITES=(
   "gulp"
   "flow-typed"
   "http-server"
+  "package-diff-summary"
   "ionic"
   "react-native-cli"
   "typings"
