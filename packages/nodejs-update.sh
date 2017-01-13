@@ -42,6 +42,7 @@ NPM_FAVOURITES=(
   "angular-cli"
   "cordova"
   "create-react-app"
+  "diff-so-fancy"
   "ember-cli"
   "git-guilt"
   "greenkeeper"

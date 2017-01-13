@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if which git > /dev/null 2>&1; then
   echo "configuring git..."
@@ -17,7 +17,21 @@ if which git > /dev/null 2>&1; then
     git config --global --unset gpg.program
   fi
 
+  if type diff-so-fancy > /dev/null 2>&1; then
+    if type less > /dev/null 2>&1; then
+      git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+    fi
+  else
+    git config --global --unset core.pager
+  fi
+
   git config --global color.ui "auto"
+
+  # https://github.com/so-fancy/diff-so-fancy
+  git config --global color.diff-highlight.oldNormal "red bold"
+  git config --global color.diff-highlight.oldHighlight "red bold 52"
+  git config --global color.diff-highlight.newNormal "green bold"
+  git config --global color.diff-highlight.newHighlight "green bold 22"
 
   # https://about.gitlab.com/2016/12/08/git-tips-and-tricks/
   git config --global fetch.prune true
