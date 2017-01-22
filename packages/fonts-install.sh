@@ -40,7 +40,7 @@ if [ ${USER_OTF_DIR} ]; then
   __dotfiles_download_extract_zip "${FIRACODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
   HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
-  HASKLIG_URL=${HASKLIG_RELEASES}'v1.0-beta/Hasklig-1.0-Beta.zip'
+  HASKLIG_URL=${HASKLIG_RELEASES}'1.1/Hasklig-1.1.zip'
   __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
 
   OVERPASS_RELEASES='https://github.com/RedHatBrand/Overpass/releases/download/'
