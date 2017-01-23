@@ -5,7 +5,7 @@
 if which brew > /dev/null 2>&1; then
   echo 'updating Homebrew and packages...'
   sudo chmod g+w /usr/local/share/zsh /usr/local/share/zsh/site-functions
-  brew update && brew upgrade && brew linkapps && brew cleanup
+  brew update && brew upgrade && brew cleanup
   sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 

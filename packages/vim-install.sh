@@ -6,7 +6,8 @@ set -e
 
 if which brew > /dev/null 2>&1; then
   echo 'found brew!'
-  brew install ctags macvim
+  brew install ctags
+  brew cask install macvim
 fi
 
 if which dnf > /dev/null 2>&1; then
