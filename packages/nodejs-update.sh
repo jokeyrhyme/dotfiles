@@ -48,6 +48,7 @@ NPM_FAVOURITES=(
   "greenkeeper"
   "grunt-cli"
   "gulp"
+  "flow-bin"
   "flow-typed"
   "http-server"
   "lebab"

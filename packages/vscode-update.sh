@@ -7,6 +7,7 @@ EXTENSIONS=(
     "WakaTime.vscode-wakatime"
     "dbaeumer.vscode-eslint"
     "eg2.tslint"
+    "flowtype.flow-for-vscode"
     "georgewfraser.vscode-javac"
     "lukehoban.Go"
     "mitaki28.vscode-clang"
