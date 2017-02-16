@@ -42,12 +42,12 @@ __dotfiles_force_mkdir() { # dirPath
 
 # ln -sf fails silently, so we need this
 __dotfiles_force_symlink() { # sourcePath, # targetPath
-  if [ -L $2 ]; then
+  if [ -L "$2" ]; then
     echo "$2 is a symlink"
   else
     echo "$2 is not a symlink"
-    rm -f $2
-    ln -s $1 $2
+    rm -f "$2"
+    ln -s "$1" "$2"
   fi
 }
 

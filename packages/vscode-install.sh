@@ -1,6 +1,23 @@
 #!/bin/sh
 
+source $(dirname $0)/../scripts/lib/utils.sh
+
 if which aurget > /dev/null 2>&1; then
   echo 'found pacman!'
   aurget -Sy visual-studio-code
+fi
+
+# Linux
+if [ -d $HOME/.config/Code ]; then
+  VSCODE_CFG_DIR=$HOME/.config/Code
+fi
+
+# macOS
+if [ -d "$HOME/Library/Application Support/Code" ]; then
+  VSCODE_CFG_DIR="$HOME/Library/Application Support/Code"
+fi
+
+if [ -n "$VSCODE_CFG_DIR" ]; then
+  mkdir -p "$VSCODE_CFG_DIR/User"
+  __dotfiles_force_symlink $HOME/.dotfiles/config/vscode.json "$VSCODE_CFG_DIR/User/settings.json"
 fi

@@ -1,0 +1,8 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontFamily": "Fira Code, Hasklig, Hack, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "javascript.validate.enable": false,
+  "workbench.welcome.enabled": false
+}
