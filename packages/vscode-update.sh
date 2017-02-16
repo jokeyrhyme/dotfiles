@@ -18,6 +18,7 @@ EXTENSIONS=(
   "saviorisdead.RustyCode"
   "shinnn.stylelint"
   "streetsidesoftware.code-spell-checker"
+  "timonwong.shellcheck"
   "travisthetechie.write-good-linter"
   "vsmobile.cordova-tools"
   "vsmobile.vscode-react-native"
@@ -31,7 +32,7 @@ do
     echo "Installing extensions for $VARIANT"
     for EXTENSION in "${EXTENSIONS[@]}"
     do
-      $VARIANT --install-extension $EXTENSION
+      $VARIANT --install-extension "$EXTENSION"
     done
   fi
 done
