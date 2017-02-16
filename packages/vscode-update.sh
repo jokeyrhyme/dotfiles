@@ -4,6 +4,7 @@
 
 EXTENSIONS=(
   "EditorConfig.EditorConfig"
+  "PeterJausovec.vscode-docker"
   "WakaTime.vscode-wakatime"
   "dbaeumer.vscode-eslint"
   "eg2.tslint"
@@ -12,7 +13,9 @@ EXTENSIONS=(
   "lukehoban.Go"
   "mitaki28.vscode-clang"
   "ms-vscode.PowerShell"
+  "ms-vscode.cpptools"
   "ms-vscode.csharp"
+  "ms-vscode.latex"
   "msjsdiag.debugger-for-chrome"
   "rebornix.Ruby"
   "saviorisdead.RustyCode"
