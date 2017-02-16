@@ -15,8 +15,6 @@ set nowritebackup
 
 let g:syntastic_javascript_checkers=['eslint']
 
-"set gfn=Hack\ 11,Source\ Code\ Pro\ 11,Menlo\ 11,Consolas\ 11,Bitstream\ Vera\ Sans\ Mono\ 11
-
 if has('gui_running')
   if has('toolbar')
     set go-=T
@@ -24,4 +22,7 @@ if has('gui_running')
 
   set columns=90
   set lines=50
+
+  set guifont=Fira_Code:h14,Hasklig:h14,Hack:h14
 endif
+
