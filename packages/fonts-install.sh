@@ -39,6 +39,10 @@ if [ ${USER_OTF_DIR} ]; then
   FIRACODE_URL=${FIRACODE_RELEASES}'1.204/FiraCode_1.204.zip'
   __dotfiles_download_extract_zip "${FIRACODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
+  FIRA_RELEASES='https://github.com/mozilla/Fira/archive/'
+  FIRA_URL=${FIRA_RELEASES}'4.202.zip'
+  __dotfiles_download_extract_zip "${FIRA_URL}" "${USER_OTF_DIR}" "*.otf"
+
   HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
   HASKLIG_URL=${HASKLIG_RELEASES}'1.1/Hasklig-1.1.zip'
   __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
