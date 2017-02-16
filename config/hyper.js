@@ -4,7 +4,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: 'Hack, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: '"Fira Mono", Hack, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // set to `true` if you're using a Linux set up
     // that doesn't shows native menus
