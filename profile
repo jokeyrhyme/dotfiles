@@ -57,6 +57,4 @@ fi
 
 . ~/.dotfiles/packages/atom-env.sh
 
-. ~/.dotfiles/packages/golang-env.sh
-
 . ~/.dotfiles/packages/vscode-env.sh
