@@ -2,7 +2,9 @@
 
 set -e
 
-source $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 __dotfiles_assert_in_path curl
 __dotfiles_assert_in_path git
@@ -35,7 +37,9 @@ __dotfiles_ensure_shallow_git_clone ~/.rbenv/plugins/rbenv-gem-rehash https://gi
 
 __dotfiles_ensure_shallow_git_clone ~/.rbenv/plugins/ruby-build https://github.com/sstephenson/ruby-build.git
 
-source $(dirname $0)/ruby-update.sh
+pushd "$(dirname $0)" > /dev/null
+. ./ruby-update.sh
+popd > /dev/null
 
 gem install rake
 gem install bundle

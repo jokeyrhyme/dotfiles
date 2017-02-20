@@ -1,6 +1,8 @@
 #!/bin/sh
 
-source $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 if which aurget > /dev/null 2>&1; then
   echo 'found pacman!'

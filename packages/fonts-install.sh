@@ -2,7 +2,9 @@
 
 set -e
 
-. $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'

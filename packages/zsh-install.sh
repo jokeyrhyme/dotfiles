@@ -2,7 +2,9 @@
 
 set -e
 
-source $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 __dotfiles_assert_in_path git
 
@@ -27,4 +29,6 @@ __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 __dotfiles_safely_set_shell /usr/bin/zsh
 __dotfiles_safely_set_shell /usr/local/bin/zsh # homebrew
 
-. $(dirname $0)/zsh-update.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null

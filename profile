@@ -1,19 +1,22 @@
 #!/bin/bash
 
-. ~/.dotfiles/packages/ruby-env.sh
-
 export CLICOLOR=true
-
-. ~/.dotfiles/packages/vim-env.sh
-
-. ~/.dotfiles/packages/homebrew-env.sh
-
 export LANGUAGE="en_AU:en_GB:en_US:en"
 
+pushd "$HOME" > /dev/null
+. ./.dotfiles/packages/atom-env.sh
+. ./.dotfiles/packages/homebrew-env.sh
+. ./.dotfiles/packages/nodejs-env.sh
+. ./.dotfiles/packages/ruby-env.sh
+. ./.dotfiles/packages/vim-env.sh
+. ./.dotfiles/packages/vscode-env.sh
+popd > /dev/null
+
 # Java on OS X
-if [ -f /usr/libexec/java_home -a -x /usr/libexec/java_home ]; then
+if [ -f /usr/libexec/java_home ] && [ -x /usr/libexec/java_home ]; then
   if /usr/libexec/java_home &> /dev/null; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
+    JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME
   fi
 fi
 
@@ -54,7 +57,3 @@ if type docker > /dev/null 2>&1; then
     export DOCKER_HOST=unix:///var/run/docker.sock
   fi
 fi
-
-. ~/.dotfiles/packages/atom-env.sh
-
-. ~/.dotfiles/packages/vscode-env.sh

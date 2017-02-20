@@ -2,7 +2,9 @@
 
 set -e
 
-. $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 if which brew > /dev/null 2>&1; then
   echo 'found brew!'
@@ -31,4 +33,6 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/wakatime git://github.com/wakatime/vim-wakatime.git
 
-. $(dirname $0)/vim-update.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null

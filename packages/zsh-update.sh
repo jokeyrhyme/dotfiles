@@ -2,19 +2,13 @@
 
 # set -e
 
-source $(dirname $0)/../scripts/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 __dotfiles_assert_in_path git
 
 ## just let oh-my-zsh use its own updater for now
-
-# __dotfiles_update_shallow_git_clone ~/.oh-my-zsh
-
-# if [ -f ~/.oh-my-zsh/tools/upgrade.sh ]; then
-#   pushd ~/.oh-my-zsh
-#   sh ~/.oh-my-zsh/tools/upgrade.sh
-#   popd
-# fi
 
 __dotfiles_ensure_shallow_git_clone ~/.zsh-pure https://github.com/sindresorhus/pure.git
 

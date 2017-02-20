@@ -4,9 +4,11 @@
 if [ -f /etc/profile ]; then
   . /etc/profile
 fi
+
 # include user profile
-# shellcheck source=./profile
-. $HOME/.profile
+pushd "$HOME" > /dev/null
+. ./.profile
+popd > /dev/null
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -62,5 +64,3 @@ bindkey "^R" history-incremental-search-backward
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-. $HOME/.dotfiles/packages/nodejs-env.sh

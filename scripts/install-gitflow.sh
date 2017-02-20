@@ -2,7 +2,9 @@
 
 set -e
 
-source $(dirname $0)/lib/utils.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/utils.sh
+popd > /dev/null
 
 if type git-flow > /dev/null 2>&1; then
   echo 'found git-flow! no install necessary'

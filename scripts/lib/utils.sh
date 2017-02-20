@@ -17,7 +17,7 @@ __dotfiles_update_shallow_git_clone() { # dirPath
     git fetch --depth 1
     # git merge --no-edit --strategy recursive --strategy-option theirs FETCH_HEAD
     git reset --hard FETCH_HEAD
-    popd
+    popd > /dev/null
   fi
 }
 

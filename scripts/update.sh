@@ -1,10 +1,10 @@
 #!/bin/sh
 
-pushd "$(dirname $0)/.."
+pushd "$(dirname $0)/.." > /dev/null
 . ./packages/git-config.sh
 . ./packages/bash-update.sh
 . ./packages/zsh-update.sh
-popd
+popd > /dev/null
 
 if which dnf > /dev/null 2>&1; then
   echo 'updating packages with dnf...'
@@ -24,11 +24,11 @@ if which aurget > /dev/null 2>&1; then
   aurget -Syu --noedit
 fi
 
-pushd "$(dirname $0)/.."
+pushd "$(dirname $0)/.." > /dev/null
 . ./packages/homebrew-update.sh
 . ./packages/nodejs-update.sh
 . ./packages/ruby-update.sh
 . ./packages/atom-update.sh
 . ./packages/vim-update.sh
 . ./packages/vscode-update.sh
-popd
+popd > /dev/null

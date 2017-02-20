@@ -7,8 +7,9 @@
 [[ $- != *i* ]] && return
 
 # include user profile
-# shellcheck source=./profile
-. $HOME/.profile
+pushd "$HOME" > /dev/null
+. ./.profile
+popd > /dev/null
 
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
@@ -38,7 +39,9 @@ export SCM_CHECK=true
 
 # Load Bash It
 # shellcheck source=../.bash-it/bash_it.sh
-. $BASH_IT/bash_it.sh
+pushd "$BASH_IT" > /dev/null
+. ./bash_it.sh
+popd > /dev/null
 
 # custom `cd` command
 cd() { builtin cd "$@" && ls; }
@@ -51,5 +54,3 @@ bash-it enable plugin git ssh > /dev/null 2>&1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-. $HOME/.dotfiles/packages/nodejs-env.sh

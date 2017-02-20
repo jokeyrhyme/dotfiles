@@ -2,9 +2,9 @@
 
 # set -e # nvm.sh triggers this
 
-pushd "$(dirname $0)/.."
+pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
-popd
+popd > /dev/null
 
 __dotfiles_assert_in_path git
 
@@ -15,7 +15,7 @@ if [ -d ~/.nvm/.git ]; then
     git fetch origin
     git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
     . ./nvm.sh
-    popd
+    popd > /dev/null
   fi
 
   nvm install 4

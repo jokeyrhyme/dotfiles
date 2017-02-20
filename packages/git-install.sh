@@ -31,4 +31,6 @@ if type apt-get > /dev/null 2>&1; then
   apt-get install -y git
 fi
 
-source $(dirname $0)/git-config.sh
+pushd "$(dirname $0)" > /dev/null
+. ./git-config.sh
+popd > /dev/null
