@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# ruby
-if [ -d ~/.gem/ruby/2.0.0/bin ]; then
-  export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-fi
-if [ -d ~/.gem/ruby/2.1.0/bin ]; then
-  export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
+# add "/bin" to GEMPATHs and add to PATH
+if which gem > /dev/null 2>&1; then
+  if gem environment gempath > /dev/null 2>&1; then
+    if [ -n "$(gem environment gempath)" ]; then
+      PATH="$(gem environment gempath | sed -e 's/:/\/bin:/g')/bin:$PATH"
+      export PATH
+    fi
+  fi
 fi
 
 # rbenv
