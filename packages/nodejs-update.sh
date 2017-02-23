@@ -39,7 +39,7 @@ npm config set save-exact true
 NPM_FAVOURITES=(
   "npm"
   "@jokeyrhyme/node-init"
-  "angular-cli"
+  "@angular/cli"
   "cordova"
   "create-react-app"
   "diff-so-fancy"
