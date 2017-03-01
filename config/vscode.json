@@ -1,9 +1,14 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "editor.dragAndDrop": true,
   "editor.fontFamily": "Fira Code, Hasklig, Hack, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
-  "editor.wrappingColumn": 0,
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.renderIndentGuides": true,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
   "javascript.validate.enable": false,
   "window.menuBarVisibility": "toggle",
   "workbench.welcome.enabled": false
