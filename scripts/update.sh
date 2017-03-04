@@ -26,6 +26,7 @@ fi
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./packages/homebrew-update.sh
+. ./packages/golang-update.sh
 . ./packages/nodejs-update.sh
 . ./packages/ruby-update.sh
 . ./packages/atom-update.sh
