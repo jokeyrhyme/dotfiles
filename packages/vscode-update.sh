@@ -17,7 +17,6 @@ fi
 EXTENSIONS=(
   "EditorConfig.EditorConfig"
   "PeterJausovec.vscode-docker"
-  "WakaTime.vscode-wakatime"
   "dbaeumer.vscode-eslint"
   "eg2.tslint"
   "flowtype.flow-for-vscode"
