@@ -13,8 +13,3 @@ __dotfiles_ensure_shallow_git_clone ~/.nvm https://github.com/creationix/nvm.git
 pushd "$(dirname $0)" > /dev/null
 . ./nodejs-update.sh
 popd > /dev/null
-
-echo "installing yarn..."
-YARN_URL="https://yarnpkg.com/latest.tar.gz"
-mkdir -p ~/.yarn
-__dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn

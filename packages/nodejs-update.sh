@@ -36,6 +36,11 @@ npm config set init.author.url 'https://github.com/jokeyrhyme'
 
 npm config set save-exact true
 
+echo "installing / updating yarn..."
+YARN_URL="https://yarnpkg.com/latest.tar.gz"
+mkdir -p ~/.yarn
+__dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
+
 NPM_FAVOURITES=(
   "npm"
   "@jokeyrhyme/node-init"
@@ -59,9 +64,6 @@ NPM_FAVOURITES=(
 )
 
 if type yarn > /dev/null 2>&1; then
-  echo "updating yarn..."
-  yarn self-update
-
   echo 'installing favourite global NPM packages with yarn...'
   yarn global add "${NPM_FAVOURITES[@]}"
 
