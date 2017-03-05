@@ -31,8 +31,6 @@ __dotfiles_assert_in_path git
 __dotfiles_ensure_shallow_git_clone ~/.vim_runtime https://github.com/amix/vimrc.git
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-__dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/wakatime git://github.com/wakatime/vim-wakatime.git
-
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
 popd > /dev/null
