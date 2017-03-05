@@ -1,6 +1,10 @@
 #!/bin/sh
 
 pushd "$(dirname $0)/.." > /dev/null
+# scripts that break because of `set -e` # TODO: fixme!
+. ./packages/nodejs-update.sh
+
+# scripts that are fine with `set -e`
 . ./packages/git-config.sh
 . ./packages/bash-update.sh
 . ./packages/zsh-update.sh
@@ -27,7 +31,6 @@ fi
 pushd "$(dirname $0)/.." > /dev/null
 . ./packages/homebrew-update.sh
 . ./packages/golang-update.sh
-. ./packages/nodejs-update.sh
 . ./packages/ruby-update.sh
 . ./packages/atom-update.sh
 . ./packages/vim-update.sh

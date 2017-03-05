@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# set -e
+set -e
 
 if which brew > /dev/null 2>&1; then
   echo 'updating Homebrew and packages...'
