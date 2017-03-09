@@ -6,6 +6,9 @@ module.exports = {
     // font family with optional fallbacks
     fontFamily: '"Fira Mono", Hack, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
+    // set to true for blinking cursor
+    cursorBlink: true,
+
     // set to `true` if you're using a Linux set up
     // that doesn't shows native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
