@@ -61,6 +61,7 @@ NPM_FAVOURITES=(
   "ionic"
   "react-native-cli"
   "typings"
+  "unleash"
 )
 
 if type yarn > /dev/null 2>&1; then
