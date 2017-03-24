@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -d ~/.yarn/bin ]; then
-  export PATH="$HOME/.yarn/bin:$PATH"
+if which yarn > /dev/null 2>&1; then
+  export PATH="$PATH:$(yarn global bin)"
 fi
 
 if [ -d ~/.config/yarn/global/node_modules/.bin ]; then

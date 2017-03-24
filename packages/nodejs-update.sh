@@ -36,10 +36,10 @@ npm config set init.author.url 'https://github.com/jokeyrhyme'
 
 npm config set save-exact true
 
-echo "installing / updating yarn..."
-YARN_URL="https://yarnpkg.com/latest.tar.gz"
-mkdir -p ~/.yarn
-__dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
+# echo "installing / updating yarn..."
+# YARN_URL="https://yarnpkg.com/latest.tar.gz"
+# mkdir -p ~/.yarn
+# __dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
 
 NPM_FAVOURITES=(
   "npm"
