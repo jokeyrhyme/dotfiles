@@ -4,26 +4,19 @@ set -e
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
+. ./packages/nodejs-env.sh
 popd > /dev/null
 
 __dotfiles_assert_in_path git
 
-if [ -d ~/.nvm/.git ]; then
-  if ! type nvm > /dev/null 2>&1; then
-    # https://github.com/creationix/nvm#manual-upgrade
-    pushd ~/.nvm
-    git fetch origin
-    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-    . ./nvm.sh
-    popd > /dev/null
-  fi
+__dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
 
-  nvm install 4
-  nvm install 6
-  nvm install 7
-
-  nvm alias default 7
-  nvm use default
+if type nvs > /dev/null 2>&1; then
+  nvs add 4
+  nvs add 6
+  nvs add lts
+  nvs add latest
+  nvs link latest
 fi
 
 if [ -x /usr/bin/python2 ]; then

@@ -8,7 +8,7 @@ popd > /dev/null
 
 __dotfiles_assert_in_path git
 
-__dotfiles_ensure_shallow_git_clone ~/.nvm https://github.com/creationix/nvm.git
+__dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
 
 if which aurget > /dev/null 2>&1; then
   aurget -Sy yarn
