@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -e # nvm.sh triggers this
+set -e
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
@@ -9,6 +9,10 @@ popd > /dev/null
 __dotfiles_assert_in_path git
 
 __dotfiles_ensure_shallow_git_clone ~/.nvm https://github.com/creationix/nvm.git
+
+if which aurget > /dev/null 2>&1; then
+  aurget -Sy yarn
+fi
 
 if which brew > /dev/null 2>&1; then
   brew install yarn

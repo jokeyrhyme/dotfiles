@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -e # nvm.sh triggers this
+set -e
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
