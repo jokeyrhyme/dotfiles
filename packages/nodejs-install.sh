@@ -18,6 +18,6 @@ if which brew > /dev/null 2>&1; then
   brew install yarn
 fi
 
-pushd "$(dirname $0)" > /dev/null
-. ./nodejs-update.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./packages/nodejs-update.sh
 popd > /dev/null

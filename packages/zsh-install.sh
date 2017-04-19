@@ -30,5 +30,5 @@ __dotfiles_safely_set_shell /usr/bin/zsh
 __dotfiles_safely_set_shell /usr/local/bin/zsh # homebrew
 
 pushd "$(dirname $0)/.." > /dev/null
-. ./scripts/lib/utils.sh
+. ./packages/zsh-update.sh
 popd > /dev/null

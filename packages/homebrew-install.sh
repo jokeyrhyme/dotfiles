@@ -18,3 +18,7 @@ fi
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew cask
+
+pushd "$(dirname $0)/.." > /dev/null
+. ./packages/homebrew-update.sh
+popd > /dev/null

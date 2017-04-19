@@ -23,3 +23,7 @@ if [ -n "$VSCODE_CFG_DIR" ]; then
   mkdir -p "$VSCODE_CFG_DIR/User"
   __dotfiles_force_symlink $HOME/.dotfiles/config/vscode.json "$VSCODE_CFG_DIR/User/settings.json"
 fi
+
+pushd "$(dirname $0)/.." > /dev/null
+. ./packages/vscode-update.sh
+popd > /dev/null

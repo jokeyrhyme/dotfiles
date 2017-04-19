@@ -32,5 +32,5 @@ __dotfiles_ensure_shallow_git_clone ~/.vim_runtime https://github.com/amix/vimrc
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 pushd "$(dirname $0)/.." > /dev/null
-. ./scripts/lib/utils.sh
+. ./packages/vim-update.sh
 popd > /dev/null
