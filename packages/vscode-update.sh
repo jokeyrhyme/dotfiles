@@ -19,6 +19,7 @@ EXTENSIONS=(
   "PeterJausovec.vscode-docker"
   "dbaeumer.vscode-eslint"
   "eg2.tslint"
+  "donjayamanne.python"
   "flowtype.flow-for-vscode"
   "georgewfraser.vscode-javac"
   "lukehoban.Go"
