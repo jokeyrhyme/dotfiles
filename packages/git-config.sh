@@ -5,11 +5,17 @@ set -e
 if which git > /dev/null 2>&1; then
   echo "configuring git..."
 
-  git config --global user.email "jokeyrhyme@gmail.com"
-  git config --global user.name "Ron Waldon"
+  if ! git config --global --get user.email; then
+    git config --global user.email "jokeyrhyme@gmail.com"
+  fi
+  if ! git config --global --get user.name; then
+    git config --global user.name "Ron Waldon"
+  fi
 
-  # https://keybase.io/jokeyrhyme
-  git config --global user.signingKey "F96EC3B1"
+  if ! git config --global --get user.signingKey; then
+    # https://keybase.io/jokeyrhyme
+    git config --global user.signingKey "F96EC3B1"
+  fi
 
   git config --global push.default "simple"
 
