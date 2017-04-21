@@ -36,6 +36,13 @@
     ```
 
 
+### Debian / Ubuntu / etc
+
+-   these systems [symlink `/bin/sh` to `dash`](https://wiki.ubuntu.com/DashAsBinSh) rather than `bash`
+
+-   as such, whilst examples here use `sh`, you will have to use `bash` explicitly
+
+
 ## Updating
 
 ```sh
