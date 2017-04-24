@@ -66,3 +66,8 @@ if type yarn > /dev/null 2>&1; then
   echo 'upgrading favourite global NPM packages with yarn...'
   yarn global upgrade
 fi
+
+if type npm > /dev/null 2>&1; then
+  echo 'updating NPM and packages...'
+  npm update --global
+fi
