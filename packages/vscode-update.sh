@@ -48,16 +48,22 @@ for VARIANT in "code-insiders" \
                "code"
 do
   if hash $VARIANT 2>/dev/null; then
-    echo "Installing extensions for $VARIANT"
+    INSTALLED_EXTENSIONS=$($VARIANT --list-extensions)
+
+    echo "Installing extensions for $VARIANT..."
     for EXTENSION in "${EXTENSIONS[@]}"
     do
-      $VARIANT --install-extension "$EXTENSION"
+      if ! echo "${INSTALLED_EXTENSIONS}" | grep "${EXTENSION}" > /dev/null 2>&1; then
+        $VARIANT --install-extension "$EXTENSION"
+      fi
     done
 
-    echo "Uninstalling extensions for $VARIANT"
+    echo "Uninstalling unused extensions for $VARIANT..."
     for UNINSTALL_EXTENSIONS in "${UNINSTALL_EXTENSIONSS[@]}"
     do
-      $VARIANT --install-extension "$UNINSTALL_EXTENSIONS"
+      if echo "${INSTALLED_EXTENSIONS}" | grep " ${EXTENSION}@" > /dev/null 2>&1; then
+        $VARIANT --install-extension "$UNINSTALL_EXTENSIONS"
+      fi
     done
   fi
 done
