@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
-# if [ -d ~/go/bin ]; then
-#   echo "installing latest glide.sh ..."
-#   curl https://raw.githubusercontent.com/Masterminds/glide.sh/master/get | sh
-# fi
+if which go > /dev/null 2>&1; then
+  if [ -d ~/go/bin ]; then
+    echo "installing latest glide.sh ..."
+    go get -u github.com/Masterminds/glide
+  fi
+fi
