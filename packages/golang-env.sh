@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -d ~/go ]; then
   export GOPATH="$HOME/go"
