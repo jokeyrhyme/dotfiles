@@ -21,7 +21,6 @@ EXTENSIONS=(
   "eg2.tslint"
   "donjayamanne.python"
   "flowtype.flow-for-vscode"
-  "georgewfraser.vscode-javac"
   "lukehoban.Go"
   "mitaki28.vscode-clang"
   "ms-vscode.PowerShell"
@@ -30,6 +29,7 @@ EXTENSIONS=(
   "ms-vscode.latex"
   "msjsdiag.debugger-for-chrome"
   "rebornix.Ruby"
+  "redhat.java"
   "saviorisdead.RustyCode"
   "shinnn.stylelint"
   "streetsidesoftware.code-spell-checker"
@@ -40,6 +40,10 @@ EXTENSIONS=(
   "waderyan.gitblame"
 )
 
+UNINSTALL_EXTENSIONS=(
+  "georgewfraser.vscode-javac"
+)
+
 for VARIANT in "code-insiders" \
                "code"
 do
@@ -48,6 +52,12 @@ do
     for EXTENSION in "${EXTENSIONS[@]}"
     do
       $VARIANT --install-extension "$EXTENSION"
+    done
+
+    echo "Uninstalling extensions for $VARIANT"
+    for UNINSTALL_EXTENSIONS in "${UNINSTALL_EXTENSIONSS[@]}"
+    do
+      $VARIANT --install-extension "$UNINSTALL_EXTENSIONS"
     done
   fi
 done
