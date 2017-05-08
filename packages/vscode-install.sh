@@ -5,7 +5,7 @@ pushd "$(dirname $0)/.." > /dev/null
 popd > /dev/null
 
 if which aurget > /dev/null 2>&1; then
-  echo 'found pacman!'
+  echo 'found aurget!'
   aurget -Sy visual-studio-code
 fi
 

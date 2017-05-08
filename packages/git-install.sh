@@ -15,6 +15,11 @@ fi
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm git
+
+  if which aurget > /dev/null 2>&1; then
+    echo 'found aurget!'
+    aurget -Sy git-crypt git-lfs
+  fi
 fi
 
 if type dnf > /dev/null 2>&1; then
