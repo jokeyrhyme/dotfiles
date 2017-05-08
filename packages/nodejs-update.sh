@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
@@ -23,16 +23,15 @@ if [ -x /usr/bin/python2 ]; then
   npm config set python /usr/bin/python2
 fi
 
+npm config set cache-min 3600
+
 npm config set init.author.name 'Ron Waldon'
 npm config set init.author.email 'jokeyrhyme@gmail.com'
 npm config set init.author.url 'https://github.com/jokeyrhyme'
 
 npm config set save-exact true
 
-# echo "installing / updating yarn..."
-# YARN_URL="https://yarnpkg.com/latest.tar.gz"
-# mkdir -p ~/.yarn
-# __dotfiles_download_extract_tgz "${YARN_URL}" ~/.yarn
+npm config set send-metrics true
 
 NPM_FAVOURITES=(
   "npm"
@@ -43,31 +42,47 @@ NPM_FAVOURITES=(
   "create-react-native-app"
   "diff-so-fancy"
   "ember-cli"
+  "eslint"
   "git-guilt"
-  "greenkeeper"
   "grunt-cli"
   "gulp"
   "flow-bin"
   "flow-typed"
   "http-server"
+  "ionic"
   "lebab"
   "lerna"
   "package-diff-summary"
-  "ionic"
+  "prettier"
   "react-native-cli"
   "typings"
   "unleash"
 )
 
-if type yarn > /dev/null 2>&1; then
-  echo 'installing favourite global NPM packages with yarn...'
-  yarn global add "${NPM_FAVOURITES[@]}"
-
-  echo 'upgrading favourite global NPM packages with yarn...'
-  yarn global upgrade
-fi
+UNINSTALL_NPM_FAVOURITES=(
+  "greenkeeper"
+)
 
 if type npm > /dev/null 2>&1; then
   echo 'updating NPM and packages...'
   npm update --global
+
+  echo 'installing favourite NPM packages...'
+  INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
+  for FAV in "${NPM_FAVOURITES[@]}"; do
+    if ! echo "${INSTALLED_FAVOURITES}" | grep " ${FAV}@" > /dev/null 2>&1; then
+      npm install --global $FAV
+    fi
+  done
+
+  echo 'uninstalling unused NPM packages...'
+  for FAV in "${UNINSTALL_NPM_FAVOURITES[@]}"; do
+    if npm ls --global --depth=0 $FAV > /dev/null 2>&1; then
+      npm uninstall --global $FAV
+    fi
+  done
+fi
+
+if [ -d ~/.config/yarn/global ]; then
+  rm -rf "${HOME}/.config/yarn/global"
 fi
