@@ -3,6 +3,7 @@
 set -e
 
 pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/is.sh
 . ./scripts/lib/utils.sh
 popd > /dev/null
 
@@ -14,7 +15,7 @@ if which aurget > /dev/null 2>&1; then
   aurget -Sy yarn
 fi
 
-if which brew > /dev/null 2>&1; then
+if __dotfiles_is_homebrew_found; then
   brew install yarn
 fi
 

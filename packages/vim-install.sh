@@ -3,10 +3,11 @@
 set -e
 
 pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/is.sh
 . ./scripts/lib/utils.sh
 popd > /dev/null
 
-if which brew > /dev/null 2>&1; then
+if __dotfiles_is_homebrew_found; then
   echo 'found brew!'
   brew install ctags
   brew cask install macvim

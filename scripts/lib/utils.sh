@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 __dotfiles_ensure_shallow_git_clone() { # dirPath, gitUrl
   if [ -d $1/.git ]; then

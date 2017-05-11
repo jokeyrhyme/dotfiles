@@ -2,7 +2,11 @@
 
 set -e
 
-if type brew > /dev/null 2>&1; then
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/is.sh
+popd > /dev/null
+
+if __dotfiles_is_homebrew_found; then
   echo 'found brew! preferring brew-installed git'
   brew install mercurial
   exit 0
