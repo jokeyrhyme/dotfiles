@@ -7,6 +7,7 @@ pushd "$HOME" > /dev/null
 . ./.dotfiles/packages/atom-env.sh
 . ./.dotfiles/packages/golang-env.sh
 . ./.dotfiles/packages/homebrew-env.sh
+. ./.dotfiles/packages/linuxbrew-env.sh
 . ./.dotfiles/packages/nodejs-env.sh
 . ./.dotfiles/packages/ruby-env.sh
 . ./.dotfiles/packages/vim-env.sh

@@ -20,6 +20,7 @@ fi
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./packages/homebrew-update.sh
+. ./packages/linuxbrew-update.sh
 
 . ./packages/bash-update.sh
 . ./packages/zsh-update.sh
