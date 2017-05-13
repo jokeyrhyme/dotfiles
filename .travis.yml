@@ -9,3 +9,5 @@ addons:
 
 script:
   - make test
+
+sudo: false
