@@ -6,6 +6,7 @@ addons:
     - debian-sid    # Grab ShellCheck from the Debian repo
     packages:
     - shellcheck
+    - zsh
 
 script:
   - make test
