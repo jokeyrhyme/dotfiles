@@ -14,6 +14,13 @@ pushd "$HOME" > /dev/null
 . ./.dotfiles/packages/vscode-env.sh
 popd > /dev/null
 
+# http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html
+export MAKEFLAGS='-j -k'
+
+# http://www.linuxfromscratch.org/hints/downloads/files/optimization.txt
+export CFLAGS='-Os'
+export CXXFLAGS=$CFLAGS
+
 # Java on OS X
 if [ -f /usr/libexec/java_home ] && [ -x /usr/libexec/java_home ]; then
   if /usr/libexec/java_home &> /dev/null; then
