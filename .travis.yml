@@ -1,8 +1,11 @@
-sudo: true
+language: bash
 
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y shellcheck
+addons:
+  apt:
+    sources:
+    - debian-sid    # Grab ShellCheck from the Debian repo
+    packages:
+    - shellcheck
 
 script:
   - make test
