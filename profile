@@ -4,14 +4,10 @@ export CLICOLOR=true
 export LANGUAGE="en_AU:en_GB:en_US:en"
 
 pushd "$HOME" > /dev/null
-. ./.dotfiles/packages/atom-env.sh
-. ./.dotfiles/packages/golang-env.sh
-. ./.dotfiles/packages/homebrew-env.sh
-. ./.dotfiles/packages/linuxbrew-env.sh
-. ./.dotfiles/packages/nodejs-env.sh
-. ./.dotfiles/packages/ruby-env.sh
-. ./.dotfiles/packages/vim-env.sh
-. ./.dotfiles/packages/vscode-env.sh
+for envsh in ./.dotfiles/packages/*-env.sh; do
+  # shellcheck disable=SC1090
+  . "$envsh"
+done
 popd > /dev/null
 
 # http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html

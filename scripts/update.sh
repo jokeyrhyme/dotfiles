@@ -19,19 +19,8 @@ if which pacman > /dev/null 2>&1; then
 fi
 
 pushd "$(dirname $0)/.." > /dev/null
-. ./packages/homebrew-update.sh
-. ./packages/linuxbrew-update.sh
-
-. ./packages/bash-update.sh
-. ./packages/zsh-update.sh
-
-. ./packages/golang-update.sh
-. ./packages/nodejs-update.sh
-. ./packages/ruby-update.sh
-
-. ./packages/atom-update.sh
-. ./packages/git-config.sh
-. ./packages/vagrant-update.sh
-. ./packages/vim-update.sh
-. ./packages/vscode-update.sh
+for updatesh in ./packages/*-update.sh; do
+  # shellcheck disable=SC1090
+  . "$updatesh"
+done
 popd > /dev/null
