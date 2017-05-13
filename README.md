@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles [![Build Status](https://travis-ci.org/jokeyrhyme/dotfiles.svg?branch=master)](https://travis-ci.org/jokeyrhyme/dotfiles)
 
 ## Dependencies
 
