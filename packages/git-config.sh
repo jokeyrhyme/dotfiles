@@ -19,14 +19,14 @@ if which git > /dev/null 2>&1; then
 
   git config --global push.default "simple"
 
-  if type gpg2 > /dev/null 2>&1; then
+  if which gpg2 > /dev/null 2>&1; then
     git config --global gpg.program "gpg2"
   else
     git config --global --unset gpg.program
   fi
 
-  if type diff-so-fancy > /dev/null 2>&1; then
-    if type less > /dev/null 2>&1; then
+  if which diff-so-fancy > /dev/null 2>&1; then
+    if which less > /dev/null 2>&1; then
       git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
     fi
   else

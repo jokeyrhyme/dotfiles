@@ -9,18 +9,18 @@ popd > /dev/null
 __dotfiles_assert_in_path curl
 __dotfiles_assert_in_path git
 
-if type apt-get > /dev/null 2>&1; then
+if which apt-get > /dev/null 2>&1; then
   echo 'found apt-get!'
   sudo apt-get install build-essential
 fi
 
-if type dnf > /dev/null 2>&1; then
+if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
   #sudo dnf group install -y "Development Tools"
   sudo dnf install -y gcc openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel
 fi
 
-if type pacman > /dev/null 2>&1; then
+if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
 
   # base-devel includes gcc which conflicts with multilib :S

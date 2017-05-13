@@ -59,7 +59,7 @@ do
     done
 
     echo "Uninstalling unused extensions for $VARIANT..."
-    for UNINSTALL_EXTENSIONS in "${UNINSTALL_EXTENSIONSS[@]}"
+    for UNINSTALL_EXTENSIONS in "${UNINSTALL_EXTENSIONS[@]}"
     do
       if echo "${INSTALLED_EXTENSIONS}" | grep " ${EXTENSION}@" > /dev/null 2>&1; then
         $VARIANT --install-extension "$UNINSTALL_EXTENSIONS"

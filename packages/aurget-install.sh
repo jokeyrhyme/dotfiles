@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if type pacman > /dev/null 2>&1; then
+if which pacman > /dev/null 2>&1; then
   echo 'preparing ArchLinux for AUR aurget...'
   sudo pacman -S --needed abs base-devel
   sudo mkdir -p /var/abs/local

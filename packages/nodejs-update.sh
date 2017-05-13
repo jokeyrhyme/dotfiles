@@ -11,7 +11,7 @@ __dotfiles_assert_in_path git
 
 __dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
 
-if type nvs > /dev/null 2>&1; then
+if which nvs > /dev/null 2>&1; then
   nvs add 4
   nvs add 6
   nvs add lts
@@ -63,7 +63,7 @@ UNINSTALL_NPM_FAVOURITES=(
   "greenkeeper"
 )
 
-if type npm > /dev/null 2>&1; then
+if which npm > /dev/null 2>&1; then
   echo 'updating NPM and packages...'
   npm update --global
 

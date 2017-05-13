@@ -16,7 +16,7 @@ if __dotfiles_is_homebrew_found; then
   sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
-if type pacman > /dev/null 2>&1; then
+if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm git
 
@@ -26,20 +26,20 @@ if type pacman > /dev/null 2>&1; then
   fi
 fi
 
-if type dnf > /dev/null 2>&1; then
+if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y git gitflow
 
-elif type yum > /dev/null 2>&1; then
+elif which yum > /dev/null 2>&1; then
   echo 'found yum!'
   sudo yum install -y git
 fi
 
-if type apt-get > /dev/null 2>&1; then
+if which apt-get > /dev/null 2>&1; then
   echo 'found apt!'
   apt-get install -y git
 fi
 
-pushd "$(dirname $0)" > /dev/null
-. ./git-config.sh
+pushd "$(dirname $0)/.." > /dev/null
+. ./packages/git-config.sh
 popd > /dev/null

@@ -14,7 +14,7 @@ fi
 
 if [ -f ~/.ssh/config ]; then
   # backup existing file
-  mv ~/.ssh/config ~/.ssh/config.$(date -u +%s).bak
+  mv ~/.ssh/config ~/.ssh/config."$(date -u +%s)".bak
 fi
 
 touch ~/.ssh/config

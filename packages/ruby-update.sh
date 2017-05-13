@@ -30,14 +30,14 @@ if [ -d ~/.rbenv/.git ]; then
   rbenv global "$RUBY_VERSION"
 
   # https://gist.github.com/mislav/5026283
-  if [ -f $(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE') ]; then
+  if [ -f "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')" ]; then
     echo "ruby has default certificate authorities file"
   else
     curl -fsSL curl.haxx.se/ca/cacert.pem \
       -o "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
   fi
 
-  if type gem > /dev/null 2>&1; then
+  if which gem > /dev/null 2>&1; then
     echo 'updating Ruby gems...'
     gem update
     gem cleanup
