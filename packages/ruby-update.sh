@@ -19,7 +19,7 @@ if [ -d ~/.rbenv/.git ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 
-  RUBY_VERSION=2.3.0
+  RUBY_VERSION=2.4.1
   if [ -x ~/.rbenv/versions/$RUBY_VERSION/bin/ruby ]; then
     echo "ruby $RUBY_VERSION is installed"
   else

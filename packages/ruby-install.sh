@@ -22,7 +22,11 @@ fi
 
 if type pacman > /dev/null 2>&1; then
   echo 'found pacman!'
-  sudo pacman -Sy --noconfirm --needed base-devel
+
+  # base-devel includes gcc which conflicts with multilib :S
+  if ! pacman -Q gcc-multilib > /dev/null 2>&1; then
+    sudo pacman -Sy --noconfirm --needed base-devel
+  fi
 fi
 
 __dotfiles_ensure_shallow_git_clone ~/.rbenv https://github.com/sstephenson/rbenv.git
