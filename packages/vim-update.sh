@@ -15,7 +15,7 @@ if [ -d ~/.vim_runtime/.git ]; then
   __dotfiles_remove_line ~/.vim_runtime/vimrcs/extended.vim '/set fullscreen/d'
   __dotfiles_remove_line ~/.vim_runtime/vimrcs/extended.vim '/set fuoptions/d'
 
-  __dotfiles_force_symlink ~/.dotfiles/my_configs.vim ~/.vim_runtime/my_configs.vim
+  __dotfiles_force_symlink ~/.dotfiles/config/my_configs.vim ~/.vim_runtime/my_configs.vim
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/editorconfig-vim https://github.com/editorconfig/editorconfig-vim.git
 
