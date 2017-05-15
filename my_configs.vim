@@ -1,6 +1,6 @@
 " solarize
 if has('gui_running')
-  set background=light
+  set background=dark
 else
   set background=dark
   let g:solarized_termcolors=256
@@ -23,6 +23,10 @@ if has('gui_running')
   set columns=90
   set lines=50
 
-  set guifont=Fira_Code:h14,Hasklig:h14,Hack:h14
+  if has("mac")
+    set guifont=Fira\ Code\ 14,Hasklig:h14,Hack:h14
+  elseif has("unix")
+    set guifont=Fira\ Code\ 11,Hasklig:h11,Hack:h11
+  endif
 endif
 
