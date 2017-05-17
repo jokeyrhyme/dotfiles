@@ -53,7 +53,7 @@ if which apm > /dev/null 2>&1; then
   echo "Uninstalling unused extensions for Atom..."
   for EXTENSION in "${UNINSTALL_EXTENSIONS[@]}"
   do
-    if echo "${INSTALLED_EXTENSION}" | grep " ${EXTENSION}@" > /dev/null 2>&1; then
+    if echo "${INSTALLED_EXTENSIONS}" | grep " ${EXTENSION}@" > /dev/null 2>&1; then
       apm uninstall --hard "$EXTENSION"
     fi
   done
