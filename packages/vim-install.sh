@@ -10,7 +10,7 @@ popd > /dev/null
 if __dotfiles_is_homebrew_found; then
   echo 'found brew!'
   brew install ctags
-  brew cask install macvim
+  brew cask install --force macvim
 fi
 
 if which dnf > /dev/null 2>&1; then
