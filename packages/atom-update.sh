@@ -46,7 +46,7 @@ if which apm > /dev/null 2>&1; then
   for EXTENSION in "${EXTENSIONS[@]}"
   do
     if ! echo "${INSTALLED_EXTENSIONS}" | grep "${EXTENSION}" > /dev/null 2>&1; then
-      apm install --quiet --production --check "$EXTENSION"
+      apm install --quiet --production "$EXTENSION"
     fi
   done
 
