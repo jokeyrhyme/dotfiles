@@ -11,7 +11,7 @@ if __dotfiles_is_homebrew_found; then
 
   sudo chmod g+w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
-  brew install git git-lfs git-flow
+  brew install git git-crypt git-flow git-lfs
 
   sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
@@ -19,16 +19,11 @@ fi
 if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm git
-
-  if which aurget > /dev/null 2>&1; then
-    echo 'found aurget!'
-    aurget -Sy git-crypt git-lfs
-  fi
 fi
 
 if which dnf > /dev/null 2>&1; then
   echo 'found dnf!'
-  sudo dnf install -y git gitflow
+  sudo dnf install -y git
 
 elif which yum > /dev/null 2>&1; then
   echo 'found yum!'
@@ -38,6 +33,10 @@ fi
 if which apt-get > /dev/null 2>&1; then
   echo 'found apt!'
   apt-get install -y git
+fi
+
+if __dotfiles_is_linuxbrew_found; then
+  brew install git-crypt git-flow git-lfs
 fi
 
 pushd "$(dirname $0)/.." > /dev/null
