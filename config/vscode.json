@@ -12,11 +12,5 @@
   "editor.wordWrapColumn": 80,
   "javascript.validate.enable": false,
   "window.menuBarVisibility": "toggle",
-  "workbench.welcome.enabled": false,
-  "[cpp]": {
-    "editor.quickSuggestions": false
-  },
-  "[c]": {
-    "editor.quickSuggestions": false
-  }
+  "workbench.welcome.enabled": false
 }
