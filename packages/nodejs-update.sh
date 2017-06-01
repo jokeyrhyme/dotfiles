@@ -25,13 +25,9 @@ if which npm > /dev/null 2>&1; then
     npm config set python /usr/bin/python2
   fi
 
-  npm config set cache-min 3600
-
   npm config set init.author.name 'Ron Waldon'
   npm config set init.author.email 'jokeyrhyme@gmail.com'
   npm config set init.author.url 'https://github.com/jokeyrhyme'
-
-  npm config set save-exact true
 
   npm config set send-metrics true
 
