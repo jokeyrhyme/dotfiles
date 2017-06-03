@@ -41,6 +41,7 @@ fi
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 # added by travis gem
+# shellcheck disable=SC1091
 [ -f /Users/ron/.travis/travis.sh ] && . /Users/ron/.travis/travis.sh
 
 ### Added by the Heroku Toolbelt

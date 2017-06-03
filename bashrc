@@ -8,6 +8,7 @@
 
 # include user profile
 pushd "$HOME" > /dev/null
+# shellcheck source=./profile
 . ./.profile
 popd > /dev/null
 
@@ -38,8 +39,8 @@ export SCM_CHECK=true
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # Load Bash It
-# shellcheck source=../.bash-it/bash_it.sh
 pushd "$BASH_IT" > /dev/null
+# shellcheck disable=SC1091
 . ./bash_it.sh
 popd > /dev/null
 
