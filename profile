@@ -14,8 +14,8 @@ popd > /dev/null
 export MAKEFLAGS='-j -k'
 
 # http://www.linuxfromscratch.org/hints/downloads/files/optimization.txt
-export CFLAGS='-Os'
-export CXXFLAGS=$CFLAGS
+export CFLAGS="-Os -march=native -pipe"
+export CXXFLAGS="${CFLAGS}"
 
 # Java on OS X
 if [ -f /usr/libexec/java_home ] && [ -x /usr/libexec/java_home ]; then
