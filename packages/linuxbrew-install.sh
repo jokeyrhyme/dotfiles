@@ -11,3 +11,5 @@ __dotfiles_assert_in_path git
 __dotfiles_assert_in_path ruby
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+
+brew tap linuxbrew/xorg
