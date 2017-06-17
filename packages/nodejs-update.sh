@@ -43,6 +43,7 @@ if which npm > /dev/null 2>&1; then
     "http-server"
     "lebab"
     "lerna"
+    "node-gyp"
     "package-diff-summary"
     "prettier"
     "typings"
@@ -70,6 +71,12 @@ if which npm > /dev/null 2>&1; then
       npm uninstall --global $FAV
     fi
   done
+fi
+
+if which node > /dev/null 2>&1; then
+  if which node-gyp > /dev/null 2>&1; then
+    node-gyp install $(node --version)
+  fi
 fi
 
 if [ -d ~/.config/yarn/global ]; then
