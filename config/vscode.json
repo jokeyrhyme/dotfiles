@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "editor.autoIndent": true,
   "editor.dragAndDrop": true,
   "editor.fontFamily": "Fira Code, Hasklig, Hack, monospace",
   "editor.fontLigatures": true,
