@@ -11,10 +11,10 @@ done
 popd > /dev/null
 
 # http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html
-export MAKEFLAGS='-j -k'
+export MAKEFLAGS='-j2'
 
 # http://www.linuxfromscratch.org/hints/downloads/files/optimization.txt
-export CFLAGS="-Os -march=native -pipe"
+export CFLAGS="-Os -march=native"
 export CXXFLAGS="${CFLAGS}"
 
 # Java on OS X
