@@ -21,8 +21,8 @@ fi
 
 if which npm > /dev/null 2>&1; then
 
-  if [ -x /usr/bin/python2 ]; then
-    npm config set python /usr/bin/python2
+  if which python2 > /dev/null 2>&1; then
+    npm config set python $(which python2)
   fi
 
   npm config set init.author.name 'Ron Waldon'
