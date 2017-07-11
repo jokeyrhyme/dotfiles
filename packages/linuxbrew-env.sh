@@ -1,8 +1,10 @@
 #!/bin/bash
 
-if [ -d "${HOME}/.linuxbrew/bin" ]; then
-  export PATH="${HOME}/.linuxbrew/bin:${PATH}"
-  export INFOPATH="/home/ron/.linuxbrew/share/info:$INFOPATH"
-  export MANPATH="/home/ron/.linuxbrew/share/man:$MANPATH"
-  export XDG_DATA_DIRS="/home/ron/.linuxbrew/share:$XDG_DATA_DIRS"
+LINUXBREW_DIR=/home/linuxbrew/.linuxbrew
+
+if [ -d "${LINUXBREW_DIR}/bin" ]; then
+  export PATH="${LINUXBREW_DIR}/bin:${PATH}"
+  export INFOPATH="${LINUXBREW_DIR}/share/info:$INFOPATH"
+  export MANPATH="${LINUXBREW_DIR}/share/man:$MANPATH"
+  export XDG_DATA_DIRS="${LINUXBREW_DIR}/share:$XDG_DATA_DIRS"
 fi
