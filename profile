@@ -10,6 +10,10 @@ for envsh in ./.dotfiles/packages/*-env.sh; do
 done
 popd > /dev/null
 
+if [ -d /etc/xdg ]; then
+  export XDG_DATA_DIRS=${XDG_DATA_DIRS}:/usr/local/share:/usr/share
+fi
+
 # http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html
 export MAKEFLAGS='-j2'
 
