@@ -5,7 +5,7 @@ pushd "$(dirname $0)/.." > /dev/null
 popd > /dev/null
 
 if which pacaur > /dev/null 2>&1; then
-  pacaur -Sy visual-studio-code
+  pacaur -Sy --needed --noconfirm visual-studio-code
 fi
 
 # Linux
