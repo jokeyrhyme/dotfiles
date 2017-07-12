@@ -4,9 +4,8 @@ pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
 popd > /dev/null
 
-if which aurget > /dev/null 2>&1; then
-  echo 'found aurget!'
-  aurget -Sy visual-studio-code
+if which pacaur > /dev/null 2>&1; then
+  pacaur -Sy visual-studio-code
 fi
 
 # Linux

@@ -18,8 +18,8 @@
 2. install additional package managers depending on your OS
 
     ```sh
-    sh ~/.dotfiles/packages/aurget-install.sh # ArchLinux-only, required
     sh ~/.dotfiles/packages/homebrew-install.sh # OSX-only, required
+    sh ~/.dotfiles/packages/linuxbrew-install.sh # linux-only, required
     ```
 
 3. run any of the following as you wish
