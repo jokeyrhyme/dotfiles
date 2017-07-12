@@ -18,6 +18,7 @@ EXTENSIONS=(
   "EditorConfig.EditorConfig"
   "PeterJausovec.vscode-docker"
   "dbaeumer.vscode-eslint"
+  "eamodio.gitlens"
   "eg2.tslint"
   "donjayamanne.python"
   "flowtype.flow-for-vscode"
@@ -37,11 +38,11 @@ EXTENSIONS=(
   "travisthetechie.write-good-linter"
   "vsmobile.cordova-tools"
   "vsmobile.vscode-react-native"
-  "waderyan.gitblame"
 )
 
 UNINSTALL_EXTENSIONS=(
   "georgewfraser.vscode-javac"
+  "waderyan.gitblame"
 )
 
 for VARIANT in "code-insiders" \
@@ -61,8 +62,8 @@ do
     echo "Uninstalling unused extensions for $VARIANT..."
     for EXTENSION in "${UNINSTALL_EXTENSIONS[@]}"
     do
-      if echo "${INSTALLED_EXTENSIONS}" | grep " ${EXTENSION}@" > /dev/null 2>&1; then
-        $VARIANT --install-extension "$EXTENSION"
+      if echo "${INSTALLED_EXTENSIONS}" | grep "${EXTENSION}" > /dev/null 2>&1; then
+        $VARIANT --uninstall-extension "$EXTENSION"
       fi
     done
   fi
