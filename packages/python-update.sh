@@ -20,6 +20,7 @@ PIP2_TOOLS=(
 
 PIP3_TOOLS=(
   "pylint"
+  "virtualenv"
 )
 
 for PIP in "${PIPS[@]}"; do
