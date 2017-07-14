@@ -32,7 +32,7 @@ fi
 
 if which apt-get > /dev/null 2>&1; then
   echo 'found apt!'
-  apt-get install -y git
+  sudo apt-get install -y git
 fi
 
 if __dotfiles_is_linuxbrew_found; then

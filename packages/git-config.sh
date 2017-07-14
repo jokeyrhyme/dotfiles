@@ -33,6 +33,10 @@ if which git > /dev/null 2>&1; then
     git config --global --unset core.pager
   fi
 
+  if which git-lfs > /dev/null 2>&1; then
+    git lfs install
+  fi
+
   git config --global color.ui "auto"
 
   # https://github.com/so-fancy/diff-so-fancy
