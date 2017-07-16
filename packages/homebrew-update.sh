@@ -13,7 +13,8 @@ fi
 
 if __dotfiles_is_brew_found; then
   echo 'updating Homebrew and packages...'
-  brew update && brew upgrade && brew cleanup
+  brew update || true # may fail if a tap is inaccessible
+  brew upgrade && brew cleanup
 fi
 
 # zsh likes to be locked down for normal use
