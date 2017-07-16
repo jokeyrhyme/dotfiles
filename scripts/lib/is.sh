@@ -38,3 +38,12 @@ __dotfiles_is_os_linux() {
   fi
   return 1
 }
+
+__dotfiles_is_os_wsl() {
+  if [ -r /proc/version ]; then
+    if $(grep -q Microsoft /proc/version); then
+      return 0
+    fi
+  fi
+  return 1
+}

@@ -2,6 +2,10 @@
 
 set -e
 
+pushd "$(dirname $0)/.." > /dev/null
+. ./scripts/lib/is.sh
+popd > /dev/null
+
 EXTENSIONS=(
   "Zen"
   "atom-wrap-in-tag"
@@ -39,7 +43,10 @@ EXTENSIONS=(
 
 UNINSTALL_EXTENSIONS=()
 
-if which apm > /dev/null 2>&1; then
+if __dotfiles_is_os_wsl; then
+  echo "WSL detected, skipping ..."
+
+elif which apm > /dev/null 2>&1; then
   INSTALLED_EXTENSIONS=$(apm ls --bare --intalled --packaged)
 
   echo "Installing extensions for Atom..."
