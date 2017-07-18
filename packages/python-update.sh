@@ -38,7 +38,7 @@ for PIP in "${PIPS[@]}"; do
       echo "installing favourite ${PIP} libraries ..."
       for PIP_LIB in "${PIP_LIBS[@]}"; do
         if ! echo "${PIP_INSTALLED}" | grep "${PIP_LIB}@" > /dev/null 2>&1; then
-          pip install --upgrade "${PIP_LIB}"
+          ${PIP} install --upgrade "${PIP_LIB}"
         fi
       done
 
@@ -46,7 +46,7 @@ for PIP in "${PIPS[@]}"; do
         echo "installing favourite ${PIP} tools ..."
         for PIP2_TOOL in "${PIP2_TOOLS[@]}"; do
           if ! echo "${PIP_INSTALLED}" | grep "${PIP2_TOOL}@" > /dev/null 2>&1; then
-            pip install --upgrade "${PIP2_TOOL}"
+            ${PIP} install --upgrade "${PIP2_TOOL}"
           fi
         done
       fi
@@ -55,7 +55,7 @@ for PIP in "${PIPS[@]}"; do
         echo "installing favourite ${PIP} tools ..."
         for PIP3_TOOL in "${PIP3_TOOLS[@]}"; do
           if ! echo "${PIP_INSTALLED}" | grep "${PIP3_TOOL}@" > /dev/null 2>&1; then
-            pip install --upgrade "${PIP3_TOOL}"
+            ${PIP} install --upgrade "${PIP3_TOOL}"
           fi
         done
       fi
