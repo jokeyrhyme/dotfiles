@@ -33,7 +33,6 @@ EXTENSIONS=(
   "ms-vscode.PowerShell"
   "ms-vscode.cpptools"
   "ms-vscode.csharp"
-  "ms-vscode.latex"
   "msjsdiag.debugger-for-chrome"
   "rebornix.Ruby"
   "redhat.java"
@@ -48,6 +47,7 @@ EXTENSIONS=(
 
 UNINSTALL_EXTENSIONS=(
   "georgewfraser.vscode-javac"
+  "ms-vscode.latex"
   "waderyan.gitblame"
 )
 
