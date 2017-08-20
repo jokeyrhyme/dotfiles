@@ -38,6 +38,9 @@ if [ -d ~/.rbenv/.git ]; then
   fi
 
   if which gem > /dev/null 2>&1; then
+    gem install rake
+    gem install bundle
+
     echo 'updating Ruby gems...'
     gem update
     gem cleanup

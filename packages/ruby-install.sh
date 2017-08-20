@@ -41,9 +41,6 @@ __dotfiles_ensure_shallow_git_clone ~/.rbenv/plugins/rbenv-gem-rehash https://gi
 
 __dotfiles_ensure_shallow_git_clone ~/.rbenv/plugins/ruby-build https://github.com/sstephenson/ruby-build.git
 
-gem install rake
-gem install bundle
-
 pushd "$(dirname $0)/.." > /dev/null
 . ./packages/ruby-update.sh
 popd > /dev/null
