@@ -19,6 +19,7 @@ PIP2_TOOLS=(
 )
 
 PIP3_TOOLS=(
+  "autopep8"
   "pylint"
   "virtualenv"
 )
