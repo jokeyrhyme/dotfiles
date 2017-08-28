@@ -61,3 +61,8 @@ cd() { builtin cd "$@" && ls; }
 
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
+
+# enable Alt+Arrow to skip by word on macOS
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+
