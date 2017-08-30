@@ -19,8 +19,8 @@ if which git > /dev/null 2>&1; then
 
   git config --global push.default "simple"
 
-  if which gpg2 > /dev/null 2>&1; then
-    git config --global gpg.program "gpg2"
+  if which gpg > /dev/null 2>&1; then
+    git config --global gpg.program "gpg"
   else
     git config --global --unset gpg.program
   fi
@@ -48,6 +48,8 @@ if which git > /dev/null 2>&1; then
   # https://about.gitlab.com/2016/12/08/git-tips-and-tricks/
   git config --global fetch.prune true
   git config --global rebase.autosquash true
+  git config --global status.branch true
+  git config --global status.short true
   git config --global status.submoduleSummary true
 
   # http://blog.kfish.org/2010/04/git-lola.html
