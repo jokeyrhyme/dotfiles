@@ -2,15 +2,21 @@
 
 set -e
 
+GO_FAVOURITES=(
+  "github.com/alecthomas/gometalinter"
+  "github.com/Masterminds/glide"
+  "github.com/derekparker/delve/cmd/dlv"
+  "github.com/golang/dep/cmd/dep"
+)
+
 if which go > /dev/null 2>&1; then
   if [ -d ~/go/bin ]; then
-    echo "installing latest glide.sh ..."
-    go get -u github.com/Masterminds/glide
+    for FAV in "${GO_FAVOURITES[@]}"; do
+      go get -u -v $FAV
+    done
+  fi
 
-    echo "installing latest delve ..."
-    go get -u github.com/derekparker/delve/cmd/dlv
-
-    echo "installing latest dep ..."
-    go get -u github.com/golang/dep/cmd/dep
+  if which gometalinter > /dev/null 2>&1; then
+    gometalinter --install
   fi
 fi
