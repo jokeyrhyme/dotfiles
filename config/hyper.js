@@ -23,9 +23,13 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: false,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    hyperTransparentDynamic: {
+      alpha: 0.8
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -36,6 +40,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyper-solarized-dark',
+    'hyper-transparent-dynamic',
     'hypercwd',
     'hyperlinks'
   ],
