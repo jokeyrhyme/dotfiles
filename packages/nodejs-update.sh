@@ -46,6 +46,7 @@ if which npm > /dev/null 2>&1; then
     "node-gyp"
     "package-diff-summary"
     "prettier"
+    "tslint"
     "typings"
     "unleash"
   )
