@@ -6,6 +6,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderIndentGuides": true,
@@ -13,6 +14,7 @@
   "editor.wordWrapColumn": 80,
   "eslint.autoFixOnSave": true,
   "javascript.validate.enable": false,
+  "rust.formatOnSave": true,
   "tslint.autoFixOnSave": true,
   "window.menuBarVisibility": "toggle",
   "workbench.welcome.enabled": false
