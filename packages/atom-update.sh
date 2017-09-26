@@ -39,6 +39,7 @@ EXTENSIONS=(
   "minimap-git-diff"
   "minimap-linter"
   "minimap-selection"
+  "prettier-atom"
 )
 
 UNINSTALL_EXTENSIONS=()

@@ -27,6 +27,7 @@ EXTENSIONS=(
   "eamodio.gitlens"
   "eg2.tslint"
   "donjayamanne.python"
+  "esbenp.prettier-vscode"
   "flowtype.flow-for-vscode"
   "lukehoban.Go"
   "mitaki28.vscode-clang"

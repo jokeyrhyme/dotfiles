@@ -17,6 +17,8 @@ if [ -d ~/.vim_runtime/.git ]; then
 
   __dotfiles_force_symlink ~/.dotfiles/config/my_configs.vim ~/.vim_runtime/my_configs.vim
 
+  __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/ale https://github.com/w0rp/ale.git
+
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/editorconfig-vim https://github.com/editorconfig/editorconfig-vim.git
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides.git
