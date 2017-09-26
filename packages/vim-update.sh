@@ -6,11 +6,13 @@ pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
 popd > /dev/null
 
-__dotfiles_assert_in_path git
-
 if [ -d ~/.vim_runtime/.git ]; then
   echo "updating amix/vimrc..."
   __dotfiles_update_shallow_git_clone ~/.vim_runtime
+
+  if which python3 > /dev/null 2>&1; then
+    python3 ~/.vim_runtime/update_plugins.py
+  fi
 
   __dotfiles_remove_line ~/.vim_runtime/vimrcs/extended.vim '/set fullscreen/d'
   __dotfiles_remove_line ~/.vim_runtime/vimrcs/extended.vim '/set fuoptions/d'
@@ -18,6 +20,7 @@ if [ -d ~/.vim_runtime/.git ]; then
   __dotfiles_force_symlink ~/.dotfiles/config/my_configs.vim ~/.vim_runtime/my_configs.vim
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/ale https://github.com/w0rp/ale.git
+  rm -rf ~/.vim_runtime/sources_non_forked/syntastic
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/editorconfig-vim https://github.com/editorconfig/editorconfig-vim.git
 
