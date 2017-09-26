@@ -11,7 +11,9 @@
   "editor.renderIndentGuides": true,
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
+  "eslint.autoFixOnSave": true,
   "javascript.validate.enable": false,
+  "tslint.autoFixOnSave": true,
   "window.menuBarVisibility": "toggle",
   "workbench.welcome.enabled": false
 }
