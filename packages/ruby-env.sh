@@ -10,9 +10,3 @@ if which gem > /dev/null 2>&1; then
   fi
 fi
 
-# rbenv
-if [ -x ~/.rbenv/bin/rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
