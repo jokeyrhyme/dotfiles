@@ -16,7 +16,7 @@ set nowritebackup
 let g:ale_fixers = {
 \  'javascript': ['prettier', 'eslint']
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 if has('gui_running')
   if has('toolbar')

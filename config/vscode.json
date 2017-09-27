@@ -12,39 +12,11 @@
   "editor.wordWrapColumn": 80,
   "window.menuBarVisibility": "toggle",
   "workbench.welcome.enabled": false,
-  "[css]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
   "[javascript]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "eslint.autoFixOnSave": true,
     "javascript.validate.enable": false
   },
-  "[json]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
-  "[less]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
-  "[markdown]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
-  "[rust]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
-  "[scss]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-  },
   "[typescript]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "tslint.autoFixOnSave": true
   }
 }
