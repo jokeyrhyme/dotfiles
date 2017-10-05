@@ -8,6 +8,7 @@ popd > /dev/null
 
 EXTENSIONS=(
   "Zen"
+  "atom-ide-ui"
   "atom-wrap-in-tag"
   "autocomplete-modules"
   "autocomplete-paths"
@@ -18,12 +19,20 @@ EXTENSIONS=(
   "go-plus"
   "go-signature-statusbar"
   "hyperclick"
+  "ide-csharp"
+  "ide-css"
+  "ide-flowtype"
+  "ide-html"
+  "ide-java"
+  "ide-json"
+  "ide-rust"
+  "ide-typescript"
+  "ide-yaml"
   "language-babel"
   "language-docker"
   "language-markdown"
   "language-swift"
   "language-terraform"
-  "linter"
   "linter-alex"
   "linter-csslint"
   "linter-eslint"
@@ -42,13 +51,15 @@ EXTENSIONS=(
   "prettier-atom"
 )
 
-UNINSTALL_EXTENSIONS=()
+UNINSTALL_EXTENSIONS=(
+  "linter"
+)
 
 if __dotfiles_is_os_wsl; then
   echo "WSL detected, skipping ..."
 
 elif which apm > /dev/null 2>&1; then
-  INSTALLED_EXTENSIONS=$(apm ls --bare --intalled --packaged)
+  INSTALLED_EXTENSIONS=$(apm ls --bare --installed --packaged)
 
   echo "Installing extensions for Atom..."
   for EXTENSION in "${EXTENSIONS[@]}"
