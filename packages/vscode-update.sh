@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eu
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/is.sh
@@ -42,6 +42,7 @@ EXTENSIONS=(
   "streetsidesoftware.code-spell-checker"
   "timonwong.shellcheck"
   "travisthetechie.write-good-linter"
+  "vscjava.vscode-java-debug"
   "vsmobile.cordova-tools"
   "vsmobile.vscode-react-native"
 )
