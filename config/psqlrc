@@ -1,0 +1,14 @@
+\set QUIET 1
+
+-- https://robots.thoughtbot.com/improving-the-command-line-postgres-experience
+\set PROMPT1 '%[%033[1m%]%M\n%n@%/%[%033[0m%]\n%R%# '
+\set PROMPT2 '[more] %R%# '
+
+-- https://robots.thoughtbot.com/an-explained-psqlrc
+\pset null '(null)'
+
+-- http://pavdmyt.com/better-postgresql-cli-experience-with-psqlrc-tweaks/
+\timing
+\set HISTCONTROL ignoredups
+
+\unset QUIET
