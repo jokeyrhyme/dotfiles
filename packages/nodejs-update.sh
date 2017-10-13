@@ -48,12 +48,12 @@ if which npm > /dev/null 2>&1; then
     "prettier"
     "typescript" # before tslint
     "tslint" # after typescript
-    "typings"
     "unleash"
   )
 
   UNINSTALL_NPM_FAVOURITES=(
     "greenkeeper"
+    "typings"
   )
 
   echo 'updating NPM and packages...'
