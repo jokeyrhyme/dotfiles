@@ -57,7 +57,8 @@ if which npm > /dev/null 2>&1; then
   )
 
   echo 'updating NPM and packages...'
-  npm update --global
+  npm update --global || exit 0
+  # private packages will fail on incorrect networks, ignore this
 
   echo 'installing favourite NPM packages...'
   INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
