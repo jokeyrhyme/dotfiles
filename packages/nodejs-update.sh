@@ -1,15 +1,18 @@
 #!/bin/sh
 
-set -eu
+set -e
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
-. ./packages/nodejs-env.sh
+. ./packages/nodejs-env.sh # `set -u` breaks nvs, so do after
 popd > /dev/null
+
+set -u
 
 __dotfiles_assert_in_path git
 
 __dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
+__dotfiles_update_shallow_git_clone ~/.nvs
 
 if nvs --version > /dev/null 2>&1; then
   nvs add 4
