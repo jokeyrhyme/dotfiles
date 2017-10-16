@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -eu
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
@@ -57,8 +57,9 @@ if which npm > /dev/null 2>&1; then
   )
 
   echo 'updating NPM and packages...'
-  npm update --global || exit 0
-  # private packages will fail on incorrect networks, ignore this
+  set +e # private packages will fail on incorrect networks, ignore this
+  npm update --global
+  set -e
 
   echo 'installing favourite NPM packages...'
   INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
