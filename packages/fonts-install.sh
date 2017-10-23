@@ -29,10 +29,6 @@ elif [ -d ~/Library/Fonts ]; then
 fi
 
 if [ ${USER_OTF_DIR} ]; then
-  HACK_RELEASES='https://github.com/chrissimpkins/Hack/releases/download/'
-  HACK_URL=${HACK_RELEASES}'v2.020/Hack-v2_020-otf.zip'
-  __dotfiles_download_extract_zip "${HACK_URL}" "${USER_OTF_DIR}" "*.otf"
-
   ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
   ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.030R-ro/1.050R-it.zip'
   __dotfiles_download_extract_zip "${ADOBE_CODE_URL}" "${USER_OTF_DIR}" "*.otf"
@@ -55,11 +51,11 @@ if [ ${USER_OTF_DIR} ]; then
 fi
 
 if [ ${USER_TTF_DIR} ]; then
-  if [ -d ~/.local/share/fonts ]; then
-    NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
-  elif [ -d ~/Library/Fonts ]; then
-    NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-unhinted.zip'
-  fi
+  HACK_RELEASES='https://github.com/source-foundry/Hack/releases/download/'
+  HACK_URL=${HACK_RELEASES}'v3.000/Hack-v3.000-ttf.zip'
+  __dotfiles_download_extract_zip "${HACK_URL}" "${USER_TTF_DIR}" "*.ttf"
+
+  NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
   __dotfiles_download_extract_zip "${NOTO_URL}" "${USER_TTF_DIR}" "*.ttf"
 fi
 
