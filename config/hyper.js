@@ -23,7 +23,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
+    copyOnSelect: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
@@ -42,7 +42,6 @@ module.exports = {
     'hyper-solarized-dark',
     'hyper-transparent-dynamic',
     'hypercwd',
-    'hyperlinks'
   ],
 
   // in development, you can create a directory under
