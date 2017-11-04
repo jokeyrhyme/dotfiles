@@ -15,8 +15,6 @@ __dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
 __dotfiles_update_shallow_git_clone ~/.nvs
 
 if nvs --version > /dev/null 2>&1; then
-  nvs add 4
-  nvs add 6
   nvs add lts
   nvs add latest
   nvs link latest
