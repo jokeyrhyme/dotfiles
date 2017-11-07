@@ -33,3 +33,5 @@ if has('gui_running')
   endif
 endif
 
+" https://twitter.com/climagic/status/925785161622605827
+:set scrolloff=5
