@@ -42,6 +42,7 @@ if which npm > /dev/null 2>&1; then
     "flow-bin"
     "flow-typed"
     "http-server"
+    "import-js"
     "lebab"
     "lerna"
     "node-gyp"

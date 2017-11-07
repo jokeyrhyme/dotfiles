@@ -23,10 +23,11 @@ fi
 EXTENSIONS=(
   "EditorConfig.EditorConfig"
   "PeterJausovec.vscode-docker"
+  "dabbott.vscode-import-js"
   "dbaeumer.vscode-eslint"
+  "donjayamanne.python"
   "eamodio.gitlens"
   "eg2.tslint"
-  "donjayamanne.python"
   "esbenp.prettier-vscode"
   "flowtype.flow-for-vscode"
   "lukehoban.Go"

@@ -9,6 +9,7 @@ popd > /dev/null
 EXTENSIONS=(
   "Zen"
   "atom-ide-ui"
+  "atom-import-js"
   "atom-wrap-in-tag"
   "autocomplete-modules"
   "autocomplete-paths"

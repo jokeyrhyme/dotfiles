@@ -24,6 +24,8 @@ if [ -d ~/.vim_runtime/.git ]; then
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/editorconfig-vim https://github.com/editorconfig/editorconfig-vim.git
 
+  __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/vim-import-js https://github.com/Galooshi/vim-import-js.git
+
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides.git
 
   __dotfiles_ensure_shallow_git_clone ~/.vim_runtime/sources_non_forked/vim-polyglot https://github.com/sheerun/vim-polyglot.git
