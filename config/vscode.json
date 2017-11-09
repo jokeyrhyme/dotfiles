@@ -10,6 +10,13 @@
   "editor.renderIndentGuides": true,
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
+  "go.coverOnSave": true,
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": false
+  },
+  "go.lintTool": "gometalinter",
+  "go.lintFlags": ["--fast", "--tests", "--vendor"],
   "window.menuBarVisibility": "toggle",
   "workbench.welcome.enabled": false,
   "[javascript]": {
