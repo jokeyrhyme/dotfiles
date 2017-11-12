@@ -25,13 +25,13 @@ EXTENSIONS=(
   "PeterJausovec.vscode-docker"
   "dabbott.vscode-import-js"
   "dbaeumer.vscode-eslint"
-  "donjayamanne.python"
   "eamodio.gitlens"
   "eg2.tslint"
   "esbenp.prettier-vscode"
   "flowtype.flow-for-vscode"
   "lukehoban.Go"
   "mitaki28.vscode-clang"
+  "ms-python.python"
   "ms-vscode.PowerShell"
   "ms-vscode.cpptools"
   "ms-vscode.csharp"
@@ -49,6 +49,7 @@ EXTENSIONS=(
 )
 
 UNINSTALL_EXTENSIONS=(
+  "donjayamanne.python"
   "georgewfraser.vscode-javac"
   "ms-vscode.latex"
   "waderyan.gitblame"

@@ -32,7 +32,7 @@ for PIP in "${PIPS[@]}"; do
       echo "updating ${PIP} packages ..."
       OUTDATED=$(${PIP} list --outdated --format=freeze | cut -d = -f 1)
       for PACKAGE in ${OUTDATED}; do
-        ${PIP} install --upgrade ${PACKAGE}
+        ${PIP} install --upgrade --user ${PACKAGE}
       done
 
       PIP_INSTALLED=$(${PIP} list --format=freeze | cut -d = -f 1)
@@ -40,7 +40,7 @@ for PIP in "${PIPS[@]}"; do
       echo "installing favourite ${PIP} libraries ..."
       for PIP_LIB in "${PIP_LIBS[@]}"; do
         if ! echo "${PIP_INSTALLED}" | grep "${PIP_LIB}@" > /dev/null 2>&1; then
-          ${PIP} install --upgrade "${PIP_LIB}"
+          ${PIP} install --upgrade --user "${PIP_LIB}"
         fi
       done
 
@@ -48,7 +48,7 @@ for PIP in "${PIPS[@]}"; do
         echo "installing favourite ${PIP} tools ..."
         for PIP2_TOOL in "${PIP2_TOOLS[@]}"; do
           if ! echo "${PIP_INSTALLED}" | grep "${PIP2_TOOL}@" > /dev/null 2>&1; then
-            ${PIP} install --upgrade "${PIP2_TOOL}"
+            ${PIP} install --upgrade --user "${PIP2_TOOL}"
           fi
         done
       fi
@@ -57,7 +57,7 @@ for PIP in "${PIPS[@]}"; do
         echo "installing favourite ${PIP} tools ..."
         for PIP3_TOOL in "${PIP3_TOOLS[@]}"; do
           if ! echo "${PIP_INSTALLED}" | grep "${PIP3_TOOL}@" > /dev/null 2>&1; then
-            ${PIP} install --upgrade "${PIP3_TOOL}"
+            ${PIP} install --upgrade --user "${PIP3_TOOL}"
           fi
         done
       fi
