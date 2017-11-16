@@ -50,6 +50,7 @@ EXTENSIONS=(
   "minimap-linter"
   "minimap-selection"
   "prettier-atom"
+  "teletype"
 )
 
 UNINSTALL_EXTENSIONS=(
