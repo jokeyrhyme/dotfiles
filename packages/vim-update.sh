@@ -10,8 +10,8 @@ if [ -d ~/.vim_runtime/.git ]; then
   echo "updating amix/vimrc..."
   __dotfiles_update_shallow_git_clone ~/.vim_runtime
 
-  if which python3 > /dev/null 2>&1; then
-    python3 ~/.vim_runtime/update_plugins.py
+  if which python2 > /dev/null 2>&1; then
+    python2 ~/.vim_runtime/update_plugins.py
   fi
 
   __dotfiles_remove_line ~/.vim_runtime/vimrcs/extended.vim '/set fullscreen/d'
