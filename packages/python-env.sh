@@ -8,8 +8,8 @@ if [ -d "$HOME"/Library/Python/3.6/bin ]; then
   export PATH=$HOME/Library/Python/3.6/bin:$PATH
 fi
 
-# cloudtoken shell additions seem broken for me :(
-# if [ -f "$HOME"/Library/Python/3.6/share/cloudtoken/shell_additions/bashrc_additions ]; then
-#   # shellcheck disable=SC1090
-#   . "$HOME"/Library/Python/3.6/share/cloudtoken/shell_additions/bashrc_additions
-# fi
+if [ -f "$HOME"/Library/Python/3.6/share/cloudtoken/shell_additions/bashrc_additions ]; then
+  # shellcheck disable=SC1090
+  . "$HOME"/Library/Python/3.6/share/cloudtoken/shell_additions/bashrc_additions
+fi
+
