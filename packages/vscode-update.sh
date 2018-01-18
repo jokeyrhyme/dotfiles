@@ -46,6 +46,7 @@ EXTENSIONS=(
   "vscjava.vscode-java-debug"
   "vsmobile.cordova-tools"
   "vsmobile.vscode-react-native"
+  "wix.vscode-import-cost"
 )
 
 UNINSTALL_EXTENSIONS=(
