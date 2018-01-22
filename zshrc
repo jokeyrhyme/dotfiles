@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+autoload -Uz compinit && compinit
+
 # include system profile
 if [ -f /etc/profile ]; then
   . /etc/profile
