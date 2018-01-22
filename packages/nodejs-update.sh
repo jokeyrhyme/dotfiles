@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -e +u
 
 pushd "$(dirname $0)/.." > /dev/null
 . ./scripts/lib/utils.sh
