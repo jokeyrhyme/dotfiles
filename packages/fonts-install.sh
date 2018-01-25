@@ -52,7 +52,7 @@ fi
 
 if [ ${USER_TTF_DIR} ]; then
   HACK_RELEASES='https://github.com/source-foundry/Hack/releases/download/'
-  HACK_URL=${HACK_RELEASES}'v3.000/Hack-v3.000-ttf.zip'
+  HACK_URL=${HACK_RELEASES}'v3.001/Hack-v3.001-ttf.zip'
   __dotfiles_download_extract_zip "${HACK_URL}" "${USER_TTF_DIR}" "*.ttf"
 
   NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
