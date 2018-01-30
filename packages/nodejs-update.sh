@@ -36,6 +36,7 @@ if which npm > /dev/null 2>&1; then
     "npm"
     "@jokeyrhyme/node-init"
     "create-react-app"
+    "clipboard-cli"
     "diff-so-fancy"
     "eslint"
     "git-guilt"
