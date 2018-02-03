@@ -14,6 +14,16 @@
     "wordWrapColumn": 80
   },
   "gitlens": {
+    "advanced.messages": {
+      "suppressCommitHasNoPreviousCommitWarning": false,
+      "suppressCommitNotFoundWarning": false,
+      "suppressFileNotUnderSourceControlWarning": false,
+      "suppressGitVersionWarning": false,
+      "suppressLineUncommittedWarning": false,
+      "suppressNoRepositoryWarning": false,
+      "suppressUpdateNotice": true,
+      "suppressWelcomeNotice": true
+    },
     "blame": {
       "ignoreWhitespace": true
     }
