@@ -51,8 +51,7 @@ if [ ${USER_OTF_DIR} ]; then
 fi
 
 if [ ${USER_TTF_DIR} ]; then
-  HACK_RELEASES='https://github.com/source-foundry/Hack/releases/download/'
-  HACK_URL=${HACK_RELEASES}'v3.001/Hack-v3.001-ttf.zip'
+  HACK_URL='https://github.com/source-foundry/Hack/releases/download/v3.002/Hack-v3.002-ttf.zip'
   __dotfiles_download_extract_zip "${HACK_URL}" "${USER_TTF_DIR}" "*.ttf"
 
   NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
