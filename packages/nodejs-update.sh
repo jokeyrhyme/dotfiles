@@ -35,6 +35,7 @@ if which npm > /dev/null 2>&1; then
   NPM_FAVOURITES=(
     "npm"
     "@jokeyrhyme/node-init"
+    "clinic"
     "create-react-app"
     "clipboard-cli"
     "diff-so-fancy"
