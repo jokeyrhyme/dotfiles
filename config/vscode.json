@@ -26,7 +26,11 @@
     },
     "blame": {
       "ignoreWhitespace": true
-    }
+    },
+    "codeLens.scopes": [
+      "document"
+    ],
+    "hovers.currentLine.over": "line"
   },
   "go": {
     "coverOnSave": true,
@@ -41,8 +45,13 @@
       "delay": 500
     }
   },
+  "search.smartCase": true,
+  "terminal.integrated.copyOnSelection": true,
   "window.menuBarVisibility": "toggle",
-  "workbench.welcome.enabled": false,
+  "workbench": {
+    "fontAliasing": "auto",
+    "welcome.enabled": false
+  },
   "[javascript]": {
     "eslint.autoFixOnSave": true,
     "javascript.validate.enable": false
