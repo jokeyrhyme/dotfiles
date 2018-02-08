@@ -11,4 +11,7 @@
 \timing
 \set HISTCONTROL ignoredups
 
+-- show tables differently depending on available display width
+\x auto
+
 \unset QUIET
