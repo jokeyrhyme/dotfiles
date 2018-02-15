@@ -17,6 +17,8 @@ PIP2_TOOLS=(
   "ansible"
   "ansible-lint"
   "ansible-vault"
+  "virtualenv"
+  "virtualenvwrapper"
 )
 
 PIP3_TOOLS=(
@@ -25,6 +27,7 @@ PIP3_TOOLS=(
   "pylint"
   "twine"
   "virtualenv"
+  "virtualenvwrapper"
 )
 
 for PIP in "${PIPS[@]}"; do
