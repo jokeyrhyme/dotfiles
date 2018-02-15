@@ -13,6 +13,11 @@
     "wordWrap": "on",
     "wordWrapColumn": 80
   },
+  "files.exclude": {
+    "**/*.gz": true,
+    "**/*.pyc": true,
+    "**/__pycache__": true
+  },
   "gitlens": {
     "advanced.messages": {
       "suppressCommitHasNoPreviousCommitWarning": false,
@@ -45,7 +50,13 @@
       "delay": 500
     }
   },
-  "search.smartCase": true,
+  "search": {
+    "exclude": {
+      "**/site-packages/**": true,
+      "**/vendor": true
+    },
+    "smartCase": true
+  },
   "terminal.integrated.copyOnSelection": true,
   "window.menuBarVisibility": "toggle",
   "workbench": {
