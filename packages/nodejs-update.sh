@@ -50,6 +50,7 @@ if which npm > /dev/null 2>&1; then
     "node-gyp"
     "package-diff-summary"
     "prettier"
+    "quicktype"
     "typescript" # before tslint
     "tslint" # after typescript
     "unleash"
