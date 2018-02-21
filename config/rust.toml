@@ -1,0 +1,8 @@
+install = [
+  "exa",
+  "jokeyrhyme-dotfiles",
+  "racer",
+  "ripgrep",
+  "rustfmt",
+  "rustsym",
+]
