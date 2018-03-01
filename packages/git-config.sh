@@ -55,4 +55,7 @@ if which git > /dev/null 2>&1; then
   # http://blog.kfish.org/2010/04/git-lola.html
   git config --global alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit"
   git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+
+  # http://psung.blogspot.com.au/2011/02/reducing-merge-headaches-git-meets.html
+  git config --global merge.conflictstyle diff3
 fi
