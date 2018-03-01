@@ -8,6 +8,7 @@ install = [
   "eg2.tslint",
   "esbenp.prettier-vscode",
   "flowtype.flow-for-vscode",
+  "kumar-harsh.graphql-for-vscode",
   "lukehoban.Go",
   "mitaki28.vscode-clang",
   "ms-python.python",
