@@ -32,9 +32,12 @@
     "blame": {
       "ignoreWhitespace": true
     },
-    "codeLens.scopes": [
-      "document"
-    ],
+    "codeLens": {
+      "authors.enabled": false,
+      "scopes": [
+        "document"
+      ]
+    },
     "hovers.currentLine.over": "line"
   },
   "go": {
