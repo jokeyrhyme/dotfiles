@@ -35,3 +35,7 @@ endif
 
 " https://twitter.com/climagic/status/925785161622605827
 :set scrolloff=5
+
+" https://stackoverflow.com/a/37542976/488373
+set nofoldenable
+
