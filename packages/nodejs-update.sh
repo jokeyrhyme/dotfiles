@@ -21,7 +21,6 @@ if nvs --version > /dev/null 2>&1; then
 fi
 
 if which npm > /dev/null 2>&1; then
-
   if which python2 > /dev/null 2>&1; then
     npm config set python "$(which python2)"
   fi
@@ -31,55 +30,6 @@ if which npm > /dev/null 2>&1; then
   npm config set init.author.url 'https://github.com/jokeyrhyme'
 
   npm config set send-metrics true
-
-  NPM_FAVOURITES=(
-    "npm"
-    "@jokeyrhyme/node-init"
-    "clinic"
-    "create-react-app"
-    "clipboard-cli"
-    "diff-so-fancy"
-    "eslint"
-    "git-guilt"
-    "flow-bin"
-    "flow-typed"
-    "http-server"
-    "import-js"
-    "lebab"
-    "lerna"
-    "node-gyp"
-    "package-diff-summary"
-    "prettier"
-    "quicktype"
-    "typescript" # before tslint
-    "tslint" # after typescript
-    "unleash"
-  )
-
-  UNINSTALL_NPM_FAVOURITES=(
-    "greenkeeper"
-    "typings"
-  )
-
-  echo 'updating NPM and packages...'
-  set +e # private packages will fail on incorrect networks, ignore this
-  npm update --global
-  set -e
-
-  echo 'installing favourite NPM packages...'
-  INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
-  for FAV in "${NPM_FAVOURITES[@]}"; do
-    if ! echo "${INSTALLED_FAVOURITES}" | grep " ${FAV}@" > /dev/null 2>&1; then
-      npm install --global $FAV
-    fi
-  done
-
-  echo 'uninstalling unused NPM packages...'
-  for FAV in "${UNINSTALL_NPM_FAVOURITES[@]}"; do
-    if npm ls --global --depth=0 $FAV > /dev/null 2>&1; then
-      npm uninstall --global $FAV
-    fi
-  done
 fi
 
 if which node > /dev/null 2>&1; then

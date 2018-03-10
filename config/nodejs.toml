@@ -1,0 +1,27 @@
+install = [
+  "@jokeyrhyme/node-init",
+  "clinic",
+  "create-react-app",
+  "clipboard-cli",
+  "diff-so-fancy",
+  "eslint",
+  "git-guilt",
+  "flow-bin",
+  "flow-typed",
+  "http-server",
+  "import-js",
+  "lebab",
+  "lerna",
+  "node-gyp",
+  "package-diff-summary",
+  "prettier",
+  "quicktype",
+  "tslint",
+  "typescript",
+  "unleash",
+]
+
+uninstall = [
+  "greenkeeper",
+  "typings",
+]
