@@ -1,0 +1,78 @@
+" https://github.com/junegunn/vim-plug
+
+if has('win64') || has('win32') || has('win16')
+  call plug#begin('~/vimfiles/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
+
+Plug 'w0rp/ale'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'rust-lang/rust.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Galooshi/vim-import-js'
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'plasticboy/vim-markdown'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'racer-rust/vim-racer'
+
+call plug#end()
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \}
+
+" solarize
+if has('gui_running')
+  set background=dark
+else
+  set background=dark
+  let g:solarized_termcolors=256
+  let g:solarized_termtrans=1
+endif
+:colorscheme solarized
+
+" disable additional junk files
+set noswapfile
+set nobackup
+set nowritebackup
+
+let g:ale_fixers = {
+\  'javascript': ['prettier', 'eslint']
+\}
+let g:ale_fix_on_save = 0
+
+if has('gui_running')
+  if has('toolbar')
+    set go-=T
+  endif
+
+  set columns=90
+  set lines=50
+
+  if has("mac")
+    set guifont=Fira\ Code\ 14,Hasklig:h14,Hack:h14
+  elseif has("unix")
+    set guifont=Fira\ Code\ 11,Hasklig:h11,Hack:h11
+  endif
+endif
+
+" https://stackoverflow.com/a/37542976/488373
+set nofoldenable
+
+set nu
+set relativenumber
+
+" https://github.com/scrooloose/nerdtree
+map <C-\> :NERDTreeToggle<CR>

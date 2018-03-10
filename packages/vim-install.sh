@@ -26,12 +26,3 @@ if which pacman > /dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --noconfirm ctags gvim
 fi
-
-__dotfiles_assert_in_path git
-
-__dotfiles_ensure_shallow_git_clone ~/.vim_runtime https://github.com/amix/vimrc.git
-sh ~/.vim_runtime/install_awesome_vimrc.sh
-
-pushd "$(dirname $0)/.." > /dev/null
-. ./packages/vim-update.sh
-popd > /dev/null
