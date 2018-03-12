@@ -38,7 +38,8 @@
         "document"
       ]
     },
-    "hovers.currentLine.over": "line"
+    "hovers.currentLine.over": "line",
+    "keymap": "alternate"
   },
   "go": {
     "coverOnSave": true,
