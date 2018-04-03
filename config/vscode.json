@@ -26,6 +26,7 @@
       "suppressGitVersionWarning": false,
       "suppressLineUncommittedWarning": false,
       "suppressNoRepositoryWarning": false,
+      "suppressResultsExplorerNotice": false,
       "suppressUpdateNotice": true,
       "suppressWelcomeNotice": true
     },
@@ -39,7 +40,7 @@
       ]
     },
     "hovers.currentLine.over": "line",
-    "keymap": "alternate"
+    "keymap": "none"
   },
   "go": {
     "coverOnSave": true,
