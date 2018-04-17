@@ -24,6 +24,7 @@
       "suppressCommitNotFoundWarning": false,
       "suppressFileNotUnderSourceControlWarning": false,
       "suppressGitVersionWarning": false,
+      "suppressShowKeyBindingsNotice": true,
       "suppressLineUncommittedWarning": false,
       "suppressNoRepositoryWarning": false,
       "suppressResultsExplorerNotice": false,
