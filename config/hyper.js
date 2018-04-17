@@ -28,7 +28,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     hyperTransparentDynamic: {
-      alpha: 0.8
+      alpha: 0.9
     }
   },
 
