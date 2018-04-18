@@ -19,6 +19,7 @@ install = [
   "tslint",
   "typescript",
   "unleash",
+  "yarn",
 ]
 
 uninstall = [
