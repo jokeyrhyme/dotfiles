@@ -1,5 +1,6 @@
 install = [
   "exa",
+  "fastmod",
   "jokeyrhyme-dotfiles",
   "racer",
   "ripgrep",
