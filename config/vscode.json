@@ -19,18 +19,6 @@
     "**/__pycache__": true
   },
   "gitlens": {
-    "advanced.messages": {
-      "suppressCommitHasNoPreviousCommitWarning": false,
-      "suppressCommitNotFoundWarning": false,
-      "suppressFileNotUnderSourceControlWarning": false,
-      "suppressGitVersionWarning": false,
-      "suppressShowKeyBindingsNotice": true,
-      "suppressLineUncommittedWarning": false,
-      "suppressNoRepositoryWarning": false,
-      "suppressResultsExplorerNotice": false,
-      "suppressUpdateNotice": true,
-      "suppressWelcomeNotice": true
-    },
     "blame": {
       "ignoreWhitespace": true
     },
@@ -42,6 +30,18 @@
     },
     "hovers.currentLine.over": "line",
     "keymap": "none"
+  },
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressUpdateNotice": true,
+    "suppressWelcomeNotice": true
   },
   "go": {
     "coverOnSave": true,
