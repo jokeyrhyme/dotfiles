@@ -8,8 +8,6 @@ popd > /dev/null
 
 __dotfiles_assert_in_path git
 
-__dotfiles_ensure_shallow_git_clone ~/.nvs https://github.com/jasongin/nvs.git
-
 PLUGINS=(
   "vagrant-cachier"
   "vagrant-vbguest"
