@@ -1,6 +1,9 @@
 {
   "editor": {
     "autoIndent": true,
+    "codeActionsOnSave": {
+      "source.organizeImports": true
+    },
     "dragAndDrop": true,
     "fontFamily": "Fira Code, Hasklig, Hack, monospace",
     "fontLigatures": true,
