@@ -1,5 +1,6 @@
 install = [
   "EditorConfig.EditorConfig",
+  "MS-vsliveshare.vsliveshare",
   "PeterJausovec.vscode-docker",
   "bungcip.better-toml",
   "dabbott.vscode-import-js",
