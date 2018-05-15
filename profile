@@ -3,12 +3,12 @@
 export CLICOLOR=true
 export LANGUAGE="en_AU:en_GB:en_US:en"
 
-pushd "$HOME" > /dev/null
+pushd "$HOME" > /dev/null || exit 1
 for envsh in ./.dotfiles/packages/*-env.sh; do
   # shellcheck disable=SC1090
   . "$envsh"
 done
-popd > /dev/null
+popd > /dev/null || exit 1
 
 if [ -d /etc/xdg ]; then
   export XDG_DATA_DIRS=${XDG_DATA_DIRS}:/usr/local/share:/usr/share

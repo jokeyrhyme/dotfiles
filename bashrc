@@ -7,10 +7,10 @@
 [[ $- != *i* ]] && return
 
 # include user profile
-pushd "$HOME" > /dev/null
+pushd "$HOME" > /dev/null || exit 1
 # shellcheck source=./profile
 . ./.profile
-popd > /dev/null
+popd > /dev/null || exit 1
 
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
@@ -39,13 +39,20 @@ export SCM_CHECK=true
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # Load Bash It
-pushd "$BASH_IT" > /dev/null
+pushd "$BASH_IT" > /dev/null || exit 1
 # shellcheck disable=SC1091
 . ./bash_it.sh
-popd > /dev/null
+popd > /dev/null || exit 1
 
 # custom `cd` command
-cd() { builtin cd "$@" && ls; }
+cd() {
+    builtin cd "$@"
+    if [[ $- == *s* ]]; then
+        # reading from stdin, so have a helpful `ls`
+        # note that checking *i* for interactivity breaks cloudtoken
+        ls
+    fi
+}
 
 if [ "$(uname)" = "Darwin"  ]; then
   bash-it enable plugin osx > /dev/null 2>&1

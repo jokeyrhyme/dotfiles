@@ -8,9 +8,9 @@ elif which yum > /dev/null 2>&1; then
   sudo yum upgrade -y
 fi
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." > /dev/null || exit 1
 for updatesh in ./packages/*-update.sh; do
   # shellcheck disable=SC1090
   . "$updatesh"
 done
-popd > /dev/null
+popd > /dev/null || exit 1
