@@ -16,6 +16,7 @@
     "wordWrap": "on",
     "wordWrapColumn": 80
   },
+  "files.defaultLanguage": "markdown",
   "files.exclude": {
     "**/*.gz": true,
     "**/*.pyc": true,
@@ -70,6 +71,7 @@
   "window.menuBarVisibility": "toggle",
   "workbench": {
     "fontAliasing": "auto",
+    "startupEditor": "newUntitledFile",
     "welcome.enabled": false
   },
   "[javascript]": {
@@ -78,5 +80,6 @@
   },
   "[typescript]": {
     "tslint.autoFixOnSave": true
-  }
+  },
+  "gitlens.historyExplorer.enabled": true
 }

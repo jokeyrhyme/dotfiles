@@ -15,7 +15,7 @@ install = [
   "ms-vscode.PowerShell",
   "ms-vscode.cpptools",
   "ms-vscode.csharp",
-  "ms-vscode.go",
+  "ms-vscode.Go",
   "msjsdiag.debugger-for-chrome",
   "rebornix.Ruby",
   "redhat.java",
