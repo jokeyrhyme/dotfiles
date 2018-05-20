@@ -2,10 +2,10 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/is.sh
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
 __dotfiles_assert_in_path ruby
 __dotfiles_assert_in_path git
@@ -20,6 +20,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew tap caskroom/cask
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./packages/homebrew-update.sh
-popd > /dev/null
+popd >/dev/null

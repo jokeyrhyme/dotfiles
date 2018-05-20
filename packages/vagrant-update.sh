@@ -2,9 +2,9 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
 __dotfiles_assert_in_path git
 
@@ -13,10 +13,10 @@ PLUGINS=(
   "vagrant-vbguest"
 )
 
-if which vagrant > /dev/null 2>&1; then
+if which vagrant >/dev/null 2>&1; then
   INSTALLED_PLUGINS=$(vagrant plugin list)
   for PLUGIN in "${PLUGINS[@]}"; do
-    if ! echo "${INSTALLED_PLUGINS}" | grep "${PLUGIN} (" > /dev/null 2>&1; then
+    if ! echo "${INSTALLED_PLUGINS}" | grep "${PLUGIN} (" >/dev/null 2>&1; then
       vagrant plugin install "${PLUGIN}"
     fi
   done

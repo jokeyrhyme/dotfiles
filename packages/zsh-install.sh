@@ -2,18 +2,18 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
 __dotfiles_assert_in_path git
 
-if which dnf > /dev/null 2>&1; then
+if which dnf >/dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y zsh
 fi
 
-if which pacman > /dev/null 2>&1; then
+if which pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm zsh
 fi
@@ -29,6 +29,6 @@ __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 __dotfiles_safely_set_shell /usr/bin/zsh
 __dotfiles_safely_set_shell /usr/local/bin/zsh # homebrew
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./packages/zsh-update.sh
-popd > /dev/null
+popd >/dev/null

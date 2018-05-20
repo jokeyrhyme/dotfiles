@@ -2,18 +2,18 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
-if which dnf > /dev/null 2>&1; then
+if which dnf >/dev/null 2>&1; then
   echo 'found dnf!'
   __dotfiles_force_mkdir ~/.local/share/fonts
   sudo dnf install -y google-droid-{sans,serif,sans-mono}-fonts
   sudo dnf install -y liberation-{mono,narrow,sans,serif}-fonts
 fi
 
-if which pacman > /dev/null 2>&1; then
+if which pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   __dotfiles_force_mkdir ~/.local/share/fonts
   sudo pacman -Sy --needed --noconfirm ttf-{droid,liberation,ubuntu-font-family}
@@ -56,6 +56,6 @@ if [ ${USER_TTF_DIR} ]; then
   __dotfiles_download_extract_zip "${NOTO_URL}" "${USER_TTF_DIR}" "*.ttf"
 fi
 
-if which fc-cache > /dev/null 2>&1; then
+if which fc-cache >/dev/null 2>&1; then
   fc-cache -r
 fi

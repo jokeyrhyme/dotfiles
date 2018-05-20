@@ -2,10 +2,10 @@
 
 set -eu
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/is.sh
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
 __dotfiles_assert_in_path brew
 
@@ -14,6 +14,6 @@ if __dotfiles_is_brew_found; then
   brew install ruby
 fi
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./packages/ruby-update.sh
-popd > /dev/null
+popd >/dev/null

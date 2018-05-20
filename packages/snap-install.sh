@@ -2,12 +2,12 @@
 
 set -e
 
-if which pacman > /dev/null 2>&1; then
+if which pacman >/dev/null 2>&1; then
   sudo pacman -Sy --needed --noconfirm snapd
 fi
 
-if which snap > /dev/null 2>&1; then
-  if which systemctl > /dev/null 2>&1; then
+if which snap >/dev/null 2>&1; then
+  if which systemctl >/dev/null 2>&1; then
     sudo systemctl enable snapd.service
     sudo systemctl start snapd.service
 
@@ -16,6 +16,6 @@ if which snap > /dev/null 2>&1; then
   fi
 fi
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./packages/snap-update.sh
-popd > /dev/null
+popd >/dev/null

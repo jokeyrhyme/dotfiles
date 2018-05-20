@@ -1,4 +1,9 @@
-.PHONY: test
+.NOCACHE: fmt
+fmt:
+	prettier --write **/*.md
+	shfmt -w -s -i 2 **/*.sh
+
+.NOCACHE: test
 test:
 	bash -n **/*.sh
 	if which zsh > /dev/null 2>&1; then zsh -n **/*.sh; fi

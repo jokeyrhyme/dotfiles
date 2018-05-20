@@ -8,7 +8,7 @@ GO_FAVOURITES=(
   "github.com/derekparker/delve/cmd/dlv"
 )
 
-if which go > /dev/null 2>&1; then
+if which go >/dev/null 2>&1; then
   if [ -d ~/go/bin ]; then
     for FAV in "${GO_FAVOURITES[@]}"; do
       go get -u -v $FAV
@@ -18,7 +18,7 @@ if which go > /dev/null 2>&1; then
     rm -rf ~/go/bin/dep ~/go/{pkg,src}/github.com/golang/dep
   fi
 
-  if which gometalinter > /dev/null 2>&1; then
+  if which gometalinter >/dev/null 2>&1; then
     gometalinter --install
   fi
 fi

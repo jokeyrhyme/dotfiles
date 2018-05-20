@@ -9,25 +9,24 @@ Eventually, this project will contain preferences, and all scripts will be remov
 
 ### OS X
 
-- Xcode, run at least once to agree to the license
-
+* Xcode, run at least once to agree to the license
 
 ## Installation
 
-1. clone this repository into a hidden directory
+1.  clone this repository into a hidden directory
 
     ```sh
     git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
-2. install additional package managers depending on your OS
+2.  install additional package managers depending on your OS
 
     ```sh
     sh ~/.dotfiles/packages/homebrew-install.sh # OSX-only, required
     sh ~/.dotfiles/packages/linuxbrew-install.sh # linux-only, required
     ```
 
-3. run any of the following as you wish
+3.  run any of the following as you wish
 
     ```sh
     sh ~/.dotfiles/packages/git-install.sh
@@ -40,13 +39,11 @@ Eventually, this project will contain preferences, and all scripts will be remov
     sh ~/.dotfiles/packages/atom-install.sh
     ```
 
-
 ### Debian / Ubuntu / etc
 
--   these systems [symlink `/bin/sh` to `dash`](https://wiki.ubuntu.com/DashAsBinSh) rather than `bash`
+* these systems [symlink `/bin/sh` to `dash`](https://wiki.ubuntu.com/DashAsBinSh) rather than `bash`
 
--   as such, whilst examples here use `sh`, you will have to use `bash` explicitly
-
+* as such, whilst examples here use `sh`, you will have to use `bash` explicitly
 
 ## Updating
 
@@ -60,6 +57,6 @@ sh ~/.dotfiles/scripts/update.sh
 
 I avoid `sudo` usage where possible. I currently need it for:
 
-- system package installation (e.g. pacman, apt, yum)
-- ensuring installed `zsh` is in the `/etc/shells` file
-- setting `zsh` as the default shell for the current user
+* system package installation (e.g. pacman, apt, yum)
+* ensuring installed `zsh` is in the `/etc/shells` file
+* setting `zsh` as the default shell for the current user

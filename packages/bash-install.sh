@@ -2,9 +2,9 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
 __dotfiles_assert_in_path git
 
@@ -22,6 +22,6 @@ __dotfiles_force_symlink ~/.dotfiles/profile ~/.profile
 __dotfiles_safely_set_shell /usr/bin/bash
 __dotfiles_safely_set_shell /usr/local/bin/bash # homebrew
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./packages/bash-update.sh
-popd > /dev/null
+popd >/dev/null

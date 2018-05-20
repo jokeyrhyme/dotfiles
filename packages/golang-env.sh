@@ -7,4 +7,3 @@ if [ -d ~/go ]; then
     export PATH="$HOME/go/bin:$PATH"
   fi
 fi
-

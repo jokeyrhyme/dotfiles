@@ -2,9 +2,9 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/is.sh
-popd > /dev/null
+popd >/dev/null
 
 # brew cannot update zsh if it is locked down
 if __dotfiles_is_homebrew_found; then
@@ -23,7 +23,7 @@ if __dotfiles_is_homebrew_found; then
 fi
 
 if __dotfiles_is_homebrew_found; then
-  if which brew-cask.rb > /dev/null 2>&1; then
+  if which brew-cask.rb >/dev/null 2>&1; then
     echo 'updating Homebrew Cask and packages...'
 
     for f in $(brew cask outdated | cut -f 1 -d ''); do

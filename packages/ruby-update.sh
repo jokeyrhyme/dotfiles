@@ -2,11 +2,11 @@
 
 set -e
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-popd > /dev/null
+popd >/dev/null
 
-if which gem > /dev/null 2>&1; then
+if which gem >/dev/null 2>&1; then
   gem install rake
   gem install bundle
 
@@ -14,4 +14,3 @@ if which gem > /dev/null 2>&1; then
   gem update
   gem cleanup
 fi
-

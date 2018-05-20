@@ -2,17 +2,17 @@
 
 set -e +u
 
-pushd "$(dirname $0)/.." > /dev/null
+pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
 . ./packages/nodejs-env.sh # `set -u` breaks nvs, so do after
-popd > /dev/null
+popd >/dev/null
 
 set -u
 
 __dotfiles_assert_in_path git
 
-if which npm > /dev/null 2>&1; then
-  if which python2 > /dev/null 2>&1; then
+if which npm >/dev/null 2>&1; then
+  if which python2 >/dev/null 2>&1; then
     npm config set python "$(which python2)"
   fi
 
@@ -21,8 +21,8 @@ if which npm > /dev/null 2>&1; then
   npm config set init.author.url 'https://github.com/jokeyrhyme'
 fi
 
-if which node > /dev/null 2>&1; then
-  if which node-gyp > /dev/null 2>&1; then
+if which node >/dev/null 2>&1; then
+  if which node-gyp >/dev/null 2>&1; then
     node-gyp install "$(node --version)"
   fi
 fi
