@@ -1,5 +1,10 @@
 # dotfiles [![Build Status](https://travis-ci.org/jokeyrhyme/dotfiles.svg?branch=master)](https://travis-ci.org/jokeyrhyme/dotfiles)
 
+## Status
+
+This project is best paired with [`jokeyrhyme-dotfiles`](https://github.com/jokeyrhyme/dotfiles-rs).
+Eventually, this project will contain preferences, and all scripts will be removed in favour of `jokeyrhyme-dotfiles`.
+
 ## Dependencies
 
 ### OS X
