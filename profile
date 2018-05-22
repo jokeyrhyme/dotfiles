@@ -21,6 +21,12 @@ export MAKEFLAGS='-j2'
 export CFLAGS="-Os -march=native"
 export CXXFLAGS="${CFLAGS}"
 
+# https://opensource.com/article/18/5/advanced-use-less-text-file-viewer
+if type less > /dev/null 2>&1; then
+  export LESS='-C -M -I -j 10 -# 4'
+  export PAGER=less
+fi
+
 # Java on OS X
 if [ -f /usr/libexec/java_home ] && [ -x /usr/libexec/java_home ]; then
   if /usr/libexec/java_home &> /dev/null; then
