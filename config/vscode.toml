@@ -1,6 +1,5 @@
 install = [
   "EditorConfig.EditorConfig",
-  "MS-vsliveshare.vsliveshare",
   "PeterJausovec.vscode-docker",
   "bungcip.better-toml",
   "dabbott.vscode-import-js",
@@ -16,6 +15,7 @@ install = [
   "ms-vscode.cpptools",
   "ms-vscode.csharp",
   "ms-vscode.Go",
+  "ms-vsliveshare.vsliveshare",
   "msjsdiag.debugger-for-chrome",
   "rebornix.Ruby",
   "redhat.java",
