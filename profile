@@ -23,7 +23,7 @@ export CXXFLAGS="${CFLAGS}"
 
 # https://opensource.com/article/18/5/advanced-use-less-text-file-viewer
 if type less > /dev/null 2>&1; then
-  export LESS='-C -M -I -j 10 -# 4'
+  export LESS='-C -M -I -j 10 -# 4 -R'
   export PAGER=less
 fi
 
