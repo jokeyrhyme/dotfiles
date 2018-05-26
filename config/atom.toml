@@ -36,7 +36,6 @@ install = [
   "linter-csslint",
   "linter-eslint",
   "linter-htmlhint",
-  "linter-markdown",
   "linter-php",
   "linter-proselint",
   "linter-shellcheck",
@@ -52,4 +51,5 @@ install = [
 ]
 
 uninstall = [
+  "linter-markdown",
 ]
