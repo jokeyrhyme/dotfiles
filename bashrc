@@ -59,3 +59,8 @@ if [ "$(uname)" = "Darwin"  ]; then
 fi
 
 bash-it enable plugin git ssh > /dev/null 2>&1
+
+# enable concurrent shell history
+# https://opensource.com/article/18/5/bash-tricks
+shopt -s histappend
+
