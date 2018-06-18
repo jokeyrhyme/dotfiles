@@ -27,6 +27,7 @@ install = [
   "ide-typescript",
   "ide-yaml",
   "language-babel",
+  "language-bazel",
   "language-docker",
   "language-markdown",
   "language-swift",
