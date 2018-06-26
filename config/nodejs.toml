@@ -1,5 +1,6 @@
 install = [
   "@jokeyrhyme/node-init",
+  "alex",
   "clinic",
   "create-react-app",
   "clipboard-cli",
@@ -19,6 +20,7 @@ install = [
   "tslint",
   "typescript",
   "unleash",
+  "write-good",
   "yarn",
 ]
 
