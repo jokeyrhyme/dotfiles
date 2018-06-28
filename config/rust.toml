@@ -6,4 +6,5 @@ install = [
   "ripgrep",
   "rustfmt",
   "rustsym",
+  "tokei",
 ]
