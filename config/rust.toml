@@ -4,7 +4,6 @@ install = [
   "jokeyrhyme-dotfiles",
   "racer",
   "ripgrep",
-  "rustfmt",
   "rustsym",
   "tokei",
 ]
