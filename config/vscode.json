@@ -52,7 +52,7 @@
     "coverOnSave": true,
     "enableCodeLens": {
       "references": false,
-      "runtest": false
+      "runtest": true
     },
     "lintTool": "gometalinter",
     "lintFlags": ["--fast", "--tests", "--vendor"],
