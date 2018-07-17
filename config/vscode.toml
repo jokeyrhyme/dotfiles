@@ -17,7 +17,7 @@ install = [
   "ms-vscode.csharp",
   "ms-vscode.Go",
   "ms-vsliveshare.vsliveshare",
-  "msjsdiag.debugger-for-chrome",
+  "nodesource.vscode-for-node-js-development-pack",
   "rebornix.Ruby",
   "redhat.java",
   "shinnn.stylelint",
@@ -28,7 +28,6 @@ install = [
   "vscjava.vscode-java-debug",
   "vsmobile.cordova-tools",
   "vsmobile.vscode-react-native",
-  "wix.vscode-import-cost",
 ]
 
 uninstall = [
