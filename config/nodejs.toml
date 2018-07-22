@@ -13,6 +13,7 @@ install = [
   "import-js",
   "lebab",
   "lerna",
+  "ndb",
   "node-gyp",
   "package-diff-summary",
   "prettier",
