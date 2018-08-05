@@ -12,7 +12,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rust-lang/rust.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'Galooshi/vim-import-js'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-expand-region'
@@ -29,20 +28,6 @@ Plug 'tpope/vim-surround'
 Plug 'racer-rust/vim-racer'
 
 call plug#end()
-
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \}
-
-" solarize
-if has('gui_running')
-  set background=dark
-else
-  set background=dark
-  let g:solarized_termcolors=256
-  let g:solarized_termtrans=1
-endif
-:colorscheme solarized
 
 " disable additional junk files
 set noswapfile
