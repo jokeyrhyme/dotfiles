@@ -2,8 +2,10 @@ install = [
   "exa",
   "fastmod",
   "jokeyrhyme-dotfiles",
+  "just",
   "racer",
   "ripgrep",
   "rustsym",
   "tokei",
+  "watchexec",
 ]
