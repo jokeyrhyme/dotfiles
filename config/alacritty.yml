@@ -19,8 +19,8 @@ window:
   # Falls back to size specified by window manager if set to 0x0.
   # (changes require restart)
   dimensions:
-    columns: 90
-    lines: 50
+    columns: 0
+    lines: 0
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
