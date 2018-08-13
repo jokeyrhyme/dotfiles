@@ -1,9 +1,6 @@
 install = [
   "EditorConfig.EditorConfig",
-  "PeterJausovec.vscode-docker",
   "bungcip.better-toml",
-  "dabbott.vscode-import-js",
-  "dbaeumer.vscode-eslint",
   "DevonDCarew.bazel-code",
   "eamodio.gitlens",
   "eg2.tslint",
@@ -16,21 +13,20 @@ install = [
   "ms-vscode.cpptools",
   "ms-vscode.csharp",
   "ms-vscode.Go",
-  "ms-vsliveshare.vsliveshare",
-  "nodesource.vscode-for-node-js-development-pack",
+  "nodesource.vscode-for-node-js-development-pack", # pack
   "rebornix.ruby",
-  "redhat.java",
   "shinnn.stylelint",
   "streetsidesoftware.code-spell-checker",
   "rust-lang.rust",
   "timonwong.shellcheck",
   "travisthetechie.write-good-linter",
-  "vscjava.vscode-java-debug",
+  "vscjava.vscode-java-pack", # pack
   "vsmobile.cordova-tools",
   "vsmobile.vscode-react-native",
 ]
 
 uninstall = [
+  "dabbott.vscode-import-js", # NodeSource pack includes an alternative
   "donjayamanne.python",
   "georgewfraser.vscode-javac",
   "lukehoban.Go",
