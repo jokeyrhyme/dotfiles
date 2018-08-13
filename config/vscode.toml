@@ -18,7 +18,7 @@ install = [
   "ms-vscode.Go",
   "ms-vsliveshare.vsliveshare",
   "nodesource.vscode-for-node-js-development-pack",
-  "rebornix.Ruby",
+  "rebornix.ruby",
   "redhat.java",
   "shinnn.stylelint",
   "streetsidesoftware.code-spell-checker",
