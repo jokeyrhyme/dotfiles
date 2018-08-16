@@ -1,6 +1,7 @@
 install = [
   "@jokeyrhyme/node-init",
   "alex",
+  "autocannon",
   "clinic",
   "create-react-app",
   "clipboard-cli",
