@@ -63,5 +63,10 @@ set nofoldenable
 set nu
 set relativenumber
 
+" show trailing whitespace
+" https://stackoverflow.com/a/1675752/488373
+set list
+set listchars=trail:~
+
 " https://github.com/scrooloose/nerdtree
 map <C-\> :NERDTreeToggle<CR>
