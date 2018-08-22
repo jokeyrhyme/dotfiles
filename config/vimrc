@@ -29,6 +29,11 @@ Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
+" auto-reload files when modified externally
+" https://unix.stackexchange.com/a/383044
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
 " disable additional junk files
 set noswapfile
 set nobackup
