@@ -11,6 +11,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'joshdick/onedark.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'Galooshi/vim-import-js'
 Plug 'itchyny/lightline.vim'
@@ -45,6 +46,13 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 0
 
+" onedark
+syntax on
+colorscheme onedark
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
 let g:rustfmt_autosave = 1
 
 if has('gui_running')
@@ -60,6 +68,10 @@ if has('gui_running')
   elseif has("unix")
     set guifont=Fira\ Code\ 11,Hasklig:h11,Hack:h11
   endif
+endif
+
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 " https://stackoverflow.com/a/37542976/488373
