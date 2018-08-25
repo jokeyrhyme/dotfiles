@@ -73,3 +73,8 @@ if type docker > /dev/null 2>&1; then
     export DOCKER_HOST=unix:///var/run/docker.sock
   fi
 fi
+
+# neovim
+if [ -f ~/.local/nvim/bin/nvim ]; then
+  export EDITOR=~/.local/nvim/bin/nvim
+fi
