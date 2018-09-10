@@ -5,6 +5,7 @@ install = [
   "clinic",
   "create-react-app",
   "clipboard-cli",
+  "deoptigate",
   "diff-so-fancy",
   "eslint",
   "git-guilt",
