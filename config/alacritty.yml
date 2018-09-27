@@ -33,11 +33,14 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: true
 
-# Display tabs using this many cells (changes require restart)
-tabspaces: 8
+scrolling:
+  history: 1000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: true
 
-# When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors: true
+# Display tabs using this many cells (changes require restart)
+tabspaces: 4
 
 # Font configuration (changes require restart)
 #
@@ -96,10 +99,7 @@ font:
     x: 0
     y: 0
 
-  # OS X only: use thin stroke font rendering. Thin strokes are suitable
-  # for retina displays, but for non-retina you probably want this set to
-  # false.
-  use_thin_strokes: true
+  scale_with_dpi: true
 
 # Should display the render timer
 render_timer: false
@@ -107,6 +107,9 @@ render_timer: false
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
+
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -409,4 +412,4 @@ key_bindings:
   - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
-    
+
