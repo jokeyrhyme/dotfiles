@@ -85,5 +85,10 @@ set relativenumber
 set list
 set listchars=tab:\ \ ,extends:>,precedes:<,trail:·
 
+" tab stuff
+" https://stackoverflow.com/a/1878983/488373
+set smarttab
+set tabstop=4
+
 " https://github.com/scrooloose/nerdtree
 map <C-\> :NERDTreeToggle<CR>
