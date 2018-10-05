@@ -15,6 +15,7 @@ install = [
   "import-js",
   "lebab",
   "lerna",
+  "llnode",
   "ndb",
   "node-gyp",
   "package-diff-summary",
