@@ -16,6 +16,7 @@ if which pacman >/dev/null 2>&1; then
   sudo chmod a+rx /usr/local/bin/pacaur
 
   echo 'updating packages with pacman ...'
+  sudo pacman -Su --needed archlinux-keyring
   sudo pacman -Syu
 
   if which pacaur >/dev/null 2>&1; then
