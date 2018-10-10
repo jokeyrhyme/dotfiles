@@ -10,6 +10,11 @@ for envsh in ./.dotfiles/packages/*-env.sh; do
 done
 popd > /dev/null || exit 1
 
+if which jokeyrhyme-dotfiles > /dev/null 2>&1; then
+  # shellcheck disable=SC2091
+  $(jokeyrhyme-dotfiles env || true)
+fi
+
 if [ -d /etc/xdg ]; then
   export XDG_DATA_DIRS=${XDG_DATA_DIRS}:/usr/local/share:/usr/share
 fi
@@ -74,7 +79,3 @@ if type docker > /dev/null 2>&1; then
   fi
 fi
 
-# neovim
-if [ -f ~/.local/nvim/bin/nvim ]; then
-  export EDITOR=~/.local/nvim/bin/nvim
-fi

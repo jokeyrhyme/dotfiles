@@ -8,7 +8,7 @@
 
 # include user profile
 pushd "$HOME" > /dev/null || exit 1
-# shellcheck source=./profile
+# shellcheck source=./config/profile
 . ./.profile
 popd > /dev/null || exit 1
 
@@ -46,7 +46,7 @@ popd > /dev/null || exit 1
 
 # custom `cd` command
 cd() {
-    builtin cd "$@"
+    builtin cd "$@" || exit
     if [[ $- == *s* ]]; then
         # reading from stdin, so have a helpful `ls`
         # note that checking *i* for interactivity breaks cloudtoken
