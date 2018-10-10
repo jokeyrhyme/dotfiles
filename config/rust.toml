@@ -1,4 +1,5 @@
 install = [
+  "bat",
   "exa",
   "fastmod",
   "jokeyrhyme-dotfiles",
