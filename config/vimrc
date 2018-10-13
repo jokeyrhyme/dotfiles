@@ -70,6 +70,11 @@ if has('gui_running')
   endif
 endif
 
+" neovim-gtk
+if exists('g:GtkGuiLoaded')
+  call rpcnotify(1, 'Gui', 'Font', 'Fira Code 11')
+endif
+
 if (has("termguicolors"))
   set termguicolors
 endif
