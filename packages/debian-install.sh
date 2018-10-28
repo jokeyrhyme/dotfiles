@@ -8,7 +8,7 @@ if ! lsb_release -i | grep 'Debian' > /dev/null; then
 fi
 
 sudo apt-get update
-sudo apt-get install --yes build-essential cmake fuse inetutils-ping libgit2-dev man python python3 zsh
+sudo apt-get install --yes build-essential cmake fuse inetutils-ping libgit2-dev man python python3{,-pip} zsh
 sudo apt-get autoclean
 
 # stretch-backports certificate cannot be verified without this
