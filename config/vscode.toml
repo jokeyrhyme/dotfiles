@@ -18,6 +18,7 @@ install = [
   "shinnn.stylelint",
   "streetsidesoftware.code-spell-checker",
   "rust-lang.rust",
+  "tabnine.tabnine-vscode",
   "timonwong.shellcheck",
   "travisthetechie.write-good-linter",
   "vscjava.vscode-java-pack", # pack

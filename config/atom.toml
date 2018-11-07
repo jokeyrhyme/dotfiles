@@ -48,6 +48,7 @@ install = [
   "minimap-linter",
   "minimap-selection",
   "prettier-atom",
+  "tabnine",
   "teletype",
 ]
 

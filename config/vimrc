@@ -15,6 +15,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'Galooshi/vim-import-js'
 Plug 'itchyny/lightline.vim'
+if has('python')
+  Plug 'zxqfl/tabnine-vim'
+endif
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
