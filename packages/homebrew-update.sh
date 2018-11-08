@@ -8,7 +8,7 @@ popd >/dev/null
 
 # brew cannot update zsh if it is locked down
 if __dotfiles_is_homebrew_found; then
-  sudo chmod g+w /usr/local/share/zsh /usr/local/share/zsh/site-functions
+  chmod g+w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
 if __dotfiles_is_brew_found; then
@@ -19,7 +19,7 @@ fi
 
 # zsh likes to be locked down for normal use
 if __dotfiles_is_homebrew_found; then
-  sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
+  chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
 if __dotfiles_is_homebrew_found; then
