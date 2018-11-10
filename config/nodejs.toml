@@ -21,6 +21,7 @@ install = [
   "package-diff-summary",
   "prettier",
   "quicktype",
+  "speedscope",
   "tslint",
   "typescript",
   "unleash",
