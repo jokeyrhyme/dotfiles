@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export PATH="$HOME/.local/bin:$HOME/.local/go/bin:$HOME/.local/java/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/go/bin:$HOME/.local/java/bin:$HOME/.local/maven/bin:$PATH"
 
 if [ -d "$HOME/.local/node/bin" ]; then
   export PATH="$HOME/.local/node/bin:$PATH"
