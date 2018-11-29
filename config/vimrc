@@ -44,19 +44,20 @@ set nobackup
 set nowritebackup
 
 let g:ale_fixers = {
-\  'javascript': ['prettier', 'eslint'],
-\  'rust': ['rustfmt']
+\  'markdown': ['prettier'],
 \}
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\  'javascript': ['eslint', 'flow'],
+\  'rust': ['cargo', 'rls', 'rustc'],
+\}
 
 " onedark
 syntax on
 colorscheme onedark
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
-let g:rustfmt_autosave = 1
+\  'colorscheme': 'onedark',
+\}
 
 if has('gui_running')
   if has('toolbar')
