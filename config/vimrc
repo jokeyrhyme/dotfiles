@@ -49,8 +49,10 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
-\  'rust': ['cargo', 'rls', 'rustc'],
+\  'rust': ['cargo', 'rls'],
 \}
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
 " onedark
 syntax on
