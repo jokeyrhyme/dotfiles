@@ -3,7 +3,7 @@ install = [
   # see: https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on
   "github.com/acroca/go-symbols",
   "github.com/alecthomas/gometalinter",
-  "github.com/cweill/gotests/...",
+  "github.com/cweill/gotests/gotests",
   "github.com/davidrjenni/reftools/cmd/fillstruct",
   "github.com/derekparker/delve/cmd/dlv",
   "github.com/fatih/gomodifytags",
