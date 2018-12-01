@@ -8,7 +8,7 @@ popd >/dev/null
 
 if which pacman >/dev/null 2>&1; then
   echo 'installing toolchain with pacman ...'
-  sudo pacman -S --needed --noconfirm base-devel cmake expac lldb yajl
+  sudo pacman -S --needed --noconfirm base-devel cmake expac kcov lldb yajl
 
 #  echo 'installing / updating AUR pacaur ...'
 #  __dotfiles_ensure_shallow_git_clone ~/.pacaur-repo https://github.com/rmarquis/pacaur.git
