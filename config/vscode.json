@@ -32,6 +32,7 @@
         "document"
       ]
     },
+    "historyExplorer.enabled": true,
     "hovers.currentLine.over": "line",
     "keymap": "none"
   },
@@ -54,7 +55,7 @@
       "references": false,
       "runtest": true
     },
-    "lintTool": "gometalinter",
+    "lintTool": "golangci-lint",
     "lintFlags": ["--fast", "--tests", "--vendor"],
     "liveErrors": {
       "enabled": true,
@@ -81,6 +82,5 @@
   },
   "[typescript]": {
     "tslint.autoFixOnSave": true
-  },
-  "gitlens.historyExplorer.enabled": true
+  }
 }

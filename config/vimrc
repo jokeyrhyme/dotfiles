@@ -6,30 +6,30 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
-Plug 'w0rp/ale'
+Plug 'Galooshi/vim-import-js'
+Plug 'RRethy/vim-illuminate'
+Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'plasticboy/vim-markdown'
+Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'joshdick/onedark.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'Galooshi/vim-import-js'
-Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
 if has('python')
   Plug 'zxqfl/tabnine-vim'
 endif
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'RRethy/vim-illuminate'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'plasticboy/vim-markdown'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -44,19 +44,22 @@ set nobackup
 set nowritebackup
 
 let g:ale_fixers = {
-\  'javascript': ['prettier', 'eslint'],
-\  'rust': ['rustfmt']
+\  'markdown': ['prettier'],
 \}
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\  'javascript': ['eslint', 'flow'],
+\  'rust': ['cargo', 'rls'],
+\}
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
 " onedark
 syntax on
 colorscheme onedark
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
-let g:rustfmt_autosave = 1
+\  'colorscheme': 'onedark',
+\}
 
 if has('gui_running')
   if has('toolbar')

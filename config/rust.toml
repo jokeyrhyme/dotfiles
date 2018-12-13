@@ -1,12 +1,19 @@
 install = [
   "bat",
+  "cargo-kcov",
   "exa",
   "fastmod",
   "jokeyrhyme-dotfiles",
   "just",
-  "racer",
   "ripgrep",
   "rustsym",
   "tokei",
   "watchexec",
 ]
+
+uninstall = [
+  "rustfmt",
+  "rustfmt-nightly",
+  "rustfmt-preview",
+]
+

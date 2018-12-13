@@ -1,15 +1,15 @@
-# see: https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on
 install = [
+  "sigs.k8s.io/kind",
+  # see: https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on
   "github.com/acroca/go-symbols",
   "github.com/alecthomas/gometalinter",
-  "github.com/cweill/gotests/...",
+  "github.com/cweill/gotests/gotests",
   "github.com/davidrjenni/reftools/cmd/fillstruct",
   "github.com/derekparker/delve/cmd/dlv",
   "github.com/fatih/gomodifytags",
   "github.com/golang/lint/golint",
   "github.com/haya14busa/goplay/cmd/goplay",
   "github.com/josharian/impl",
-  "github.com/Masterminds/glide",
   "github.com/nsf/gocode",
   "github.com/ramya-rao-a/go-outline",
   "github.com/rogpeppe/godef",
@@ -22,4 +22,9 @@ install = [
   "golang.org/x/tools/cmd/gorename",
   "golang.org/x/tools/cmd/guru",
   "sourcegraph.com/sqs/goreturns",
+]
+
+uninstall = [
+  "github.com/Masterminds/glide", # unfashionable now
+  "github.com/golang/dep", # use binary release instead
 ]
