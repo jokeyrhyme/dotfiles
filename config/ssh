@@ -1,9 +1,6 @@
 # ~/.ssh/config
 
 ConnectTimeout 10
-ControlMaster auto
-ControlPath ~/.ssh/cm-%C
-ControlPersist 10m
 ServerAliveInterval 10
 VisualHostKey yes
 
