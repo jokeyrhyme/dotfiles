@@ -41,10 +41,8 @@ if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
 fi
 
 # run through list of commands and pull in matching plugins
-PLUGIN_CMDS=(brew bundler gem npm pip yum) # package managers
-PLUGIN_CMDS=(git git-flow svn ${PLUGIN_CMDS}) # version control
-PLUGIN_CMDS=(go node ruby rbenv ${PLUGIN_CMDS}) # languages
-PLUGIN_CMDS=(docker gpg-agent rake tmux vagrant ${PLUGIN_CMDS}) # other commands
+PLUGIN_CMDS=(git ${PLUGIN_CMDS}) # version control
+PLUGIN_CMDS=(gpg-agent tmux ${PLUGIN_CMDS}) # other commands
 for p in $PLUGIN_CMDS
 do
   if type $p > /dev/null 2>&1; then
