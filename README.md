@@ -19,12 +19,7 @@ Eventually, this project will contain preferences, and all scripts will be remov
     git clone https://github.com/jokeyrhyme/dotfiles.git ~/.dotfiles
     ```
 
-2.  install additional package managers depending on your OS
-
-    ```sh
-    sh ~/.dotfiles/packages/homebrew-install.sh # OSX-only, required
-    sh ~/.dotfiles/packages/linuxbrew-install.sh # linux-only, required
-    ```
+2.  (optional) install [Homebrew](https://brew.sh)
 
 3.  run any of the following as you wish
 
