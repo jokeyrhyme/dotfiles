@@ -33,25 +33,15 @@ if [ ${USER_OTF_DIR} ]; then
   ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.030R-ro/1.050R-it.zip'
   __dotfiles_download_extract_zip "${ADOBE_CODE_URL}" "${USER_OTF_DIR}" "*.otf"
 
-  FIRACODE_URL='https://github.com/tonsky/FiraCode/releases/download/1.206/FiraCode_1.206.zip'
-  __dotfiles_download_extract_zip "${FIRACODE_URL}" "${USER_OTF_DIR}" "*.otf"
-
   FIRA_RELEASES='https://github.com/mozilla/Fira/archive/'
   FIRA_URL=${FIRA_RELEASES}'4.202.zip'
   __dotfiles_download_extract_zip "${FIRA_URL}" "${USER_OTF_DIR}" "*.otf"
-
-  HASKLIG_RELEASES='https://github.com/i-tu/Hasklig/releases/download/'
-  HASKLIG_URL=${HASKLIG_RELEASES}'1.1/Hasklig-1.1.zip'
-  __dotfiles_download_extract_zip "${HASKLIG_URL}" "${USER_OTF_DIR}" "*.otf"
 
   OVERPASS_URL='https://github.com/RedHatBrand/Overpass/archive/3.0.3.zip'
   __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_OTF_DIR}" "*.otf"
 fi
 
 if [ ${USER_TTF_DIR} ]; then
-  HACK_URL='https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip'
-  __dotfiles_download_extract_zip "${HACK_URL}" "${USER_TTF_DIR}" "*.ttf"
-
   NOTO_URL='https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip'
   __dotfiles_download_extract_zip "${NOTO_URL}" "${USER_TTF_DIR}" "*.ttf"
 fi
