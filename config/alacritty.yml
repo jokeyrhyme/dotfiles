@@ -1,3 +1,8 @@
+window:
+  dimensions:
+    columns: 80
+    lines: 40
+
 tabspaces: 4
 
 font:
