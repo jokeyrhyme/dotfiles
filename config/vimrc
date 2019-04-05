@@ -28,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-if has('python')
+if has('python') || has('python3')
   Plug 'zxqfl/tabnine-vim'
 endif
 
