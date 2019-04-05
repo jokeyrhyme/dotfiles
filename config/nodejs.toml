@@ -17,6 +17,7 @@ install = [
   "lerna",
   "llnode",
   "ndb",
+  "neovim",
   "node-gyp",
   "package-diff-summary",
   "prettier",

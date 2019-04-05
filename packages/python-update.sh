@@ -10,6 +10,7 @@ PIPS=(
 PIP_LIBS=(
   "boto"
   "botocore"
+  "neovim"
   "requests"
 )
 
