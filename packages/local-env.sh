@@ -9,4 +9,3 @@ fi
 if [ -d "$HOME/.local/nvim/bin" ]; then
   export PATH="$HOME/.local/nvim/bin:$PATH"
 fi
-

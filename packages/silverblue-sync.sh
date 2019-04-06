@@ -6,7 +6,7 @@ if ! [ -e /etc/fedora-release ]; then
   echo "error: this script should only be executed for Fedora"
 fi
 
-if ! which rpm-ostree > /dev/null 2>&1; then
+if ! which rpm-ostree >/dev/null 2>&1; then
   echo "error: this script should only be executed for Fedora Silverblue"
 fi
 
@@ -16,4 +16,3 @@ sudo rpm-ostree install --idempotent cmake make gcc gcc-c++ lldb tmux zsh
 # sudo curl -L -o /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/fedora/docker-ce.repo
 # sudo rpm-ostree install --idempotent docker-ce
 # currently fails because upstream Docker only supports Fedora 28 :S
-
