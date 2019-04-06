@@ -1,0 +1,36 @@
+# https://github.com/jokeyrhyme/dotfiles-rs
+
+[config]
+
+"color.ui" = "auto"
+
+"core.pager" = { value = "diff-so-fancy | less --tabs=2 -RFX", when = "which" }
+
+"gpg.program" = { value = "gpg", when = "which" }
+"user.email" = { value = "jokeyrhyme@gmail.com", when = "unset" }
+"user.name" = { value = "Ron Waldon", when = "unset" }
+# https://keybase.io/jokeyrhyme
+"user.signingKey" = { value = "F96EC3B1", when = "unset" }
+
+"push.default" = "simple"
+
+# https://github.com/so-fancy/diff-so-fancy
+"color.diff-highlight.oldNormal" = "red bold"
+"color.diff-highlight.oldHighlight" = "red bold 52"
+"color.diff-highlight.newNormal" = "green bold"
+"color.diff-highlight.newHighlight" = "green bold 22"
+
+# https://about.gitlab.com/2016/12/08/git-tips-and-tricks/
+"fetch.prune" = "true"
+"rebase.autosquash" = "true"
+"status.branch" = "true"
+"status.short" = "true"
+"status.submoduleSummary" = "true"
+
+# http://blog.kfish.org/2010/04/git-lola.html
+"alias.lol" = "log --graph --decorate --pretty=oneline --abbrev-commit"
+"alias.lola" = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+
+# http://psung.blogspot.com.au/2011/02/reducing-merge-headaches-git-meets.html
+"merge.conflictStyle" = "diff3"
+
