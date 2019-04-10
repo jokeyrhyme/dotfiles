@@ -1,0 +1,18 @@
+install = [
+  "ansible",
+  "ansible-lint",
+  "ansible-vault",
+  "autopep8",
+  "boto",
+  "botocore",
+  "cloudtoken",
+  "neovim",
+  "pylint",
+  "requests",
+  "twine",
+  "virtualenv",
+  "virtualenvwrapper",
+]
+
+uninstall = []
+
