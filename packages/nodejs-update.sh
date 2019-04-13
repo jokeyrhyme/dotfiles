@@ -4,7 +4,6 @@ set -e +u
 
 pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
-. ./packages/nodejs-env.sh # `set -u` breaks nvs, so do after
 popd >/dev/null
 
 set -u
