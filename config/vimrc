@@ -90,6 +90,7 @@ endif
 " https://stackoverflow.com/a/37542976/488373
 set nofoldenable
 
+set mouse=a
 set nu
 set relativenumber
 
