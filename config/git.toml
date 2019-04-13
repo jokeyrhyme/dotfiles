@@ -4,7 +4,7 @@
 
 "color.ui" = "auto"
 
-"core.pager" = { value = "diff-so-fancy | less --tabs=2 -RFX", when = "which" }
+"core.pager" = { value = "diff-so-fancy | less", when = "which" }
 
 "gpg.program" = { value = "gpg", when = "which" }
 "user.email" = { value = "jokeyrhyme@gmail.com", when = "unset" }
