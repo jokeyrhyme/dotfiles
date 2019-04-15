@@ -1,0 +1,7 @@
+# non-Windows favourites go here
+# for full-cross-platform favourites, rely on jokeyrhyme-dotfiles
+
+brew "bash"
+brew "fish"
+brew "zsh"
+
