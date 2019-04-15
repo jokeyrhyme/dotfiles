@@ -9,6 +9,7 @@ endif
 Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'airblade/vim-gitgutter'
+Plug 'brooth/far.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
