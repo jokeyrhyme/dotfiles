@@ -9,7 +9,6 @@ endif
 Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'airblade/vim-gitgutter'
-Plug 'brooth/far.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
@@ -30,6 +29,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 if has('python') || has('python3')
+  Plug 'brooth/far.vim'
   Plug 'zxqfl/tabnine-vim'
 endif
 
