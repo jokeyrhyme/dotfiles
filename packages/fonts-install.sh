@@ -32,9 +32,6 @@ if [ ${USER_OTF_DIR} ]; then
   ADOBE_CODE_RELEASES='https://github.com/adobe-fonts/source-code-pro/archive/'
   ADOBE_CODE_URL=${ADOBE_CODE_RELEASES}'2.030R-ro/1.050R-it.zip'
   __dotfiles_download_extract_zip "${ADOBE_CODE_URL}" "${USER_OTF_DIR}" "*.otf"
-
-  OVERPASS_URL='https://github.com/RedHatBrand/Overpass/archive/3.0.3.zip'
-  __dotfiles_download_extract_zip "${OVERPASS_URL}" "${USER_OTF_DIR}" "*.otf"
 fi
 
 if [ ${USER_TTF_DIR} ]; then
