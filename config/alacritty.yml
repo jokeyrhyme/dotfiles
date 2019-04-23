@@ -1,16 +1,14 @@
+# https://github.com/jwilm/alacritty/blob/master/alacritty.yml
 window:
   dimensions:
     columns: 80
     lines: 40
+  decorations: none
 
 tabspaces: 4
 
 font:
   normal:
-    family: Fira Mono
-  bold:
-    family: Fira Mono
-  italic:
     family: Fira Mono
   size: 14.0
 
