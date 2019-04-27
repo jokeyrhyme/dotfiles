@@ -3,7 +3,6 @@ install = [
   "alex",
   "autocannon",
   "clinic",
-  "create-react-app",
   "clipboard-cli",
   "deoptigate",
   "diff-so-fancy",
@@ -22,7 +21,6 @@ install = [
   "prettier",
   "quicktype",
   "speedscope",
-  "tslint",
   "typescript",
   "unleash",
   "write-good",
@@ -30,7 +28,9 @@ install = [
 ]
 
 uninstall = [
+  "create-react-app",
   "greenkeeper",
   "node-gyp",
+  "tslint",
   "typings",
 ]
