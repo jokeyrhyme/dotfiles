@@ -16,12 +16,6 @@ if which npm >/dev/null 2>&1; then
   npm config set init.author.url 'https://github.com/jokeyrhyme'
 fi
 
-if which node >/dev/null 2>&1; then
-  if which node-gyp >/dev/null 2>&1; then
-    node-gyp install "$(node --version)"
-  fi
-fi
-
 if [ -d ~/.config/yarn/global ]; then
   rm -rf "${HOME}/.config/yarn/global"
 fi
