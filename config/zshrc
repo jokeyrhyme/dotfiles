@@ -56,16 +56,6 @@ plugins=(vi-mode battery encode64 $plugins)
 
 . "$ZSH/oh-my-zsh.sh"
 
-# custom `cd` command
-cd() {
-    builtin cd "$@"
-    if [[ $- == *s* ]]; then
-        # reading from stdin, so have a helpful `ls`
-        # note that checking *i* for interactivity breaks cloudtoken
-        ls
-    fi
-}
-
 # enable incremental search
 bindkey "^R" history-incremental-search-backward
 

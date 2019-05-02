@@ -15,6 +15,20 @@ if which jokeyrhyme-dotfiles > /dev/null 2>&1; then
   $(jokeyrhyme-dotfiles env || true)
 fi
 
+# custom `cd` command
+cd() {
+    builtin cd "$@"
+    if [[ $- == *s* ]]; then
+        # reading from stdin, so have a helpful `ls`
+        # note that checking *i* for interactivity breaks cloudtoken
+        if type exa > /dev/null 2>&1; then
+          exa
+        else
+          ls
+        fi
+    fi
+}
+
 if [ -d /etc/xdg ]; then
   export XDG_DATA_DIRS=${XDG_DATA_DIRS}:/usr/local/share:/usr/share
 fi
