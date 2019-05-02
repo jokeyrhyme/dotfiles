@@ -10,7 +10,7 @@ tabspaces: 4
 
 font:
   normal:
-    family: Fira Mono
+    family: Fira Code
   size: 14.0
 
 visual_bell:
