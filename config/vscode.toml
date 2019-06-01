@@ -22,8 +22,6 @@ install = [
   "timonwong.shellcheck",
   "travisthetechie.write-good-linter",
   "vscjava.vscode-java-pack", # pack
-  "vsmobile.cordova-tools",
-  "vsmobile.vscode-react-native",
 ]
 
 uninstall = [
