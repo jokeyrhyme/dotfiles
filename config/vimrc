@@ -8,6 +8,7 @@ endif
 
 Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
