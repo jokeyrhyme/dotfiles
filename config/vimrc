@@ -10,11 +10,11 @@ Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'joshdick/onedark.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
 Plug 'racer-rust/vim-racer'
@@ -66,10 +66,7 @@ let g:ctrlp_custom_ignore = {
 
 " onedark
 syntax on
-colorscheme onedark
-let g:lightline = {
-\  'colorscheme': 'onedark',
-\}
+color dracula
 
 if has('gui_running')
   if has('toolbar')
