@@ -10,11 +10,11 @@ Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
 Plug 'racer-rust/vim-racer'
@@ -64,9 +64,12 @@ let g:ctrlp_custom_ignore = {
 \  'dir': '\v[\/](coverage|dist|node_modules|vendor)',
 \}
 
-" onedark
+" theme
 syntax on
-color dracula
+color jellybeans
+let g:lightline = {
+\   'colorscheme': 'jellybeans',
+\ }
 
 if has('gui_running')
   if has('toolbar')
