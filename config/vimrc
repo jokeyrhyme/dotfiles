@@ -46,12 +46,14 @@ set nobackup
 set nowritebackup
 
 let g:ale_fixers = {
+\  'go': ['gofmt', 'goimports'],
 \  'markdown': ['prettier'],
 \  'rust': ['rustfmt'],
 \  'typescript': ['eslint', 'prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
+\  'go': ['golangci-lint'],
 \  'javascript': ['eslint', 'flow'],
 \  'rust': ['cargo', 'rls'],
 \}
