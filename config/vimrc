@@ -54,7 +54,7 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-\  'go': ['golangci-lint'],
+\  'go': ['gobuild', 'golangci-lint', 'gomod', 'govet'],
 \  'javascript': ['eslint', 'flow'],
 \  'rust': ['cargo', 'rls'],
 \}
