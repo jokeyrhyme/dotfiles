@@ -3,6 +3,7 @@ install = [
   "ansible-lint",
   "ansible-vault",
   "autopep8",
+  "black",
   "boto",
   "botocore",
   "cloudtoken",
