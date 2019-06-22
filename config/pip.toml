@@ -7,13 +7,15 @@ install = [
   "boto",
   "botocore",
   "cloudtoken",
-  "neovim",
   "pylint",
+  "pynvim",
   "requests",
   "twine",
   "virtualenv",
   "virtualenvwrapper",
 ]
 
-uninstall = []
+uninstall = [
+  "neovim", # replaced by pynvim
+]
 
