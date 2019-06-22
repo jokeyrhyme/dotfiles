@@ -3,6 +3,7 @@
 
 brew "bash"
 brew "fish"
+brew "gnupg"
 brew "tmux"
 brew "zsh"
 
