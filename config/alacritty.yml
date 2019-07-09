@@ -4,7 +4,6 @@ window:
     columns: 80
     lines: 40
   dynamic_padding: true
-  decorations: none
 
 tabspaces: 4
 
