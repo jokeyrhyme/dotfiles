@@ -26,6 +26,13 @@ cd() {
         else
           ls
         fi
+        if ! type nvm > /dev/null 2>&1; then
+          if type nvs > /dev/null 2>&1; then
+            if [ -r ./.nvmrc ]; then
+              nvs use $(cat ./.nvmrc)
+            fi
+          fi
+        fi
     fi
 }
 
