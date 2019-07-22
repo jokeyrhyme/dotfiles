@@ -27,6 +27,9 @@
 "status.short" = "true"
 "status.submoduleSummary" = "true"
 
+# https://bitbucket.org/blog/resolving-conflicts-with-git-rerere
+"rerere.enabled" = "true"
+
 # http://blog.kfish.org/2010/04/git-lola.html
 "alias.lol" = "log --graph --decorate --pretty=oneline --abbrev-commit"
 "alias.lola" = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
