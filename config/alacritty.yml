@@ -3,6 +3,9 @@ window:
   dimensions:
     columns: 80
     lines: 40
+  position:
+    x: 0
+    y: 0
   dynamic_padding: true
 
 tabspaces: 4
