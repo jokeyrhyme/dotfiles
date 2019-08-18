@@ -62,8 +62,10 @@ let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
 let g:ctrlp_custom_ignore = {
-\  'dir': '\v[\/](coverage|dist|node_modules|vendor)',
+\  'dir': '\v[\/](\.hg|\.git|\.svn|coverage|dist|node_modules|target|vendor)$',
+\  'file': 'v\.(DS_Store|class|dll|exe|pyc|so)$',
 \}
+let g:ctrlp_show_hidden = 1
 
 " theme
 syntax on
