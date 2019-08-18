@@ -48,9 +48,12 @@ set nowritebackup
 
 let g:ale_fixers = {
 \  'go': ['gofmt', 'goimports'],
+\  'graphql': ['prettier'],
 \  'markdown': ['prettier'],
+\  'mdx': ['prettier'],
 \  'rust': ['rustfmt'],
 \  'typescript': ['eslint', 'prettier'],
+\  'yaml': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
