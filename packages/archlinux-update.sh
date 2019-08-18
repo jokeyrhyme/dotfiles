@@ -6,7 +6,7 @@ pushd "$(dirname $0)/.." >/dev/null
 . ./scripts/lib/utils.sh
 popd >/dev/null
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   echo 'installing toolchain with pacman ...'
   sudo pacman -S --needed --noconfirm base-devel cmake expac kcov lldb yajl
 
@@ -19,7 +19,7 @@ if which pacman >/dev/null 2>&1; then
   sudo pacman -Su --needed archlinux-keyring
   sudo pacman -Syu
 
-#  if which pacaur >/dev/null 2>&1; then
+#  if command -v pacaur >/dev/null 2>&1; then
 #    echo 'updating packages with pacaur...'
 #    pacaur -Syu --aur
 #  fi

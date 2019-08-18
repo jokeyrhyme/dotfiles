@@ -13,16 +13,16 @@ if __dotfiles_is_homebrew_found; then
   brew cask install --force macvim
 fi
 
-if which dnf >/dev/null 2>&1; then
+if command -v dnf >/dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y ctags vim
-  if which Xorg >/dev/null 2>&1; then
+  if command -v Xorg >/dev/null 2>&1; then
     echo 'found Xorg!'
     sudo dnf install -y vim-X11
   fi
 fi
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --noconfirm ctags gvim
 fi

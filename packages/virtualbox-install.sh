@@ -16,7 +16,7 @@ if __dotfiles_is_homebrew_found; then
   sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm virtualbox virtualbox-host-dkms
 fi

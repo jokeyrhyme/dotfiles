@@ -2,12 +2,12 @@
 
 set -e
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Sy --needed --noconfirm snapd
 fi
 
-if which snap >/dev/null 2>&1; then
-  if which systemctl >/dev/null 2>&1; then
+if command -v snap >/dev/null 2>&1; then
+  if command -v systemctl >/dev/null 2>&1; then
     sudo systemctl enable snapd.service
     sudo systemctl start snapd.service
 

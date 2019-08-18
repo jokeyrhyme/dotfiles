@@ -26,6 +26,6 @@ if [ ${USER_TTF_DIR} ]; then
   __dotfiles_download_extract_zip "${NOTO_URL}" "${USER_TTF_DIR}" "*.ttf"
 fi
 
-if which fc-cache >/dev/null 2>&1; then
+if command -v fc-cache >/dev/null 2>&1; then
   fc-cache -r
 fi

@@ -10,14 +10,14 @@ for envsh in ./.dotfiles/packages/*-env.sh; do
 done
 popd > /dev/null || exit 1
 
-if which jokeyrhyme-dotfiles > /dev/null 2>&1; then
+if command -v jokeyrhyme-dotfiles > /dev/null 2>&1; then
   # shellcheck disable=SC2091
   $(jokeyrhyme-dotfiles env || true)
 fi
 
 # custom `cd` command
 cd() {
-    builtin cd "$@"
+    builtin cd "$@" || exit 1
     if [[ $- == *s* ]]; then
         # reading from stdin, so have a helpful `ls`
         # note that checking *i* for interactivity breaks cloudtoken
@@ -29,7 +29,7 @@ cd() {
         if ! type nvm > /dev/null 2>&1; then
           if type nvs > /dev/null 2>&1; then
             if [ -r ./.nvmrc ]; then
-              nvs use $(cat ./.nvmrc)
+              nvs use "$(cat ./.nvmrc)"
             fi
           fi
         fi

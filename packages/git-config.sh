@@ -2,7 +2,7 @@
 
 set -e
 
-if which git >/dev/null 2>&1; then
+if command -v git >/dev/null 2>&1; then
   echo "configuring git..."
 
   if ! git config --global --get user.email; then
@@ -19,21 +19,21 @@ if which git >/dev/null 2>&1; then
 
   git config --global push.default "simple"
 
-  if which gpg >/dev/null 2>&1; then
+  if command -v gpg >/dev/null 2>&1; then
     git config --global gpg.program "gpg"
   else
     git config --global --unset gpg.program
   fi
 
-  if which diff-so-fancy >/dev/null 2>&1; then
-    if which less >/dev/null 2>&1; then
+  if command -v diff-so-fancy >/dev/null 2>&1; then
+    if command -v less >/dev/null 2>&1; then
       git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
     fi
   else
     git config --global --unset core.pager
   fi
 
-  if which git-lfs >/dev/null 2>&1; then
+  if command -v git-lfs >/dev/null 2>&1; then
     git lfs install
   fi
 

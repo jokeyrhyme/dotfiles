@@ -22,7 +22,7 @@ __dotfiles_update_shallow_git_clone() { # dirPath
 }
 
 __dotfiles_assert_in_path() { # binBasename
-  if which $1 > /dev/null 2>&1; then
+  if command -v $1 > /dev/null 2>&1; then
     echo "found $1"
   else
     echo "error: no $1!"

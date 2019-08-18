@@ -16,21 +16,21 @@ if __dotfiles_is_homebrew_found; then
   sudo chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 fi
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm git
 fi
 
-if which dnf >/dev/null 2>&1; then
+if command -v dnf >/dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y git
 
-elif which yum >/dev/null 2>&1; then
+elif command -v yum >/dev/null 2>&1; then
   echo 'found yum!'
   sudo yum install -y git
 fi
 
-if which apt-get >/dev/null 2>&1; then
+if command -v apt-get >/dev/null 2>&1; then
   echo 'found apt!'
   sudo apt-get install -y git
 fi

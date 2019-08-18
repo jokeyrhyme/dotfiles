@@ -2,16 +2,16 @@
 
 set -e
 
-if which pacman >/dev/null 2>&1; then
+if command -v pacman >/dev/null 2>&1; then
   echo 'found pacman!'
   sudo pacman -Sy --needed --noconfirm flatpak
 fi
 
-if which dnf >/dev/null 2>&1; then
+if command -v dnf >/dev/null 2>&1; then
   echo 'found dnf!'
   sudo dnf install -y flatpak
 
-elif which yum >/dev/null 2>&1; then
+elif command -v yum >/dev/null 2>&1; then
   echo 'found yum!'
   sudo yum install -y flatpak
 fi

@@ -6,7 +6,7 @@ if ! [ -e /etc/fedora-release ]; then
   echo "error: this script should only be executed for Fedora"
 fi
 
-if ! which rpm-ostree >/dev/null 2>&1; then
+if ! command -v rpm-ostree >/dev/null 2>&1; then
   echo "error: this script should only be executed for Fedora Silverblue"
 fi
 

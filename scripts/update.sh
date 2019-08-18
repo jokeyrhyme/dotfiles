@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if which dnf >/dev/null 2>&1; then
+if command -v dnf >/dev/null 2>&1; then
   echo 'updating packages with dnf...'
   sudo dnf upgrade --obsoletes --allowerasing
-elif which yum >/dev/null 2>&1; then
+elif command -v yum >/dev/null 2>&1; then
   echo 'updating packages with yum...'
   sudo yum upgrade -y
 fi

@@ -10,7 +10,7 @@ set -u
 
 __dotfiles_assert_in_path git
 
-if which npm >/dev/null 2>&1; then
+if command -v npm >/dev/null 2>&1; then
   npm config set init.author.name 'Ron Waldon'
   npm config set init.author.email 'jokeyrhyme@gmail.com'
   npm config set init.author.url 'https://github.com/jokeyrhyme'

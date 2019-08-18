@@ -1,7 +1,7 @@
 #!/bin/sh
 
 __dotfiles_is_brew_found() {
-  if which brew > /dev/null 2>&1; then
+  if command -v brew > /dev/null 2>&1; then
     return 0
   fi
   return 1
