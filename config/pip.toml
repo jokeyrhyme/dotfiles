@@ -13,6 +13,7 @@ install = [
   "twine",
   "virtualenv",
   "virtualenvwrapper",
+  "yamllint",
 ]
 
 uninstall = [
