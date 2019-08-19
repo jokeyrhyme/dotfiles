@@ -37,4 +37,7 @@
 # http://psung.blogspot.com.au/2011/02/reducing-merge-headaches-git-meets.html
 "merge.conflictStyle" = "diff3"
 
+"url.git://bitbucket.org.insteadOf" = "https://bitbucket.org"
 "url.git://github.com.insteadOf" = "https://github.com"
+"url.git://gitlab.com.insteadOf" = "https://gitlab.com"
+
