@@ -15,7 +15,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
 Plug 'racer-rust/vim-racer'
@@ -72,10 +72,7 @@ let g:ctrlp_show_hidden = 1
 
 " theme
 syntax on
-color jellybeans
-let g:lightline = {
-\   'colorscheme': 'jellybeans',
-\ }
+color gruvbox
 
 if has('gui_running')
   if has('toolbar')
