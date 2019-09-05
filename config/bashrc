@@ -15,10 +15,6 @@ popd > /dev/null || exit 1
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
 
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-export BASH_IT_THEME='minimal'
-
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
 
@@ -63,4 +59,8 @@ bash-it enable plugin git ssh > /dev/null 2>&1
 # enable concurrent shell history
 # https://opensource.com/article/18/5/bash-tricks
 shopt -s histappend
+
+if which starship > /dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
 
