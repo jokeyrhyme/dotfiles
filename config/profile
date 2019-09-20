@@ -42,6 +42,10 @@ fi
 
 # http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html
 export MAKEFLAGS='-j2'
+if [ -r /proc/cpuinfo ]; then
+  # use all CPUs, but leave one spare for system responsiveness
+  export MAKEFLAGS='-j'$(($(grep -c ^processor < /proc/cpuinfo) - 1))
+fi
 
 # http://www.linuxfromscratch.org/hints/downloads/files/optimization.txt
 export CFLAGS="-Os -march=native"
