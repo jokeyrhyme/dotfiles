@@ -54,7 +54,6 @@ let g:ale_fixers = {
 \  'mdx': ['prettier'],
 \  'rust': ['rustfmt'],
 \  'typescript': ['eslint', 'prettier'],
-\  'yaml': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
