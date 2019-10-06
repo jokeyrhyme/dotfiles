@@ -60,7 +60,7 @@ bash-it enable plugin git ssh > /dev/null 2>&1
 # https://opensource.com/article/18/5/bash-tricks
 shopt -s histappend
 
-if which starship > /dev/null 2>&1; then
+if type starship > /dev/null 2>&1; then
   eval "$(starship init bash)"
 fi
 
