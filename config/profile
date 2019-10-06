@@ -57,6 +57,13 @@ if type less > /dev/null 2>&1; then
   export PAGER=less
 fi
 
+if type pkg-config > /dev/null 2>&1; then
+  export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+  if [ -d /home/linuxbrew/.linuxbrew/lib/pkgconfig ]; then
+    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/linuxbrew/.linuxbrew/lib/pkgconfig
+  fi
+fi
+
 # Java on OS X
 if [ -f /usr/libexec/java_home ] && [ -x /usr/libexec/java_home ]; then
   if /usr/libexec/java_home &> /dev/null; then
