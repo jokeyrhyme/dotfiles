@@ -13,4 +13,3 @@ if [ -r "${HOME}/.nvs/nvs.sh" ]; then
   # shellcheck disable=SC1090
   . "${NVS_HOME}/nvs.sh"
 fi
-
