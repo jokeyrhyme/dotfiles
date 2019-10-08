@@ -17,7 +17,9 @@ fi
 
 # custom `cd` command
 cd() {
-  builtin cd "$@" || exit 1
+  if ! builtin cd "$@"; then
+    return 1
+  fi
   if [[ $- == *s* ]]; then
     # reading from stdin, so have a helpful `ls`
     # note that checking *i* for interactivity breaks cloudtoken
