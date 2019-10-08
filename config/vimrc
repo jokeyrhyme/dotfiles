@@ -83,15 +83,15 @@ if has('gui_running')
   set lines=50
 
   if has("mac")
-    set guifont=Fira\ Code\ 14,Hasklig:h14,Hack:h14
+    set guifont=Cascadia\ Code\ 14,Fira\ Code\ 14,Hasklig:h14,Hack:h14
   elseif has("unix")
-    set guifont=Fira\ Code\ 11,Hasklig:h11,Hack:h11
+    set guifont=Cascadia\ Code\ 11,Fira\ Code\ 11,Hasklig:h11,Hack:h11
   endif
 endif
 
 " neovim-gtk
 if exists('g:GtkGuiLoaded')
-  call rpcnotify(1, 'Gui', 'Font', 'Fira Code 11')
+  call rpcnotify(1, 'Gui', 'Font', 'Cascadia Code 11')
 endif
 
 if (has("termguicolors"))
