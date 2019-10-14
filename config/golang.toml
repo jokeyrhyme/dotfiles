@@ -2,7 +2,6 @@ install = [
   "sigs.k8s.io/kind",
   # see: https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on
   "github.com/acroca/go-symbols",
-  "github.com/alecthomas/gometalinter",
   "github.com/cweill/gotests/gotests",
   "github.com/davidrjenni/reftools/cmd/fillstruct",
   "github.com/derekparker/delve/cmd/dlv",
@@ -27,5 +26,6 @@ install = [
 
 uninstall = [
   "github.com/Masterminds/glide", # unfashionable now
+  "github.com/alecthomas/gometalinter", # deprecated
   "github.com/golang/dep", # use binary release instead
 ]
