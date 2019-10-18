@@ -38,7 +38,7 @@ HYPHEN_INSENSITIVE="true"
 
 # load in OS X plugins
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ]; then
-  plugins=(osx terminalapp $plugins)
+  plugins=(osx $plugins)
 fi
 
 # run through list of commands and pull in matching plugins
