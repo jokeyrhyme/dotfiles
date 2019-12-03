@@ -81,8 +81,7 @@
   },
   "[javascript]": {
     "eslint.autoFixOnSave": true,
-    "javascript.validate.enable": false
-  },
+  ,
   "[typescript]": {
     "tslint.autoFixOnSave": true
   }

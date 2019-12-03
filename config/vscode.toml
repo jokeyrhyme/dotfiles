@@ -3,9 +3,7 @@ install = [
   "bungcip.better-toml",
   "DevonDCarew.bazel-code",
   "eamodio.gitlens",
-  "eg2.tslint",
   "esbenp.prettier-vscode",
-  "flowtype.flow-for-vscode",
   "kumar-harsh.graphql-for-vscode",
   "mitaki28.vscode-clang",
   "ms-python.python",
@@ -15,7 +13,6 @@ install = [
   "ms-vscode.Go",
   "nodesource.vscode-for-node-js-development-pack", # pack
   "rebornix.ruby",
-  "shinnn.stylelint",
   "streetsidesoftware.code-spell-checker",
   "rust-lang.rust",
   "TabNine.tabnine-vscode",
@@ -27,7 +24,9 @@ install = [
 uninstall = [
   "dabbott.vscode-import-js", # NodeSource pack includes an alternative
   "donjayamanne.python",
+  "eg2.tslint",
   "georgewfraser.vscode-javac",
+  "flowtype.flow-for-vscode",
   "lukehoban.Go",
   "ms-vscode.latex",
   "saviorisdead.RustyCode",
