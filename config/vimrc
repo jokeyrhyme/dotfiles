@@ -59,7 +59,7 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \  'go': ['gobuild', 'golangci-lint', 'gomod', 'govet'],
 \  'javascript': ['eslint', 'flow'],
-\  'rust': ['cargo', 'rls'],
+\  'rust': ['cargo'],
 \}
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
