@@ -79,10 +79,29 @@
     "startupEditor": "newUntitledFile",
     "welcome.enabled": false
   },
+  "[go]": {
+    "editor": {
+      "formatOnPaste": true,
+      "formatOnSave": true
+    }
+  },
   "[javascript]": {
-    "eslint.autoFixOnSave": true,
+    "eslint.autoFixOnSave": true
+  },
+  "[rust]": {
+    "editor": {
+      "formatOnPaste": true,
+      "formatOnSave": true
+    }
   },
   "[typescript]": {
+    "editor": {
+      "formatOnPaste": true,
+      "formatOnSave": true
+    },
     "tslint.autoFixOnSave": true
-  }
+  },
+  "cSpell.userWords": [
+    "clippy"
+  ]
 }
