@@ -19,6 +19,7 @@ install = [
   "prettier",
   "quicktype",
   "speedscope",
+  "swaglint",
   "typescript",
   "typescript-language-server",
   "vscode-json-languageserver",
