@@ -21,6 +21,7 @@ install = [
   "golang.org/x/tools/cmd/gopls",
   "golang.org/x/tools/cmd/gorename",
   "golang.org/x/tools/cmd/guru",
+  "golang.org/x/tools/gopls",
   "sourcegraph.com/sqs/goreturns",
 ]
 
