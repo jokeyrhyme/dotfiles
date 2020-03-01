@@ -1,7 +1,7 @@
 # https://github.com/jwilm/alacritty/blob/master/alacritty.yml
 window:
   dimensions:
-    columns: 80
+    columns: 90
     lines: 40
   position:
     x: 0
