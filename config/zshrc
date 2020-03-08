@@ -1,4 +1,4 @@
-#!/bin/zsh
+#! /usr/bin/env zsh
 
 autoload -Uz compinit && compinit
 
@@ -63,6 +63,11 @@ bindkey "^R" history-incremental-search-backward
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
-if which starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
+# include interactive setup
+if [ -f ~/.dotfiles/config/interactive.sh ]; then
+  . ~/.dotfiles/config/interactive.sh
 fi
+if [ -f ~/.dotfiles/config/interactive.zsh ]; then
+  . ~/.dotfiles/config/interactive.zsh
+fi
+
