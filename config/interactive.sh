@@ -24,3 +24,9 @@ cd() {
   fi
 }
 
+# ensure tmux
+if [ "${TMUX:-nope}" = "nope" ]; then
+  if command -v tmux > /dev/null 2>&1; then
+    tmux new-session
+  fi
+fi
