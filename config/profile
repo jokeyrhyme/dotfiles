@@ -35,6 +35,14 @@ cd() {
         fi
       fi
     fi
+    if [ -f ./.venv/bin/activate ]; then
+      source ./.venv/bin/activate
+      export PATH=./.venv/bin:$PATH
+    fi
+    if [ -f ./.virtualenv/bin/activate ]; then
+      source ./.virtualenv/bin/activate
+      export PATH=./.virtualenv/bin:$PATH
+    fi
   fi
 }
 
