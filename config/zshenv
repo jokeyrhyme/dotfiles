@@ -1,0 +1,12 @@
+#! /usr/bin/env zsh
+
+# include system profile
+if [ -f /etc/profile ]; then
+  . /etc/profile
+fi
+
+if [ -f ~/.dotfiles/config/environment.sh ]; then
+  # shellcheck source=./config/environment.sh
+  . ~/.dotfiles/config/environment.sh
+fi
+
