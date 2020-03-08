@@ -1,5 +1,4 @@
 #! /usr/bin/env sh
-# sh/bash/zsh setup for interactive sessions
 
 # custom `cd` command
 cd() {
@@ -26,7 +25,7 @@ cd() {
 
 # ensure tmux
 if [ "${TMUX:-nope}" = "nope" ]; then
-  if command -v tmux > /dev/null 2>&1; then
+  if command -v tmux >/dev/null 2>&1; then
     tmux new-session
   fi
 fi

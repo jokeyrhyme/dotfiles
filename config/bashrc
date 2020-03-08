@@ -1,9 +1,11 @@
 #! /usr/bin/env bash
-#
-# ~/.bashrc
-#
 
-# If not running interactively, don't do anything
+if [ -f ~/.dotfiles/config/environment.sh ]; then
+  # shellcheck source=./config/environment.sh
+  . ~/.dotfiles/config/environment.sh
+fi
+
+# If not running interactively, don't do anything else
 [[ $- != *i* ]] && return
 
 # include user profile
@@ -40,23 +42,12 @@ pushd "$BASH_IT" >/dev/null || exit 1
 . ./bash_it.sh
 popd >/dev/null || exit 1
 
-# custom `cd` command
-cd() {
-  builtin cd "$@" || exit
-  if [[ $- == *s* ]]; then
-    # reading from stdin, so have a helpful `ls`
-    # note that checking *i* for interactivity breaks cloudtoken
-    ls
-  fi
-}
-
 if [ "$(uname)" = "Darwin" ]; then
   bash-it enable plugin osx >/dev/null 2>&1
 fi
 
 bash-it enable plugin git ssh >/dev/null 2>&1
 
-# include interactive setup
 if [ -f ~/.dotfiles/config/interactive.sh ]; then
   # shellcheck source=./config/interactive.sh
   . ~/.dotfiles/config/interactive.sh
