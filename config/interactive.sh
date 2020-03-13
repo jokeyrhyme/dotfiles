@@ -21,10 +21,12 @@ cd() {
       fi
     fi
     if [ -f ./.venv/bin/activate ]; then
+      # shellcheck disable=SC1091
       source ./.venv/bin/activate
       export PATH=./.venv/bin:$PATH
     fi
     if [ -f ./.virtualenv/bin/activate ]; then
+      # shellcheck disable=SC1091
       source ./.virtualenv/bin/activate
       export PATH=./.virtualenv/bin:$PATH
     fi
