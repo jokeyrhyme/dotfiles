@@ -1,5 +1,10 @@
 #! /usr/bin/env sh
 
+pushd "$(dirname $0)/.." >/dev/null || exit 1
+. ./scripts/lib/is.sh
+. ./scripts/lib/utils.sh
+popd >/dev/null || exit 1
+
 if command -v dnf >/dev/null 2>&1; then
   echo 'updating packages with dnf...'
   sudo dnf upgrade --obsoletes --allowerasing
@@ -20,12 +25,16 @@ if command -v cargo >/dev/null 2>&1; then
 fi
 if [ -r ~/.dotfiles/tuning/main.toml ]; then
   if command -v tuning >/dev/null 2>&1; then
-    mkdir -p ~/.config
-    __dotfiles_force_symlink ~/.dotfiles/tuning ~/.config/tuning
+    if __dotfiles_is_os_darwin; then
+      mkdir -p ~/Library/Preferences
+      __dotfiles_force_symlink ~/.dotfiles/tuning ~/Library/Preferences/tuning
+    else # linux
+      mkdir -p ~/.config
+      __dotfiles_force_symlink ~/.dotfiles/tuning ~/.config/tuning
+    fi
     RUST_BACKTRACE=1 tuning || true
   fi
 fi
 if command -v jokeyrhyme-dotfiles >/dev/null 2>&1; then
   RUST_BACKTRACE=1 jokeyrhyme-dotfiles all || true
 fi
-
