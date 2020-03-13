@@ -41,6 +41,9 @@ if type pkg-config >/dev/null 2>&1; then
   if [ -d /home/linuxbrew/.linuxbrew/lib/pkgconfig ]; then
     export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/linuxbrew/.linuxbrew/lib/pkgconfig
   fi
+  if [ -d /usr/lib/x86_64-linux-gnu/pkgconfig ]; then
+    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig
+  fi
 fi
 
 # Java on OS X
