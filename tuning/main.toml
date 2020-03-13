@@ -1,0 +1,70 @@
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/tuning"
+path = "{{ config_dir }}/tuning"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/hyper.js"
+path = "{{ config_dir }}/Hyper/hyper.js"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/bash_profile"
+path = "{{ home_dir }}/.bash_profile"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/bashrc"
+path = "{{ home_dir }}/.bashrc"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/inputrc"
+path = "{{ home_dir }}/.inputrc"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/profile"
+path = "{{ home_dir }}/.profile"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/zshenv"
+path = "{{ home_dir }}/.zshenv"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/zshlogin"
+path = "{{ home_dir }}/.zlogin"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/zshprofile"
+path = "{{ home_dir }}/.zprofile"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/zshrc"
+path = "{{ home_dir }}/.zshrc"
+state = "link"
+
