@@ -10,6 +10,7 @@ install = [
   "starship",
   "tokei",
   "watchexec",
+  "zoxide",
 ]
 
 uninstall = [
