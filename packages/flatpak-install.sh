@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/env sh
 
 set -e
 
@@ -15,7 +15,3 @@ elif command -v yum >/dev/null 2>&1; then
   echo 'found yum!'
   sudo yum install -y flatpak
 fi
-
-pushd "$(dirname $0)/.." >/dev/null
-. ./packages/flatpak-update.sh
-popd >/dev/null

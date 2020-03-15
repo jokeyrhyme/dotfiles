@@ -69,3 +69,14 @@ src = "{{ home_dir }}/.dotfiles/config/zshrc"
 path = "{{ home_dir }}/.zshrc"
 state = "link"
 
+[[jobs]]
+type = "command"
+argv = ["remote-add", "--if-not-exists", "--user", "flathub", "https://flathub.org/repo/flathub.flatpakrepo"]
+command = "flatpak"
+# TODO: only run when flatpak exists
+
+[[jobs]]
+type = "command"
+argv = ["update", "--user", "--assumeyes"]
+command = "flatpak"
+# TODO: only run when flatpak exists
