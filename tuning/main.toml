@@ -87,3 +87,10 @@ type = "command"
 argv = ["update", "--user", "--assumeyes"]
 command = "flatpak"
 # TODO: only run when flatpak exists
+
+[[jobs]]
+name = "rebuild font caches"
+type = "command"
+argv = ["--really-force"]
+command = "fc-cache"
+# TODO: only run when fc-cache exists
