@@ -1,4 +1,6 @@
+---
 # https://github.com/jwilm/alacritty/blob/master/alacritty.yml
+
 window:
   dimensions:
     columns: 90
@@ -7,8 +9,6 @@ window:
     x: 0
     y: 0
   dynamic_padding: true
-
-tabspaces: 4
 
 font:
   normal:
@@ -22,4 +22,3 @@ background_opacity: 0.95
 
 selection:
   save_to_clipboard: true
-
