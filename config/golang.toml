@@ -9,6 +9,7 @@ install = [
   "github.com/golang/lint/golint",
   "github.com/haya14busa/goplay/cmd/goplay",
   "github.com/josharian/impl",
+  "github.com/junegunn/fzf",
   "github.com/mrtazz/checkmake",
   "github.com/nsf/gocode",
   "github.com/ramya-rao-a/go-outline",
