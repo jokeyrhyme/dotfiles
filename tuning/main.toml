@@ -6,6 +6,7 @@ path = "{{ config_dir }}/tuning"
 state = "link"
 
 [[jobs]]
+name = "Brewfile"
 type = "file"
 force = true
 src = "{{ home_dir }}/.dotfiles/config/Brewfile"
@@ -16,6 +17,7 @@ state = "link"
 type = "command"
 argv = ["bundle", "install", "--global", "--no-upgrade", "--verbose"]
 command = "brew"
+needs = ["Brewfile"]
 # TODO: only run when brew exists
 
 [[jobs]]
