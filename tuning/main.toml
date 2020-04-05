@@ -13,6 +13,12 @@ path = "{{ home_dir }}/.Brewfile"
 state = "link"
 
 [[jobs]]
+type = "command"
+argv = ["bundle", "install", "--global", "--no-upgrade", "--verbose"]
+command = "brew"
+# TODO: only run when brew exists
+
+[[jobs]]
 type = "file"
 force = true
 src = "{{ home_dir }}/.dotfiles/config/hyper.js"
