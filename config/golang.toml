@@ -2,8 +2,8 @@ install = [
   "github.com/junegunn/fzf",
   "github.com/mgechev/revive",
   "github.com/mrtazz/checkmake",
-  "github.com/mvdan/gofumpt",
   "github.com/mvdan/sh",
+  "mvdan.cc/gofumpt",
 ]
 
 uninstall = [
