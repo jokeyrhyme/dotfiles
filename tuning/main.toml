@@ -59,6 +59,13 @@ state = "link"
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/tmux.conf"
+path = "{{ home_dir }}/.tmux.conf"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/zshenv"
 path = "{{ home_dir }}/.zshenv"
 state = "link"
