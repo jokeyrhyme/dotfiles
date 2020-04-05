@@ -1,30 +1,9 @@
 install = [
-  "sigs.k8s.io/kind",
-  # see: https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on
-  "github.com/acroca/go-symbols",
-  "github.com/cweill/gotests/gotests",
-  "github.com/davidrjenni/reftools/cmd/fillstruct",
-  "github.com/derekparker/delve/cmd/dlv",
-  "github.com/fatih/gomodifytags",
-  "github.com/golang/lint/golint",
-  "github.com/haya14busa/goplay/cmd/goplay",
-  "github.com/josharian/impl",
   "github.com/junegunn/fzf",
+  "github.com/mgechev/revive"
   "github.com/mrtazz/checkmake",
-  "github.com/nsf/gocode",
-  "github.com/ramya-rao-a/go-outline",
-  "github.com/rogpeppe/godef",
-  "github.com/sourcegraph/go-langserver",
-  "github.com/tylerb/gotype-live",
-  "github.com/uudashr/gopkgs/cmd/gopkgs",
-  "github.com/zmb3/gogetdoc",
-  "golang.org/x/tools/cmd/godoc",
-  "golang.org/x/tools/cmd/goimports",
-  "golang.org/x/tools/cmd/gopls",
-  "golang.org/x/tools/cmd/gorename",
-  "golang.org/x/tools/cmd/guru",
-  "golang.org/x/tools/gopls",
-  "sourcegraph.com/sqs/goreturns",
+  "github.com/mvdan/gofumpt",
+  "github.com/mvdan/sh",
 ]
 
 uninstall = [
