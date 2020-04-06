@@ -10,13 +10,11 @@ Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
@@ -31,6 +29,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
+if executable('fzf')
+  Plug 'junegunn/fzf'
+  map <C-p> :FZF<CR>
+else
+  Plug 'ctrlpvim/ctrlp.vim'
+endif
 if has('python') || has('python3')
   Plug 'brooth/far.vim'
   Plug 'zxqfl/tabnine-vim'
