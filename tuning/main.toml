@@ -16,6 +16,13 @@ needs = ["Brewfile"]
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/alacritty.yml"
+path = "{{ config_dir }}/alacritty/alacritty.yml"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/hyper.js"
 path = "{{ config_dir }}/Hyper/hyper.js"
 state = "link"
