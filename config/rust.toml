@@ -1,6 +1,7 @@
 install = [
   "bat",
   "cargo-kcov",
+  "fd-find",
   "exa",
   "fastmod",
   "jokeyrhyme-dotfiles",
