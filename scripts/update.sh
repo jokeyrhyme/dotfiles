@@ -25,13 +25,6 @@ if command -v cargo >/dev/null 2>&1; then
 fi
 if [ -r ~/.dotfiles/tuning/main.toml ]; then
   if command -v tuning >/dev/null 2>&1; then
-    if __dotfiles_is_os_darwin; then
-      mkdir -p ~/Library/Preferences
-      __dotfiles_force_symlink ~/.dotfiles/tuning ~/Library/Preferences/tuning
-    else # linux
-      mkdir -p ~/.config
-      __dotfiles_force_symlink ~/.dotfiles/tuning ~/.config/tuning
-    fi
     RUST_BACKTRACE=1 tuning || true
   fi
 fi
