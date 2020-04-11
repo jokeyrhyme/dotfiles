@@ -1,11 +1,4 @@
 [[jobs]]
-type = "file"
-force = true
-src = "{{ home_dir }}/.dotfiles/tuning"
-path = "{{ config_dir }}/tuning"
-state = "link"
-
-[[jobs]]
 name = "Brewfile"
 type = "file"
 force = true
