@@ -1,0 +1,10 @@
+#window {
+  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-size: x-large;
+}
+
+#input,
+#input:focus {
+  border: none;
+  border-radius: 0;
+}

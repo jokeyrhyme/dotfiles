@@ -19,7 +19,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu bemenu --fn "Cascadia Code 32" | xargs swaymsg exec --
+set $menu wofi --show=dmenu | xargs swaymsg exec --
 set $swaylock 'swaylock --ignore-empty-password --show-failed-attempts --daemonize --indicator-caps-lock --color 000000 --indicator-radius 200 --indicator-thickness 25'
 set $swaydpmsoff 'swaymsg "output * dpms off"'
 set $swaydpmson 'swaymsg "output * dpms on"'
@@ -83,7 +83,7 @@ exec swayidle -w \
 
     # start your launcher
     # bindsym $mod+d exec $menu
-    bindsym $mod+d exec ~/.local/bin/wldash
+    bindsym $mod+d exec wofi --show=drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

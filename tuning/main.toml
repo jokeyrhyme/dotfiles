@@ -94,6 +94,20 @@ state = "link"
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/wofi"
+path = "{{ config_dir }}/wofi/config"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/wofi.css"
+path = "{{ config_dir }}/wofi/style.css"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/zshenv"
 path = "{{ home_dir }}/.zshenv"
 state = "link"
