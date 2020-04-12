@@ -73,6 +73,27 @@ state = "link"
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/sway"
+path = "{{ config_dir }}/sway/config"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/waybar.json"
+path = "{{ config_dir }}/waybar/config"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
+src = "{{ home_dir }}/.dotfiles/config/waybar.css"
+path = "{{ config_dir }}/waybar/style.css"
+state = "link"
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/zshenv"
 path = "{{ home_dir }}/.zshenv"
 state = "link"

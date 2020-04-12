@@ -1,0 +1,82 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(30, 30, 30, 0.5);
+  color: white;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: white;
+  border-bottom: 3px solid transparent;
+}
+
+#idle_inhibitor.activated,
+#workspaces button.focused {
+  border-bottom: 3px solid white;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid white;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 10px;
+  margin: 0 4px;
+  background-color: transparent;
+}
+
+@keyframes blink {
+  to {
+    background-color: white;
+    color: black;
+  }
+}
+
+#workspaces button.urgent,
+#battery.critical:not(.charging),
+#temperature.critical {
+  background-color: red;
+  color: white;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: black;
+}
+
+#network.disconnected,
+#pulseaudio.muted {
+  color: black;
+}

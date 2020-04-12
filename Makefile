@@ -1,6 +1,6 @@
 .NOCACHE: fmt
 fmt:
-	prettier --write **/*.md
+	prettier --write **/*.css **/*.md
 	shfmt -w -s -i 2 **/*.sh **/*.bash **/*.zsh
 
 .NOCACHE: test
