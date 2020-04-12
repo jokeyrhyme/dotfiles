@@ -21,6 +21,8 @@ set $term alacritty
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu bemenu --fn "Cascadia Code 32" | xargs swaymsg exec --
 set $swaylock 'swaylock --ignore-empty-password --show-failed-attempts --daemonize --indicator-caps-lock --color 000000 --indicator-radius 200 --indicator-thickness 25'
+set $swaydpmsoff 'swaymsg "output * dpms off"'
+set $swaydpmson 'swaymsg "output * dpms on"'
 
 ### Output configuration
 #
@@ -48,11 +50,10 @@ set $swaylock 'swaylock --ignore-empty-password --show-failed-attempts --daemoni
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
      timeout 300 $swaylock \
-#     timeout 330 'swaymsg "output * dpms off"' \
-#	      resume 'swaymsg "output * dpms on"' \
-#    after-resume 'swaymsg "output * dpms on"' \
+     timeout 330 $swaydpmsoff \
     before-sleep $swaylock \
-            lock $swaylock
+            lock $swaylock \
+	      unlock $swaydpmson
 
 ### Input configuration
 #
