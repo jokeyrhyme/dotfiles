@@ -3,6 +3,7 @@
 
 brew "bash"
 brew "fish"
+brew "git-extras"
 brew "gnupg"
 brew "pandoc" # needed for checkmake
 brew "tmux"
