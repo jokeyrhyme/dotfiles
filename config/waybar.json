@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"],
+    "modules-right": ["pulseaudio", "custom/internet", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -23,6 +23,11 @@
     //         "default": ""
     //     }
     // },
+	"custom/internet": {
+	   "exec": "source ~/.dotfiles/config/environment.sh && ~/.dotfiles/config/waybar.internet.js",
+	   "interval": 3,
+	   "return-type": "json"
+	},
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
