@@ -4,13 +4,16 @@
 
 const childProcess = require('child_process');
 
+const CONNECTED = 'connected';
+const DISCONNECTED = 'disconnected';
+
 (async () => {
   const device = extractInternetDevice(await spawn('nmcli'));
   const status = extractStatus(await spawn('nmcli', ['general', 'status']));
 
   console.log(JSON.stringify({
     class: status,
-    percentage: status === 'connected' ? 100 : 0,
+    percentage: status === CONNECTED ? 100 : 0,
     text: device || status,
     tooltip: `${device}: ${status}`,
   }));
@@ -33,11 +36,13 @@ function extractInternetDevice(input = '') {
   return undefined;
 }
 
-// example output from `nmcli general status`
+// example output from `nmcli general status`:
+// STATE      CONNECTIVITY  WIFI-HW  WIFI      WWAN-HW  WWAN
+// connected  full          enabled  disabled  enabled  enabled
 function extractStatus(input = '') {
   const [ , secondLine = '' ] = input.split('\n') || [];
   const [ status ] = secondLine.match(/^\w+/);
-  return status || 'disconnected';
+  return status || DISCONNECTED;
 }
 
 async function spawn(exe, args) {
