@@ -9,7 +9,11 @@ const DISCONNECTED = 'disconnected';
 
 (async () => {
   const device = extractInternetDevice(await spawn('nmcli'));
-  const status = extractStatus(await spawn('nmcli', ['general', 'status']));
+  // consider us DISCONNECTED if we don't find a `device`,
+  // otherwise a "connected (local only)" status is possible
+  const status = device ?
+    extractStatus(await spawn('nmcli', ['general', 'status'])) :
+    DISCONNECTED;
 
   console.log(JSON.stringify({
     class: status,
