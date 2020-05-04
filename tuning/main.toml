@@ -11,7 +11,7 @@ type = "command"
 argv = ["bundle", "install", "--global", "--no-upgrade", "--verbose"]
 command = "brew"
 needs = ["Brewfile"]
-# TODO: only run when brew exists
+when = {{ has_executable(exe="brew") }}
 
 [[jobs]]
 type = "file"
@@ -76,6 +76,7 @@ force = true
 src = "{{ home_dir }}/.dotfiles/config/sway"
 path = "{{ config_dir }}/sway/config"
 state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -83,6 +84,7 @@ force = true
 src = "{{ home_dir }}/.dotfiles/config/waybar.json"
 path = "{{ config_dir }}/waybar/config"
 state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -90,6 +92,7 @@ force = true
 src = "{{ home_dir }}/.dotfiles/config/waybar.css"
 path = "{{ config_dir }}/waybar/style.css"
 state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -97,6 +100,7 @@ force = true
 src = "{{ home_dir }}/.dotfiles/config/wofi"
 path = "{{ config_dir }}/wofi/config"
 state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -104,6 +108,7 @@ force = true
 src = "{{ home_dir }}/.dotfiles/config/wofi.css"
 path = "{{ config_dir }}/wofi/style.css"
 state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -137,17 +142,17 @@ state = "link"
 type = "command"
 argv = ["remote-add", "--if-not-exists", "--user", "flathub", "https://flathub.org/repo/flathub.flatpakrepo"]
 command = "flatpak"
-# TODO: only run when flatpak exists
+when = {{ has_executable(exe="flatpak") }}
 
 [[jobs]]
 type = "command"
 argv = ["update", "--user", "--assumeyes"]
 command = "flatpak"
-# TODO: only run when flatpak exists
+when = {{ has_executable(exe="flatpak") }}
 
 [[jobs]]
 name = "rebuild font caches"
 type = "command"
 argv = ["--really-force"]
 command = "fc-cache"
-# TODO: only run when fc-cache exists
+when = {{ has_executable(exe="fc-cache") }}
