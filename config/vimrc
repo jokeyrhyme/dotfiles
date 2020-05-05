@@ -49,6 +49,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+" ale
 let g:ale_fixers = {
 \  'go': ['gofmt', 'goimports'],
 \  'graphql': ['prettier'],
@@ -66,11 +67,15 @@ let g:ale_linters = {
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
+" ctrlp
 let g:ctrlp_custom_ignore = {
 \  'dir': '\v[\/](\.hg|\.git|\.svn|coverage|dist|lcov-report|node_modules|target|vendor)$',
 \  'file': 'v\.(DS_Store|class|dll|exe|pyc|so)$',
 \}
 let g:ctrlp_show_hidden = 1
+
+" lightline
+set noshowmode
 
 " theme
 syntax on
