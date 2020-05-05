@@ -22,12 +22,12 @@ cd() {
     fi
     if [ -f ./.venv/bin/activate ]; then
       # shellcheck disable=SC1091
-      source ./.venv/bin/activate
+      . ./.venv/bin/activate
       export PATH=./.venv/bin:$PATH
     fi
     if [ -f ./.virtualenv/bin/activate ]; then
       # shellcheck disable=SC1091
-      source ./.virtualenv/bin/activate
+      . ./.virtualenv/bin/activate
       export PATH=./.virtualenv/bin:$PATH
     fi
   fi
@@ -36,6 +36,19 @@ cd() {
 # ensure tmux
 if [ "${TMUX:-nope}" = "nope" ]; then
   if command -v tmux >/dev/null 2>&1; then
-    tmux new-session
+    TMUX_ARGS=new-session
+    TMUX_DETACHED_SESSION=$(tmux list-sessions | grep -v attached)
+    if [ -n "$TMUX_DETACHED_SESSION" ]; then
+      # attach to the most recently used unattached session
+      TMUX_ARGS=attach-session
+    fi
+    if command -v systemd-run >/dev/null 2>&1; then
+      # allow detached tmux sessions to keep running after logout
+      TMUX_UNIT_ID=tmux-$(tmux list-sessions | wc -l)
+      systemd-run --same-dir --scope --unit $TMUX_UNIT_ID --user tmux $TMUX_ARGS
+    else
+      tmux $TMUX_ARGS
+    fi
   fi
 fi
+
