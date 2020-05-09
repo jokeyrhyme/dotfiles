@@ -37,14 +37,14 @@ cd() {
 if [ "${TMUX:-nope}" = "nope" ]; then
   if command -v tmux >/dev/null 2>&1; then
     TMUX_ARGS=new-session
-    TMUX_DETACHED_SESSION=$(tmux list-sessions | grep -v attached)
+    TMUX_DETACHED_SESSION=$(tmux list-sessions 2>/dev/null | grep -v attached)
     if [ -n "$TMUX_DETACHED_SESSION" ]; then
       # attach to the most recently used unattached session
       TMUX_ARGS=attach-session
     fi
     if command -v systemd-run >/dev/null 2>&1; then
       # allow detached tmux sessions to keep running after logout
-      TMUX_UNIT_ID=tmux-$(tmux list-sessions | wc -l)
+      TMUX_UNIT_ID=tmux-$(tmux list-sessions 2>/dev/null | wc -l)
       systemd-run --same-dir --scope --unit $TMUX_UNIT_ID --user tmux $TMUX_ARGS
     else
       tmux $TMUX_ARGS
