@@ -13,7 +13,7 @@ window:
 font:
   normal:
     family: Fira Code
-  size: 13.0
+  size: 11.0
 
 visual_bell:
   duration: 100
