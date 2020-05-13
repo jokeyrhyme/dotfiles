@@ -12,7 +12,7 @@ window:
 
 font:
   normal:
-    family: Cascadia Code
+    family: Fira Code
   size: 13.0
 
 visual_bell:

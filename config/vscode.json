@@ -5,7 +5,7 @@
       "source.organizeImports": true
     },
     "dragAndDrop": true,
-    "fontFamily": "'Cascadia Code', 'Fira Code', Hasklig, Hack, monospace",
+    "fontFamily": "'Fira Code', 'Cascadia Code', Hasklig, Hack, monospace",
     "fontLigatures": true,
     "fontSize": 14,
     "minimap": {

@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // font family with optional fallbacks
-    fontFamily: '"Cascadia Code", "Fira Code", "Fira Mono", monospace',
+    fontFamily: '"Fira Code", "Cascadia Code", "Fira Mono", monospace',
     fontSize: 14,
 
     // set to `true` if you're using a Linux set up

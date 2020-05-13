@@ -103,7 +103,7 @@ exec swayidle -w \
 
     # exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag \
-	--font="Cascadia Code" \
+	--font="Fira Code" \
 	-t warning \
 	-m 'Do you really want to exit sway?' \
 	-b 'loginctl lock-sessions' 'loginctl lock-sessions' \
@@ -247,7 +247,7 @@ bar {
 
 default_border none
 default_floating_border normal
-font "Cascadia Code 12"
+font "Fira Code 12"
 gaps inner 16
 gaps outer 0
 smart_gaps on

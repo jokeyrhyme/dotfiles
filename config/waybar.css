@@ -2,7 +2,7 @@
   border: none;
   border-radius: 0;
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-family: "Fira Code", "Cascadia Code", monospace;
   font-size: 13px;
   min-height: 0;
 }

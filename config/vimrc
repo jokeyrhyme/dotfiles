@@ -90,9 +90,9 @@ if has('gui_running')
   set lines=50
 
   if has("mac")
-    set guifont=Cascadia\ Code\ 14,Fira\ Code\ 14,Hasklig:h14,Hack:h14
+    set guifont=Fira\ Code\ 14,Cascadia\ Code\ 14,Hasklig:h14,Hack:h14
   elseif has("unix")
-    set guifont=Cascadia\ Code\ 11,Fira\ Code\ 11,Hasklig:h11,Hack:h11
+    set guifont=Fira\ Code\ 11,Cascadia\ Code\ 11,Hasklig:h11,Hack:h11
   endif
 endif
 
