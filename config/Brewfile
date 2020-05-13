@@ -5,6 +5,8 @@ brew "bash"
 brew "fish"
 brew "git-extras"
 brew "gnupg"
+brew "lynis"
+brew "neofetch"
 brew "pandoc" # needed for checkmake
 brew "tmux"
 brew "zsh"
