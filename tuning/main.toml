@@ -156,3 +156,10 @@ type = "command"
 argv = ["--really-force"]
 command = "fc-cache"
 when = {{ has_executable(exe="fc-cache") }}
+
+[[jobs]]
+name = "install pip with easy_install"
+type = "command"
+argv = ["--user", "install", "pip"]
+command = "easy_install"
+when = {{ has_executable(exe="easy_install") and not has_executable(exe="pip") and not has_executable(exe="pip3") }}
