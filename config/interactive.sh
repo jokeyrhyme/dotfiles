@@ -33,6 +33,14 @@ cd() {
   fi
 }
 
+# ensure ssh-agent
+if [ "${SSH_AGENT_PID:-nope}" = "nope" ]; then
+  if command -v ssh-agent >/dev/null 2>&1; then
+    eval $(ssh-agent -s)
+  fi
+fi
+
+
 # ensure tmux
 if [ "${TMUX:-nope}" = "nope" ]; then
   if command -v tmux >/dev/null 2>&1; then
