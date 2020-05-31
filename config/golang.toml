@@ -1,4 +1,5 @@
 install = [
+  "github.com/FiloSottile/yubikey-agent",
   "github.com/junegunn/fzf",
   "github.com/mgechev/revive",
   "github.com/mrtazz/checkmake",
