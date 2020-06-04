@@ -11,10 +11,10 @@ Plug 'RRethy/vim-illuminate'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
+Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
@@ -76,10 +76,13 @@ let g:ctrlp_show_hidden = 1
 
 " lightline
 set noshowmode
+let g:lightline = {
+\  'colorscheme': 'darcula',
+\}
 
 " theme
 syntax on
-color gruvbox
+color dracula
 
 if has('gui_running')
   if has('toolbar')
