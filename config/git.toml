@@ -12,7 +12,9 @@
 # https://keybase.io/jokeyrhyme
 "user.signingKey" = { value = "F96EC3B1", when = "unset" }
 
+"pull.rebase" = "false"
 "push.default" = "simple"
+"protocol.version" = "2"
 
 # https://github.com/so-fancy/diff-so-fancy
 "color.diff-highlight.oldNormal" = "red bold"
