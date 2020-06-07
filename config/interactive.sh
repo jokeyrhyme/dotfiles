@@ -36,10 +36,9 @@ cd() {
 # ensure ssh-agent
 if [ "${SSH_AUTH_SOCK:-nope}" = "nope" ]; then
   if command -v ssh-agent >/dev/null 2>&1; then
-    eval $(ssh-agent -s)
+    eval "$(ssh-agent -s)"
   fi
 fi
-
 
 # ensure tmux
 if [ "${TMUX:-nope}" = "nope" ]; then
@@ -59,4 +58,3 @@ if [ "${TMUX:-nope}" = "nope" ]; then
     fi
   fi
 fi
-
