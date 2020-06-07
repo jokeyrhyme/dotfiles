@@ -1,5 +1,15 @@
 #! /usr/bin/env sh
 
+set -eu
+
+# prepare smartcard/yubikey for SSH use
+if [ -n "${SSH_AUTH_SOCK:-}" ]; then
+  if [ -e /usr/lib/opensc-pkcs11.so ]; then
+    ssh-add -e /usr/lib/opensc-pkcs11.so
+    ssh-add -s /usr/lib/opensc-pkcs11.so
+  fi
+fi
+
 pushd "$(dirname $0)/.." >/dev/null || exit 1
 . ./scripts/lib/is.sh
 . ./scripts/lib/utils.sh
