@@ -10,6 +10,7 @@ Plug 'Galooshi/vim-import-js'
 Plug 'RRethy/vim-illuminate'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
 Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
