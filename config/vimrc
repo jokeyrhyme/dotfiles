@@ -126,5 +126,9 @@ set listchars=tab:\ \ ,extends:>,precedes:<,trail:·
 set smarttab
 set tabstop=4
 
+" http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
+" make Y consistent with C and D.
+nnoremap Y y$
+
 " https://github.com/scrooloose/nerdtree
 map <C-\> :NERDTreeToggle<CR>
