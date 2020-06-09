@@ -7,6 +7,7 @@ path = "{{ home_dir }}/.Brewfile"
 state = "link"
 
 [[jobs]]
+name = "brew bundle"
 type = "command"
 argv = ["bundle", "install", "--global", "--no-upgrade", "--verbose"]
 command = "brew"
@@ -155,6 +156,7 @@ name = "rebuild font caches"
 type = "command"
 argv = ["--really-force"]
 command = "fc-cache"
+needs = ["brew bundle"]
 when = {{ has_executable(exe="fc-cache") }}
 
 [[jobs]]
