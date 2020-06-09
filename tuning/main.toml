@@ -1,4 +1,11 @@
 [[jobs]]
+name = "macOS update"
+type = "command"
+argv = ["--all", "--install", "--force"]
+command = "softwareupdate"
+when = {{ is_os_macos }}
+
+[[jobs]]
 name = "Brewfile"
 type = "file"
 force = true
@@ -13,6 +20,25 @@ argv = ["bundle", "install", "--global", "--no-upgrade", "--verbose"]
 command = "brew"
 needs = ["Brewfile"]
 when = {{ has_executable(exe="brew") }}
+# TODO: after macOS update
+
+[[jobs]]
+name = "link homebrew fonts"
+type = "file"
+force = true
+src = "/usr/local/share/fonts"
+path = "{{ home_dir }}/Library/Fonts/homebrew"
+state = "link"
+when = {{ is_os_macos }}
+
+[[jobs]]
+name = "link linuxbrew fonts"
+type = "file"
+force = true
+src = "/home/linuxbrew/.linuxbrew/share/fonts"
+path = "{{ home_dir }}/.local/share/fonts/linuxbrew"
+state = "link"
+when = {{ is_os_linux }}
 
 [[jobs]]
 type = "file"
@@ -158,6 +184,7 @@ argv = ["--really-force"]
 command = "fc-cache"
 needs = ["brew bundle"]
 when = {{ has_executable(exe="fc-cache") }}
+# TODO: after linux homebrew/linuxbrew fonts
 
 [[jobs]]
 name = "install pip with easy_install"
