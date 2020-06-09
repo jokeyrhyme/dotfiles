@@ -5,7 +5,7 @@ set -eu
 # prepare smartcard/yubikey for SSH use
 if [ -n "${SSH_AUTH_SOCK:-}" ]; then
   if [ -e /usr/lib/opensc-pkcs11.so ]; then
-    ssh-add -e /usr/lib/opensc-pkcs11.so
+    ssh-add -e /usr/lib/opensc-pkcs11.so || true
     ssh-add -s /usr/lib/opensc-pkcs11.so
   fi
 fi
