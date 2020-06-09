@@ -31,7 +31,6 @@ Eventually, this project will contain preferences, and all scripts will be remov
     sh ~/.dotfiles/packages/nodejs-install.sh # requires git
     sh ~/.dotfiles/packages/ruby-install.sh # requires git
     sh ~/.dotfiles/packages/vim-install.sh # requires git
-    sh ~/.dotfiles/packages/atom-install.sh
     ```
 
 ### Debian / Ubuntu / etc
