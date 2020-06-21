@@ -1,6 +1,6 @@
 {
   "editor": {
-    "autoIndent": true,
+    "autoIndent": "advanced",
     "codeActionsOnSave": {
       "source.organizeImports": true
     },
@@ -8,6 +8,8 @@
     "fontFamily": "'Fira Code', 'Cascadia Code', Hasklig, Hack, monospace",
     "fontLigatures": true,
     "fontSize": 14,
+    "formatOnPaste": true,
+    "formatOnSave": true,
     "minimap": {
       "enabled": true,
       "renderCharacters": false
@@ -29,9 +31,7 @@
     },
     "codeLens": {
       "authors.enabled": false,
-      "scopes": [
-        "document"
-      ]
+      "scopes": ["document"]
     },
     "historyExplorer.enabled": true,
     "hovers.currentLine.over": "line",
@@ -79,29 +79,9 @@
     "startupEditor": "newUntitledFile",
     "welcome.enabled": false
   },
-  "[go]": {
-    "editor": {
-      "formatOnPaste": true,
-      "formatOnSave": true
-    }
-  },
-  "[javascript]": {
-    "eslint.autoFixOnSave": true
-  },
-  "[rust]": {
-    "editor": {
-      "formatOnPaste": true,
-      "formatOnSave": true
-    }
-  },
-  "[typescript]": {
-    "editor": {
-      "formatOnPaste": true,
-      "formatOnSave": true
-    },
-    "tslint.autoFixOnSave": true
-  },
-  "cSpell.userWords": [
-    "clippy"
-  ]
+  "cSpell.userWords": ["clippy"],
+  "tabnine.experimentalAutoImports": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
