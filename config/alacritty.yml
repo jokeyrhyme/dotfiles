@@ -4,10 +4,13 @@
 window:
   dimensions:
     columns: 100
-    lines: 40
+    lines: 60
   position:
     x: 0
     y: 0
+  padding:
+    x: 2
+    y: 2
   dynamic_padding: true
 
 font:
