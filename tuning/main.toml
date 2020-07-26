@@ -51,7 +51,7 @@ state = "link"
 type = "file"
 force = true
 src = "{{ home_dir }}/.dotfiles/config/hyper.js"
-path = "{{ config_dir }}/Hyper/hyper.js"
+path = "{{ home_dir }}/.hyper.js"
 state = "link"
 # TODO: use data_dir on macOS
 
