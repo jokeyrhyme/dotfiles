@@ -6,7 +6,6 @@ install = [
   "black",
   "boto",
   "botocore",
-  "cloudtoken",
   "pylint",
   "pynvim",
   "requests",
