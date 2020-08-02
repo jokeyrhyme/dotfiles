@@ -18,7 +18,7 @@ font:
     family: Fira Code
   size: 11.0
 
-visual_bell:
+bell:
   duration: 100
 
 background_opacity: 0.95
