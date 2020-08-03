@@ -19,6 +19,12 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Su --needed archlinux-keyring
   sudo pacman -Syu
 
+  echo 'installing favourites with pacman ...'
+  sudo pacman -S --needed --noconfirm bash fish gnupg lynis neofetch tmux zsh
+  sudo pacman -S --needed --noconfirm pandoc # needed for checkmake # TODO: haskell?
+  sudo pacman -S --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts otf-overpass ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono} inter-font
+  # TODO: try to keep in sync with config/Brewfile
+
 #  if command -v pacaur >/dev/null 2>&1; then
 #    echo 'updating packages with pacaur...'
 #    pacaur -Syu --aur
