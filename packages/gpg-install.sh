@@ -13,7 +13,3 @@ fi
 if __dotfiles_is_homebrew_found; then
   brew install gpg2
 fi
-
-pushd "$(dirname $0)/.." >/dev/null
-. ./packages/gpg-update.sh
-popd >/dev/null

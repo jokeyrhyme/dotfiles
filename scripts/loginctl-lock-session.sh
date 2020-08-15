@@ -6,4 +6,3 @@
 for SESSION_ID in $(loginctl list-sessions --no-ask-password --output json | jq -r ".[] | select(.user==\"${USER}\") | .session"); do
   loginctl lock-session "${SESSION_ID}"
 done
-

@@ -18,10 +18,10 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm alacritty keybase{,-gui} python-pipx neovim
   sudo pacman -S --needed --noconfirm sway swaybg swayidle swaylock waybar wofi
   sudo pacman -S --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-overpass ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
-  if pacman -Q keybase-bin > /dev/null 2>&1; then
+  if pacman -Q keybase-bin >/dev/null 2>&1; then
     sudo pacman -R --noconfirm --unneeded keybase-bin # from AUR, now in community
   fi
-  if pacman -Q redshift > /dev/null 2>&1; then
+  if pacman -Q redshift >/dev/null 2>&1; then
     sudo pacman -R --noconfirm --unneeded redshift # doesn't work on wayland
   fi
 
