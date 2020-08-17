@@ -22,7 +22,7 @@ set $term alacritty
 set $menu wofi --show=dmenu | xargs swaymsg exec --
 set $swaylock 'swaylock --daemonize'
 set $swaydpmsoff 'swaymsg "output * dpms off"'
-set $swaydpmson 'swaymsg "output * dpms on"'
+set $swaydpmson  'swaymsg "output * dpms on"'
 
 # setup polkit integration
 # requires `pacman -S polkit-gnome`
@@ -61,13 +61,13 @@ output * adaptive_sync on
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
+  idlehint 300              \
    timeout 300 $swaylock    \
-#   timeout 330 $swaydpmsoff \
+   timeout 300 $swaydpmsoff resume $swaydpmson \
   before-sleep $swaylock    \
-          lock $swaylock   # \
-#  after-resume $swaydpmson  \
-#        resume $swaydpmson  \
-#        unlock $swaydpmson
+          lock $swaylock    \
+  after-resume $swaydpmson  \
+        unlock $swaydpmson
 
 ### Input configuration
 #
@@ -117,7 +117,6 @@ bindsym --release {
 	--font="Fira Code" \
 	-t warning \
 	-m 'Do you really want to exit sway?' \
-	-b 'loginctl lock-sessions' 'loginctl lock-sessions' \
 	-b 'swaymsg exit' 'swaymsg exit' \
 	-b 'systemctl reboot' 'systemctl reboot' \
 	-b 'systemctl poweroff' 'systemctl poweroff'
