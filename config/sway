@@ -24,6 +24,15 @@ set $swaylock 'swaylock --daemonize'
 set $swaydpmsoff 'swaymsg "output * dpms off"'
 set $swaydpmson 'swaymsg "output * dpms on"'
 
+# setup polkit integration
+# requires `pacman -S polkit-gnome`
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# setup notifications
+# requires `pacman -S mako`
+exec mako
+exec_always makoctl reload
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
