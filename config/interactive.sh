@@ -34,7 +34,7 @@ cd() {
 }
 
 # ensure ssh-agent
-if [ "${SSH_AUTH_SOCK:-nope}" = "nope" ]; then
+if [ ! -w "${SSH_AUTH_SOCK:-nope}" ]; then
   if command -v ssh-agent >/dev/null 2>&1; then
     eval "$(ssh-agent -s)"
   fi
