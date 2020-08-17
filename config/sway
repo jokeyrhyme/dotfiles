@@ -83,9 +83,8 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-# https://github.com/MichaelAquilina/tumbleweed-ansible/blob/master/roles/sway/files/sway/config
 bindsym --release {
-    $mod+$alt+l exec sleep 0.2 && killall -SIGUSR1 swayidle
+    $mod+$alt+l exec loginctl lock-session
 }
 
 ### Key bindings
@@ -117,6 +116,7 @@ bindsym --release {
 	--font="Fira Code" \
 	-t warning \
 	-m 'Do you really want to exit sway?' \
+	-b 'loginctl lock-session' 'loginctl lock-session' \
 	-b 'swaymsg exit' 'swaymsg exit' \
 	-b 'systemctl reboot' 'systemctl reboot' \
 	-b 'systemctl poweroff' 'systemctl poweroff'
