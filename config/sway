@@ -211,7 +211,9 @@ bindsym --release {
 
 # Multi-media keys:
 # =================
-#bindsym Print					exec grim ~/Pictures/$(date +%Y%m%d%h%m%s).png
+bindsym Print					exec grim $(xdg-user-dir PICTURES)/$(date +%Y%m%d%h%m%s).png
+bindsym Shift+Print   exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +%Y%m%d%h%m%s).png
+
 bindsym XF86AudioMute			exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume 	exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume 	exec pactl set-sink-volume @DEFAULT_SINK@ -5%

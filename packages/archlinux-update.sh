@@ -16,7 +16,7 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm pandoc # needed for checkmake # TODO: haskell?
   sudo pacman -S --needed --noconfirm opensc yubikey-manager
   sudo pacman -S --needed --noconfirm alacritty keybase{,-gui} python-pipx neovim
-  sudo pacman -S --needed --noconfirm mako playerctl polkit-gnome sway swaybg swayidle swaylock waybar wofi
+  sudo pacman -S --needed --noconfirm grim mako playerctl polkit-gnome slurp sway swaybg swayidle swaylock waybar wofi
   sudo pacman -S --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-overpass ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
   if pacman -Q keybase-bin >/dev/null 2>&1; then
     sudo pacman -R --noconfirm --unneeded keybase-bin # from AUR, now in community
