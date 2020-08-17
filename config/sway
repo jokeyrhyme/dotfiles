@@ -20,7 +20,7 @@ set $term alacritty
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show=dmenu | xargs swaymsg exec --
-set $swaylock 'swaylock --ignore-empty-password --show-failed-attempts --daemonize --indicator-caps-lock --color 000000 --indicator-radius 200 --indicator-thickness 25'
+set $swaylock 'swaylock --daemonize'
 set $swaydpmsoff 'swaymsg "output * dpms off"'
 set $swaydpmson 'swaymsg "output * dpms on"'
 

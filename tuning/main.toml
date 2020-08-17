@@ -117,6 +117,14 @@ when = {{ is_os_linux }}
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/swaylock"
+path = "{{ config_dir }}/swaylock/config"
+state = "link"
+when = {{ is_os_linux }}
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/waybar.json"
 path = "{{ config_dir }}/waybar/config"
 state = "link"
