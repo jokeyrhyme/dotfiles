@@ -82,6 +82,8 @@ exec swayidle -w \
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input * xkb_capslock disable
+input * xkb_numlock enable
 
 bindsym --release {
     $mod+$alt+l exec loginctl lock-session
