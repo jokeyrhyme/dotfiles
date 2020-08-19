@@ -49,6 +49,10 @@ exec_always makoctl reload
 output * bg '#000000' solid_color
 output * adaptive_sync on
 
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 ### Idle configuration
 #
 # Example configuration:
