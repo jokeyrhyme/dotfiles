@@ -36,7 +36,6 @@ window#waybar.hidden {
 }
 
 #clock,
-#custom-internet,
 #battery,
 #cpu,
 #memory,
@@ -62,8 +61,6 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent,
-#custom-internet.connecting,
-#custom-internet.disconnected,
 #battery.critical:not(.charging),
 #temperature.critical {
   background-color: red;
@@ -75,15 +72,10 @@ window#waybar.hidden {
   animation-direction: alternate;
 }
 
-#custom-internet.connecting {
-  background-color: yellow;
-}
-
 label:focus {
   background-color: black;
 }
 
-#custom-internet.asleep,
 #network.disconnected,
 #pulseaudio.muted {
   color: black;
