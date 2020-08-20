@@ -269,7 +269,7 @@ bar {
     swaybar_command waybar
 }
 
-default_border none
+default_border pixel 4
 default_floating_border normal
 font "Fira Code 12"
 gaps inner 16
