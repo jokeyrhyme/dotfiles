@@ -276,4 +276,6 @@ gaps inner 16
 gaps outer 0
 smart_gaps on
 
+for_window [app_id="nm-openconnect-auth-dialog"] floating enable
+
 include /etc/sway/config.d/*
