@@ -278,4 +278,19 @@ smart_gaps on
 
 for_window [app_id="nm-openconnect-auth-dialog"] floating enable
 
+# Twitch seems to hate being tiled :shrug:
+for_window [class="twitchui.exe" title="Twitch"] floating enable
+
+# games
+for_window [class="twitchui.exe" title="Twitch"] move container to workspace 6
+for_window [instance="Steam"] move container to workspace 6
+for_window [instance="battle.net.exe"] move container to workspace 6
+
+# chat
+for_window [instance="discord"] move container to workspace 8
+for_window [instance="slack"] move container to workspace 8
+
+# just get these out of the way
+for_window [class="explorer.exe" title="Wine System Tray"] move container to workspace 10
+
 include /etc/sway/config.d/*
