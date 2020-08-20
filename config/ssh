@@ -1,6 +1,12 @@
 # ~/.ssh/config
 
 ConnectTimeout 10
+Include ~/.ssh/config.d/*
 ServerAliveInterval 10
 VisualHostKey yes
+
+Match user=git
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%C
+  ControlPersist 30
 
