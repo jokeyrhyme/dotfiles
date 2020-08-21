@@ -29,7 +29,7 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm flatpak xdg-utils
 
   # swaywm and friends
-  sudo pacman -S --needed --noconfirm grim light mako network-manager-applet playerctl polkit-gnome slurp sway{,bg,idle,lock} waybar wf-recorder wl-clipboard wofi
+  sudo pacman -S --needed --noconfirm gammastep grim light mako network-manager-applet playerctl polkit-gnome slurp sway{,bg,idle,lock} waybar wf-recorder wl-clipboard wofi
 
   # fonts
   sudo pacman -S --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-{font-awesome,overpass} ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
