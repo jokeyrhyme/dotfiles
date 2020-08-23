@@ -2,43 +2,55 @@
 
 set -e
 
+__dotfiles_pacman_install() {
+  # shellcheck disable=SC2068
+  # explicitly passing arguments along without quoting
+  sudo pacman -S --needed --noconfirm $@
+}
+
+__dotfiles_pacman_uninstall() {
+  for PKG in "$@"; do
+    if pacman -Q "${PKG}" >/dev/null 2>&1; then
+      sudo pacman -R --noconfirm --unneeded "${PKG}"
+    fi
+  done
+}
+
 if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Su --needed --noconfirm archlinux-keyring
 
   echo 'installing favourites with pacman ...'
 
   # basics
-  sudo pacman -S --needed --noconfirm alacritty bash fish man-db neofetch neovim tmux zsh
+  __dotfiles_pacman_install alacritty bash fish man-db neofetch neovim tmux zsh
 
   # security
-  sudo pacman -S --needed --noconfirm firewalld lynis nftables sudo
+  __dotfiles_pacman_install firewalld lynis nftables sudo
 
   # developer tools
-  sudo pacman -S --needed --noconfirm base-devel cmake expac kcov lldb yajl
-  sudo pacman -S --needed --noconfirm pandoc # needed for checkmake # TODO: haskell?
-  sudo pacman -S --needed --noconfirm python-pipx shellcheck
+  __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl
+  __dotfiles_pacman_install pandoc # needed for checkmake # TODO: haskell?
+  __dotfiles_pacman_install python-pipx shellcheck
 
   # encryption
-  sudo pacman -S --needed --noconfirm gnupg keybase{,-gui} opensc pcsclite yubikey-manager
+  __dotfiles_pacman_install gnupg keybase{,-gui} opensc pcsclite yubikey-manager
 
   # firmware and drivers
-  sudo pacman -S --needed --noconfirm cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol
+  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol
 
   # flatpak and friends
-  sudo pacman -S --needed --noconfirm flatpak xdg-utils
+  __dotfiles_pacman_install flatpak xdg-utils
 
   # swaywm and friends
-  sudo pacman -S --needed --noconfirm gammastep grim light mako network-manager-applet playerctl polkit-gnome slurp sway{,bg,idle,lock} waybar wf-recorder wl-clipboard wofi
+  __dotfiles_pacman_install gammastep grim light mako network-manager-applet playerctl polkit-gnome slurp sway{,bg,idle,lock} waybar wf-recorder wl-clipboard wofi
 
   # fonts
-  sudo pacman -S --needed --noconfirm adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-{font-awesome,overpass} ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
+  __dotfiles_pacman_install adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-{font-awesome,overpass} ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
 
-  if pacman -Q keybase-bin >/dev/null 2>&1; then
-    sudo pacman -R --noconfirm --unneeded keybase-bin # from AUR, now in community
-  fi
-  if pacman -Q redshift >/dev/null 2>&1; then
-    sudo pacman -R --noconfirm --unneeded redshift # doesn't work on wayland
-  fi
+  echo 'uninstalling ex-favourites with pacman ...'
+
+  __dotfiles_pacman_uninstall keybase-bin # from AUR, now in community
+  __dotfiles_pacman_uninstall redshift    # doesn't work on wayland
 
   echo 'updating packages with pacman ...'
   sudo pacman -Syu
