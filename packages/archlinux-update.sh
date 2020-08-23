@@ -2,17 +2,16 @@
 
 set -e
 
-pushd "$(dirname $0)/.." >/dev/null
-. ./scripts/lib/utils.sh
-popd >/dev/null
-
 if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Su --needed --noconfirm archlinux-keyring
 
   echo 'installing favourites with pacman ...'
 
   # basics
-  sudo pacman -S --needed --noconfirm alacritty bash fish lynis man-db neofetch neovim sudo tmux zsh
+  sudo pacman -S --needed --noconfirm alacritty bash fish man-db neofetch neovim tmux zsh
+
+  # security
+  sudo pacman -S --needed --noconfirm firewalld lynis nftables sudo
 
   # developer tools
   sudo pacman -S --needed --noconfirm base-devel cmake expac kcov lldb yajl
