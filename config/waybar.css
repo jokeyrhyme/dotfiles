@@ -42,13 +42,16 @@ window {
 #tray,
 #mode,
 #idle_inhibitor,
-#mpd {
+#mpd,
+#custom-kernel-modules-match
+{
   padding: 0 10px;
   margin: 0 4px;
 }
 
 #workspaces button.urgent,
 #battery.critical:not(.charging),
+#custom-kernel-modules-match.critical,
 #temperature.critical {
   background-color: red;
 }

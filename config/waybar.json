@@ -3,7 +3,10 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"],
+    "modules-right": [
+      "custom/kernel-modules-match",
+      "pulseaudio", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"
+    ],
     // Modules configuration
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -87,5 +90,12 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/kernel-modules-match": {
+      "exec": "$HOME/.dotfiles/scripts/check-kernel-modules-match.sh --json",
+      "format": "{icon}",
+      "format-icons": ["",""],
+      "interval": 15,
+      "return-type": "json"
     }
 }
