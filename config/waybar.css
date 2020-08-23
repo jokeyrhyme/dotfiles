@@ -42,7 +42,8 @@ window {
 #mode,
 #idle_inhibitor,
 #mpd,
-#custom-kernel-modules-match
+#custom-kernel-modules-match,
+#custom-systemd-failed-units
 {
   padding: 0 10px;
   margin: 0 4px;
@@ -53,6 +54,11 @@ window {
 #custom-kernel-modules-match.critical,
 #temperature.critical {
   background-color: red;
+}
+
+#custom-systemd-failed-units {
+  background-color: yellow;
+  color: black;
 }
 
 #network.disconnected,

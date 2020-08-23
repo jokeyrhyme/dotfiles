@@ -5,6 +5,7 @@
     "modules-center": ["sway/window"],
     "modules-right": [
       "custom/kernel-modules-match",
+      "custom/systemd-failed-units",
       "pulseaudio", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"
     ],
     // Modules configuration
@@ -93,6 +94,13 @@
     },
     "custom/kernel-modules-match": {
       "exec": "$HOME/.dotfiles/scripts/check-kernel-modules-match.sh --json",
+      "format": "{icon}",
+      "format-icons": ["",""],
+      "interval": 15,
+      "return-type": "json"
+    },
+    "custom/systemd-failed-units": {
+      "exec": "$HOME/.dotfiles/scripts/check-systemd-failed-units.sh --json",
       "format": "{icon}",
       "format-icons": ["",""],
       "interval": 15,
