@@ -25,7 +25,7 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install alacritty bash fish man-db neofetch neovim tmux zsh
 
   # security
-  __dotfiles_pacman_install firewalld lynis nftables sudo
+  __dotfiles_pacman_install arch-audit firewalld lynis nftables osquery sudo
 
   # developer tools
   __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl
