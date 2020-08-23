@@ -43,8 +43,7 @@ window {
 #idle_inhibitor,
 #mpd,
 #custom-kernel-modules-match,
-#custom-systemd-failed-units
-{
+#custom-systemd-failed-units {
   padding: 0 10px;
   margin: 0 4px;
 }

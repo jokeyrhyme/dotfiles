@@ -11,7 +11,7 @@
 MSG_FAIL="systemd has units in failed state"
 MSG_PASS="systemd has no units in failed state"
 
-if systemctl list-units --state=failed | grep "0 loaded units listed" > /dev/null; then
+if systemctl list-units --state=failed | grep "0 loaded units listed" >/dev/null; then
   if [ "$1" = "--json" ]; then
     echo '{"class": "success", "percentage": 100, "tooltip": ""}'
   else
@@ -27,4 +27,3 @@ fi
 
 echo "${MSG_FAIL}"
 exit 1
-
