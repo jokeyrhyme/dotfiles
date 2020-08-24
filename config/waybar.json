@@ -1,12 +1,19 @@
 {
     "layer": "top", // Waybar at top layer
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+      "wlr/taskbar"
+    ],
     "modules-center": ["sway/window"],
     "modules-right": [
       "custom/kernel-modules-match",
       "custom/systemd-failed-units",
-      "pulseaudio", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "idle_inhibitor", "tray", "clock"
+      "cpu", "memory", "temperature", "disk",
+      "backlight", "battery", "battery#bat2", "idle_inhibitor",
+      "pulseaudio",
+      "tray", "clock"
     ],
     // Modules configuration
     "sway/mode": {
@@ -20,7 +27,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     },
     "clock": {
@@ -32,6 +39,9 @@
         "format": "{usage}% ",
         "tooltip": false
     },
+    "disk": {
+      "format": "{percentage_free}% "
+    },
     "memory": {
         "format": "{}% "
     },
@@ -41,7 +51,7 @@
         "critical-threshold": 65,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -55,7 +65,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -91,6 +101,11 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "wlr/taskbar": {
+      "all-outputs": true,
+      "icon-size": 16,
+      "on-click": "activate"
     },
     "custom/kernel-modules-match": {
       "exec": "$HOME/.dotfiles/scripts/check-kernel-modules-match.sh --json",

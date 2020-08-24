@@ -29,19 +29,20 @@ window {
   font-weight: bolder;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
 #backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#memory,
+#mode,
+#mpd,
 #network,
 #pulseaudio,
-#custom-media,
+#taskbar,
+#temperature,
 #tray,
-#mode,
-#idle_inhibitor,
-#mpd,
 #custom-kernel-modules-match,
 #custom-systemd-failed-units {
   padding: 0 10px;
@@ -55,7 +56,7 @@ window {
   background-color: red;
 }
 
-#custom-systemd-failed-units {
+#custom-systemd-failed-units.warning {
   background-color: yellow;
   color: black;
 }
