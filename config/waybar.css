@@ -1,32 +1,42 @@
+/* CSS reset */
+
+#workspaces button {
+  color: inherit;
+  padding: 0;
+  transition: none;
+}
+#workspaces button:hover {
+  background: inherit;
+  box-shadow: inherit;
+  color: inherit;
+  text-shadow: inherit;
+}
+
+/* my styles */
+
 * {
   border: none;
   border-radius: 0;
 }
 
-#waybar {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(95%, 95%, 95%, 0.95);
+window {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: "Fira Code", "Cascadia Code", monospace;
   font-size: 13px;
 }
 
-/* reset to default styles on workspace */
-#workspaces button {
-  color: inherit;
-}
-#workspaces button:hover {
-  background: inherit;
-  box-shadow: inherit;
-  text-shadow: inherit;
+#waybar {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(95%, 95%, 95%, 0.95);
 }
 
 #workspaces button {
-  padding: 0 5px;
+  padding: 0 0.5em;
 }
 
 #idle_inhibitor.activated,
 #workspaces button.focused {
+  animation: 5s infinite rainbow-color;
   font-weight: bolder;
 }
 
@@ -46,19 +56,19 @@
 #tray,
 #custom-kernel-modules-match,
 #custom-systemd-failed-units {
-  padding: 0 10px;
-  margin: 0 4px;
+  padding: 0 0.5em;
+  margin: 0 0.5em;
 }
 
 #workspaces button.urgent,
 #battery.critical:not(.charging),
 #custom-kernel-modules-match.critical,
 #temperature.critical {
-  background-color: red;
+  background: red;
 }
 
 #custom-systemd-failed-units.warning {
-  background-color: yellow;
+  background: yellow;
   color: black;
 }
 
@@ -66,3 +76,15 @@
 #pulseaudio.muted {
   color: rgba(95%, 95%, 95%, 0.5);
 }
+
+@keyframes rainbow-color {
+  from { color: red; }
+  14.3% { color: orange; }
+  28.6% { color: yellow; }
+  42.9% { color: green; }
+  57.1% { color: blue; } 
+  71.4% { color: indigo; }
+  85.7% { color: violet; }
+  to { color: red; }
+}
+
