@@ -35,8 +35,8 @@ if command -v pacman >/dev/null 2>&1; then
   # encryption
   __dotfiles_pacman_install gnupg keybase{,-gui} opensc pcsclite yubikey-manager
 
-  # firmware and drivers
-  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol
+  # devices, firmware, and drivers
+  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol usbutils
 
   # flatpak and friends
   __dotfiles_pacman_install flatpak xdg-utils
