@@ -1,10 +1,9 @@
 * {
   border: none;
   border-radius: 0;
-  color: inherit;
 }
 
-window {
+#waybar {
   background-color: rgba(0, 0, 0, 0.5);
   color: rgba(95%, 95%, 95%, 0.95);
   /* `otf-font-awesome` is required to be installed for icons */
@@ -12,7 +11,10 @@ window {
   font-size: 13px;
 }
 
-/* disable default styles on workspace */
+/* reset to default styles on workspace */
+#workspaces button {
+  color: inherit;
+}
 #workspaces button:hover {
   background: inherit;
   box-shadow: inherit;
@@ -21,7 +23,6 @@ window {
 
 #workspaces button {
   padding: 0 5px;
-  /* border-bottom: 3px solid transparent; */
 }
 
 #idle_inhibitor.activated,
