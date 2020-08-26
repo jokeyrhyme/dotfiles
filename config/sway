@@ -257,13 +257,14 @@ for_window [app_id="nm-openconnect-auth-dialog"] floating enable
 for_window [class="twitchui.exe" title="Twitch"] floating enable
 
 # games
-for_window [class="twitchui.exe" title="Twitch"] move container to workspace 6
-for_window [instance="Steam"] move container to workspace 6
-for_window [instance="battle.net.exe"] move container to workspace 6
+for_window [class="twitchui.exe" title="Twitch"] move container to workspace 5
+for_window [instance="Steam"] move container to workspace 5
+for_window [instance="battle.net.exe"] move container to workspace 5
 
 # chat
-for_window [instance="discord"] move container to workspace 8
-for_window [instance="slack"] move container to workspace 8
+for_window [instance="zoom" title="Zoom Meeting"] move container to workspace 4
+for_window [instance="discord"] move container to workspace 6
+for_window [instance="slack"] move container to workspace 6
 
 # just get these out of the way
 for_window [class="explorer.exe" title="Wine System Tray"] move container to workspace 10
