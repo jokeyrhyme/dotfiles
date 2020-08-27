@@ -19,15 +19,12 @@
   border-radius: 0;
 }
 
-window {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Fira Code", "Cascadia Code", monospace;
-  font-size: 13px;
-}
-
 #waybar {
   background: rgba(0, 0, 0, 0.5);
   color: rgba(95%, 95%, 95%, 0.95);
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Fira Code", "Cascadia Code", monospace;
+  font-size: 13px;
 }
 
 #workspaces button {
