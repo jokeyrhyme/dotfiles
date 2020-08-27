@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["idle_inhibitor", "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
       "custom/kernel-modules-match",
       "custom/systemd-failed-units",
       "cpu", "memory", "temperature", "disk",
-      "backlight", "battery", "battery#bat2", "idle_inhibitor",
+      "backlight", "battery", "battery#bat2",
       "pulseaudio",
       "tray", "clock"
     ],
