@@ -22,7 +22,7 @@ if command -v pacman >/dev/null 2>&1; then
   echo 'installing favourites with pacman ...'
 
   # basics
-  __dotfiles_pacman_install alacritty bash fish man-db neofetch neovim tmux zsh
+  __dotfiles_pacman_install alacritty bash deno fish man-db neofetch neovim tmux zsh
 
   # security
   __dotfiles_pacman_install arch-audit firewalld lynis nftables osquery sudo
