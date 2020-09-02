@@ -126,8 +126,21 @@ function sleep(ms = 500) {
   });
 }
 
+async function slurp() {
+  return await stdout(
+    Deno.run({
+      // intentionally don't use our DEFAULT_RUN_OPTIONS
+      cmd: ['slurp'],
+      stdout: 'piped',
+    }),
+  );
+}
+
 async function start() {
   const devicePath = await findWfRecorderDevicePath();
+  if (!devicePath) {
+    throw new Error('unable to determine v4l2loopback device path');
+  }
   await wfRecorder(devicePath);
 }
 
@@ -155,14 +168,20 @@ async function v4l2CtlListDevices() {
 }
 
 async function wfRecorder(devicePath) {
+  const cmd = [
+    'wf-recorder',
+    '--muxer=v4l2',
+    '--codec=rawvideo',
+    `--file=${devicePath}`,
+    '--pixel-format=yuv420p',
+  ];
+
+  if (Deno.args.includes('--slurp')) {
+    cmd.push(`--geometry=${await slurp()}`);
+  }
+
   await Deno.run({
     ...DEFAULT_RUN_OPTIONS,
-    cmd: [
-      'wf-recorder',
-      '--muxer=v4l2',
-      '--codec=rawvideo',
-      `--file=${devicePath}`,
-      '--pixel-format=yuv420p',
-    ],
+    cmd,
   }).status();
 }
