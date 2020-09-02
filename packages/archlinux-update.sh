@@ -30,7 +30,7 @@ if command -v pacman >/dev/null 2>&1; then
   # developer tools
   __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl
   __dotfiles_pacman_install linux{,-lts}-headers # needed for DKMS e.g. v4l2loopback
-  __dotfiles_pacman_install pandoc # needed for checkmake # TODO: haskell?
+  __dotfiles_pacman_install pandoc               # needed for checkmake # TODO: haskell?
   __dotfiles_pacman_install python-pipx shellcheck
 
   # encryption
