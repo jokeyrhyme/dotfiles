@@ -196,6 +196,9 @@ bindsym --locked {
     Print       exec grim $(xdg-user-dir PICTURES)/$(date +%Y%m%d%h%m%s).png
     Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +%Y%m%d%h%m%s).png
 
+    Ctrl+Print       exec grim - | wl-copy
+    Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy
+
     XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@   toggle
     XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
