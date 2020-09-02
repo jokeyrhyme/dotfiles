@@ -22,13 +22,14 @@ if command -v pacman >/dev/null 2>&1; then
   echo 'installing favourites with pacman ...'
 
   # basics
-  __dotfiles_pacman_install alacritty bash deno fish man-db neofetch neovim tmux zsh
+  __dotfiles_pacman_install alacritty bash deno fish linux{,-lts} man-db neofetch neovim tmux zsh
 
   # security
   __dotfiles_pacman_install arch-audit firewalld lynis nftables osquery sudo
 
   # developer tools
   __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl
+  __dotfiles_pacman_install linux{,-lts}-headers # needed for DKMS e.g. v4l2loopback
   __dotfiles_pacman_install pandoc # needed for checkmake # TODO: haskell?
   __dotfiles_pacman_install python-pipx shellcheck
 
@@ -36,7 +37,7 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install gnupg keybase{,-gui} opensc pcsclite yubikey-manager
 
   # devices, firmware, and drivers
-  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol usbutils
+  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol usbutils v4l-utils v4l2loopback-dkms
 
   # flatpak and friends
   __dotfiles_pacman_install flatpak xdg-utils
