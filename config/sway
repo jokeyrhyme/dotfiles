@@ -93,14 +93,7 @@ bindsym --release {
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag \
-	--font="Fira Code" \
-	-t warning \
-	-m 'Do you really want to exit sway?' \
-	-b 'loginctl lock-session' 'loginctl lock-session' \
-	-b 'swaymsg exit' 'swaymsg exit' \
-	-b 'systemctl reboot' 'systemctl reboot' \
-	-b 'systemctl poweroff' 'systemctl poweroff'
+    bindsym $mod+Shift+e exec ~/.dotfiles/scripts/wofi-poweroff.js
 #
 # Moving around:
 #
