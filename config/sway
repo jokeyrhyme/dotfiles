@@ -41,10 +41,8 @@ exec_always makoctl reload
 
 output * bg '#000000' solid_color
 # machine-specific output config over in /etc/sway/config.d/...
-
-set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# see: https://github.com/swaywm/sway/wiki#clamshell-mode
+# see: https://github.com/swaywm/sway/wiki#multihead
 
 ### Idle configuration
 
