@@ -40,11 +40,9 @@ exec_always makoctl reload
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output * bg '#000000' solid_color
-output * adaptive_sync on
-
-set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# machine-specific output config over in /etc/sway/config.d/...
+# see: https://github.com/swaywm/sway/wiki#clamshell-mode
+# see: https://github.com/swaywm/sway/wiki#multihead
 
 ### Idle configuration
 
