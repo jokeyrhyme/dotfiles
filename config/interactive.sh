@@ -51,7 +51,7 @@ if [ "${TMUX:-nope}" = "nope" ]; then
     fi
     if command -v systemd-run >/dev/null 2>&1; then
       # allow detached tmux sessions to keep running after logout
-      TMUX_UNIT_ID=tmux-$(tmux list-sessions 2>/dev/null | wc -l)
+      TMUX_UNIT_ID=tmux-$(date +%s.%N)
       systemd-run --same-dir --scope --unit $TMUX_UNIT_ID --user tmux $TMUX_ARGS
     else
       tmux $TMUX_ARGS
