@@ -1,9 +1,11 @@
 #! /usr/bin/env -S deno run --allow-run
 
-/* eslint-env es2021 */
 /*
  * reliably wire up wf-recorder to a v4l2 loopback device
- */ /* global Deno */ const DEFAULT_RUN_OPTIONS = {
+ *
+ * see: ~/.dotfiles/config/sudo-v4l2loopback
+ *
+ */ /* eslint-env es2021 */ /* global Deno */ const DEFAULT_RUN_OPTIONS = {
   stdin: 'piped',
   stderr: 'piped',
   stdout: 'piped',
@@ -53,7 +55,7 @@ async function modprobeV4l2loopback() {
   const p = Deno.run({
     ...DEFAULT_RUN_OPTIONS,
     cmd: [
-      'pkexec',
+      'sudo',
       'modprobe',
       V4L2_LOOPBACK_MODULE,
       'exclusive_caps=1',
@@ -115,7 +117,7 @@ function parseV4l2CtlListDevices(stdout) {
 async function rmmodV4l2loopback() {
   const p = Deno.run({
     ...DEFAULT_RUN_OPTIONS,
-    cmd: ['pkexec', 'rmmod', V4L2_LOOPBACK_MODULE],
+    cmd: ['sudo', 'rmmod', V4L2_LOOPBACK_MODULE],
   });
   await p.output();
 }
