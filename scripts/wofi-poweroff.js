@@ -1,6 +1,7 @@
 #! /usr/bin/env -S deno run --allow-env --allow-run
 
- /* eslint-env es2021 *//* global Deno */ (async () => { // main entrypoint
+/* eslint-env es2021 */ /* global Deno */ (async () => {
+  // main entrypoint
   const items = [
     'loginctl lock-session',
     'systemctl hibernate',

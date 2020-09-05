@@ -52,7 +52,8 @@
 #temperature,
 #tray,
 #custom-kernel-modules-match,
-#custom-systemd-failed-units {
+#custom-systemd-failed-units,
+#custom-wfrecorder {
   padding: 0 0.5em;
   margin: 0 0.5em;
 }
@@ -61,17 +62,31 @@
 #battery.critical:not(.charging),
 #custom-kernel-modules-match.critical,
 #temperature.critical {
+  animation: 2s linear infinite alternate-reverse blink-background;
   background: red;
 }
 
 #custom-systemd-failed-units.warning {
+  animation: 2s linear infinite alternate-reverse blink-background;
   background: yellow;
   color: black;
+}
+
+#custom-wfrecorder.recording {
+  animation: 2s linear infinite alternate-reverse blink-background;
+  background: white;
+  color: red;
 }
 
 #network.disconnected,
 #pulseaudio.muted {
   color: rgba(95%, 95%, 95%, 0.5);
+}
+
+@keyframes blink-background {
+  from {
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 @keyframes rainbow-color {

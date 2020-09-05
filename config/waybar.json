@@ -4,8 +4,9 @@
     "modules-left": ["idle_inhibitor", "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
-      "custom/kernel-modules-match",
+      "custom/wfrecorder",
       "custom/systemd-failed-units",
+      "custom/kernel-modules-match",
       "cpu", "memory", "temperature", "disk",
       "backlight", "battery", "battery#bat2",
       "pulseaudio",
@@ -115,6 +116,15 @@
       "format": "{icon}",
       "format-icons": ["",""],
       "interval": 15,
+      "return-type": "json"
+    },
+    "custom/wfrecorder": {
+      "exec": "$HOME/.dotfiles/scripts/waybar-wfrecorder.js",
+      "exec-if": "which wf-recorder",
+      "format": "{icon}",
+      "format-icons": ["",""],
+      "interval": 3,
+      "tooltip": false,
       "return-type": "json"
     }
 }
