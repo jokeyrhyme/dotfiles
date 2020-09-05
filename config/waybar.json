@@ -32,11 +32,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage:2}% ",
         "tooltip": false
     },
     "disk": {
-      "format": "{percentage_free}% "
+      "format": "{percentage_free:2}% "
     },
     "memory": {
         "format": "{}% "
@@ -60,9 +60,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{capacity:3}% {icon}",
+        "format-charging": "{capacity:3}% ",
+        "format-plugged": "{capacity:3}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -81,11 +81,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{volume:3}% {icon} {format_source}",
+        "format-bluetooth": "{volume:3}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "{volume:3}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
