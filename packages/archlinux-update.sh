@@ -38,7 +38,10 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install gnupg keybase{,-gui} opensc pcsclite yubikey-manager
 
   # devices, firmware, and drivers
-  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol usbutils v4l-utils v4l2loopback-dkms
+  __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol pipewire{,-jack,-pulse} usbutils v4l-utils v4l2loopback-dkms
+  if /usr/bin/lsusb | /usr/bin/grep -i bluetooth >/dev/null 2>&1; then
+    __dotfiles_pacman_install blueman bluez{,-utils} pulseaudio-bluetooth
+  fi
 
   # flatpak and friends
   __dotfiles_pacman_install flatpak xdg-utils
