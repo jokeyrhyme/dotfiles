@@ -25,7 +25,8 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install alacritty bash deno fish linux{,-lts} man-db neofetch neovim tmux zsh
 
   # security
-  __dotfiles_pacman_install arch-audit firewalld lynis nftables osquery sudo
+  __dotfiles_pacman_install arch-audit lynis nftables osquery sudo
+  __dotfiles_pacman_install firewalld python-pyqt5 qt5-wayland # python/qt packages are needed for firewall-applet
 
   # developer tools
   __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl

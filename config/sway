@@ -28,6 +28,7 @@ set $swaydpmson  'swaymsg "output * dpms on"'
 # requires `pacman -S polkit-gnome`
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+exec /usr/bin/firewall-applet
 exec /usr/bin/gammastep-indicator
 exec /usr/bin/nm-applet --indicator
 
