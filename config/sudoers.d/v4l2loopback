@@ -1,5 +1,5 @@
 # copy to /etc/sudoers.d/v4l2loopback
-# see: ~/.dotfiles/scripts/wfrecorder-to-v4l2loopback.js
+# see: ~/.dotfiles/scripts/wfrecorder-to-v4l2loopback.deno.mjs
 
 %video ALL= NOPASSWD: /usr/bin/modprobe v4l2loopback *
 %video ALL= NOPASSWD: /usr/bin/rmmod v4l2loopback

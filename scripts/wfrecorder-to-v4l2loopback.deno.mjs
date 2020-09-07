@@ -5,11 +5,16 @@
  *
  * see: ~/.dotfiles/config/sudo-v4l2loopback
  *
- */ /* eslint-env es2021 */ /* global Deno */ const DEFAULT_RUN_OPTIONS = {
+ */
+
+import { sleep } from './lib/promises.mjs';
+
+const DEFAULT_RUN_OPTIONS = {
   stdin: 'piped',
   stderr: 'piped',
   stdout: 'piped',
 };
+const SLEEP_MS = 500;
 const V4L2_LOOPBACK_MODULE = 'v4l2loopback';
 const WF_RECORDER_V4L2_NAME = 'WfRecorder';
 
@@ -63,7 +68,7 @@ async function modprobeV4l2loopback() {
     ],
   });
   await p.status();
-  await sleep();
+  await sleep(SLEEP_MS);
 }
 
 async function killallWfRecorder() {
@@ -120,12 +125,6 @@ async function rmmodV4l2loopback() {
     cmd: ['sudo', 'rmmod', V4L2_LOOPBACK_MODULE],
   });
   await p.output();
-}
-
-function sleep(ms = 500) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
 }
 
 async function slurp() {
