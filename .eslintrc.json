@@ -3,5 +3,26 @@
   "env": {
     "es2020": true,
     "node": true
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.deno.js",
+        "**/*.deno.mjs",
+        "**/*.deno.ts"
+      ],
+      "env": {
+        "es2021": true
+      },
+      "globals": {
+        "Deno": "readonly"
+      }
+    },
+    {
+      "files": ["**/*.mjs"],
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    }
+  ]
 }
