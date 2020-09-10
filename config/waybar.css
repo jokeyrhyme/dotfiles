@@ -33,7 +33,8 @@
 
 #idle_inhibitor.activated,
 #workspaces button.focused {
-  animation: 5s infinite rainbow-color;
+  animation: 3s linear infinite alternate-reverse blink-background;
+  background: rgba(95%, 95%, 95%, 0.95);
   font-weight: bolder;
 }
 
@@ -87,31 +88,7 @@
   from {
     background: rgba(0, 0, 0, 0.5);
   }
-}
-
-@keyframes rainbow-color {
-  from {
-    color: red;
-  }
-  14.3% {
-    color: orange;
-  }
-  28.6% {
-    color: yellow;
-  }
-  42.9% {
-    color: green;
-  }
-  57.1% {
-    color: blue;
-  }
-  71.4% {
-    color: indigo;
-  }
-  85.7% {
-    color: violet;
-  }
   to {
-    color: red;
+    color: black;
   }
 }
