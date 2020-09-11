@@ -38,6 +38,7 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install gnupg keybase{,-gui} opensc pcsclite yubikey-manager
 
   # devices, firmware, and drivers
+  __dotfiles_pacman_install acpi{,d,_call-dkms}
   __dotfiles_pacman_install cups{,-filters,-pk-helper} foomatic-db-gutenprint-ppds fwupd linux-firmware pavucontrol pipewire{,-jack,-pulse} usbutils v4l-utils v4l2loopback-dkms
   if /usr/bin/lsmod | /usr/bin/grep -i btusb >/dev/null 2>&1; then
     __dotfiles_pacman_install blueman bluez{,-utils} pulseaudio-bluetooth
