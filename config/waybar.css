@@ -1,6 +1,7 @@
 /* CSS reset */
 
 #workspaces button {
+  border: none;
   color: inherit;
   padding: 0;
   transition: none;
@@ -15,7 +16,6 @@
 /* my styles */
 
 * {
-  border: none;
   border-radius: 0;
 }
 
@@ -52,6 +52,7 @@
 #taskbar,
 #temperature,
 #tray,
+#window,
 #custom-kernel-modules-match,
 #custom-systemd-failed-units,
 #custom-wfrecorder {

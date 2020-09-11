@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     // Choose the order of the modules
-    "modules-left": ["idle_inhibitor", "sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["idle_inhibitor", "sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
     "modules-right": [
       "custom/wfrecorder",
       "custom/systemd-failed-units",
