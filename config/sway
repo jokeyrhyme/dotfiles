@@ -256,6 +256,7 @@ for_window [class="twitchui.exe" title="Twitch"] floating enable
 for_window [class="twitchui.exe" title="Twitch"] move container to workspace 5
 for_window [instance="Steam"] move container to workspace 5
 for_window [instance="battle.net.exe"] move container to workspace 5
+for_window [instance="itch"] move container to workspace 5
 
 # chat
 for_window [instance="zoom" title="Zoom Meeting"] move container to workspace 4
