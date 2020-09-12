@@ -63,4 +63,7 @@ if command -v pacman >/dev/null 2>&1; then
 
   echo 'copying into /etc/sudoers.d/ ...'
   sudo cp -v ~/.dotfiles/config/sudoers.d/v4l2loopback /etc/sudoers.d/v4l2loopback
+
+  echo 'preparing for Secure Boot ...'
+  sudo ~/.dotfiles/bin/secure-boot-create-keys.sh
 fi
