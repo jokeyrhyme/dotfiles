@@ -19,7 +19,7 @@ mkdir -p "${PRIVATE_DIR}" && chmod -R go-rwx "${PRIVATE_DIR}"
 if [ -e "${PRIVATE_DIR}/GUID.txt" ]; then
   echo "private GUID.txt already exists"
 else
-  uuidgen --random > "${PRIVATE_DIR}"/GUID.txt
+  uuidgen --random >"${PRIVATE_DIR}"/GUID.txt
 fi
 
 __dotfiles_ensure_certificates() { # $1=variable $2=CommonName
@@ -28,7 +28,6 @@ __dotfiles_ensure_certificates() { # $1=variable $2=CommonName
   else
     openssl req -verbose -newkey rsa:4096 -nodes -keyout "${PRIVATE_DIR}/${1}.key" -new -x509 -sha256 -days 3650 -subj "/CN=${2}/" -out "${PUBLIC_DIR}/${1}.crt"
   fi
-
 
   if [ -e "${PUBLIC_DIR}/${1}.cer" ]; then
     echo "${1}: DER format certificates already exists"
@@ -64,4 +63,3 @@ if [ -e "${PUBLIC_DIR}/rm_PK.auth" ]; then
 else
   sign-efi-sig-list -g "$(cat ${PRIVATE_DIR}/GUID.txt)" -k "${PRIVATE_DIR}/PK.key" -c "${PUBLIC_DIR}/PK.crt" PK /dev/null "${PUBLIC_DIR}/rm_PK.auth"
 fi
-

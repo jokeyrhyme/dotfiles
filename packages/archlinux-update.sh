@@ -68,5 +68,6 @@ if command -v pacman >/dev/null 2>&1; then
   sudo cp -v ~/.dotfiles/config/sudoers.d/v4l2loopback /etc/sudoers.d/v4l2loopback
 
   echo 'preparing for Secure Boot ...'
+  sudo cp -v ~/.dotfiles/bin/secure-boot-sign-bootloader.sh /root/secure-boot/sign-bootloader.sh
   sudo ~/.dotfiles/bin/secure-boot-create-keys.sh
 fi
