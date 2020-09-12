@@ -54,12 +54,8 @@ if command -v pacman >/dev/null 2>&1; then
   __dotfiles_pacman_install adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-{font-awesome,overpass} ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
 
   echo 'uninstalling ex-favourites with pacman ...'
-
   __dotfiles_pacman_uninstall keybase-bin # from AUR, now in community
   __dotfiles_pacman_uninstall redshift    # doesn't work on wayland
-
-  echo 'updating packages with pacman ...'
-  sudo pacman -Syu
 
   echo 'copying into /etc/pacman.d/hooks/ ...'
   sudo cp -v ~/.dotfiles/config/pacman.d/hooks/*.hook /etc/pacman.d/hooks/
@@ -68,6 +64,14 @@ if command -v pacman >/dev/null 2>&1; then
   sudo cp -v ~/.dotfiles/config/sudoers.d/v4l2loopback /etc/sudoers.d/v4l2loopback
 
   echo 'preparing for Secure Boot ...'
+  if [ ! -e /etc/cmdline ]; then
+    sudo cp -v /proc/cmdline /etc/cmdline
+  fi
+  sudo cp -v ~/.dotfiles/bin/secure-boot-mkinitcpio-install.sh /root/secure-boot/mkinitcpio-install.sh
   sudo cp -v ~/.dotfiles/bin/secure-boot-sign-bootloader.sh /root/secure-boot/sign-bootloader.sh
+  sudo cp -v ~/.dotfiles/bin/secure-boot-sign-image.sh /root/secure-boot/sign-image.sh
   sudo ~/.dotfiles/bin/secure-boot-create-keys.sh
+
+  echo 'updating packages with pacman ...'
+  sudo pacman -Syu
 fi
