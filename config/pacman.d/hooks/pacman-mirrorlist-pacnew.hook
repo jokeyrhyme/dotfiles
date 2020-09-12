@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman-mirrorlist
+
+[Action]
+Description = Removing pacman-mirrorlist pacnew...
+When = PostTransaction
+Depends = reflector
+Exec = /usr/bin/rm -f /etc/pacman.d/mirrorlist.pacnew

@@ -61,6 +61,9 @@ if command -v pacman >/dev/null 2>&1; then
   echo 'updating packages with pacman ...'
   sudo pacman -Syu
 
+  echo 'copying into /etc/pacman.d/hooks/ ...'
+  sudo cp -v ~/.dotfiles/config/pacman.d/hooks/*.hook /etc/pacman.d/hooks/
+
   echo 'copying into /etc/sudoers.d/ ...'
   sudo cp -v ~/.dotfiles/config/sudoers.d/v4l2loopback /etc/sudoers.d/v4l2loopback
 
