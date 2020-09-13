@@ -33,7 +33,7 @@ for TYPE in "" "-fallback"; do
     --add-section .initrd=${BUILDDIR}/initramfs.img --change-section-vma .initrd=0x3000000 \
     "${EFISTUB}" "${BUILDDIR}/combined-boot.efi"
 
-  /usr/bin/sbsign --key ${PRIVATE_DIR}/db.key --cert ${PUBLIC_DIR}/db.crt --output "${BUILDDIR}/combined-boot.efi" "/boot/${PKGBASE}${TYPE}.img"
+  /usr/bin/sbsign --key ${PRIVATE_DIR}/db.key --cert ${PUBLIC_DIR}/db.crt --output "/boot/${PKGBASE}${TYPE}.img" "${BUILDDIR}/combined-boot.efi"
 
   /usr/bin/rm -fv "${INITRAMFS}"
 done
