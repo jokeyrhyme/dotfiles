@@ -63,3 +63,21 @@ if [ -e "${PUBLIC_DIR}/rm_PK.auth" ]; then
 else
   sign-efi-sig-list -g "$(cat ${PRIVATE_DIR}/GUID.txt)" -k "${PRIVATE_DIR}/PK.key" -c "${PUBLIC_DIR}/PK.crt" PK /dev/null "${PUBLIC_DIR}/rm_PK.auth"
 fi
+
+# https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface/Secure_Boot#Microsoft_Windows
+if [ -e "${PUBLIC_DIR}/add_MS_db.auth" ]; then
+  echo "Microsoft: EFI Signature List format certificates with authentication header already exists"
+else
+  MS_GUID="77fa9abd-0359-4d32-bd60-28f4e78f784b"
+
+  curl -L -o "${PUBLIC_DIR}/MicWinProPCA2011_2011-10-19.crt" https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt
+  sbsiglist --owner "${MS_GUID}" --type x509 --output "${PUBLIC_DIR}/MS_Win_db.esl" "${PUBLIC_DIR}/MicWinProPCA2011_2011-10-19.crt"
+
+  curl -L -o "${PUBLIC_DIR}/MicCorUEFCA2011_2011-06-27.crt" https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt
+  sbsiglist --owner "${MS_GUID}" --type x509 --output "${PUBLIC_DIR}/MS_UEFI_db.esl" "${PUBLIC_DIR}/MicCorUEFCA2011_2011-06-27.crt"
+
+  cat "${PUBLIC_DIR}/MS_Win_db.esl" "${PUBLIC_DIR}/MS_UEFI_db.esl" >"${PUBLIC_DIR}/MS_db.esl"
+  sign-efi-sig-list -a -g "${MS_GUID}" -k "${PRIVATE_DIR}/KEK.key" -c "${PUBLIC_DIR}/KEK.crt" db "${PUBLIC_DIR}/MS_db.esl" "${PUBLIC_DIR}/add_MS_db.auth"
+
+  rm -fv "${PUBLIC_DIR}/MicWinProPCA2011_2011-10-19.crt" "${PUBLIC_DIR}/MS_Win_db.esl" "${PUBLIC_DIR}/MicCorUEFCA2011_2011-06-27.crt" "${PUBLIC_DIR}/MS_UEFI_db.esl" "${PUBLIC_DIR}/MS_db.esl"
+fi

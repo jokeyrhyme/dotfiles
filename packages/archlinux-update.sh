@@ -27,6 +27,7 @@ if command -v pacman >/dev/null 2>&1; then
   # security
   __dotfiles_pacman_install arch-audit lynis nftables osquery sudo usbguard
   __dotfiles_pacman_install firewalld python-pyqt5 qt5-wayland # python/qt packages are needed for firewall-applet
+  __dotfiles_pacman_install efibootmgr efitools sbsigntools
 
   # developer tools
   __dotfiles_pacman_install base-devel cmake expac kcov lldb yajl
