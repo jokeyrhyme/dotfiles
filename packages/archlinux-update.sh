@@ -69,7 +69,6 @@ if command -v pacman >/dev/null 2>&1; then
   if [ ! -e /etc/cmdline ]; then
     sudo cp -v /proc/cmdline /etc/cmdline
   fi
-  sudo cp -v ~/.dotfiles/bin/secure-boot-mkinitcpio-install.sh /root/secure-boot/mkinitcpio-install.sh
   sudo cp -v ~/.dotfiles/bin/secure-boot-sign-bootloader.sh /root/secure-boot/sign-bootloader.sh
   sudo cp -v ~/.dotfiles/bin/secure-boot-sign-image.sh /root/secure-boot/sign-image.sh
 

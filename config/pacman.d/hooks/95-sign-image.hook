@@ -17,5 +17,4 @@ Target = systemd
 [Action]
 Description = Updating linux initcpios...
 When = PostTransaction
-Exec = /root/secure-boot/mkinitcpio-install.sh
-NeedsTargets
+Exec = /root/secure-boot/sign-image.sh
