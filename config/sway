@@ -249,6 +249,9 @@ smart_gaps on
 
 for_window [app_id="nm-openconnect-auth-dialog"] floating enable
 
+# Firefox
+for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
+
 # Twitch seems to hate being tiled :shrug:
 for_window [class="twitchui.exe" title="Twitch"] floating enable
 
