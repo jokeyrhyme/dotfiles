@@ -10,7 +10,7 @@ module.exports = {
     showHamburgerMenu: true,
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '2px',
+    padding: "2px",
 
     // set to false for no bell
     bell: false,
@@ -18,5 +18,5 @@ module.exports = {
     // if true, selected text will automatically be copied to the clipboard
     copyOnSelect: true,
   },
-  plugins: ['hyper-dracula'],
+  plugins: ["hyper-dracula"],
 };

@@ -92,8 +92,10 @@ bindsym --release {
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
+    bindsym $mod+Shift+p exec ~/.dotfiles/bin/wofi-presentation.deno.mjs
+
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec ~/.dotfiles/scripts/wofi-poweroff.js
+    bindsym $mod+Shift+e exec ~/.dotfiles/bin/wofi-poweroff.deno.mjs
 #
 # Moving around:
 #

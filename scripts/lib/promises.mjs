@@ -11,7 +11,7 @@ export async function waitUntil({ fn, sleepMs, deadlineMs = 5000 } = {}) {
   let result;
   while (!result) {
     if (Date.now() > deadline) {
-      throw new Error('deadline exceeded');
+      throw new Error("deadline exceeded");
     }
     try {
       result = await fn();

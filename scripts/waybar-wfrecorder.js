@@ -11,12 +11,12 @@
  *
  */ /* eslint-env es2021 */ (async () => {
   // entrypoint
-  if (await isProcessRunning('wf-recorder')) {
+  if (await isProcessRunning("wf-recorder")) {
     console.log(
       JSON.stringify({
-        class: 'recording',
+        class: "recording",
         percentage: 100,
-        text: 'wf-recorder',
+        text: "wf-recorder",
       }),
     );
     return;
@@ -24,7 +24,7 @@
   console.log(
     JSON.stringify({
       percentage: 0,
-      text: 'wf-recorder',
+      text: "wf-recorder",
     }),
   );
 })().catch((err) => {
@@ -33,17 +33,17 @@
 });
 
 async function isProcessRunning(processName) {
-  for await (const dirEntry of Deno.readDir('/proc')) {
+  for await (const dirEntry of Deno.readDir("/proc")) {
     if (!dirEntry.isDirectory || !dirEntry.name.match(/^\d+$/)) {
       // not a process entry, skip
       continue;
     }
     try {
       const status = await Deno.readTextFile(`/proc/${dirEntry.name}/status`);
-      for (let line of status.split('\n')) {
+      for (let line of status.split("\n")) {
         line = line.trim();
-        if (line.startsWith('Name:')) {
-          let [, name] = line.split(':');
+        if (line.startsWith("Name:")) {
+          let [, name] = line.split(":");
           name = name.trim();
 
           if (name === processName) {

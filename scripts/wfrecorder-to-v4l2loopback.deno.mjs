@@ -7,24 +7,24 @@
  *
  */
 
-import { sleep } from './lib/promises.mjs';
+import { sleep } from "./lib/promises.mjs";
 
 const DEFAULT_RUN_OPTIONS = {
-  stdin: 'piped',
-  stderr: 'piped',
-  stdout: 'piped',
+  stdin: "piped",
+  stderr: "piped",
+  stdout: "piped",
 };
 const SLEEP_MS = 500;
-const V4L2_LOOPBACK_MODULE = 'v4l2loopback';
-const WF_RECORDER_V4L2_NAME = 'WfRecorder';
+const V4L2_LOOPBACK_MODULE = "v4l2loopback";
+const WF_RECORDER_V4L2_NAME = "WfRecorder";
 
 // main entrypoint
 (async () => {
-  if (Deno.args.includes('start')) {
+  if (Deno.args.includes("start")) {
     return start();
   }
 
-  if (Deno.args.includes('stop')) {
+  if (Deno.args.includes("stop")) {
     return stop();
   }
 })().catch((err) => {
@@ -50,7 +50,7 @@ async function lsmod() {
   const out = await stdout(
     Deno.run({
       ...DEFAULT_RUN_OPTIONS,
-      cmd: ['lsmod'],
+      cmd: ["lsmod"],
     }),
   );
   return parseLsmod(out);
@@ -60,10 +60,10 @@ async function modprobeV4l2loopback() {
   const p = Deno.run({
     ...DEFAULT_RUN_OPTIONS,
     cmd: [
-      'sudo',
-      'modprobe',
+      "sudo",
+      "modprobe",
       V4L2_LOOPBACK_MODULE,
-      'exclusive_caps=1',
+      "exclusive_caps=1",
       `card_label=${WF_RECORDER_V4L2_NAME}`,
     ],
   });
@@ -74,7 +74,7 @@ async function modprobeV4l2loopback() {
 async function killallWfRecorder() {
   await Deno.run({
     ...DEFAULT_RUN_OPTIONS,
-    cmd: ['killall', 'wf-recorder'],
+    cmd: ["killall", "wf-recorder"],
   }).output();
 }
 
@@ -84,7 +84,7 @@ function parseLsmod(stdout) {
   // fat                    86016  1 vfat
 
   const modules = []; // {name, size}[]
-  for (let line of stdout.split('\n')) {
+  for (let line of stdout.split("\n")) {
     line = line.trim();
     const [, name, size] = line.match(/^(\w+)\s+(\d+)/) || [];
     if (name && size) {
@@ -102,7 +102,7 @@ function parseV4l2CtlListDevices(stdout) {
 
   const devices = []; // {id, name, paths}[]
   let record;
-  for (let line of stdout.split('\n')) {
+  for (let line of stdout.split("\n")) {
     line = line.trim();
     const [, name, id] = line.match(/^(.*) \((.*)\):$/) || [];
     if (name && id) {
@@ -110,7 +110,7 @@ function parseV4l2CtlListDevices(stdout) {
       devices.push(record);
       continue;
     }
-    if (line.startsWith('/dev/')) {
+    if (line.startsWith("/dev/")) {
       record.paths.push(line);
       continue;
     }
@@ -122,7 +122,7 @@ function parseV4l2CtlListDevices(stdout) {
 async function rmmodV4l2loopback() {
   const p = Deno.run({
     ...DEFAULT_RUN_OPTIONS,
-    cmd: ['sudo', 'rmmod', V4L2_LOOPBACK_MODULE],
+    cmd: ["sudo", "rmmod", V4L2_LOOPBACK_MODULE],
   });
   await p.output();
 }
@@ -131,8 +131,8 @@ async function slurp() {
   return await stdout(
     Deno.run({
       // intentionally don't use our DEFAULT_RUN_OPTIONS
-      cmd: ['slurp'],
-      stdout: 'piped',
+      cmd: ["slurp"],
+      stdout: "piped",
     }),
   );
 }
@@ -140,7 +140,7 @@ async function slurp() {
 async function start() {
   const devicePath = await findWfRecorderDevicePath();
   if (!devicePath) {
-    throw new Error('unable to determine v4l2loopback device path');
+    throw new Error("unable to determine v4l2loopback device path");
   }
   await wfRecorder(devicePath);
 }
@@ -162,7 +162,7 @@ async function v4l2CtlListDevices() {
   const out = await stdout(
     Deno.run({
       ...DEFAULT_RUN_OPTIONS,
-      cmd: ['v4l2-ctl', '--list-devices'],
+      cmd: ["v4l2-ctl", "--list-devices"],
     }),
   );
   return parseV4l2CtlListDevices(out);
@@ -170,14 +170,14 @@ async function v4l2CtlListDevices() {
 
 async function wfRecorder(devicePath) {
   const cmd = [
-    'wf-recorder',
-    '--muxer=v4l2',
-    '--codec=rawvideo',
+    "wf-recorder",
+    "--muxer=v4l2",
+    "--codec=rawvideo",
     `--file=${devicePath}`,
-    '--pixel-format=yuv420p',
+    "--pixel-format=yuv420p",
   ];
 
-  if (Deno.args.includes('--slurp')) {
+  if (Deno.args.includes("--slurp")) {
     cmd.push(`--geometry=${await slurp()}`);
   }
 
