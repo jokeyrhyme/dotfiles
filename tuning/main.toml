@@ -209,3 +209,11 @@ type = "command"
 argv = ["--user", "install", "pip"]
 command = "easy_install"
 when = {{ has_executable(exe="easy_install") and not has_executable(exe="pip") and not has_executable(exe="pip3") }}
+
+[[jobs]]
+name = "oh-my-zsh: upgrade"
+type = "command"
+argv = ["{{ home_dir }}/.oh-my-zsh/tools/upgrade.sh"]
+command = "zsh"
+chdir = "{{ home_dir }}/.oh-my-zsh"
+when = {{ has_executable(exe="zsh") }}
