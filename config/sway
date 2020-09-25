@@ -272,6 +272,6 @@ for_window [instance="discord"] move container to workspace 6
 for_window [instance="slack"] move container to workspace 6
 
 # just get these out of the way
-for_window [class="explorer.exe" title="Wine System Tray"] move container to workspace 10
+for_window [class="explorer.exe" title="Wine System Tray"] move container to workspace 10, urgent disable
 
 include /etc/sway/config.d/*
