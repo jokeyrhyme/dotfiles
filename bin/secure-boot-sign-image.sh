@@ -20,13 +20,21 @@ for f in /etc/mkinitcpio.d/*.preset; do
   KERNEL="/boot/vmlinuz-${PKGBASE}"
 
   for TYPE in "" "-fallback"; do
-    if [ -e /boot/amd-ucode.img ]; then
+    INITRAMFS="/boot/initramfs-${PKGBASE}${TYPE}.img"
+    if [ -f "${INITRAMFS}" ]; then
+      echo "found ${INITRAMFS}, bundling and signing ..."
+    else
+      # likely that only the other kernel was updated, e.g. linux-lts vs linux
+      echo "no new ${INITRAMFS} found, nothing to sign"
+      continue
+    fi
+
+    if [ -f /boot/amd-ucode.img ]; then
       cat /boot/amd-ucode.img >${BUILDDIR}/initramfs.img
     fi
-    if [ -e /boot/intel-ucode.img ]; then
+    if [ -f /boot/intel-ucode.img ]; then
       cat /boot/intel-ucode.img >${BUILDDIR}/initramfs.img
     fi
-    INITRAMFS="/boot/initramfs-${PKGBASE}${TYPE}.img"
     cat "${INITRAMFS}" >>${BUILDDIR}/initramfs.img
 
     /usr/bin/objcopy \
