@@ -1,0 +1,17 @@
+border-color=#ffffffdd
+default-timeout=5000
+font=Fira Code 12
+group-by=app-name
+text-color=#ffffff
+
+[urgency=low]
+background-color=#000000dd
+default-timeout=3000
+
+[urgency=normal]
+background-color=#000033dd
+
+[urgency=high]
+background-color=#330000dd
+default-timeout=0
+

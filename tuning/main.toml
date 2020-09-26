@@ -81,6 +81,14 @@ state = "link"
 [[jobs]]
 type = "file"
 force = true
+src = "{{ home_dir }}/.dotfiles/config/mako"
+path = "{{ config_dir }}/mako/config"
+state = "link"
+when = {{ is_os_linux }}
+
+[[jobs]]
+type = "file"
+force = true
 src = "{{ home_dir }}/.dotfiles/config/profile"
 path = "{{ home_dir }}/.profile"
 state = "link"
