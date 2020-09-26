@@ -62,7 +62,15 @@ if command -v pacman >/dev/null 2>&1; then
   sudo cp -v ~/.dotfiles/config/pacman.d/hooks/*.hook /etc/pacman.d/hooks/
 
   echo 'copying into /etc/sudoers.d/ ...'
-  sudo cp -v ~/.dotfiles/config/sudoers.d/v4l2loopback /etc/sudoers.d/v4l2loopback
+  sudo cp -v ~/.dotfiles/config/sudoers.d/* /etc/sudoers.d/
+
+  # echo 'copying into /etc/systemd/system/ ...'
+  # sudo cp -v ~/.dotfiles/config/systemd/system/* /etc/systemd/system/
+  # sudo systemctl daemon-reload
+
+  # echo 'copying into /etc/udev/rules.d/ ...'
+  # sudo cp -v ~/.dotfiles/config/udev/rules.d/*.rules /etc/udev/rules.d/
+  # sudo udevadm control --reload
 
   echo 'preparing for Secure Boot ...'
   sudo ~/.dotfiles/bin/secure-boot-create-keys.sh
