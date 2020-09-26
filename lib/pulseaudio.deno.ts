@@ -1,6 +1,7 @@
 const PA_LIST_RE = /^([\w\s]+) #(\d+)$/;
 
 export enum PactlDeviceState {
+  Idle = "IDLE",
   Running = "RUNNING",
   Suspended = "SUSPENDED",
 }
