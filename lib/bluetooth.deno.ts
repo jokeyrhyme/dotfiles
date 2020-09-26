@@ -1,6 +1,7 @@
 import { castBoolean, castMAC } from "./types.ts";
 
 const BT_INFO_RE = /^Device ([\w:]+)/;
+const BT_PAIRED_RE = /^Device ([\w:]+) ([\w\s]+)$/;
 const BT_UUID_RE = /^(.+)\s+\(([\w-]+)\)$/; // TODO: check UUID format
 
 export function parseBluetoothctlInfo(text: string): BluetoothctlDevice {
@@ -57,6 +58,23 @@ export function parseBluetoothctlInfo(text: string): BluetoothctlDevice {
   return device;
 }
 
+export function parseBluetoothctlPairedDevices(
+  text: string,
+): BluetoothctlPairedDevice[] {
+  const result = [];
+
+  for (let line of text.split("\n")) {
+    line = line.trim();
+
+    let [, mac, name] = line.match(BT_PAIRED_RE) || [];
+    if (mac && name) {
+      result.push({ mac: castMAC(mac), name });
+    }
+  }
+
+  return result;
+}
+
 interface BluetoothctlDevice {
   alias: string;
   blocked: boolean;
@@ -75,6 +93,11 @@ interface BluetoothctlDevice {
 interface BluetoothctlDeviceUUID {
   type: string;
   uuid: string;
+}
+
+interface BluetoothctlPairedDevice {
+  mac: string;
+  name: string;
 }
 
 function makeBluetoothctlDevice(): BluetoothctlDevice {

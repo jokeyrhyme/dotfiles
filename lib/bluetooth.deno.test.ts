@@ -4,6 +4,7 @@ import {
 } from "https://deno.land/std@0.70.0/testing/asserts.ts";
 import {
   parseBluetoothctlInfo,
+  parseBluetoothctlPairedDevices,
 } from "./bluetooth.deno.ts";
 
 Deno.test("parseBluetoothctlInfo", () => {
@@ -53,4 +54,21 @@ Device 00:00:00:00:00:00 (public)
   const got = parseBluetoothctlInfo(input);
 
   assertEquals(expected, got);
+});
+
+Deno.test("parseBluetoothctlPairedDevices", () => {
+  const input = `
+Device 00:00:00:00:00:00 Something
+Device 00:00:00:00:00:01 Something Else
+Device 00:00:00:00:00:02 Another Thing
+  `;
+  const expected = [
+    { mac: "00:00:00:00:00:00", name: "Something" },
+    { mac: "00:00:00:00:00:01", name: "Something Else" },
+    { mac: "00:00:00:00:00:02", name: "Another Thing" },
+  ];
+  const got = parseBluetoothctlPairedDevices(input);
+
+  assertArrayContains(expected, got);
+  assertEquals(expected.length, got.length);
 });
