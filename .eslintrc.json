@@ -7,9 +7,9 @@
   "overrides": [
     {
       "files": [
-        "**/*.deno.js",
-        "**/*.deno.mjs",
-        "**/*.deno.ts"
+        "**/*.deno.*",
+        "**/*.deno.*",
+        "**/*.deno.*"
       ],
       "env": {
         "es2021": true

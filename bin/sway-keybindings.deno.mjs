@@ -8,17 +8,24 @@ setTimeout(() => {
 // main entrypoint
 (async () => {
   const config = await getConfig();
-  const keybindings = parseSwayConfig(config).filter(({ sway }) => sway === 'bindsym');
+  const keybindings = parseSwayConfig(config).filter(({ sway }) =>
+    sway === "bindsym"
+  );
   console.log(`${keybindings.length} keybindings:`);
   console.log(formatKeybindings(keybindings));
-})().catch(err => {
+})().catch((err) => {
   console.error(err);
   //Deno.exit(1);
 });
 
 function formatKeybindings(config = []) {
-  const longestKeys = config.reduce((prev, curr) => Math.max(prev, curr.keys.length), 0);
-  return config.map(({ command, keys }) => `${keys.padEnd(longestKeys)} -> ${command.join(' ')}`).join('\n');
+  const longestKeys = config.reduce(
+    (prev, curr) => Math.max(prev, curr.keys.length),
+    0,
+  );
+  return config.map(({ command, keys }) =>
+    `${keys.padEnd(longestKeys)} -> ${command.join(" ")}`
+  ).join("\n");
 }
 
 async function getConfig() {
@@ -31,27 +38,27 @@ async function getConfig() {
   return JSON.parse(stdout).config;
 }
 
-function parseSwayConfig(text = '') {
+function parseSwayConfig(text = "") {
   const results = [];
 
   let isBlock = false;
   let sway;
-  for (let line of text.split('\n')) {
+  for (let line of text.split("\n")) {
     line = line.trim();
 
-    if (line.startsWith('#')) {
+    if (line.startsWith("#")) {
       continue; // don't bother processing comments for now
     }
 
     const parts = line.split(/\s+/).filter(Boolean);
     const ending = parts[parts.length - 1];
 
-    if (ending === '{') {
+    if (ending === "{") {
       isBlock = true;
       sway = parts[0];
       continue;
     }
-    if (ending === '}') {
+    if (ending === "}") {
       isBlock = false;
       sway = null;
       continue;
@@ -61,13 +68,13 @@ function parseSwayConfig(text = '') {
       parts.unshift(sway);
     }
 
-    if (parts[0] === 'bindsym' && parts.length >= 3) {
-      const [ sway, keys, ...command ] = parts;
+    if (parts[0] === "bindsym" && parts.length >= 3) {
+      const [sway, keys, ...command] = parts;
       results.push({
         command,
         keys,
         sway,
-      })
+      });
     }
   }
 
