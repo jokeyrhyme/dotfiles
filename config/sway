@@ -85,6 +85,9 @@ bindsym $mod+Shift+Slash exec alacritty --command ~/.dotfiles/bin/sway-keybindin
     # bindsym $mod+d exec $menu
     bindsym $mod+d exec wofi --show=drun
 
+    # dismiss a notification
+    bindsym $mod+Shift+n exec makoctl dismiss
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
