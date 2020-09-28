@@ -70,7 +70,7 @@ bindsym --release {
 
 ### Key bindings
 
-bindsym $mod+Shift+Slash exec alacritty --command ~/.dotfiles/bin/sway-keybindings.deno.mjs
+bindsym $mod+Shift+Slash exec alacritty --command ~/.dotfiles/bin/sway-keybindings.deno.ts
 
 #
 # Basics:
