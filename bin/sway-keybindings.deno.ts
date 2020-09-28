@@ -1,4 +1,4 @@
-#! /usr/bin/env -S deno run --allow-run
+#! /usr/bin/env -S deno run --allow-read --allow-run
 
 // keep open for 10 seconds by default
 setTimeout(() => {
@@ -16,8 +16,15 @@ async function main(): Promise<void> {
     0,
   );
 
+  const [scriptFile] = Deno.mainModule.split('/').reverse();
+
   for (const keybinding of keybindings) {
-    console.log(`${keybinding.padEnd(longestKeys)} -> ${keysToActions.get(keybinding)}`);
+    const action = keysToActions.get(keybinding);
+    if (action?.includes(scriptFile)) {
+      continue; // don't show the keybinding we just used
+    }
+
+    console.log(`${keybinding.padEnd(longestKeys)} -> ${action}`);
   }
 }
 

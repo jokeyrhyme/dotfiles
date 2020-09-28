@@ -70,7 +70,7 @@ bindsym --release {
 
 ### Key bindings
 
-bindsym $mod+Shift+Slash exec alacritty --command ~/.dotfiles/bin/sway-keybindings.deno.ts
+bindsym $mod+Shift+Slash exec alacritty --class "Sway Keybindings" --command ~/.dotfiles/bin/sway-keybindings.deno.ts
 
 #
 # Basics:
@@ -256,6 +256,7 @@ gaps outer 0
 smart_gaps on
 
 for_window [app_id="nm-openconnect-auth-dialog"] floating enable
+for_window [app_id="^Sway Keybindings$"] floating enable
 
 # Firefox
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
