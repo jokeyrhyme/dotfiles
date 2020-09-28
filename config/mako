@@ -1,17 +1,26 @@
-border-color=#ffffffdd
-default-timeout=5000
-font=Fira Code 12
 group-by=app-name
+layer=overlay
+
+# font and background/text-color same as in ~/.config/waybar/styles.css
+background-color=#000000ee
+font=Fira Code 10
 text-color=#ffffff
 
+# border-size same as in ~/.config/sway/config
+border-size=4
+
 [urgency=low]
-background-color=#000000dd
+# border-color same as above background-color
+border-color=#000000ee
 default-timeout=3000
 
 [urgency=normal]
-background-color=#000033dd
+# border-color same as "unfocused" background in `man 5 sway`
+border-color=#222222ee
+default-timeout=5000
 
 [urgency=high]
-background-color=#330000dd
+# border-color same as "urgent" background in `man 5 sway`
+border-color=#900000ee
 default-timeout=0
 
