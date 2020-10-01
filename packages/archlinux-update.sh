@@ -68,9 +68,9 @@ if command -v pacman >/dev/null 2>&1; then
   # sudo cp -v ~/.dotfiles/config/systemd/system/* /etc/systemd/system/
   # sudo systemctl daemon-reload
 
-  # echo 'copying into /etc/udev/rules.d/ ...'
-  # sudo cp -v ~/.dotfiles/config/udev/rules.d/*.rules /etc/udev/rules.d/
-  # sudo udevadm control --reload
+  echo 'copying into /etc/udev/rules.d/ ...'
+  sudo cp -v ~/.dotfiles/config/udev/rules.d/*.rules /etc/udev/rules.d/
+  sudo udevadm control --reload
 
   echo 'preparing for Secure Boot ...'
   sudo ~/.dotfiles/bin/secure-boot-create-keys.sh
