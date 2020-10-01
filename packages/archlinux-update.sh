@@ -79,6 +79,7 @@ if command -v pacman >/dev/null 2>&1; then
   fi
   sudo cp -v ~/.dotfiles/bin/secure-boot-sign-bootloader.sh /root/secure-boot/sign-bootloader.sh
   sudo cp -v ~/.dotfiles/bin/secure-boot-sign-image.sh /root/secure-boot/sign-image.sh
+  sudo cp -v ~/.dotfiles/bin/secure-boot-sign-fwupd.sh /root/secure-boot/sign-fwupd.sh
 
   echo 'updating packages with pacman ...'
   sudo pacman -Syu

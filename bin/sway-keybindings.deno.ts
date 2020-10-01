@@ -16,7 +16,7 @@ async function main(): Promise<void> {
     0,
   );
 
-  const [scriptFile] = Deno.mainModule.split('/').reverse();
+  const [scriptFile] = Deno.mainModule.split("/").reverse();
 
   for (const keybinding of keybindings) {
     const action = keysToActions.get(keybinding);
@@ -29,7 +29,7 @@ async function main(): Promise<void> {
 }
 
 enum SwayCommand {
-  BindSym = 'bindsym',
+  BindSym = "bindsym",
 }
 
 interface SwayDirective {
@@ -67,11 +67,13 @@ function mapActionsToKeys(config: SwayDirective[] = []): Map<string, string[]> {
   return results;
 }
 
-function mapKeysToActions(actionsToKeys: Map<string, string[]>): Map<string, string> {
+function mapKeysToActions(
+  actionsToKeys: Map<string, string[]>,
+): Map<string, string> {
   const results = new Map();
 
-  for (const [ action, keybindings ] of actionsToKeys.entries()) {
-    results.set(keybindings.join(' OR '), action);
+  for (const [action, keybindings] of actionsToKeys.entries()) {
+    results.set(keybindings.join(" OR "), action);
   }
 
   return results;

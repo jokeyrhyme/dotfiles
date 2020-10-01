@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = fwupd
+
+[Action]
+When = PostTransaction
+Exec = /root/secure-boot/sign-fwupd.sh
+
