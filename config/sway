@@ -261,14 +261,12 @@ for_window [app_id="^Sway Keybindings$"] floating enable
 # Firefox
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
 
-# Twitch seems to hate being tiled :shrug:
-for_window [class="twitchui.exe" title="Twitch"] floating enable
-
 # games
-for_window [class="twitchui.exe" title="Twitch"] move container to workspace 5
+for_window [class="twitchui.exe" title="Twitch"] move container to workspace 5, floating enable
 for_window [instance="Steam"] move container to workspace 5
 for_window [instance="battle.net.exe"] move container to workspace 5
 for_window [instance="itch"] move container to workspace 5
+for_window [instance="wowup.exe"] move container to workspace 5, floating enable
 
 # chat
 for_window [instance="zoom" title="Zoom Meeting"] move container to workspace 4
