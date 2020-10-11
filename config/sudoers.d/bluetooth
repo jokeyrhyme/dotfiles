@@ -1,0 +1,3 @@
+# copy to /etc/sudoers.d/bluetooth
+
+%wheel ALL= NOPASSWD: /usr/bin/systemctl restart bluetooth.service
