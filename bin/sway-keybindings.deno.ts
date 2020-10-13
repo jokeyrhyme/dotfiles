@@ -23,6 +23,9 @@ async function main(): Promise<void> {
     if (action?.includes(scriptFile)) {
       continue; // don't show the keybinding we just used
     }
+    if (keybinding.startsWith("XF86")) {
+      continue; // don't show fairly-obvious media-key bindings
+    }
 
     console.log(`${keybinding.padEnd(longestKeys)} -> ${action}`);
   }
