@@ -35,6 +35,9 @@ exec /usr/bin/nm-applet --indicator
 # firewall-applet doesn't appear if called too soon
 exec sleep 10s && /usr/bin/firewall-applet
 
+# bluetooth needs to be restarted after user's pulseaudio is started
+exec sleep 10s && /usr/bin/sudo /usr/bin/systemctl restart bluetooth.service
+
 # setup notifications
 # requires `pacman -S mako`
 exec mako
