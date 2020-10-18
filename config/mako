@@ -1,6 +1,3 @@
-group-by=app-name
-layer=overlay
-
 # font and background/text-color same as in ~/.config/waybar/styles.css
 background-color=#000000ee
 font=Fira Code 10
