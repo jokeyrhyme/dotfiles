@@ -22,7 +22,7 @@ if command -v pacman >/dev/null 2>&1; then
   echo 'installing favourites with pacman ...'
 
   # basics
-  __dotfiles_pacman_install alacritty bash deno fish fzf linux{,-lts} man-db neofetch neovim s-tui tmux zsh
+  __dotfiles_pacman_install alacritty bash deno fish fzf linux{,-lts} man-db neofetch neovim pkgstats s-tui tmux zsh
 
   # security
   __dotfiles_pacman_install arch-audit lynis nftables osquery sudo usbguard
@@ -83,4 +83,6 @@ if command -v pacman >/dev/null 2>&1; then
 
   echo 'updating packages with pacman ...'
   sudo pacman -Syu
+
+  pkgstats submit
 fi
