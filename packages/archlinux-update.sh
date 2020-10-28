@@ -54,6 +54,9 @@ if command -v pacman >/dev/null 2>&1; then
   # fonts
   __dotfiles_pacman_install adobe-source-{code,sans,serif}-pro-fonts noto-fonts{,-emoji} otf-{font-awesome,overpass} ttf-{cascadia-code,fira-{code,mono,sans},hack,jetbrains-mono,roboto{,-mono}} inter-font
 
+  # networking, protocols, etc
+  __dotfiles_pacman_install cyrus-sasl-gssapi
+
   echo 'uninstalling ex-favourites with pacman ...'
   __dotfiles_pacman_uninstall keybase-bin # from AUR, now in community
   __dotfiles_pacman_uninstall redshift    # doesn't work on wayland
