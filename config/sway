@@ -70,7 +70,7 @@ input * xkb_capslock disable
 input * xkb_numlock enable
 
 bindsym --release {
-    $mod+$alt+l exec loginctl lock-session
+    Control+$alt+$mod+l exec loginctl lock-session
 }
 
 ### Key bindings
@@ -84,11 +84,11 @@ bindsym $mod+Shift+Slash exec alacritty --class "Sway Keybindings" --command ~/.
     bindsym $mod+Return exec $term
 
     # kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym Control+$alt+$mod+q kill
 
     # start your launcher
     # bindsym $mod+d exec $menu
-    bindsym $mod+d exec wofi --show=drun
+    bindsym Control+$alt+$mod+d exec wofi --show=drun
 
     # dismiss a notification
     bindsym $mod+Shift+n exec makoctl dismiss
@@ -101,12 +101,12 @@ bindsym $mod+Shift+Slash exec alacritty --class "Sway Keybindings" --command ~/.
     floating_modifier $mod normal
 
     # reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym Control+$alt+$mod+c reload
 
-    bindsym $mod+Shift+p exec ~/.dotfiles/bin/wofi-presentation.deno.mjs
+    bindsym Control+$alt+$mod+p exec ~/.dotfiles/bin/wofi-presentation.deno.mjs
 
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec ~/.dotfiles/bin/wofi-poweroff.deno.mjs
+    bindsym Control+$alt+$mod+e exec ~/.dotfiles/bin/wofi-poweroff.deno.mjs
 #
 # Moving around:
 #
