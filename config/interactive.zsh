@@ -12,5 +12,5 @@ if type starship >/dev/null 2>&1; then
 fi
 
 if type zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh --no-define-aliases)"
+  eval "$(zoxide init --no-aliases zsh)"
 fi
