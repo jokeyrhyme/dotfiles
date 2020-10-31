@@ -36,7 +36,7 @@ exec /usr/bin/nm-applet --indicator
 exec sleep 10s && /usr/bin/firewall-applet
 
 # bluetooth needs to be restarted after user's pulseaudio is started
-exec sleep 10s && /usr/bin/sudo /usr/bin/systemctl restart bluetooth.service
+exec /usr/bin/systemctl is-enabled bluetooth.service && sleep 10s && /usr/bin/sudo /usr/bin/systemctl restart bluetooth.service
 
 # setup notifications
 # requires `pacman -S mako`
