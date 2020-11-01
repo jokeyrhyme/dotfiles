@@ -5,6 +5,8 @@
 This project is best paired with [`jokeyrhyme-dotfiles`](https://github.com/jokeyrhyme/dotfiles-rs).
 Eventually, this project will contain preferences, and all scripts will be removed in favour of `jokeyrhyme-dotfiles`.
 
+MOVED: https://gitlab.com/jokeyrhyme/dotfiles
+
 ## Dependencies
 
 ### OS X
